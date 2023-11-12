@@ -1,7 +1,26 @@
 {
   "name": "eleventy-bookshop-starter",
-  "private": true,
+  "author": "CloudCannon",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CloudCannon/eleventy-bookshop-starter.git"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@bookshop/browser": "3.0.0",
+    "@bookshop/eleventy-bookshop": "3.0.0",
+    "@bookshop/eleventy-engine": "3.0.0",
+    "@bookshop/generate": "3.0.0",
+    "@bookshop/sass": "3.0.0",
+    "npm-run-all": "^4.1.5"
+  },
+  "bugs": {
+    "url": "https://github.com/CloudCannon/eleventy-bookshop-starter/issues"
+  },
   "description": "A starter template for Eleventy with Bookshop",
+  "homepage": "https://github.com/CloudCannon/eleventy-bookshop-starter#readme",
+  "license": "MIT",
+  "private": true,
   "scripts": {
     "bookshop:watch": "bookshop-browser",
     "bookshop-sass:build": "bookshop-sass -b component-library -o site/assets/bookshop.css",
@@ -9,24 +28,5 @@
     "eleventy:build": "eleventy",
     "eleventy:watch": "ELEVENTY_ENV=development eleventy --serve",
     "start": "npm-run-all bookshop-sass:build --parallel bookshop-sass:watch bookshop:watch eleventy:watch"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/CloudCannon/eleventy-bookshop-starter.git"
-  },
-  "author": "CloudCannon",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/CloudCannon/eleventy-bookshop-starter/issues"
-  },
-  "homepage": "https://github.com/CloudCannon/eleventy-bookshop-starter#readme",
-  "devDependencies": {
-    "@11ty/eleventy": "^1.0.0",
-    "@bookshop/browser": "3.0.0",
-    "@bookshop/eleventy-bookshop": "3.0.0",
-    "@bookshop/eleventy-engine": "3.0.0",
-    "@bookshop/generate": "3.0.0",
-    "@bookshop/sass": "3.0.0",
-    "npm-run-all": "^4.1.5"
   }
 }
