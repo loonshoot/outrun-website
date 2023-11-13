@@ -1,0 +1,9 @@
+<div class="group relative">
+  <button class="flex items-center w-32 h-8 m-4 absolute {% if background == "Yellow" %} bg-yellow-400 {% endif %} {% if background == "Pink" %} bg-pink-600 {% endif %}">
+    <div class="flex items-center w-full text-center {% if background == "Yellow" %} text-slate-900 {% endif %} {% if background == "Pink" %} text-light {% endif %} text-xs font-normal font-mono">
+      <p class="text-center w-full pt-1 group-hover:pt-0" >{{ text }}</p>
+    </div>
+  </button>
+  <div class="flex items-center w-32 h-8 top-1 left-1 group-hover:top-0 group-hover:left-0 m-4 absolute border-solid border-2 {% if border == "Dark" %} border-dark {% endif %} {% if border == "Light" %} border-light {% endif %}">
+  </div>
+</div>
