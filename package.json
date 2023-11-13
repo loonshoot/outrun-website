@@ -27,6 +27,13 @@
     "bookshop-sass:watch": "bookshop-sass -b component-library -o site/assets/bookshop.css -w",
     "eleventy:build": "eleventy",
     "eleventy:watch": "ELEVENTY_ENV=development eleventy --serve",
-    "start": "npm-run-all bookshop-sass:build --parallel bookshop-sass:watch bookshop:watch eleventy:watch"
+    "tailwind:build": "tailwindcss -i component-library/shared/styles/tailwind.css -o component-library/shared/styles/tailwind.out.css --postcss",
+    "tailwind:watch": "tailwindcss -i component-library/shared/styles/tailwind.css -o component-library/shared/styles/tailwind.out.css --watch --postcss",
+    "start": "npm-run-all bookshop-sass:build --parallel tailwind:watch bookshop-sass:watch bookshop:watch eleventy:watch"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.5"
   }
 }
