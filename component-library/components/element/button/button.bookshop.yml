@@ -1,7 +1,8 @@
 # Metadata about this component, to be used in the CMS
 spec:
-  structures: []
-  label: Button
+  structures:
+    - hero
+  label: button
   description: The primary CTA button.
   icon: smart_button
   tags: [button]
@@ -11,12 +12,11 @@ blueprint:
   text: "Button"
   background: "Pink"
   border: "Light"
+  link: "/"
 
 # Overrides any fields in the blueprint when viewing this component in the component browser
 preview:
-  text: "Button"
-  background: "Pink"
-  border: "Light"
+  link: "/"
 
 # Any extra CloudCannon inputs configuration to apply to the blueprint
 _inputs:
