@@ -17,7 +17,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&display=swap" rel="stylesheet">
     <title>Eleventy Bookshop Starter</title>
 </head>
-<body>
+<body class="bg-dark min-h-screen">
+    {% bookshop "block/menu" bind: menu %}
     <main>
         {% comment %}
             # The `page` include loops through all content_blocks and renders them.
