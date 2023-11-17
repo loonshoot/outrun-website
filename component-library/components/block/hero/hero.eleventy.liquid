@@ -1,8 +1,13 @@
 
 <div class="w-full bg-pink-600 relative">
-    <div class="container mx-auto p-5">
-        <h1 class="text-dark text-2xl font-semibold font-mono">{{ title-text }}</h1>
-        <p class="text-dark text-xl pt-3 font-normal font-mono">We are building the data platform for AI first organizations.</p>
-        {% bookshop "element/button" bind: button %}
+    <div class="container mx-auto flex pt-5 justify-between">
+        <div class="block self-center">
+            <h1 class="text-dark text-2xl font-semibold font-mono md:w-3/5">{{ title }}</h1>
+            <p class="text-dark text-xl pt-3 font-normal font-mono md:w-3/5">{{ subtitle }}</p>
+            {% bookshop "element/button" bind: button %}
+        </div>
+        <div class="hidden md:inline self-end">
+            <img src="{{ image }}" class="h-full">
+        </div>
     </div>
 </div>

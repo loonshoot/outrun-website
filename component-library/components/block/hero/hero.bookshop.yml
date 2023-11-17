@@ -8,17 +8,21 @@ spec:
 
 # Defines the structure of this component, as well as the default values
 blueprint:
-  title-text: "We are outrun."
+  title: "We are outrun."
+  subtitle: "We are building the data platform for AI first organizations."
   type: standard
   color: pink
+  image: "https://res.cloudinary.com/dpzlbvtpx/image/upload/f_auto,q_auto/re6suai35iyrdnwxerem"
   button: 
     bookshop:element/button
 
 # Overrides any fields in the blueprint when viewing this component in the component browser
 preview:
-  title-text: "We are outrun."
+  title: "We are outrun."
+  subtitle: "We are building the data platform for AI first organizations."
   type: standard
   color: pink
+  image: "https://res.cloudinary.com/dpzlbvtpx/image/upload/f_auto,q_auto/re6suai35iyrdnwxerem"
 
 # Any extra CloudCannon inputs configuration to apply to the blueprint
 _inputs:

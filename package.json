@@ -29,7 +29,7 @@
     "eleventy:watch": "ELEVENTY_ENV=development eleventy --serve",
     "tailwind:build": "tailwindcss -i component-library/shared/styles/tailwind.css -o component-library/shared/styles/tailwind.out.css --postcss",
     "tailwind:watch": "tailwindcss -i component-library/shared/styles/tailwind.css -o component-library/shared/styles/tailwind.out.css --watch --postcss",
-    "start": "npm-run-all bookshop-sass:build --parallel tailwind:watch bookshop-sass:watch bookshop:watch eleventy:watch"
+    "start": "npm-run-all bookshop-sass:build --parallel tailwind:build tailwind:watch bookshop-sass:watch bookshop:watch eleventy:watch"
   },
   "dependencies": {
     "autoprefixer": "^10.4.16",

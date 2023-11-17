@@ -7,6 +7,15 @@ module.exports = {
     fontFamily: {
       'mono': ['Fira Code', 'ui-monospace', 'SFMono-Regular'],
     },
+    container: {
+      padding: {
+        DEFAULT: '1rem',
+        sm: '2rem',
+        lg: '4rem',
+        xl: '5rem',
+        '2xl': '6rem',
+      },
+    },
     colors: {
       'pink': {
         600: '#FE0170',
