@@ -1,0 +1,59 @@
+# Metadata about this component, to be used in the CMS
+spec:
+  label: carousel
+  description: Page carousel component
+  icon: wysiwyg
+  tags:
+
+# Defines the structure of this component, as well as the default values
+blueprint:
+  cards:
+    - title: "Card 1"
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      image: "/images/card1.jpg"
+      button: bookshop:element/button
+      background: "Yellow"
+    - title: "Card 2"
+      description: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      image: "/images/card2.jpg"
+      button: bookshop:element/button
+      background: "Blue"
+    - title: "Card 3"
+      description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
+      image: "/images/card3.jpg"
+      button: bookshop:element/button
+      background: "Green"
+    - title: "Card 4"
+      description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore."
+      image: "/images/card4.jpg"
+      button: bookshop:element/button
+      background: "Red"
+  type: standard
+
+# Overrides any fields in the blueprint when viewing this component in the component browser
+preview:
+  cards:
+    - title: "Card 1"
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      image: "/images/card1.jpg"
+      button: bookshop:element/button
+      background: "Yellow"
+    - title: "Card 2"
+      description: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      image: "/images/card2.jpg"
+      button: bookshop:element/button
+      background: "Blue"
+    - title: "Card 3"
+      description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
+      image: "/images/card3.jpg"
+      button: bookshop:element/button
+      background: "Green"
+    - title: "Card 4"
+      description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore."
+      image: "/images/card4.jpg"
+      button: bookshop:element/button
+      background: "Red"
+  type: standard
+# Any extra CloudCannon inputs configuration to apply to the blueprint
+_inputs:
+
