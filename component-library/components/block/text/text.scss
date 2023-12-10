@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap');
+
+.textBlock {
+    h1 {
+        @apply text-dark;
+        @apply text-4xl;
+        @apply font-semibold;
+        @apply font-mono;
+    }
+    h2 {
+        @apply text-pink-600;
+        @apply text-2xl;
+        @apply font-semibold;
+        @apply font-mono;
+    }
+    p {
+        @apply text-light;
+        @apply text-xl;
+        @apply font-mono;
+        @apply pt-2;
+    }
+}
