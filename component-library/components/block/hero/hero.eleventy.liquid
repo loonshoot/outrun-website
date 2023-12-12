@@ -2,8 +2,8 @@
 <div class="w-full {% if background == "Yellow" %} bg-yellow-400 {% endif %} {% if background == "Pink" %} bg-pink-600 {% endif %} relative">
     <div class="container mx-auto flex {% if image %} pt-5 {% else %} py-5 {% endif %} justify-between">
         <div class="block self-center">
-            <h1 class="text-dark text-3xl font-semibold font-mono md:w-3/5">{{ title }}</h1>
-            <p class="text-dark text-xl pt-3 font-normal font-mono md:w-3/5">{{ subtitle }}</p>
+            <h1 class="text-dark text-3xl font-semibold font-mono md:w-3/5 leading-loose">{{ title }}</h1>
+            <p class="text-dark text-xl pt-3 font-normal font-mono md:w-3/5 leading-loose">{{ subtitle }}</p>
             {% if button %}
                 {% bookshop "element/button" bind: button %}
             {% endif %}

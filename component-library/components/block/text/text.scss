@@ -5,16 +5,27 @@
 
 .textBlock {
     h1 {
-        @apply text-dark;
+        @apply text-pink-600;
         @apply text-4xl;
         @apply font-semibold;
         @apply font-mono;
+        @apply leading-loose;
     }
     h2 {
         @apply text-pink-600;
         @apply text-2xl;
         @apply font-semibold;
         @apply font-mono;
+        @apply mt-6;
+        @apply leading-loose;
+    }
+    h3 {
+        @apply text-pink-600;
+        @apply text-xl;
+        @apply font-semibold;
+        @apply font-mono;
+        @apply mt-6;
+        @apply leading-loose;
     }
     p {
         @apply text-light;
@@ -22,5 +33,6 @@
         @apply font-mono;
         @apply font-normal;
         @apply pt-2;
+        @apply leading-loose;
     }
 }
