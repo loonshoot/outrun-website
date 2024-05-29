@@ -4,6 +4,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap');
 
 .textBlock {
+    a {
+        @apply text-pink-600;
+        @apply decoration-solid;
+    }
     h1 {
         @apply text-pink-600;
         @apply text-4xl;
@@ -30,9 +34,41 @@
     p {
         @apply text-light;
         @apply text-xl;
+        @apply mt-6;
         @apply font-mono;
         @apply font-normal;
-        @apply pt-2;
         @apply leading-loose;
+    }
+    li {
+        @apply text-light;
+        @apply text-xl;
+        @apply mt-6;
+        @apply font-mono;
+        @apply font-normal;
+        @apply leading-loose;
+    }
+    figcaption {
+        @apply text-light;
+        @apply text-lg;
+        @apply mt-6;
+        @apply font-mono;
+        @apply font-normal;
+        @apply leading-loose;
+    }
+    .tldr {
+        @apply p-6;
+        @apply mt-4;
+        @apply border-light;
+        @apply border-2;
+        @apply rounded-none;
+        
+        h2 {
+            @apply mt-2;
+            @apply text-4xl;
+        }
+
+        li {
+            @apply text-lg;
+        }
     }
 }

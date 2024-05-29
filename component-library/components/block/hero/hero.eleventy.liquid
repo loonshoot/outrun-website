@@ -1,14 +1,14 @@
 
 <div class="w-full {% if background == "Yellow" %} bg-yellow-400 {% endif %} {% if background == "Pink" %} bg-pink-600 {% endif %} relative">
-    <div class="container mx-auto flex {% if image %} pt-5 {% else %} py-5 {% endif %} justify-between">
-        <div class="block self-center">
-            <h1 class="text-dark text-3xl font-semibold font-mono md:w-3/5 leading-loose">{{ title }}</h1>
-            <p class="text-dark text-xl pt-3 font-normal font-mono md:w-3/5 leading-loose">{{ subtitle }}</p>
+    <div class="container mx-auto flex flex-wrap {% if image %} pt-5 {% else %} py-5 {% endif %} justify-between">
+        <div class="w-screen block self-center md:w-3/5">
+            <h1 class="w-fit md:w-8/12 text-dark text-3xl font-semibold font-mono text-wrap leading-8 md:leading-10">{{ title }}</h1>
+            <p class="w-fit md:w-8/12 text-dark text-xl pt-3 font-normal font-mono text-wrap leading-8 md:leading-10">{{ subtitle }}</p>
             {% if button %}
                 {% bookshop "element/button" bind: button %}
             {% endif %}
         </div>
-        <div class="hidden md:inline self-end">
+        <div class="w-screen md:w-2/5 md:inline self-center md:self-end">
             <img src="{{ image }}" class="h-full">
         </div>
     </div>
