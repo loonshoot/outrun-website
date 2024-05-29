@@ -11,11 +11,16 @@
         # to this location before the Eleventy build.
         # This includes running any postcss configuration in your working directory.
     {% endcomment %}
+    <link rel="stylesheet" href="/assets/tailwind.css">
     <link rel="stylesheet" href="/assets/bookshop.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&display=swap" rel="stylesheet">
     <title>Eleventy Bookshop Starter</title>
 </head>
-<body>
-    <main>
+<body class="bg-dark min-h-screen">
+    {% bookshop "block/menu" bind: menu %}
+    <main class="gap-y-4 mb-4">
         {% comment %}
             # The `page` include loops through all content_blocks and renders them.
             # Using a bookshop tag here means that live previewing will catch new components.
@@ -27,5 +32,6 @@
         {% endcomment %}
         {{ content }}
     </main>
+    {% bookshop "block/footer" bind: footer %}
 </body>
 </html>

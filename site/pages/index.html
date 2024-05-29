@@ -4,18 +4,108 @@ content_blocks:
   # An example of using bookshop via array structures.
   # On CloudCannon, these structures are configured automatically for you.
   # To follow this array being rendered, see layouts/default.liquid
-  - _bookshop_name: hero
-    title: Bookshop Eleventy Starter
-    content:
-      content_html: >-
-        <p>A skeleton for getting started with your component journey using Bookshop and Eleventy.</p>
-    tags:
-      - text: "bookshop"
-      - text: "eleventy"
-  - _bookshop_name: content
-    content_html: >-
-      <p>For more info, check out the <a href="https://github.com/CloudCannon/eleventy-bookshop-starter#readme" target="_blank">readme</a></p>
-    type: standard
+  - _bookshop_name: block/hero
+    title: "Turbo charge your Data. Outrun the Competition."
+    subtitle: "Outrun is the future of data, a fast, agile platform that unlocks its full potential."
+    image: "https://res.cloudinary.com/dpzlbvtpx/image/upload/v1716978202/home-hero_h8cad3.png"
+    background: "Pink"
+    button: 
+      background: "Yellow"
+      border: "Dark"
+      text: "Find out more"
+  - _bookshop_name: block/text
+    htmlBlock: 
+      <h2>Recommended Reads</h2>
+  - _bookshop_name: block/carousel
+    cards:
+    - title: "Process automation"
+      description: "Understand intent and automate outcomes."
+      link: "#"
+      background: "Blue"
+      button: 
+        background: "Pink"
+        border: "Light"
+        text: "Read more"
+        link: /learn/use-ai-to-automate-processes
+    - title: "Understanding your data"
+      description: "Ask questions about your business performance."
+      link: "#"
+      background: "Green"
+      button: 
+        background: "Pink"
+        border: "Light"
+        text: "Read more"
+        link: /learn/use-ai-to-understand-business-performance-data
+    - title: "Ticket deflection"
+      description: "Use AI to delight humans and answer common questions."
+      subtitle: ""
+      link: "#"
+      background: "Yellow"
+      button: 
+        background: "Pink"
+        border: "Light"
+        text: "Read more"
+        link: /learn/use-ai-to-reduce-support-tickets
+    - title: "Knowledge Search"
+      description: "Search for the answers locked in your internal tools."
+      link: "#"
+      background: "Red"
+      button: 
+        background: "Pink"
+        border: "Light"
+        text: "Read more"
+        link: /learn/use-ai-to-unlock-secrets-locked-in-your-internal-tools
+    - title: "Code generation and review"
+      description: "Empower your people with rapid code generation tools."
+      link: "#"
+      background: "Red"
+      button: 
+        background: "Pink"
+        border: "Light"
+        text: "Read more"
+        link: /learn/use-ai-to-rapidly-develop-your-business-offerings
+    - title: "5"
+      description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore."
+      link: "#"
+      background: "Red"
+      button: 
+        background: "Pink"
+        border: "Light"
+        text: "Read more"
+        link: /
+    - title: "6"
+      description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore."
+      link: "#"
+      background: "Red"
+      button: 
+        background: "Pink"
+        border: "Light"
+        text: "Read more"
+        link: /
+  - _bookshop_name: block/twocolumn
+    title: "Where Data Gets Rewired, Reimagined, and Re-energized."
+    subtitle: "Outrun is the data platform that gives your data the freedom to move, the power to adapt, and the intelligence to unlock its full potential. Connect to your data sources, build automations with our drag-and-drop workflow builder, and deliver insights that are easy, fast and scalable."
+    image: "https://res.cloudinary.com/dpzlbvtpx/image/upload/v1716986289/remove-the-large-orange-vehicle-behind-the-smaller_1_vi2ea4.png"
+    background: "Pink"
+    linkUrl: "#"
+    linkText: "Read more"
+  - _bookshop_name: block/twocolumn
+    flex: reverse
+    title: "Fast, Fun, and Future-Proof"
+    subtitle: "Outrun isn't just about pushing data faster; it's about making data work for you. It's about unlocking hidden insights, breaking down barriers, and empowering every team to innovate and grow."
+    image: "https://res.cloudinary.com/dpzlbvtpx/image/upload/v1716978202/home-hero_h8cad3.png"
+    background:
+    textColor: light
+    linkUrl: "#"
+    linkText: "Read more"
+  - _bookshop_name: block/twocolumn
+    title: "Fusion under the hood"
+    subtitle: "Outrun is the data platform that gives your data the freedom to move, the power to adapt, and the intelligence to unlock its full potential. Connect to your data sources, build automations with our drag-and-drop workflow builder, and deliver insights that are easy, fast and scalable."
+    image: "https://res.cloudinary.com/dpzlbvtpx/image/upload/v1716978202/home-hero_h8cad3.png"
+    background: "Yellow"
+    textColor: dark
+    linkUrl: "#"
+    linkText: "Read more"
 note_html: >-
   <p>You can also use the bookshop tag directly.</p>
 ---
@@ -26,4 +116,3 @@ note_html: >-
   # Components are referenced by component name,
   # rather than a fully qualified path.
 {% endcomment %}
-{% bookshop "content" content_html: note_html type: 'note' %}

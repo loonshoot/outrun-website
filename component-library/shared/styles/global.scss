@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap');
+
 * {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
@@ -25,16 +27,11 @@ body {
     color: var(--foreground);
 
     margin: 0;
-    min-height: 100vh;
-    padding: 120px 5vw;
 
     & > main {
         display: flex;
         flex-direction: column;
         gap: 40px;
-
-        width: var(--column);
-        max-width: var(--max-column);
         margin: 0 auto;
     }
 }

@@ -7,3 +7,4 @@ node_modules
 bookshop-live.js
 bookshop-hosted.js
 bookshop.css
+*.out.css

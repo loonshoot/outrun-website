@@ -1,0 +1,15 @@
+
+<div class="w-full {% if background == "Yellow" %} bg-yellow-400 {% endif %} {% if background == "Pink" %} bg-pink-600 {% endif %} relative">
+    <div class="container mx-auto flex flex-wrap {% if flex == "reverse" %} flex-row-reverse {% endif %} {% if image %} pt-5  py-5 {% endif %} justify-between">
+        <div class="w-screen block self-center {% if flex == "reverse" %} md:w-2/5 {% else %} md:w-3/5 {% endif %}">
+            <h1 class="w-fit {% if flex == "reverse" %} md:w-full {% else %} md:w-8/12 {% endif %} {% if textColor == "light" %} text-light {% else %} text-dark {% endif %} text-3xl font-semibold font-mono text-wrap leading-8 md:leading-10">{{ title }}</h1>
+            <p class="w-fit {% if flex == "reverse" %} md:w-full {% else %} md:w-8/12 {% endif %} {% if textColor == "light" %} text-light {% else %} text-dark {% endif %} text-xl pt-3 font-normal font-mono text-wrap leading-8 md:leading-10">{{ subtitle }}</p>
+            {% if link %}
+                <a href="{{ linkUrl }}">{{ linkText }}</a>
+            {% endif %}
+        </div>
+        <div class="w-screen {% if flex == "reverse" %} md:w-3/5 {% else %} md:w-2/5 {% endif %} md:inline self-center md:self-end">
+            <img src="{{ image }}" class="h-full">
+        </div>
+    </div>
+</div>
