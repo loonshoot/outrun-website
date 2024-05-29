@@ -23,11 +23,11 @@
   "private": true,
   "scripts": {
     "bookshop:watch": "bookshop-browser",
-    "bookshop-sass:build": "bookshop-sass -b component-library -o assets/bookshop.css",
+    "bookshop-sass:build": "bookshop-sass -b component-library -o _site/assets/bookshop.css",
     "bookshop-sass:watch": "bookshop-sass -b component-library -o assets/bookshop.css -w",
     "eleventy:build": "eleventy",
     "eleventy:watch": "ELEVENTY_ENV=development eleventy --serve",
-    "tailwind:build": "tailwindcss -i component-library/shared/styles/tailwind.css -o component-library/shared/styles/tailwind.out.css --postcss",
+    "tailwind:build": "tailwindcss -i component-library/shared/styles/tailwind.css -o _site/assets/tailwind.css --postcss",
     "tailwind:watch": "tailwindcss -i component-library/shared/styles/tailwind.css -o component-library/shared/styles/tailwind.out.css --watch --postcss",
     "dev": "npm-run-all --parallel tailwind:watch bookshop-sass:watch bookshop:watch eleventy:watch",
     "prod": "npm-run-all --parallel tailwind:build bookshop-sass:build eleventy:build"
