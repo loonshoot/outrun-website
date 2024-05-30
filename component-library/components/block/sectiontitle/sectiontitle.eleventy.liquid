@@ -1,0 +1,8 @@
+
+<div class="w-full {% if background == "Yellow" %} bg-yellow-400 {% endif %} {% if background == "Blue" %} bg-gradient-to-r from-purple-500 to-cyan-500 {% endif %} {% if background == "Pink" %} bg-pink-600 {% endif %} relative">
+    <div class="container mx-auto flex {% if flex == "reverse" %} flex-row-reverse {% endif %} {% if image %} pt-10 py-10 {% endif %} justify-between">
+        <div class="w-screen block self-center">
+            <h2 class="w-fit {% if textColor == "light" %} text-light {% else %} text-dark {% endif %} text-4xl font-semibold font-mono text-wrap leading-8 md:leading-10">{{ title }}</h2>
+        </div>
+    </div>
+</div>

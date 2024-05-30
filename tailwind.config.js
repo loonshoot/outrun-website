@@ -23,6 +23,21 @@ module.exports = {
       'yellow': {
         400: '#FFC403',
       },
+      'purple': {
+        500: '#471695',
+      },
+      'red': {
+        600: '#FF404D',
+      },
+      'grey': {
+        500: "#D9D9D9",
+      },
+      'cyan': {
+        500: "#00f3ff",
+      },
+      'blue': {
+        500: "#3b82f6",
+      },
       'light': "#FFFFFF",
       'dark': "#1B1237"
     },
