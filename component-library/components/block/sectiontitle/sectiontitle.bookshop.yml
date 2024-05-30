@@ -1,0 +1,28 @@
+# Metadata about this component, to be used in the CMS
+spec:
+  label: Section Title
+  description: Page hero component
+  icon: wysiwyg
+  tags:
+    - Text
+
+# Defines the structure of this component, as well as the default values
+blueprint:
+  title: "We are outrun."
+  background: purple
+  image: "https://res.cloudinary.com/dpzlbvtpx/image/upload/f_auto,q_auto/re6suai35iyrdnwxerem"
+
+# Overrides any fields in the blueprint when viewing this component in the component browser
+preview:
+  title: "We are outrun."
+  background: purple
+  image: "https://res.cloudinary.com/dpzlbvtpx/image/upload/f_auto,q_auto/re6suai35iyrdnwxerem"
+
+# Any extra CloudCannon inputs configuration to apply to the blueprint
+_inputs:
+  type:
+    type: select
+    options:
+      values:
+        - standard
+        - short
