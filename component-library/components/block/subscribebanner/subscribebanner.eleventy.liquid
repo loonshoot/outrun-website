@@ -1,0 +1,24 @@
+
+<div class="w-full {% if background == "Yellow" %} bg-yellow-400 {% endif %} {% if background == "Pink" %} bg-pink-600 {% endif %} relative">
+    <div class="container mx-auto flex flex-wrap pt-10 py-10 justify-between">
+        <div class="w-screen md:w-3/5 block self-center">
+            <h2 class="w-fit {% if textColor == "light" %} text-light {% else %} text-dark {% endif %} text-2xl font-semibold font-mono text-wrap leading-8 md:leading-10">{{ title }}</h2>
+            <p class="w-fit {% if textColor == "light" %} text-light {% else %} text-dark {% endif %} text-xl font-normal font-mono text-wrap leading-8 md:leading-10">{{ subtitle }}</p>
+        </div>
+        <div class="w-screen md:w-2/5 md:inline self-center md:self-end">
+            <form class="flex flex-col w-full space-y-3 mt-10">
+                <input class="px-3 py-2 border border-solid border-2 border-dark" placeholder="user@email.com" type="email" value="">
+                <div class="group h-8 relative mt-5 mb-5 w-full">
+                    <button class="flex items-center h-8 absolute  bg-pink-600  w-full" disabled="">
+                        <div class="flex items-center w-full text-center text-slate-900 text-light text-xs font-normal font-mono">
+                            <p class="flex items-center justify-center text-center space-x-2 w-full pt-1 group-hover:pt-0 text-light uppercase">Subscribe</p>
+                        </div>
+                    </button>
+                    <div class="flex h-8 top-1 left-1 group-hover:top-0 group-hover:left-0 absolute border-solid border-2 border-dark  w-full" disabled="">
+                        
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
