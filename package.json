@@ -28,7 +28,7 @@
     "eleventy:build": "eleventy",
     "eleventy:watch": "ELEVENTY_ENV=development eleventy --serve",
     "tailwind:build": "tailwindcss -i component-library/shared/styles/tailwind.css -o _site/assets/tailwind.css --postcss",
-    "tailwind:watch": "tailwindcss -i component-library/shared/styles/tailwind.css -o component-library/shared/styles/tailwind.out.css --watch --postcss",
+    "tailwind:watch": "tailwindcss -i component-library/shared/styles/tailwind.css -o component-library/shared/styles/tailwind.out.css --watch",
     "dev": "npm-run-all --parallel tailwind:watch bookshop-sass:watch bookshop:watch eleventy:watch",
     "prod": "npm-run-all --parallel tailwind:build bookshop-sass:build eleventy:build"
   },
