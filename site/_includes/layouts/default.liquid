@@ -6,6 +6,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if process.env.ENV == "production" %}
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' *.getoutrun.com; style-src 'self' *.getoutrun.com; img-src 'self' *.getoutrun.com; font-src 'self' *.getoutrun.com; connect-src 'self' *.getoutrun.com; frame-src 'self' *.getoutrun.com; media-src 'self' *.getoutrun.com;">
+    {% endif %}
     {% comment %}
         # The `bookshop-sass` command in package.json compiles all bookshop styles
         # to this location before the Eleventy build.
