@@ -25,7 +25,7 @@
     "bookshop:watch": "bookshop-browser",
     "bookshop-sass:build": "bookshop-sass -b component-library -o _site/assets/bookshop.css",
     "bookshop-sass:watch": "bookshop-sass -b component-library -o site/assets/bookshop.css -w",
-    "eleventy:build": "eleventy",
+    "eleventy:build": "ELEVENTY_ENV=production eleventy",
     "eleventy:watch": "ELEVENTY_ENV=development eleventy --serve",
     "tailwind:build": "tailwindcss -i component-library/shared/styles/tailwind.css -o _site/assets/tailwind.css --postcss",
     "tailwind:watch": "tailwindcss -i component-library/shared/styles/tailwind.css -o component-library/shared/styles/tailwind.out.css --watch",
