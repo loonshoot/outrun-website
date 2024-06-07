@@ -23,6 +23,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" type="image/x-icon" href="https://cdn.getoutrun.com/website/brand/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.getoutrun.com/sdk/outrun.js"></script>
+    <script>
+        outrun.init({
+            apiKey: '665c6b40fbf97f706b3a5770', // Replace with your actual API key
+            streamId: 'clwywk7pm0002vy0cch5huu9w',
+            workspaceId: 'clwuoes0m000h12daa5gjbrvc', // Replace with your actual Workspace ID
+            autoTrack: ['click', 'hover', 'focus', 'blur', 'input', 'submit', 'page view'], // Enable all autoTrack events
+            // Optional:
+            // endpoint: 'us.core.getoutrun.com', // Default is us.core.getoutrun.com
+            // eventNames: { click: 'custom_click', page view: 'custom_page_view' }, // Optional custom event names
+            debug: true // Optional for debugging
+        });
+    </script>
     <title>Outrun - Data Ops Software</title>
 </head>
 <body class="bg-dark min-h-screen">
@@ -41,18 +54,5 @@
     </main>
     {% bookshop "block/footer" bind: footer %}
     <script src="/assets/bundle.js"></script>
-    <script src="https://cdn.getoutrun.com/sdk/outrun.js"></script>
-    <script>
-        outrun.init({
-            apiKey: '665c6b40fbf97f706b3a5770', // Replace with your actual API key
-            streamId: 'clwywk7pm0002vy0cch5huu9w',
-            workspaceId: 'clwuoes0m000h12daa5gjbrvc', // Replace with your actual Workspace ID
-            autoTrack: ['click', 'hover', 'focus', 'blur', 'input', 'submit', 'page view'], // Enable all autoTrack events
-            // Optional:
-            // endpoint: 'us.core.getoutrun.com', // Default is us.core.getoutrun.com
-            // eventNames: { click: 'custom_click', page view: 'custom_page_view' }, // Optional custom event names
-            debug: true // Optional for debugging
-        });
-      </script>
 </body>
 </html>
