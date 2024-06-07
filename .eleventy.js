@@ -1,7 +1,10 @@
+require('dotenv').config();
+
 const pluginBookshop = require("@bookshop/eleventy-bookshop");
 const { EleventyRenderPlugin } = require("@11ty/eleventy");
 
 module.exports = function (eleventyConfig) {
+	eleventyConfig.addGlobalData('env', process.env);
 	eleventyConfig.addPlugin(EleventyRenderPlugin);
 	eleventyConfig.htmlTemplateEngine = "liquid";
 	// eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
@@ -13,8 +16,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy('site/_cloudcannon');
 	eleventyConfig.addPassthroughCopy({
 		"component-library/shared/styles/tailwind.out.css": "site/assets/tailwind.css",
-	  });
-
+	});
 	return {
 		dir: {
 			input: 'site',
