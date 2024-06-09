@@ -6,8 +6,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% if process.env.ELEVENTY_ENV == "production" %}
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' *.getoutrun.com; style-src 'self' *.getoutrun.com 'https://fonts.googleapis.com'; img-src 'self' *.getoutrun.com; font-src 'self' *.getoutrun.com 'https://fonts.gstatic.com'; connect-src 'self' *.getoutrun.com; frame-src 'self' *.getoutrun.com; media-src 'self' *.getoutrun.com;">
+    {% if env.ELEVENTY_ENV == "production" %}
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' *.getoutrun.com; style-src 'self' *.getoutrun.com https://fonts.googleapis.com; img-src 'self' *.getoutrun.com; font-src 'self' *.getoutrun.com https://fonts.gstatic.com; connect-src 'self' *.getoutrun.com; frame-src 'self' *.getoutrun.com; media-src 'self' *.getoutrun.com;">
+    {% endif %}
+    {% if env.ELEVENTY_ENV == "development" %}
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' *.localhost *.getoutrun.com; style-src 'self' *.localhost *.getoutrun.com https://fonts.googleapis.com; img-src 'self' *.localhost *.getoutrun.com; font-src 'self' *.localhost *.getoutrun.com https://fonts.gstatic.com; connect-src 'self' *.localhost *.getoutrun.com; frame-src 'self' *.localhost *.getoutrun.com; media-src 'self' *.localhost *.getoutrun.com;">
     {% endif %}
     {% comment %}
         # The `bookshop-sass` command in package.json compiles all bookshop styles
@@ -18,7 +21,10 @@
     <link rel="stylesheet" href="/assets/bookshop.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/x-icon" href="https://cdn.getoutrun.com/website/brand/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.getoutrun.com/sdk/outrun.js"></script>
+    <script src="/assets/outrunConfig.js"></script>
     <title>Outrun - Data Ops Software</title>
 </head>
 <body class="bg-dark min-h-screen">
@@ -36,5 +42,6 @@
         {{ content }}
     </main>
     {% bookshop "block/footer" bind: footer %}
+    <script src="/assets/bundle.js"></script>
 </body>
 </html>
