@@ -1,0 +1,27 @@
+<div class="w-full {% if background == "Yellow" %} bg-yellow-400 {% endif %} {% if background == "Pink" %} bg-pink-600 {% endif %} relative">
+    <div class="container mx-auto flex flex-wrap {% if image %} pt-5 {% else %} py-5 {% endif %} justify-between">
+        <div class="w-screen block self-center md:w-3/5">
+            <h1 class="w-fit md:w-8/12 text-dark text-3xl font-semibold font-mono text-wrap leading-tight md:leading-10">{{ title }}</h1>
+            <p class="w-fit md:w-8/12 text-dark text-xl pt-3 font-normal font-mono text-wrap leading-tight md:leading-10">{{ subtitle }}</p>
+            {% if button %}
+                {% bookshop "element/button" bind: button %}
+            {% endif %}
+            <form class="flex flex-col w-full space-y-3 mt-2" id="hero_subscriptionForm">
+                <input class="px-3 py-2 border border-solid border-2 border-dark w-fit md:w-8/12" placeholder="user@email.com" type="email" id="emailInput" value="">
+                <div class="group h-8 relative mt-5 mb-5 w-48" id="hero_subscribeButton">
+                    <button class="flex items-center h-8 absolute bg-yellow-400  w-full">
+                        <div class="flex items-center w-full text-center text-slate-900 text-dark text-xs font-normal font-mono">
+                            <p class="flex items-center justify-center text-center space-x-2 w-full pt-1 group-hover:pt-0 text-dark">Subscribe</p>
+                        </div>
+                    </button>
+                    <div class="flex h-8 top-1 left-1 group-hover:top-0 group-hover:left-0 absolute border-solid border-2 border-dark  w-full">
+                        
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="w-screen md:w-2/5 md:inline self-center md:self-end">
+            <img src="{{ image }}" class="h-full">
+        </div>
+    </div>
+</div>
