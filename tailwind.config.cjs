@@ -43,5 +43,11 @@ module.exports = {
     },
   },
   plugins: [],
+  mode: 'jit', // Just-in-Time mode for smaller CSS
+  purge: [
+    './component-library/**/*.{js,jsx,ts,tsx}',
+    './src/**/*.{js,jsx,ts,tsx}',
+    './index.html'
+  ],
 }
 
