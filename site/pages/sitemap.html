@@ -1,0 +1,20 @@
+---
+layout: layouts/xml.liquid
+permalink: /sitemap.xml
+excludeFromSitemap: true
+---
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% for item in collections.all %}
+  {% if item.data.excludeFromSitemap != true  %}
+    <url>
+      <loc>https://getoutrun.com{{ item.url }}</loc>
+      {% if item.date %} 
+        <lastmod>{{ item.date | date: "%Y-%m-%d"}}</lastmod>
+      {% endif %}
+        <changefreq>{{ item.data.sitemapChangefreq | default: "monthly" }}</changefreq>
+        <priority>{{ item.data.sitemapPriority | default: 0.8 }}</priority>
+    </url>
+    {% endif %}
+  {% endfor %}
+</urlset>
