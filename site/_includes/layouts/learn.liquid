@@ -1,0 +1,64 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ metaTitle }}</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="description" content="{{ metaDescription }}">
+    {% if metaAuthor %} <meta name="author" content="{{ metaAuthor }}"> {% endif %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if env.ELEVENTY_ENV == "production" %}
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' *.getoutrun.com; style-src 'self' *.getoutrun.com https://fonts.googleapis.com; img-src 'self' *.getoutrun.com; font-src 'self' *.getoutrun.com https://fonts.gstatic.com; connect-src 'self' *.getoutrun.com; frame-src 'self' *.getoutrun.com; media-src 'self' *.getoutrun.com;">
+    {% endif %}
+    {% if env.ELEVENTY_ENV == "development" %}
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' *.localhost *.getoutrun.com; style-src 'self' *.localhost *.getoutrun.com https://fonts.googleapis.com; img-src 'self' *.localhost *.getoutrun.com; font-src 'self' *.localhost *.getoutrun.com https://fonts.gstatic.com; connect-src 'self' *.localhost *.getoutrun.com; frame-src 'self' *.localhost *.getoutrun.com; media-src 'self' *.localhost *.getoutrun.com;">
+    {% endif %}
+    {% comment %}
+        # The `bookshop-sass` command in package.json compiles all bookshop styles
+        # to this location before the Eleventy build.
+        # This includes running any postcss configuration in your working directory.
+    {% endcomment %}
+    <link rel="stylesheet" href="/assets/tailwind.css">
+    <link rel="stylesheet" href="/assets/bookshop.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/x-icon" href="https://cdn.getoutrun.com/website/brand/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&display=swap" rel="stylesheet">
+    <script defer src="https://cdn.getoutrun.com/sdk/outrun.min.js"></script>
+</head>
+<body class="bg-dark min-h-screen">
+    {% bookshop "block/menu" bind: menu %}
+    {% bookshop "block/hero" 
+    bind: hero
+    background: "Yellow" %}
+    <main class="">
+        {% bookshop_include "page" content_blocks: content_blocks %}
+
+        {% comment %}
+            # The `page` include loops through all content_blocks and renders them.
+            # Using a bookshop tag here means that live previewing will catch new components.
+        {% endcomment %}
+
+        {% comment %}
+            # Render any additional page content below the page content blocks.
+        {% endcomment %}
+        <div class="markdown container mx-auto flex flex-wrap py-5 justify-between text-light text-xl font-mono font-normal text-wrap leading-tight">
+            {% if date %} <p>Last updated: {{ date | date: "%d %b %Y"}}</p> {% endif %}
+            {{ content }}
+            {% if author %} <p>Author: {{ author }}</p> {% endif %}
+        </div>
+        {% bookshop "block/subscribebanner" 
+        bind: subscribebanner 
+        title: "Join the waitlist. Stay up to date."
+        subtitle: "Subscribe to be the first to experience outrun."
+        background: "Yellow"
+        textColor: dark %}
+    </main>
+    {% bookshop "block/footer" bind: footer %}
+    <script  defer src="/assets/bundle.js"></script>
+</body>
+</html>
