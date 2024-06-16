@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <meta name="description" content="{{ metaDescription }}">
+    {% if metaAuthor %} <meta name="author" content="{{ metaAuthor }}"> {% endif %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% if env.ELEVENTY_ENV == "production" %}
         <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' *.getoutrun.com; style-src 'self' *.getoutrun.com https://fonts.googleapis.com; img-src 'self' *.getoutrun.com; font-src 'self' *.getoutrun.com https://fonts.gstatic.com; connect-src 'self' *.getoutrun.com; frame-src 'self' *.getoutrun.com; media-src 'self' *.getoutrun.com;">
@@ -27,7 +28,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" type="image/x-icon" href="https://cdn.getoutrun.com/website/brand/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&display=swap" rel="stylesheet">
-    <script src="https://cdn.getoutrun.com/sdk/outrun.min.js"></script>
+    <script defer src="https://cdn.getoutrun.com/sdk/outrun.min.js"></script>
 </head>
 <body class="bg-dark min-h-screen">
     {% bookshop "block/menu" bind: menu %}
@@ -44,6 +45,6 @@
         {{ content }}
     </main>
     {% bookshop "block/footer" bind: footer %}
-    <script src="/assets/bundle.js"></script>
+    <script  defer src="/assets/bundle.js"></script>
 </body>
 </html>
