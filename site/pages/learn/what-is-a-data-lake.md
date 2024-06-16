@@ -6,28 +6,25 @@ permalink: /learn/what-is-a-data-lake
 metaTitle: "What Is a Data Lake? A Comprehensive Guide"
 layout: layouts/learn.liquid
 metaDescription: "Unlock the power of your data with a data lake. Learn what a data lake is, its benefits, and how it differs from a data warehouse. Discover best practices and explore popular data lake vendors."
-date: 2024-06-10
+date: 2024-06-16
 metaAuthor: "Grayson Campbell"
 author: "Grayson Campbell"
 content_blocks:
+  # An example of using bookshop via array structures.
+  # On CloudCannon, these structures are configured automatically for you.
+  # To follow this array being rendered, see layouts/default.liquid
 ---
 
 <div class="tldr">
   <h2>TL;DR</h2>
   <ul>
-    <li>🌊 <strong>Data Silos & Misaligned Priorities:</strong> Departments choosing tools based on immediate needs rather than broader goals creates data silos and misaligned priorities.</li>
+    <li>🌊 <strong>Data Lakes:</strong> Vast, unfiltered reservoirs of your company's raw data, holding both structured and unstructured data. They embrace the "raw" form, keeping it untouched for later analysis, which allows for flexibility and uncovering unexpected insights.</li>
     <li>🙅☁️ <strong>Lack of Governance & Strategy:</strong> Missing clear data governance and strategy leads to duplicated efforts, conflicting data sources, and a disconnect between data collection and meaningful insights.</li>
     <li>🤯 <strong>Self-Hosting vs. Cloud:</strong> Choosing between self-hosting and cloud solutions depends on your needs and resources. Self-hosting offers control, while cloud options like AWS S3, Azure Data Lake Storage, and Google Cloud Storage provide scalability and cost-effectiveness.</li>
     <li>💰 <strong>Missed Opportunities:</strong> Companies failing to leverage their data are missing out on a goldmine of untapped potential. Gartner predicts 75% of organizations will fail to fully leverage their data and analytics investments by 2025.</li>
     <li>💎 <strong>Data Lake Benefits:</strong> A well-managed data lake unlocks a treasure trove of insights, leading to better business decisions, improved customer experiences, and a competitive edge.</li>
   </ul>
 </div>
-
-## TLDR;
-*  **Data Lakes:** Vast, unfiltered reservoirs of your company's raw data, holding both structured and unstructured data. They embrace the "raw" form, keeping it untouched for later analysis, which allows for flexibility and uncovering unexpected insights.
-*  **:** 
-*  **:** 
-*  **:** 
 
 Imagine a world where your company’s data, in all its messy glory, is a source of endless potential. No longer confined by rigid structures or pre-defined schema, it's free to reveal hidden patterns, unexpected trends, and valuable insights waiting to be discovered. This is the promise of a data lake, a modern approach to data storage that unlocks the full power of your information, enabling you to make data-driven decisions that drive growth and innovation.
 
