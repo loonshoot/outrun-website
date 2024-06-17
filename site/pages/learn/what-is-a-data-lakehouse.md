@@ -15,31 +15,16 @@ content_blocks:
   # To follow this array being rendered, see layouts/default.liquid
 ---
 
-The data landscape is changing, and traditional approaches to data management are struggling to keep up. Organizations are drowning in data, but struggle to access the insights needed to drive growth and innovation.  Enter the **Data Lakehouse**, a game-changing architecture that reimagines how we manage and analyze data.
+The data landscape is changing, and traditional approaches to data management are struggling to keep up. Organizations are drowning in data, but struggle to access the insights needed to drive growth and innovation. Enter the **Data Lakehouse**, a game-changing architecture that reimagines how we manage and analyze data.
 
 <div class="tldr">
   <h2>TL;DR</h2>
   <ul>
-    <li>🌊  **Data Lakehouse:** A unified platform blending the best of data lakes and data warehouses, providing both flexibility and analytical power.</li>
-    <li>🔑 **Key Components:**  Leverages technologies like Delta Lake, Apache Spark, and open-source data formats for efficient data storage and processing.</li>
-    <li>📈 **Benefits:** Enables real-time analytics, improved data quality, faster insights, and reduced costs compared to traditional approaches.</li>
-    <li>💼 **Applications:** Ideal for diverse use cases, including customer 360, fraud detection, marketing optimization, and personalized recommendations.</li>
-    <li>🚀 **Future of Data:** The Data Lakehouse paves the way for a future where data is readily accessible, analyzable, and actionable, driving business success.</li>
-  </ul>
-</div>
-
----
-
-The data landscape is changing, and traditional approaches to data management are struggling to keep up. Organizations are drowning in data, but struggle to access the insights needed to drive growth and innovation.  Enter the **Data Lakehouse**, a game-changing architecture that reimagines how we manage and analyze data.
-
-<div class="tldr">
-  <h2>TL;DR</h2>
-  <ul>
-    <li>🌊  **Data Lakehouse:** A unified platform blending the best of data lakes and data warehouses, providing both flexibility and analytical power.</li>
-    <li>🔑 **Key Components:**  Leverages technologies like Delta Lake, Apache Spark, and open-source data formats for efficient data storage and processing.</li>
-    <li>📈 **Benefits:** Enables real-time analytics, improved data quality, faster insights, and reduced costs compared to traditional approaches.</li>
-    <li>💼 **Applications:** Ideal for diverse use cases, including customer 360, fraud detection, marketing optimization, and personalized recommendations.</li>
-    <li>🚀 **Future of Data:** The Data Lakehouse paves the way for a future where data is readily accessible, analyzable, and actionable, driving business success.</li>
+    <li>🌊  <strong>Data Lakehouse:</strong> A unified platform blending the best of data lakes and data warehouses, providing both flexibility and analytical power.</li>
+    <li>🔑 <strong>Key Components:</strong>  Leverages a blend of technologies and data formats for efficient data storage and processing.</li>
+    <li>📈 <strong>Benefits:</strong> Enables real-time analytics, improved data quality, faster insights, and reduced costs compared to traditional approaches.</li>
+    <li>💼 <strong>Applications:</strong> Ideal for diverse use cases, including customer 360, fraud detection, marketing optimization, and personalized recommendations.</li>
+    <li>🚀 <strong>Future of Data:</strong> The Data Lakehouse paves the way for a future where data is readily accessible, analyzable, and actionable, driving business success.</li>
   </ul>
 </div>
 
@@ -71,9 +56,11 @@ The Data Lakehouse leverages a unified platform and advanced technologies to pro
 
 **Key Components of a Data Lakehouse**
 
-* **Delta Lake:** A data lake management system that provides transactional ACID properties (Atomicity, Consistency, Isolation, Durability), ensuring data reliability and consistency.  Imagine a system that ensures all data changes are recorded and applied correctly, preventing data loss and ensuring the integrity of your data. Delta Lake makes it possible to perform complex data transformations and updates while maintaining data accuracy and reliability. 
-* **Apache Spark:**  A powerful, open-source engine for processing large datasets, supporting complex analytics and machine learning models. Think of it as a powerful engine for processing vast amounts of data quickly and efficiently, enabling you to analyze data in real-time and extract meaningful insights from complex datasets.
-* **Open-source Data Formats:**  Utilizes formats like Parquet and Avro for efficient storage and retrieval of data. Imagine a universal language for storing and accessing data, making it easier to share and analyze data across different tools and platforms. These formats offer efficient compression and optimized storage, reducing storage costs and improving data processing speeds.
+* **Cloud-based infrastructure:** This provides scalability and flexibility, allowing you to adjust resources as needed.
+* **A data lake for long-term raw storage:** This acts as a central repository for all your data, regardless of its format or source.
+* **A data warehouse for modified data:** This stores structured, clean data ready for analysis.
+* **An Extraction and Transformation layer:** This allows you to modify your data in real-time into a clean format to use downstream.
+* **Robust APIs:** These connect your data to your favorite BI tool or send data in real-time to other systems you use in your day-to-day operations.
 
 **Applications of Data Lakehouse Architecture**
 
