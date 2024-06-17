@@ -82,9 +82,11 @@ a {
         @apply text-light;
         @apply text-xl;
         @apply mt-6;
+        @apply ml-5;
         @apply font-mono;
         @apply font-normal;
         @apply leading-loose;
+        @apply list-disc;
     }
     figcaption {
         @apply text-light;

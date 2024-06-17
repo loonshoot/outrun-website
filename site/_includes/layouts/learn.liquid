@@ -46,7 +46,7 @@
         {% comment %}
             # Render any additional page content below the page content blocks.
         {% endcomment %}
-        <div class="markdown container mx-auto flex flex-wrap py-5 justify-between text-light text-xl font-mono font-normal text-wrap leading-tight">
+        <div class="markdown container mx-auto py-5 justify-between text-light text-xl font-mono font-normal text-wrap leading-tight">
             {% if date %} <p>Last updated: {{ date | date: "%d %b %Y"}}</p> {% endif %}
             {{ content }}
             {% if author %} <p>Author: {{ author }}</p> {% endif %}
