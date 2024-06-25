@@ -111,6 +111,7 @@ a {
     
         li {
             @apply text-lg;
+            @apply list-none;
         }
     }
 }
