@@ -96,7 +96,13 @@ a {
         @apply font-normal;
         @apply leading-loose;
     }
-
+    pre {
+        @apply text-pink-600;
+        @apply bg-light;
+        @apply overflow-scroll;
+        @apply p-6;
+        @apply mt-6;
+    }
     .tldr {
         @apply p-6;
         @apply mt-4;
@@ -111,6 +117,7 @@ a {
     
         li {
             @apply text-lg;
+            @apply list-none;
         }
     }
 }
