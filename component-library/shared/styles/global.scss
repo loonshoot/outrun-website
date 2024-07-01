@@ -120,4 +120,29 @@ a {
             @apply list-none;
         }
     }
+    table {
+        @apply table-auto;
+        @apply my-4;
+        @apply overflow-x-auto;
+
+        thead {
+            @apply bg-pink-600;
+            @apply border-x-4;
+            @apply border-pink-600;
+            @apply text-left;
+        }
+        th {
+            @apply p-4;
+        }
+        tbody {
+            @apply border-y-4;
+            @apply border-light;
+        }
+        td {
+            @apply border-x-4;
+            @apply border-y-2;
+            @apply border-light;
+            @apply p-2;
+        }
+    }
 }
