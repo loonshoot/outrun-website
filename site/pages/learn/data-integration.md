@@ -1,5 +1,5 @@
 ---
-title: "Data Integration Fundamentals"
+title: "What is Data Integration?"
 subtitle: "Bridging the Gap Between Data Silos and Business Success"
 layout: layouts/learn.liquid
 heroBackground: "Yellow"
