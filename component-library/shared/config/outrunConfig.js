@@ -15,7 +15,7 @@
       // Initialize Outrun SDK
       outrun.init({
         apiKey: '665c6b40fbf97f706b3a5770', // Replace with your actual API key
-        streamId: 'clwywk7pm0002vy0cch5huu9w',
+        streamId: '67483fd74c2fef2fec95fcca',
         workspaceId: 'clwuoes0m000h12daa5gjbrvc', // Replace with your actual Workspace ID
         autoTrack: ['click', 'hover', 'focus', 'blur', 'input', 'submit', 'page view'], // Enable all autoTrack events
         // Optional:
