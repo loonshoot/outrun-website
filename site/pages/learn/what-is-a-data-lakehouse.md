@@ -3,7 +3,7 @@ title: "What is a Data Lakehouse?"
 subtitle: "Discover the revolutionary Data Lakehouse architecture and how it combines the best of data lakes and data warehouses to unlock new insights, streamline operations, and drive"
 layout: layouts/learn.liquid
 heroBackground: "Yellow"
-permalink: /learn/what-is-a-data-lakehouse.html
+permalink: /learn/what-is-a-data-lakehouse
 metaTitle: "Data Lakehouse Architecture: Modern Data Orchestration for Smarter Business"
 metaDescription: Discover the revolutionary Data Lakehouse architecture and how it combines the best of data lakes and data warehouses to unlock new insights, streamline operations, and drive innovation.
 metaAuthor: "Grayson Campbell"

@@ -13,8 +13,8 @@ FROM nginx:alpine AS production
 # Copy the built static files
 COPY --from=builder /app/_site /usr/share/nginx/html
 
-# Copy our custom Nginx config
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Copy our nginx configs
+COPY nginx.conf /etc/nginx/nginx.conf
 
 # Add healthcheck
 HEALTHCHECK --interval=30s --timeout=3s \
