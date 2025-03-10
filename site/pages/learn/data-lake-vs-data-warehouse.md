@@ -3,7 +3,7 @@ title: "Data Lake vs Data Warehouse"
 subtitle: "Combining both unlocks hidden potential for your business."
 layout: layouts/learn.liquid
 heroBackground: "Yellow"
-permalink: /learn/data-lake-vs-data-warehouse
+permalink: /learn/data-lake-vs-data-warehouse.html
 metaTitle: "Data Lake vs. Data Warehouse: Unlocking Hidden Business Potential"
 metaDescription: "Discover the power of data lakes and data warehouses. Learn how to leverage these tools to gain actionable insights, improve efficiency, and drive business growth."
 metaAuthor: "Grayson Campbell"

@@ -52,7 +52,15 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addGlobalData('env', process.env);
   eleventyConfig.addPlugin(EleventyRenderPlugin);
   eleventyConfig.htmlTemplateEngine = "liquid";
+  eleventyConfig.markdownTemplateEngine = "liquid";
+  
+  // Configure markdown files to output as HTML
+  eleventyConfig.addExtension("md", {
+    outputFileExtension: "html"
+  });
+  
   // eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
+  
   eleventyConfig.addPlugin(pluginBookshop({
     bookshopLocations: ["component-library"],
     pathPrefix: ""
