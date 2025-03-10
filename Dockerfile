@@ -11,8 +11,10 @@ RUN npm run prod
 FROM nginx:alpine AS production
 
 # Create necessary directories with proper permissions
-RUN mkdir -p /var/log/nginx && \
-    chown -R nginx:nginx /var/log/nginx
+RUN mkdir -p /var/log/nginx /var/cache/nginx /var/run && \
+    chown -R nginx:nginx /var/log/nginx && \
+    chown -R nginx:nginx /var/cache/nginx && \
+    chown -R nginx:nginx /var/run
 
 # Copy the built static files
 COPY --from=builder /app/_site /usr/share/nginx/html
@@ -30,8 +32,5 @@ HEALTHCHECK --interval=30s --timeout=3s \
 
 # Expose port 80
 EXPOSE 80
-
-# Switch to nginx user for better security
-USER nginx
 
 CMD ["nginx", "-g", "daemon off;"] 
