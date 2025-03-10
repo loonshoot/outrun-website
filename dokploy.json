@@ -5,6 +5,7 @@
     },
     "commands": [
       "npm install",
+      "npm install serve",
       "npm run prod"
     ]
   }

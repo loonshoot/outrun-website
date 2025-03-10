@@ -1,0 +1,1 @@
+web: npx serve -s _site -l ${PORT:-3000} 
