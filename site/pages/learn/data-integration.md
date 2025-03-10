@@ -3,7 +3,7 @@ title: "What is Data Integration?"
 subtitle: "Bridging the Gap Between Data Silos and Business Success"
 layout: layouts/learn.liquid
 heroBackground: "Yellow"
-permalink: /learn/data-integration
+permalink: /learn/data-integration.html
 metaTitle: "Data Integration: Bridging the Gap Between Data Silos and Business Success"
 metaDescription: "Discover the transformative power of data integration. Learn how to combine data from multiple sources, gain actionable insights, and drive better business decisions."
 metaAuthor: "Grayson Campbell"

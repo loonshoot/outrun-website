@@ -3,7 +3,7 @@ title: "What is a Data Warehosue?"
 subtitle: "Discover the power of data warehouses for extracting meaningful insights from your business data. Learn how data warehouses work, their advantages, and how they can drive informed decision-making."
 layout: layouts/learn.liquid
 heroBackground: "Yellow"
-permalink: /learn/what-is-a-data-warehouse
+permalink: /learn/what-is-a-data-warehouse.html
 metaTitle: "What is a Data Warehouse? A Guide to Understanding Organized Data for Insights"
 metaDescription: "Dive into the world of data warehousing. Learn what a data warehouse is, its benefits, and how it differs from a data lake. Explore common architectures and discover key considerations for building a successful data warehouse."
 metaAuthor: "Grayson Campbell"

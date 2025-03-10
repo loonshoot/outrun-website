@@ -2,7 +2,7 @@
 title: "Why Data Problems Are Actually People Problems"
 subtitle: "A Guide to Fixing Your Data Chaos"
 background: "Yellow"
-permalink: /learn/data-problems-are-people-problems
+permalink: /learn/data-problems-are-people-problems.html
 layout: layouts/learn.liquid
 metaTitle: "Why Data Problems Are Actually People Problems (And How To Fix Them)"
 metaDescription: "Data problems are actually people problems. Learn why data chaos stems from human behavior, how to fix it, and unlock the true power of data for your business."

@@ -2,7 +2,7 @@
 title: "How to Build a Data Lake"
 subtitle: "A Step-by-step Guide to Building a Data Lake for Your Business"
 background: "Yellow"
-permalink: /learn/how-to-build-a-data-lake
+permalink: /learn/how-to-build-a-data-lake.html
 metaTitle: "How to Build a Data Lake: A Step-by-Step Guide"
 layout: layouts/learn.liquid
 metaDescription: "Learn how to build a data lake for your business with this comprehensive guide. From defining your objectives to choosing the right tools and technologies, we'll walk you through the entire process."
@@ -15,7 +15,7 @@ content_blocks:
   # To follow this array being rendered, see layouts/default.liquid
 ---
 
-In today’s data-driven world, businesses are constantly seeking ways to harness the power of their data to gain a competitive edge. A data lake, a centralized repository that stores all your structured and unstructured data at scale, has emerged as a game-changer, enabling organizations to unlock valuable insights and drive better business decisions. This comprehensive guide will walk you through the essential steps on how to build a data lake tailored to your specific business needs.
+In today's data-driven world, businesses are constantly seeking ways to harness the power of their data to gain a competitive edge. A data lake, a centralized repository that stores all your structured and unstructured data at scale, has emerged as a game-changer, enabling organizations to unlock valuable insights and drive better business decisions. This comprehensive guide will walk you through the essential steps on how to build a data lake tailored to your specific business needs.
 
 <div class="tldr">
   <h2>TL;DR</h2>

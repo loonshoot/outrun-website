@@ -3,7 +3,7 @@ title: "ELT: The Modern Data Integration Approach for Data Lake Houses"
 subtitle: "ELT (Extract, Load, Transform) is a modern data integration approach. Understand its benefits, and how it aligns with the modern data lake house architecture."
 layout: layouts/learn.liquid
 heroBackground: "Yellow"
-permalink: /learn/extract-load-transform
+permalink: /learn/extract-load-transform.html
 metaTitle: "ELT: The Modern Data Integration Approach for Data Lake Houses"
 metaDescription: "Discover the power of ELT data integration for modern data lake houses. Learn about its benefits, how it works, and why it's the preferred approach for large-scale data analysis."
 metaAuthor: "Grayson Campbell"

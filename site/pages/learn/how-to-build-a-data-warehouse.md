@@ -2,7 +2,7 @@
 title: "How to Build a Data Warehouse"
 subtitle: "A Step-by-step Guide to Building a Data Warehouse for Your Business"
 background: "Yellow"
-permalink: /learn/how-to-build-a-data-warehouse
+permalink: /learn/how-to-build-a-data-warehouse.html
 metaTitle: "How to Build a Data Warehouse: A Step-by-Step Guide"
 layout: layouts/learn.liquid
 metaDescription: "Turn raw data into actionable insights! This guide shows you how to build a data warehouse, choose the right tools, and unlock the true potential of your business data."

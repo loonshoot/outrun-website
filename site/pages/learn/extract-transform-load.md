@@ -3,7 +3,7 @@ title: "ETL: The Foundation of Data Warehousing and Data Integration"
 subtitle: "ETL (Extract, Transform, Load) is a cornerstone of data integration and data warehousing. Delve into the core concepts, its evolution, key components, benefits, challenges, and the future of data integration with ETL."
 layout: layouts/learn.liquid
 heroBackground: "Yellow"
-permalink: /learn/extract-transform-load
+permalink: /learn/extract-transform-load.html
 metaTitle: "ETL: The Essential Guide to Data Integration and Warehousing"
 metaDescription: "Learn about ETL (Extract, Transform, Load), a fundamental process for data integration and data warehousing. Understand its history, components, benefits, challenges, and its role in modern data management."
 metaAuthor: "Grayson Campbell"
