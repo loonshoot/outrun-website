@@ -33,6 +33,7 @@ module.exports = {
         500: "#D9D9D9",
       },
       'cyan': {
+        400: "#22d3ee",
         500: "#00f3ff",
       },
       'blue': {
