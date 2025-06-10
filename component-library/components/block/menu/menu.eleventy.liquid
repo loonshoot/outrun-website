@@ -1,9 +1,45 @@
 <nav class="fixed bottom-0 left-0 md:sticky md:top-0 inset-x-0 z-10 w-full bg-dark">
-    <div class="container mx-auto flex justify-between">
+    <div class="container mx-auto flex justify-between items-center">
         <div class="block self-center py-6">
             <a href="/"><img src="https://cdn.getoutrun.com/website/brand/logo-horizontal.svg" class="h-5"></a>
         </div>
-        <div class="self-end">
+        <div class="hidden md:flex items-center space-x-6">
+            <a href="/learn" class="text-light hover:text-pink-600 transition-colors font-mono">Learn</a>
+            <a href="/changelog" class="text-light hover:text-pink-600 transition-colors font-mono">Changelog</a>
+            <a href="https://app.getoutrun.com" class="bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition-colors font-mono">
+                Get Started
+            </a>
+        </div>
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-light hover:text-pink-600 p-2">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-dark border-t border-gray-800">
+        <div class="container mx-auto py-4 space-y-2">
+            <a href="/learn" class="block text-light hover:text-pink-600 transition-colors font-mono px-4 py-2">Learn</a>
+            <a href="/changelog" class="block text-light hover:text-pink-600 transition-colors font-mono px-4 py-2">Changelog</a>
+            <a href="https://app.getoutrun.com" class="block bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition-colors font-mono mx-4">
+                Get Started
+            </a>
         </div>
     </div>
 </nav>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+    }
+});
+</script>

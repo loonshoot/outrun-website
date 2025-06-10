@@ -54,11 +54,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.htmlTemplateEngine = "liquid";
   eleventyConfig.markdownTemplateEngine = "liquid";
   
-  // Configure markdown files to output as HTML
-  eleventyConfig.addExtension("md", {
-    outputFileExtension: "html"
-  });
-  
   // eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
   
   eleventyConfig.addPlugin(pluginBookshop({
