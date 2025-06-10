@@ -1,45 +1,177 @@
-<nav class="fixed bottom-0 left-0 md:sticky md:top-0 inset-x-0 z-10 w-full bg-dark">
-    <div class="container mx-auto flex justify-between items-center">
+<nav class="fixed bottom-0 left-0 md:sticky md:top-0 inset-x-0 z-20 w-full bg-dark">
+    <div class="container mx-auto flex justify-between items-center relative">
         <div class="block self-center py-6">
             <a href="/"><img src="https://cdn.getoutrun.com/website/brand/logo-horizontal.svg" class="h-5"></a>
         </div>
         <div class="hidden md:flex items-center space-x-6">
+            <!-- Features Mega Nav -->
+            <div class="relative group">
+                <a href="/features" class="text-light hover:text-pink-600 transition-colors font-mono flex items-center">
+                    Features
+                    <svg class="w-4 h-4 ml-1 transform group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </a>
+                <!-- Mega Nav Dropdown -->
+                <div class="absolute top-full w-screen left-1/2 -translate-x-1/2 bg-yellow-400 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-30">
+                    <div class="p-8">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                            <!-- Data Usability -->
+                            <div>
+                                <h4 class="text-lg font-bold text-dark mb-4 border-b border-grey-600 pb-2">Data Usability</h4>
+                                <div class="space-y-3">
+                                    <a href="/features/data-browser-analytics" class="flex items-start space-x-3 p-2 rounded hover:bg-yellow-600 transition-colors group/item">
+                                        <div class="w-8 h-8 bg-gradient-to-br from-red-600 to-pink-600 flex items-center justify-center text-xs">🔍</div>
+                                        <div>
+                                            <div class="text-dark font-medium group-hover/item:text-pink-600">Data Browser & Analytics</div>
+                                            <div class="text-grey-700 text-xs">Explore and analyze your data</div>
+                                        </div>
+                                    </a>
+                                    <a href="/features/low-effort-import" class="flex items-start space-x-3 p-2 rounded hover:bg-yellow-600 transition-colors group/item">
+                                        <div class="w-8 h-8 bg-gradient-to-br from-green-500 to-cyan-500 flex items-center justify-center text-xs">⚡</div>
+                                        <div>
+                                            <div class="text-dark font-medium group-hover/item:text-pink-600">Low Effort Import</div>
+                                            <div class="text-grey-700 text-xs">Zero-code data imports</div>
+                                        </div>
+                                    </a>
+                                    <a href="/features/standardised-data-models" class="flex items-start space-x-3 p-2 rounded hover:bg-yellow-600 transition-colors group/item">
+                                        <div class="w-8 h-8 bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-xs">📊</div>
+                                        <div>
+                                            <div class="text-dark font-medium group-hover/item:text-pink-600">Standardised Data Models</div>
+                                            <div class="text-grey-700 text-xs">Universal data schemas</div>
+                                        </div>
+                                    </a>
+                                    <a href="/features/data-destinations" class="flex items-start space-x-3 p-2 rounded hover:bg-yellow-600 transition-colors group/item">
+                                        <div class="w-8 h-8 bg-gradient-to-br from-blue-700 to-purple-600 flex items-center justify-center text-xs">📤</div>
+                                        <div>
+                                            <div class="text-dark font-medium group-hover/item:text-pink-600">Data Destinations</div>
+                                            <div class="text-grey-700 text-xs">Flexible data outputs</div>
+                                        </div>
+                                    </a>
+                                    <a href="/features/tool-migration" class="flex items-start space-x-3 p-2 rounded hover:bg-yellow-600 transition-colors group/item">
+                                        <div class="w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center text-xs">🔄</div>
+                                        <div>
+                                            <div class="text-dark font-medium group-hover/item:text-pink-600">Tool Migration</div>
+                                            <div class="text-grey-700 text-xs">Seamless platform switching</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Security & Compliance -->
+                            <div>
+                                <h4 class="text-lg font-bold text-dark mb-4 border-b border-grey-600 pb-2">Security & Compliance</h4>
+                                <div class="space-y-3">
+                                    <a href="/features/multi-tenant-isolation" class="flex items-start space-x-3 p-2 rounded hover:bg-yellow-600 transition-colors group/item">
+                                        <div class="w-8 h-8 bg-gradient-to-br from-grey-500 to-red-600 flex items-center justify-center text-xs">🏢</div>
+                                        <div>
+                                            <div class="text-dark font-medium group-hover/item:text-pink-600">Multi-tenant Isolation</div>
+                                            <div class="text-grey-700 text-xs">Complete data separation</div>
+                                        </div>
+                                    </a>
+                                    <a href="/features/role-based-access-control" class="flex items-start space-x-3 p-2 rounded hover:bg-yellow-600 transition-colors group/item">
+                                        <div class="w-8 h-8 bg-gradient-to-br from-purple-500 to-red-600 flex items-center justify-center text-xs">🔐</div>
+                                        <div>
+                                            <div class="text-dark font-medium group-hover/item:text-pink-600">Role-based Access Control</div>
+                                            <div class="text-grey-700 text-xs">Granular permissions</div>
+                                        </div>
+                                    </a>
+                                    <a href="/features/comprehensive-audit-trails" class="flex items-start space-x-3 p-2 rounded hover:bg-yellow-600 transition-colors group/item">
+                                        <div class="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-500 flex items-center justify-center text-xs">📋</div>
+                                        <div>
+                                            <div class="text-dark font-medium group-hover/item:text-pink-600">Comprehensive Audit Trails</div>
+                                            <div class="text-grey-700 text-xs">Complete activity logging</div>
+                                        </div>
+                                    </a>
+                                    <a href="/features/cloud-app-data-backup" class="flex items-start space-x-3 p-2 rounded hover:bg-yellow-600 transition-colors group/item">
+                                        <div class="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center text-xs">☁️</div>
+                                        <div>
+                                            <div class="text-dark font-medium group-hover/item:text-pink-600">Cloud App Data Backup</div>
+                                            <div class="text-grey-700 text-xs">Automated cloud backups</div>
+                                        </div>
+                                    </a>
+                                    <a href="/features/global-data-residency" class="flex items-start space-x-3 p-2 rounded hover:bg-yellow-600 transition-colors group/item">
+                                        <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-green-500 flex items-center justify-center text-xs">🗺️</div>
+                                        <div>
+                                            <div class="text-dark font-medium group-hover/item:text-pink-600">Global Data Residency</div>
+                                            <div class="text-grey-700 text-xs">Choose your data location</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-6 pt-4 text-center">
+                            <a href="/features" class="text-pink-600 hover:text-pink-500 font-mono text-sm">View all features →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <a href="/learn" class="text-light hover:text-pink-600 transition-colors font-mono">Learn</a>
             <a href="/changelog" class="text-light hover:text-pink-600 transition-colors font-mono">Changelog</a>
-            <a href="https://app.getoutrun.com" class="bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition-colors font-mono">
-                Get Started
-            </a>
+            <div class="group h-10 relative w-48">
+                <a href="https://app.getoutrun.com">
+                    <button class="flex items-center w-48 h-10 absolute bg-pink-600">
+                        <div class="flex items-center w-full text-center text-white text-sm font-normal font-mono">
+                            <p class="text-center w-full pt-1 group-hover:pt-0">Get Started</p>
+                        </div>
+                    </button>
+                    <div class="flex w-48 h-10 top-1 left-1 group-hover:top-0 group-hover:left-0 absolute border-solid border-2 border-light">
+                    </div>
+                </a>
+            </div>
         </div>
         <!-- Mobile menu button -->
         <div class="md:hidden">
-            <button id="mobile-menu-button" class="text-light hover:text-pink-600 p-2">
+            <button type="button" class="text-light p-2 mobile-menu-btn">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
         </div>
     </div>
+    
     <!-- Mobile menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-dark border-t border-gray-800">
+    <div id="mobile-menu" class="hidden md:hidden bg-dark border-b border-gray-800 absolute bottom-full left-0 right-0">
         <div class="container mx-auto py-4 space-y-2">
+            <div class="space-y-2">
+                <button type="button" class="w-full text-left text-light hover:text-pink-600 transition-colors font-mono px-4 py-2 flex items-center justify-between mobile-features-btn">
+                    Features
+                    <svg class="w-4 h-4 transform transition-transform mobile-features-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="mobile-features-menu" class="hidden bg-grey-800 mx-4 rounded">
+                    <div class="p-4 space-y-2">
+                        <a href="/features/data-browser-analytics" class="block text-light hover:text-pink-600 text-sm py-1">Data Browser & Analytics</a>
+                        <a href="/features/low-effort-import" class="block text-light hover:text-pink-600 text-sm py-1">Low Effort Import</a>
+                        <a href="/features/standardised-data-models" class="block text-light hover:text-pink-600 text-sm py-1">Standardised Data Models</a>
+                        <a href="/features/data-destinations" class="block text-light hover:text-pink-600 text-sm py-1">Data Destinations</a>
+                        <a href="/features/tool-migration" class="block text-light hover:text-pink-600 text-sm py-1">Tool Migration</a>
+                        <a href="/features/multi-tenant-isolation" class="block text-light hover:text-pink-600 text-sm py-1">Multi-tenant Isolation</a>
+                        <a href="/features/role-based-access-control" class="block text-light hover:text-pink-600 text-sm py-1">Role-based Access Control</a>
+                        <a href="/features/comprehensive-audit-trails" class="block text-light hover:text-pink-600 text-sm py-1">Comprehensive Audit Trails</a>
+                        <a href="/features/cloud-app-data-backup" class="block text-light hover:text-pink-600 text-sm py-1">Cloud App Data Backup</a>
+                        <a href="/features/global-data-residency" class="block text-light hover:text-pink-600 text-sm py-1">Global Data Residency</a>
+                        <div class="pt-2 mt-2">
+                            <a href="/features" class="block text-pink-600 hover:text-pink-500 text-sm py-1">View all features →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <a href="/learn" class="block text-light hover:text-pink-600 transition-colors font-mono px-4 py-2">Learn</a>
             <a href="/changelog" class="block text-light hover:text-pink-600 transition-colors font-mono px-4 py-2">Changelog</a>
-            <a href="https://app.getoutrun.com" class="block bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 transition-colors font-mono mx-4">
-                Get Started
-            </a>
+            <div class="group h-10 relative w-48 mx-4">
+                <a href="https://app.getoutrun.com">
+                    <button class="flex items-center w-48 h-10 absolute bg-pink-600">
+                        <div class="flex items-center w-full text-center text-white text-sm font-normal font-mono">
+                            <p class="text-center w-full pt-1 group-hover:pt-0">Get Started</p>
+                        </div>
+                    </button>
+                    <div class="flex w-48 h-10 top-1 left-1 group-hover:top-0 group-hover:left-0 absolute border-solid border-2 border-light">
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 </nav>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    if (mobileMenuButton && mobileMenu) {
-        mobileMenuButton.addEventListener('click', function() {
-            mobileMenu.classList.toggle('hidden');
-        });
-    }
-});
-</script>
+<script src="/assets/js/navigation.js"></script>
