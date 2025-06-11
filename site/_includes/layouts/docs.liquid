@@ -1,0 +1,203 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ title }} - Outrun Documentation</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="description" content="{{ description | default: metaDescription }}">
+    {% if metaAuthor %} <meta name="author" content="{{ metaAuthor }}"> {% endif %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if env.ELEVENTY_ENV == "production" %}
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' *.getoutrun.com; style-src 'self' *.getoutrun.com https://fonts.googleapis.com; img-src 'self' *.getoutrun.com; font-src 'self' *.getoutrun.com https://fonts.gstatic.com; connect-src 'self' *.getoutrun.com; frame-src 'self' *.getoutrun.com; media-src 'self' *.getoutrun.com;">
+    {% endif %}
+    {% if env.ELEVENTY_ENV == "development" %}
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' *.localhost *.getoutrun.com; style-src 'self' *.localhost *.getoutrun.com https://fonts.googleapis.com; img-src 'self' *.localhost *.getoutrun.com; font-src 'self' *.localhost *.getoutrun.com https://fonts.gstatic.com; connect-src 'self' *.localhost *.getoutrun.com; frame-src 'self' *.localhost *.getoutrun.com; media-src 'self' *.localhost *.getoutrun.com;">
+    {% endif %}
+    {% comment %}
+        # The `bookshop-sass` command in package.json compiles all bookshop styles
+        # to this location before the Eleventy build.
+        # This includes running any postcss configuration in your working directory.
+    {% endcomment %}
+    <link rel="stylesheet" href="/assets/tailwind.css">
+    <link rel="stylesheet" href="/assets/bookshop.css">
+    <link rel="stylesheet" href="/assets/css/docs.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/x-icon" href="https://cdn.getoutrun.com/website/brand/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&display=swap" rel="stylesheet">
+    <script defer src="https://cdn.getoutrun.com/sdk/outrun.min.js"></script>
+</head>
+<body class="bg-dark min-h-screen font-mono">
+    {% bookshop "block/menu" bind: menu %}
+    
+    <div class="docs-layout">
+        <!-- Mobile menu toggle -->
+        <button 
+            id="mobile-menu-toggle" 
+            class="fixed top-4 left-4 z-50 p-2 rounded-md lg:hidden"
+            aria-label="Toggle navigation menu"
+        >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+
+        <!-- Sidebar Navigation -->
+        <nav class="docs-sidebar" id="docs-sidebar">
+            <!-- Header Section -->
+            <div class="docs-header">
+                <h2 class="docs-title">Documentation</h2>
+                <input 
+                    type="text" 
+                    id="docs-search" 
+                    placeholder="Search docs..."
+                    autocomplete="off"
+                >
+            </div>
+
+            <!-- Navigation Groups -->
+            <div class="docs-nav">
+                <!-- Getting Started Group -->
+                <div class="docs-nav-group">
+                    <div class="docs-nav-group-title">Getting Started</div>
+                    <div class="docs-nav-items">
+                        <a href="/docs/" class="docs-nav-link">Overview</a>
+                        <a href="/docs/getting-started/" class="docs-nav-link">Quick Start</a>
+                        <a href="/docs/getting-started/installation/" class="docs-nav-link">Installation</a>
+                        <a href="/docs/getting-started/first-sync/" class="docs-nav-link">First Sync</a>
+                        <a href="/docs/getting-started/configuration/" class="docs-nav-link">Configuration</a>
+                    </div>
+                </div>
+
+                <!-- Core Concepts Group -->
+                <div class="docs-nav-group">
+                    <div class="docs-nav-group-title">Core Concepts</div>
+                    <div class="docs-nav-items">
+                        <a href="/docs/concepts/" class="docs-nav-link">Overview</a>
+                        <a href="/docs/concepts/providers/" class="docs-nav-link">Providers</a>
+                        <a href="/docs/concepts/destinations/" class="docs-nav-link">Destinations</a>
+                        <a href="/docs/concepts/data-syncing/" class="docs-nav-link">Data Syncing</a>
+                        <a href="/docs/concepts/transformations/" class="docs-nav-link">Transformations</a>
+                        <a href="/docs/concepts/monitoring/" class="docs-nav-link">Monitoring</a>
+                    </div>
+                </div>
+
+                <!-- API Reference Group -->
+                <div class="docs-nav-group">
+                    <div class="docs-nav-group-title">API Reference</div>
+                    <div class="docs-nav-items">
+                        <a href="/docs/api/" class="docs-nav-link">Overview</a>
+                        <a href="/docs/api/authentication/" class="docs-nav-link">Authentication</a>
+                        <a href="/docs/api/workspaces/" class="docs-nav-link">Workspaces</a>
+                        <a href="/docs/api/connections/" class="docs-nav-link">Connections</a>
+                        <a href="/docs/api/sync-jobs/" class="docs-nav-link">Sync Jobs</a>
+                        <a href="/docs/api/webhooks/" class="docs-nav-link">Webhooks</a>
+                        <a href="/docs/api/errors/" class="docs-nav-link">Error Handling</a>
+                    </div>
+                </div>
+
+                <!-- Providers Group -->
+                <div class="docs-nav-group">
+                    <div class="docs-nav-group-title">Providers</div>
+                    <div class="docs-nav-items">
+                        <a href="/docs/providers/" class="docs-nav-link">Overview</a>
+                        <a href="/docs/providers/salesforce/" class="docs-nav-link">Salesforce</a>
+                        <a href="/docs/providers/hubspot/" class="docs-nav-link">HubSpot</a>
+                        <a href="/docs/providers/google-search-console/" class="docs-nav-link">Google Search Console</a>
+                        <a href="/docs/providers/confluence/" class="docs-nav-link">Confluence</a>
+                        <a href="/docs/providers/zoho-crm/" class="docs-nav-link">Zoho CRM</a>
+                        <a href="/docs/providers/custom/" class="docs-nav-link">Custom Connectors</a>
+                    </div>
+                </div>
+
+                <!-- Guides Group -->
+                <div class="docs-nav-group">
+                    <div class="docs-nav-group-title">Guides</div>
+                    <div class="docs-nav-items">
+                        <a href="/docs/guides/" class="docs-nav-link">Overview</a>
+                        <a href="/docs/guides/data-migration/" class="docs-nav-link">Data Migration</a>
+                        <a href="/docs/guides/troubleshooting/" class="docs-nav-link">Troubleshooting</a>
+                        <a href="/docs/guides/best-practices/" class="docs-nav-link">Best Practices</a>
+                        <a href="/docs/guides/security/" class="docs-nav-link">Security</a>
+                        <a href="/docs/guides/performance/" class="docs-nav-link">Performance</a>
+                    </div>
+                </div>
+
+                <!-- Support Group -->
+                <div class="docs-nav-group">
+                    <div class="docs-nav-group-title">Support</div>
+                    <div class="docs-nav-items">
+                        <a href="/docs/support/" class="docs-nav-link">Overview</a>
+                        <a href="/docs/support/faq/" class="docs-nav-link">FAQ</a>
+                        <a href="/docs/support/changelog/" class="docs-nav-link">Changelog</a>
+                        <a href="/docs/support/contact/" class="docs-nav-link">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Overlay for mobile -->
+        <div class="docs-overlay" id="docs-overlay"></div>
+
+        <!-- Main Content -->
+        <main class="docs-main">
+            <div class="docs-content">
+                <!-- Breadcrumbs -->
+                {% if breadcrumbs and breadcrumbs.size > 0 %}
+                <nav class="docs-breadcrumbs" aria-label="Breadcrumb">
+                    <ol>
+                        {% for crumb in breadcrumbs %}
+                            {% if forloop.last %}
+                                <li class="current">{{ crumb.title }}</li>
+                            {% else %}
+                                <li><a href="{{ crumb.url }}">{{ crumb.title }}</a></li>
+                                <li aria-hidden="true">/</li>
+                            {% endif %}
+                        {% endfor %}
+                    </ol>
+                </nav>
+                {% endif %}
+
+                <!-- Article Content -->
+                <article class="docs-article">
+                    {{ content }}
+                </article>
+
+                <!-- Pagination -->
+                {% if pagination %}
+                <nav class="docs-pagination">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {% if pagination.prev %}
+                        <a href="{{ pagination.prev.url }}" class="prev">
+                            <div class="label">Previous</div>
+                            <div class="title">{{ pagination.prev.title }}</div>
+                        </a>
+                        {% endif %}
+                        
+                        {% if pagination.next %}
+                        <a href="{{ pagination.next.url }}" class="next{% unless pagination.prev %} md:col-start-2{% endunless %}">
+                            <div class="label">Next</div>
+                            <div class="title">{{ pagination.next.title }}</div>
+                        </a>
+                        {% endif %}
+                    </div>
+                </nav>
+                {% endif %}
+            </div>
+            
+            <!-- Footer inside main content area -->
+            <div class="docs-footer">
+                {% bookshop "block/footer" bind: footer %}
+            </div>
+        </main>
+    </div>
+
+    <!-- JavaScript -->
+    <script defer src="/assets/bundle.js"></script>
+    <script src="/assets/js/docs.js"></script>
+</body>
+</html>
