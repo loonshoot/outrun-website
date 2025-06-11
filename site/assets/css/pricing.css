@@ -1,0 +1,69 @@
+/* Custom slider styling */
+.slider {
+  -webkit-appearance: none;
+  background: #2D2D2D;
+  outline: none;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #F1C40F;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #F1C40F;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+}
+
+/* Disabled plan styling */
+.pricing-plan {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.plan-disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.plan-disabled::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(45, 45, 45, 0.8);
+  border-radius: 0.5rem;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.plan-disabled::after {
+  content: 'Available at higher volumnes';
+  white-space: pre-line;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #F1C40F;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-align: center;
+  z-index: 11;
+  pointer-events: none;
+  background: rgba(45, 45, 45, 0.9);
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid #F1C40F;
+} 

@@ -1,0 +1,344 @@
+---
+layout: layouts/default.liquid
+permalink: /pricing/
+title: Pricing - Outrun
+social_meta:
+  title: Pricing - Outrun
+  description: Simple, transparent pricing for data integration. Start free with 100MB, then scale with Pro plans.
+---
+
+<link rel="stylesheet" href="/assets/css/pricing.css">
+
+<section class="bg-yellow-400 text-dark min-h-screen">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 py-20">
+    <div class="text-center mb-16">
+      <h1 class="text-4xl lg:text-5xl font-bold font-mono mb-6 text-dark">
+        Simple, transparent pricing
+      </h1>
+      <p class="text-xl text-dark mb-8 leading-relaxed max-w-3xl mx-auto">
+        Start free and scale as you grow. No hidden fees, no vendor lock-in. Clear limits, predictable costs.
+      </p>
+      
+      <!-- Billing Toggle -->
+      <div class="flex items-center justify-center gap-4 mb-12">
+        <label class="flex items-center cursor-pointer">
+          <input type="radio" name="billing" value="monthly" checked class="sr-only billing-toggle">
+          <span class="billing-label px-4 py-2 font-mono text-sm bg-dark text-light rounded-md">Pay monthly</span>
+        </label>
+        <label class="flex items-center cursor-pointer">
+          <input type="radio" name="billing" value="yearly" class="sr-only billing-toggle">
+          <span class="billing-label px-4 py-2 font-mono text-sm text-dark hover:bg-dark hover:text-light rounded-md transition-colors">Pay yearly (Save 20%)</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Sync Selector -->
+    <div class="mb-16">
+      <h2 class="text-2xl font-bold font-mono text-dark text-center mb-8">
+        How many syncs per month do you need?
+      </h2>
+      
+      <div class="max-w-2xl mx-auto mb-8">
+        <div class="relative">
+          <input 
+            type="range" 
+            id="syncSlider" 
+            min="0" 
+            max="6" 
+            value="0" 
+            step="1"
+            class="w-full h-2 bg-dark rounded-lg appearance-none cursor-pointer slider"
+          >
+          <div class="flex justify-between text-sm font-mono text-dark mt-2">
+            <span>200</span>
+            <span>500</span>
+            <span>1K</span>
+            <span>2.5K</span>
+            <span>5K</span>
+            <span>10K</span>
+            <span>25K+</span>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <span id="syncCount" class="text-2xl font-bold font-mono text-dark">200</span>
+          <span class="text-dark font-mono"> syncs/month</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pricing Cards -->
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+      <!-- Starter Plan -->
+      <div class="pricing-plan bg-dark p-6 rounded-lg border-2 border-grey-600 relative" data-plan="starter">
+        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <span class="bg-transparent text-transparent px-3 py-1 rounded-full text-xs font-mono">SPACER</span>
+        </div>
+        
+        <div class="text-center mb-6">
+          <p class="text-grey-300 text-xs mb-2 font-mono">Best for getting started</p>
+          <h3 class="text-xl font-bold font-mono text-light mb-2">Starter</h3>
+          <div class="text-3xl font-bold font-mono text-yellow-400 mb-2">
+            <span class="monthly-price">$0</span>
+            <span class="yearly-price hidden">$0</span>
+            <span class="text-sm text-grey-300">/mo</span>
+          </div>
+          <p class="text-grey-300 text-sm yearly-savings hidden">Billed annually</p>
+          <p class="text-grey-300 text-sm yearly-not-shown">200 syncs included</p>
+        </div>
+        
+        <div class="space-y-3 mb-8">
+          <div class="flex items-start">
+            <span class="text-yellow-400 mr-3 text-sm">✓</span>
+            <span class="text-light text-sm">100MB storage</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-yellow-400 mr-3 text-sm">✓</span>
+            <span class="text-light text-sm">2 connectors</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-yellow-400 mr-3 text-sm">✓</span>
+            <span class="text-light text-sm">1 user</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-yellow-400 mr-3 text-sm">✓</span>
+            <span class="text-light text-sm">Community support</span>
+          </div>
+        </div>
+
+        <div class="group h-10 relative w-full">
+          <button class="flex items-center w-full h-10 absolute bg-yellow-400">
+            <div class="flex items-center w-full text-center text-dark text-sm font-normal font-mono">
+              <p class="text-center w-full pt-1 group-hover:pt-0">Start Free</p>
+            </div>
+          </button>
+          <div class="flex w-full h-10 top-1 left-1 group-hover:top-0 group-hover:left-0 absolute border-solid border-2 border-light">
+          </div>
+        </div>
+      </div>
+
+      <!-- Pro Plan -->
+      <div class="pricing-plan bg-dark p-6 rounded-lg border-2 border-pink-600 relative" data-plan="pro">
+        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <span class="bg-pink-600 text-light px-3 py-1 rounded-full text-xs font-mono">POPULAR</span>
+        </div>
+        
+        <div class="text-center mb-6">
+          <p class="text-grey-300 text-xs mb-2 font-mono">Best for individuals</p>
+          <h3 class="text-xl font-bold font-mono text-light mb-2">Pro</h3>
+          <div class="text-3xl font-bold font-mono text-pink-600 mb-2">
+            <span class="monthly-price">$99</span>
+            <span class="yearly-price hidden">$79</span>
+            <span class="text-sm text-grey-300">/mo</span>
+          </div>
+          <p class="text-grey-300 text-sm yearly-savings hidden">Billed annually</p>
+        </div>
+        
+        <div class="space-y-3 mb-8">
+          <div class="flex items-start">
+            <span class="text-pink-600 mr-3 text-sm">✓</span>
+            <span class="text-light text-sm">500MB storage</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-pink-600 mr-3 text-sm">✓</span>
+            <span class="text-light text-sm">5 connectors</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-pink-600 mr-3 text-sm">✓</span>
+            <span class="text-light text-sm">5 users</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-pink-600 mr-3 text-sm">✓</span>
+            <span class="text-light text-sm">Priority support</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-pink-600 mr-3 text-sm">✓</span>
+            <span class="text-light text-sm">Advanced transformations</span>
+          </div>
+        </div>
+
+        <div class="group h-10 relative w-full">
+          <button class="flex items-center w-full h-10 absolute bg-pink-600">
+            <div class="flex items-center w-full text-center text-light text-sm font-normal font-mono">
+              <p class="text-center w-full pt-1 group-hover:pt-0">Start Trial</p>
+            </div>
+          </button>
+          <div class="flex w-full h-10 top-1 left-1 group-hover:top-0 group-hover:left-0 absolute border-solid border-2 border-light">
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Plan -->
+      <div class="pricing-plan bg-dark p-6 rounded-lg border-2 border-cyan-400 relative" data-plan="team">
+        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <span class="bg-transparent text-transparent px-3 py-1 rounded-full text-xs font-mono">SPACER</span>
+        </div>
+        
+        <div class="text-center mb-6">
+          <p class="text-grey-300 text-xs mb-2 font-mono">Best for teams</p>
+          <h3 class="text-xl font-bold font-mono text-light mb-2">Team</h3>
+          <div class="text-3xl font-bold font-mono text-cyan-400 mb-2">
+            <span class="monthly-price">$299</span>
+            <span class="yearly-price hidden">$239</span>
+            <span class="text-sm text-grey-300">/mo</span>
+          </div>
+          <p class="text-grey-300 text-sm yearly-savings hidden">Billed annually</p>
+        </div>
+        
+        <div class="space-y-3 mb-8">
+          <div class="flex items-start">
+            <span class="text-cyan-400 mr-3 text-sm">✓</span>
+            <span class="text-light text-sm">2TB storage</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-cyan-400 mr-3 text-sm">✓</span>
+            <span class="text-light text-sm">10 connectors</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-cyan-400 mr-3 text-sm">✓</span>
+            <span class="text-light text-sm">15 users</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-cyan-400 mr-3 text-sm">✓</span>
+            <span class="text-light text-sm">Advanced analytics</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-cyan-400 mr-3 text-sm">✓</span>
+            <span class="text-light text-sm">Audit trails</span>
+          </div>
+        </div>
+
+        <div class="group h-10 relative w-full">
+          <button class="flex items-center w-full h-10 absolute bg-cyan-400">
+            <div class="flex items-center w-full text-center text-dark text-sm font-normal font-mono">
+              <p class="text-center w-full pt-1 group-hover:pt-0">Start Trial</p>
+            </div>
+          </button>
+          <div class="flex w-full h-10 top-1 left-1 group-hover:top-0 group-hover:left-0 absolute border-solid border-2 border-light">
+          </div>
+        </div>
+      </div>
+
+      <!-- Enterprise Plan -->
+      <div class="pricing-plan bg-dark p-6 rounded-lg border-2 border-yellow-400 relative" data-plan="enterprise">
+        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <span class="bg-transparent text-transparent px-3 py-1 rounded-full text-xs font-mono">SPACER</span>
+        </div>
+        
+        <div class="text-center mb-6">
+          <p class="text-grey-300 text-xs mb-2 font-mono">Best for large organizations</p>
+          <h3 class="text-xl font-bold font-mono text-light mb-2">Enterprise</h3>
+          <div class="text-3xl font-bold font-mono text-yellow-400 mb-2">
+            <span class="monthly-price">Custom</span>
+            <span class="yearly-price hidden">Custom</span>
+            <span class="text-sm text-grey-300"> </span>
+          </div>
+          <p class="text-grey-300 text-sm yearly-savings hidden">Custom pricing</p>
+        </div>
+        
+        <div class="space-y-3 mb-8">
+          <div class="flex items-start">
+            <span class="text-yellow-400 mr-3 text-sm">✓</span>
+            <span class="text-light text-sm">Custom storage</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-yellow-400 mr-3 text-sm">✓</span>
+            <span class="text-light text-sm">Unlimited connectors</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-yellow-400 mr-3 text-sm">✓</span>
+            <span class="text-light text-sm">Unlimited users</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-yellow-400 mr-3 text-sm">✓</span>
+            <span class="text-light text-sm">SSO integration</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-yellow-400 mr-3 text-sm">✓</span>
+            <span class="text-light text-sm">Dedicated support</span>
+          </div>
+        </div>
+
+        <div class="group h-10 relative w-full">
+          <button class="flex items-center w-full h-10 absolute bg-yellow-400">
+            <div class="flex items-center w-full text-center text-dark text-sm font-normal font-mono">
+              <p class="text-center w-full pt-1 group-hover:pt-0">Contact Sales</p>
+            </div>
+          </button>
+          <div class="flex w-full h-10 top-1 left-1 group-hover:top-0 group-hover:left-0 absolute border-solid border-2 border-light">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-20 bg-dark">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8">
+    <h2 class="text-3xl font-bold font-mono text-light mb-12 text-center">
+      Frequently asked questions
+    </h2>
+    
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div class="space-y-8">
+        <div>
+          <h3 class="text-xl font-semibold font-mono text-yellow-400 mb-3">
+            What counts as a sync?
+          </h3>
+          <p class="text-light">
+            A sync is counted every time data is moved between your connected apps. This includes imports, exports, real-time updates, and scheduled synchronizations.
+          </p>
+        </div>
+        
+        <div>
+          <h3 class="text-xl font-semibold font-mono text-yellow-400 mb-3">
+            Can I upgrade my plan anytime?
+          </h3>
+          <p class="text-light">
+            Yes! You can upgrade your plan at any time. Changes take effect immediately, and we'll prorate any billing adjustments.
+          </p>
+        </div>
+        
+        <div>
+          <h3 class="text-xl font-semibold font-mono text-yellow-400 mb-3">
+            What happens if I exceed my sync limit?
+          </h3>
+          <p class="text-light">
+            We'll notify you when you approach your limits. You can upgrade your plan or your syncs will pause until the next billing cycle.
+          </p>
+        </div>
+      </div>
+      
+      <div class="space-y-8">
+        <div>
+          <h3 class="text-xl font-semibold font-mono text-yellow-400 mb-3">
+            How do connectors work?
+          </h3>
+          <p class="text-light">
+            Each connector links to one data source (Salesforce, HubSpot, etc.). You can connect multiple instances of the same service - each counts as one connector.
+          </p>
+        </div>
+        
+        <div>
+          <h3 class="text-xl font-semibold font-mono text-yellow-400 mb-3">
+            Is there a setup fee?
+          </h3>
+          <p class="text-light">
+            No setup fees for any plan. You only pay the monthly subscription fee. Enterprise customers may have optional professional services fees.
+          </p>
+        </div>
+        
+        <div>
+          <h3 class="text-xl font-semibold font-mono text-yellow-400 mb-3">
+            Can I add more users to my plan?
+          </h3>
+          <p class="text-light">
+            Pro and Team plans have fixed user limits. For more users, you can upgrade to the next tier or contact sales for custom Enterprise pricing.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="/assets/js/pricing.js"></script>
+

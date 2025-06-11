@@ -1,0 +1,76 @@
+{
+  "freeTier": {
+    "storage": "100MB",
+    "syncs": 200
+  },
+  "syncLevels": [200, 500, 1000, 2500, 5000, 10000, 25000],
+  "plans": {
+    "starter": {
+      "name": "Starter",
+      "color": "yellow-400",
+      "description": "Best for getting started",
+      "unitRates": [0, 0.05, 0.04, 0.046, 0.048, 0.049, 0.049],
+      "features": [
+        "100MB storage",
+        "2 connectors",
+        "1 user",
+        "Community support"
+      ],
+      "ctaText": "Start Free",
+      "ctaColor": "yellow-400"
+    },
+    "pro": {
+      "name": "Pro",
+      "color": "pink-600",
+      "description": "Best for individuals",
+      "unitRates": [0, 0.12375, 0.099, 0.1136, 0.1188, 0.1219, 0.1238],
+      "popular": true,
+      "features": [
+        "500MB storage",
+        "5 connectors",
+        "5 users",
+        "Priority support",
+        "Advanced transformations"
+      ],
+      "ctaText": "Start Trial",
+      "ctaColor": "pink-600"
+    },
+    "team": {
+      "name": "Team",
+      "color": "cyan-400",
+      "description": "Best for teams",
+      "unitRates": [0, 0.31667, 0.25, 0.29, 0.305, 0.3125, 0.319],
+      "popular": true,
+      "features": [
+        "2TB storage",
+        "10 connectors",
+        "15 users",
+        "Advanced analytics",
+        "Audit trails"
+      ],
+      "ctaText": "Start Trial",
+      "ctaColor": "cyan-400"
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "color": "yellow-400",
+      "description": "Best for large organizations",
+      "unitRates": [0, 0.63333, 0.5, 0.58, 0.61, 0.625, 0.638],
+      "customPricing": true,
+      "features": [
+        "Custom storage",
+        "Unlimited connectors",
+        "Unlimited users",
+        "SSO integration",
+        "Dedicated support"
+      ],
+      "ctaText": "Contact Sales",
+      "ctaColor": "yellow-400"
+    }
+  },
+  "thresholds": {
+    "pro": 500,
+    "team": 1000,
+    "enterprise": 2000
+  }
+}
