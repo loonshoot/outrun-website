@@ -54,6 +54,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.htmlTemplateEngine = "liquid";
   eleventyConfig.markdownTemplateEngine = "liquid";
   
+  // Add collections
+  eleventyConfig.addCollection("learn", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("site/pages/learn/*.md");
+  });
+  
   // eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
   
   eleventyConfig.addPlugin(pluginBookshop({
