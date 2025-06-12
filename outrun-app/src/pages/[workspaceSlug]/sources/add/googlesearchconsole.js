@@ -20,8 +20,8 @@ import {
 import { XMarkIcon } from '@heroicons/react/24/outline';
 
 // Define GraphQL queries and mutations
-const GET_TOKENS = gql`
-  query GetTokens($workspaceSlug: String, $service: String) {
+const GET_GOOGLE_TOKENS = gql`
+  query GetGoogleTokens($workspaceSlug: String, $service: String) {
     tokens(workspaceSlug: $workspaceSlug, service: $service) {
       _id
       email
@@ -98,53 +98,13 @@ const SCHEDULE_JOBS = gql`
   }
 `;
 
-// Configuration for different integrations
-const integrationConfigs = {
-  hubspot: {
-    displayName: 'HubSpot',
-    service: 'hubspot',
-    requiredScopes: ['crm.objects.contacts.read', 'crm.objects.companies.read', 'oauth'],
-    optionalScopes: ['crm.objects.deals.read'],
-    frequency: 'batch',
-    batchJob: 'hubspotSource',
-    clientIdEndpoint: '/api/hubspot-client-id',
-    authUrl: 'https://app.hubspot.com/oauth/authorize',
-    redirectPath: '/api/callback/hubspot',
-  },
-  confluence: {
-    displayName: 'Confluence',
-    service: 'confluence',
-    requiredScopes: ['read:confluence-space.summary', 'read:confluence-content.all', 'offline_access'],
-    frequency: 'batch',
-    batchJob: 'confluenceSource',
-    clientIdEndpoint: '/api/confluence-client-id',
-    authUrl: 'https://auth.atlassian.com/authorize',
-    redirectPath: '/api/callback/confluence',
-  },
-  googlesearchconsole: {
-    displayName: 'Google Search Console',
-    service: 'googlesearchconsole',
-    requiredScopes: ['https://www.googleapis.com/auth/webmasters.readonly'],
-    optionalScopes: ['openid', 'email', 'profile'],
-    frequency: 'batch',
-    batchJob: 'googleSearchConsoleSource',
-    clientIdEndpoint: '/api/google-client-id',
-    authUrl: 'https://accounts.google.com/o/oauth2/v2/auth',
-    redirectPath: '/api/callback/google',
-  }
-};
-
-export default function IntegrationSourcePage() {
+export default function GoogleSearchConsolePage() {
   const router = useRouter();
-  const { workspaceSlug, integrations } = router.query;
+  const { workspaceSlug } = router.query;
   const { t } = useTranslation();
   const { workspace } = useWorkspace();
   const { data: session } = useSession();
   const graphqlClient = useGraphQLClient();
-  
-  // Get integration config
-  const config = integrationConfigs[integrations] || {};
-  const { displayName, service, requiredScopes = [], optionalScopes = [], frequency, batchJob } = config;
   
   // State variables
   const [hasHydrated, setHasHydrated] = useState(false);
@@ -152,9 +112,11 @@ export default function IntegrationSourcePage() {
   const [tokens, setTokens] = useState([]);
   const [isLoadingTokens, setIsLoadingTokens] = useState(false);
   const [code, setCode] = useState(null);
+  const [service] = useState("googlesearchconsole");
   const [currentStep, setCurrentStep] = useState(1);
   const [selectedTokenId, setSelectedTokenId] = useState(null);
-  const [sourceName, setSourceName] = useState(`${displayName} Source`);
+  const [sourceName, setSourceName] = useState('Google Search Console');
+  const [frequency] = useState('batch');
   const [backfillData] = useState(true);
   const [pollingCount, setPollingCount] = useState(0);
   const [isPolling, setIsPolling] = useState(false);
@@ -164,7 +126,19 @@ export default function IntegrationSourcePage() {
   
   const MAX_REGISTRATION_ATTEMPTS = 2;
   
-  // Combine required and optional scopes
+  // Required scopes array definition for Google Search Console
+  const requiredScopes = [
+    'https://www.googleapis.com/auth/webmasters.readonly'
+  ];
+  
+  // Optional scopes
+  const optionalScopes = [
+    'openid',
+    'email',
+    'profile'
+  ];
+  
+  // All scopes combined
   const allScopes = [...requiredScopes, ...optionalScopes];
 
   // Mark component as hydrated
@@ -192,13 +166,13 @@ export default function IntegrationSourcePage() {
 
   // Function to fetch tokens
   const fetchTokens = async () => {
-    if (hasHydrated && workspaceSlug && service) {
+    if (hasHydrated && workspaceSlug) {
       setIsLoadingTokens(true);
       
       try {
         const result = await executeQuery(
           graphqlClient,
-          GET_TOKENS,
+          GET_GOOGLE_TOKENS,
           {
             workspaceSlug,
             service
@@ -255,7 +229,7 @@ export default function IntegrationSourcePage() {
 
   // Effect to register credentials when code is available
   useEffect(() => {
-    if (code && !isRegistering && registrationAttemptCount < MAX_REGISTRATION_ATTEMPTS && workspace && service) {
+    if (code && !isRegistering && registrationAttemptCount < MAX_REGISTRATION_ATTEMPTS && workspace) {
       setIsRegistering(true);
       const currentAttempt = registrationAttemptCount + 1;
       console.log(`Attempting to register credentials with code: ${code}, attempt #${currentAttempt}`);
@@ -271,7 +245,7 @@ export default function IntegrationSourcePage() {
         console.log("Successfully registered external credentials:", result);
         if (result.data && result.data.registerExternalCredentials && result.data.registerExternalCredentials.remainingTokens) {
           setTokens(result.data.registerExternalCredentials.remainingTokens);
-          toast.success(`${displayName} account added successfully`);
+          toast.success('Google Search Console account added successfully');
         }
         setIsPolling(true);
         setPollingCount(0);
@@ -289,10 +263,10 @@ export default function IntegrationSourcePage() {
       });
     } else if (code && !isRegistering && registrationAttemptCount >= MAX_REGISTRATION_ATTEMPTS) {
       console.warn(`Max registration attempts (${MAX_REGISTRATION_ATTEMPTS}) reached for code: ${code}. Please try the OAuth flow again from the beginning.`);
-      toast.error(`Failed to connect to ${displayName} after multiple attempts. Please try again.`);
+      toast.error('Failed to connect to Google Search Console after multiple attempts. Please try again.');
       setCode(null);
     }
-  }, [code, isRegistering, registrationAttemptCount, workspace, workspaceSlug, service, graphqlClient, allScopes, displayName]);
+  }, [code, isRegistering, registrationAttemptCount, workspace, workspaceSlug, service, graphqlClient, allScopes]);
 
   // Fetch tokens when the component mounts
   useEffect(() => {
@@ -345,7 +319,7 @@ export default function IntegrationSourcePage() {
   const handleRefreshToken = async (tokenId) => {
     try {
       console.log("Refreshing token:", tokenId);
-      toast.info(`Refreshing ${displayName} account...`);
+      toast.info('Refreshing Google Search Console account...');
       
       // Execute the refresh mutation
       const result = await executeMutation(
@@ -362,7 +336,7 @@ export default function IntegrationSourcePage() {
       if (result.data?.refreshExternalCredentials?.remainingTokens) {
         console.log("Token refreshed successfully");
         setTokens(result.data.refreshExternalCredentials.remainingTokens);
-        toast.success(`${displayName} account refreshed successfully`);
+        toast.success('Google Search Console account refreshed successfully');
       }
     } catch (error) {
       console.error("Error refreshing token:", error);
@@ -393,38 +367,31 @@ export default function IntegrationSourcePage() {
     setSourceName(event.target.value);
   };
 
-  // Function to get OAuth URL
-  const getOAuthUrl = () => {
+  // Function to get Google OAuth URL
+  const getGoogleAuthUrl = () => {
     // Fetch the clientId from server
-    return fetch(config.clientIdEndpoint)
+    return fetch(`/api/google-client-id`)
       .then(response => response.json())
       .then(data => {
-        const clientId = data.clientId;
-        const currentUrl = `${window.location.origin}/${workspaceSlug}/sources/add/${integrations}`;
-        const redirectUri = `${window.location.origin}${config.redirectPath}`;
+        const googleClientId = data.clientId;
+        const currentUrl = `${window.location.origin}/${workspaceSlug}/sources/add/googlesearchconsole`;
+        const redirectUri = `${window.location.origin}/api/callback/google`;
         
         const params = new URLSearchParams({
-          client_id: clientId,
+          client_id: googleClientId,
           redirect_uri: redirectUri,
           response_type: 'code',
           state: `type=source&returnTo=${encodeURIComponent(currentUrl)}`,
-          scope: allScopes.join(' ')
+          scope: allScopes.join(' '),
+          access_type: 'offline',
+          prompt: 'consent'
         });
         
-        // Add service-specific parameters
-        if (service === 'googlesearchconsole') {
-          params.append('access_type', 'offline');
-          params.append('prompt', 'consent');
-        } else if (service === 'confluence') {
-          params.append('prompt', 'consent');
-          params.append('audience', 'api.atlassian.com');
-        }
-        
-        window.location.href = `${config.authUrl}?${params.toString()}`;
+        window.location.href = `https://accounts.google.com/o/oauth2/v2/auth?${params.toString()}`;
       })
       .catch(error => {
-        console.error(`Error fetching ${displayName} client ID:`, error);
-        toast.error(`Failed to get ${displayName} authorization URL`);
+        console.error("Error fetching Google client ID:", error);
+        toast.error("Failed to get Google authorization URL");
       });
   };
 
@@ -435,7 +402,7 @@ export default function IntegrationSourcePage() {
     try {
       // Construct the batchConfig object
       const batchConfig = {
-        batchJob: batchJob,
+        batchJob: "googleSearchConsoleSource",
         batchFrequency: frequency,
         backfillData: backfillData,
       };
@@ -446,7 +413,7 @@ export default function IntegrationSourcePage() {
         CREATE_SOURCE,
         {
           name: sourceName,
-          sourceType: integrations,
+          sourceType: "googlesearchconsole",
           matchingField: "domain", 
           workspaceSlug,
           tokenId: selectedTokenId,
@@ -471,7 +438,7 @@ export default function IntegrationSourcePage() {
           jobs: [ 
             // Job 1: Backfill
             {
-              name: batchJob,
+              name: "googleSearchConsoleSource",
               schedule: "now", 
               data: {
                 sourceId: sourceId,
@@ -479,16 +446,16 @@ export default function IntegrationSourcePage() {
                 backfill: true
               }, 
             },
-            // Job 2: Regular batch job (except for realtime sources)
-            ...(frequency === 'batch' ? [{
-              name: batchJob,
+            // Job 2: Regular batch job
+            {
+              name: "googleSearchConsoleSource",
               schedule: "every 1 hour",
               data: {
                 sourceId: sourceId,
                 workspaceId: workspace.id,
                 backfill: false
               }
-            }] : [])
+            }
           ]
         }
       );
@@ -498,7 +465,7 @@ export default function IntegrationSourcePage() {
       // Show success messages
       toast.success('Source created successfully!', { duration: 5000 });
       toast.success(
-        `Records are now being synchronized from ${displayName}. Initial sync is running in the background.`,
+        'Records are now being synchronized from Google Search Console. Initial sync is running in the background.',
         { 
           duration: 8000,
           icon: '🔄'
@@ -518,17 +485,12 @@ export default function IntegrationSourcePage() {
     }
   };
 
-  // Don't render until we have the integration type
-  if (!integrations || !config.service) {
-    return null;
-  }
-
   return (
     <AccountLayout routerType="pages">
-      <Meta title={`Outrun - ${workspace?.name || 'Dashboard'} | ${t(`sources.add.title.${integrations}`) || `Add ${displayName} Source`}`} />
+      <Meta title={`Outrun - ${workspace?.name || 'Dashboard'} | ${t("sources.add.title.googlesearchconsole") || "Add Google Search Console Source"}`} />
       <Content.Title
         title={t("sources.add.title") || "Add Source"}
-        subtitle={t(`sources.add.subtitle.${integrations}`) || `Connect to ${displayName}`}
+        subtitle={t("sources.add.subtitle.googlesearchconsole") || "Connect to Google Search Console"}
       />
       <Content.Divider />
       <Content.Container>
@@ -536,7 +498,7 @@ export default function IntegrationSourcePage() {
         {currentStep === 1 && (
           <Card>
             <Card.Body
-              title={t(`sources.add.step1.title.${integrations}`) || `1. Select ${displayName} Account`}
+              title={t("sources.add.step1.title.googlesearchconsole") || "1. Select Google Search Console Account"}
               subtitle={t("sources.add.step1.subtitle") || "Choose an existing connection or add a new one"}
             >
               {tokens && tokens.length > 0 ? (
@@ -569,7 +531,7 @@ export default function IntegrationSourcePage() {
                               <h3 className="font-bold">{token.displayName || token.email} - {token.email}</h3>
                               {!hasRequiredScopes(token) && (
                                 <p className="text-xs text-amber-500">
-                                  {t(`sources.add.${integrations}.insufficientScopes`) || 'Missing required scopes'}
+                                  {t('sources.add.googlesearchconsole.insufficientScopes') || 'Missing required scopes'}
                                 </p>
                               )}
                             </div>
@@ -582,7 +544,7 @@ export default function IntegrationSourcePage() {
                                 onClick={() => handleRefreshToken(token._id)}
                                 className="text-blue-600 hover:text-blue-800 text-sm"
                               >
-                                {t(`sources.add.${integrations}.refreshCredential`) || 'Refresh Credential'}
+                                {t('sources.add.googlesearchconsole.refreshCredential') || 'Refresh Credential'}
                               </button>
                             )}
                             {token.errorMessages?.length > 0 && (
@@ -614,16 +576,16 @@ export default function IntegrationSourcePage() {
                 </table>
               ) : (
                 <p className="mt-4 font-bold text-light">
-                  {t(`sources.add.${integrations}.addFirstAccount`) || `Add your first ${displayName} account below`}
+                  {t('sources.add.googlesearchconsole.addFirstAccount') || "Add your first Google Search Console account below"}
                 </p>
               )}
               <div className="mt-4">
                 <Button
                   background="Yellow"
                   border="Light"
-                  onClick={getOAuthUrl}
+                  onClick={getGoogleAuthUrl}
                 >
-                  {t(`sources.add.${integrations}.addAccount`) || 'Add Account'}
+                  {t('sources.add.googlesearchconsole.addAccount') || 'Add Account'}
                 </Button>
               </div>
             </Card.Body>
@@ -653,7 +615,7 @@ export default function IntegrationSourcePage() {
                   <tr>
                     <th className="py-3 text-left">{t("common.organization") || "Organization"}</th>
                     <th className="py-3 text-left">{t("common.email") || "Email"}</th>
-                    <th className="py-3 text-left">{t(`sources.${integrations}.externalId`) || "External ID"}</th>
+                    <th className="py-3 text-left">{t("sources.googlesearchconsole.accountId") || "Account ID"}</th>
                   </tr>
                 </thead>
                 <tbody className="text-sm">
@@ -708,7 +670,7 @@ export default function IntegrationSourcePage() {
           <Card>
             <Card.Body
               title={t("sources.add.step3.title") || "3. Source Settings"}
-              subtitle={t("sources.add.step3.subtitle") || `Configure your ${displayName} source`}
+              subtitle={t("sources.add.step3.subtitle") || "Configure your Google Search Console source"}
             >
               <div className="space-y-6">
                 {/* Source Name */}
@@ -726,7 +688,7 @@ export default function IntegrationSourcePage() {
                 {/* Information about backfill instead of checkbox */}
                 <div className="space-y-2">
                   <p className="text-sm text-amber-500">
-                    {t(`sources.add.${integrations}.backfillInfo`) || `All historical data will be imported from ${displayName}.`}
+                    {t("sources.add.googlesearchconsole.backfillInfo") || "All historical data will be imported from Google Search Console."}
                   </p>
                 </div>
               </div>
