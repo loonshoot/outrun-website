@@ -6,6 +6,14 @@
   overflow: hidden;
 }
 
+.hero-80vh {
+  min-height: 80vh;
+}
+
+.hero-container-80vh {
+  min-height: 80vh;
+}
+
 .grid-pattern {
   background-image: linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
                     linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
@@ -17,7 +25,7 @@
 /* Hero text contrast improvements */
 .hero-title {
   animation: slideInUp 0.8s ease-out;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8), 0px 0px 16px rgba(0, 0, 0, 0.6);
 }
 
 .hero-subtitle {
@@ -87,6 +95,17 @@
   transition: all 0.3s ease;
 }
 
+/* Desktop improvements for recommended reads positioning */
+@media (min-width: 1024px) {
+  .recommended-reads-carousel {
+    margin-top: -6rem !important;
+  }
+  
+  .recommended-reads-carousel .bg-transparent {
+    padding-top: 2rem;
+  }
+}
+
 /* Value Propositions Section */
 .value-props-section img {
   transition: transform 0.3s ease;
@@ -122,9 +141,9 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 3rem;
     line-height: 1.1;
   }
   
@@ -138,13 +157,18 @@
   }
   
   .carousel-container {
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
+    overflow: hidden;
+    padding: 0 1rem;
+  }
+  
+  #carousel-track {
+    gap: 1rem;
   }
   
   .article-card {
-    scroll-snap-align: start;
+    width: calc(100vw - 4rem);
+    max-width: 300px;
+    flex-shrink: 0;
   }
   
   /* Hide carousel buttons on mobile */
