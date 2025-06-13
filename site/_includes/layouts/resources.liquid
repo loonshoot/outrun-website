@@ -44,7 +44,7 @@
                         {% if featured_article %}
                         <article class="featured-article-card">
                             <div class="featured-image-large mb-6">
-                                <div class="placeholder-image bg-gradient-to-br from-yellow-400 to-orange-500 h-80 rounded-lg"></div>
+                                <div class="placeholder-image bg-gradient-to-br from-yellow-400 to-orange-500 h-80"></div>
                             </div>
                             <div class="featured-content">
                                 <h2 class="featured-title text-4xl font-bold text-light mb-4 leading-tight">
@@ -75,7 +75,7 @@
                                 {% for article in collections.learn %}
                                     {% if forloop.index <= 5 %}
                                     <article class="top-story-item flex gap-4">
-                                        <div class="story-number flex-shrink-0 w-8 h-8 bg-yellow-400 text-dark font-bold text-lg flex items-center justify-center rounded">
+                                        <div class="story-number flex-shrink-0 w-8 h-8 bg-yellow-400 text-dark font-bold text-lg flex items-center justify-center">
                                             {{ forloop.index }}
                                         </div>
                                         <div class="story-content flex-1">
@@ -94,7 +94,7 @@
                                             </div>
                                         </div>
                                         <div class="story-thumbnail flex-shrink-0 w-20 h-16">
-                                            <div class="placeholder-image bg-purple-500 w-full h-full rounded"></div>
+                                            <div class="placeholder-image bg-purple-500 w-full h-full"></div>
                                         </div>
                                     </article>
                                     {% endif %}
@@ -114,7 +114,7 @@
                 </h2>
                 <div class="articles-grid grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {% for article in collections.learn %}
-                        <article class="article-card bg-dark rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300">
+                        <article class="article-card bg-dark overflow-hidden hover:transform hover:scale-105 transition-all duration-300">
                             <div class="article-image h-48">
                                 <div class="placeholder-image bg-gradient-to-br from-blue-500 to-cyan-500 w-full h-full"></div>
                             </div>

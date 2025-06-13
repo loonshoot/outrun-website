@@ -1,9 +1,9 @@
 ---
 layout: layouts/docs.liquid
 title: Getting Started
-description: Quick start guide for Outrun data synchronization platform. Learn the basics and create your first sync in minutes.
+description: Get started with Outrun in under 10 minutes. Create your account, connect your first source, and set up data synchronization.
 metaTitle: Getting Started with Outrun - Quick Start Guide
-metaDescription: Get started with Outrun's data synchronization platform. Step-by-step guide to setup, configuration, and your first data sync.
+metaDescription: Step-by-step quick start guide for Outrun. Create account, connect sources, authenticate, and start syncing data in minutes.
 permalink: /docs/getting-started/
 breadcrumbs:
   - title: Documentation
@@ -14,136 +14,150 @@ breadcrumbs:
 
 # Getting Started with Outrun
 
-Welcome to Outrun! This guide will help you get up and running with our data synchronization platform quickly and efficiently.
+Get your first data sync running in under 10 minutes. This guide will walk you through creating an account, connecting your first source, and setting up a destination.
 
-## What is Outrun?
+## Step 1: Create Your Account
 
-Outrun is a powerful data synchronization platform that automates the movement and transformation of data between your favorite tools and services. Whether you're syncing CRM data to your analytics platform or keeping multiple databases in sync, Outrun makes it simple and reliable.
+Your Outrun account is personal to you and designed for security and simplicity.
 
-## Prerequisites
-
-Before you begin, ensure you have:
-
-- Access to the data sources you want to sync
-- API credentials or authentication details for your services
-- A clear understanding of what data you want to move and where
-
-## Learning Path
-
-Follow this recommended learning path to master Outrun:
-
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
-    <div class="flex items-center mb-4">
-      <div class="w-8 h-8 bg-yellow text-dark rounded-full flex items-center justify-center font-bold text-sm mr-3">1</div>
-      <h3 class="text-yellow text-lg font-semibold">Quick Start</h3>
-    </div>
-    <p class="text-gray-300 mb-4">Get your first sync running in under 5 minutes. Perfect for testing and evaluation.</p>
-    <a href="/docs/getting-started/quick-start/" class="text-yellow hover:text-yellow-light transition-colors">Start Now →</a>
-  </div>
-  
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
-    <div class="flex items-center mb-4">
-      <div class="w-8 h-8 bg-yellow text-dark rounded-full flex items-center justify-center font-bold text-sm mr-3">2</div>
-      <h3 class="text-yellow text-lg font-semibold">Full Installation</h3>
-    </div>
-    <p class="text-gray-300 mb-4">Complete setup guide for production environments with security best practices.</p>
-    <a href="/docs/getting-started/installation/" class="text-yellow hover:text-yellow-light transition-colors">Install →</a>
-  </div>
-  
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
-    <div class="flex items-center mb-4">
-      <div class="w-8 h-8 bg-yellow text-dark rounded-full flex items-center justify-center font-bold text-sm mr-3">3</div>
-      <h3 class="text-yellow text-lg font-semibold">Configuration</h3>
-    </div>
-    <p class="text-gray-300 mb-4">Learn how to configure Outrun for your specific environment and requirements.</p>
-    <a href="/docs/getting-started/configuration/" class="text-yellow hover:text-yellow-light transition-colors">Configure →</a>
-  </div>
-  
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
-    <div class="flex items-center mb-4">
-      <div class="w-8 h-8 bg-yellow text-dark rounded-full flex items-center justify-center font-bold text-sm mr-3">4</div>
-      <h3 class="text-yellow text-lg font-semibold">First Sync</h3>
-    </div>
-    <p class="text-gray-300 mb-4">Step-by-step walkthrough of creating and managing your first data synchronization.</p>
-    <a href="/docs/guides/first-sync/" class="text-yellow hover:text-yellow-light transition-colors">Create Sync →</a>
-  </div>
+<div class="bg-dark-light border border-gray-600 rounded-lg p-6 my-6">
+  <h3 class="text-yellow text-lg font-semibold mb-3">🔐 Why Magic Links?</h3>
+  <p class="text-gray-300">We use magic links instead of passwords because we don't want to store your passwords. This approach also sets us up perfectly for the SSO features we have planned for later.</p>
 </div>
 
-## Key Concepts
+1. **Visit** [app.getoutrun.com](https://app.getoutrun.com)
+2. **Enter your email** address
+3. **Check your inbox** for the magic link
+4. **Click the link** to access your account
 
-Before diving in, familiarize yourself with these fundamental concepts:
+That's it! You're now logged into Outrun.
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
-    <h4 class="text-yellow text-lg font-semibold mb-3">🔌 Providers</h4>
-    <p class="text-gray-300">Source systems where your data originates (Salesforce, HubSpot, databases, APIs, etc.)</p>
-  </div>
-  
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
-    <h4 class="text-yellow text-lg font-semibold mb-3">🎯 Destinations</h4>
-    <p class="text-gray-300">Target systems where your data will be delivered (data warehouses, analytics platforms, etc.)</p>
-  </div>
-  
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
-    <h4 class="text-yellow text-lg font-semibold mb-3">🔄 Data Syncing</h4>
-    <p class="text-gray-300">The process of moving and transforming data between providers and destinations</p>
-  </div>
-  
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
-    <h4 class="text-yellow text-lg font-semibold mb-3">⚡ Rate Limiting</h4>
-    <p class="text-gray-300">Smart throttling to respect API limits and ensure reliable data transfer</p>
-  </div>
+## Step 2: Create Your First Source
+
+Sources are where your data comes from. We currently support **{{ sources.count }}** different sources.
+
+1. **Navigate to Sources** in the left sidebar
+2. **Click "Add Source"** 
+3. **Select your source type** - for this guide, we'll use **HubSpot**
+
+<div class="bg-yellow bg-opacity-10 border border-yellow rounded-lg p-6 my-6">
+  <h3 class="text-yellow text-lg font-semibold mb-3">💡 Pro Tip</h3>
+  <p class="text-gray-300">Start with a source that has data you're familiar with. HubSpot is great for testing because it has clear contact and company structures.</p>
 </div>
 
-## Common Use Cases
+## Step 3: Authenticate Your Source
 
-Here are some popular ways teams use Outrun:
+Next, you'll need to connect Outrun to your HubSpot account.
 
-### CRM to Analytics
-```bash
-# Sync Salesforce opportunities to your data warehouse
-outrun sync salesforce:opportunities → bigquery:sales_data
-```
+1. **Select your token type** - you can have multiple tokens, but add one to get started
+2. **Click "Authenticate with OAuth"** 
+3. **Complete the OAuth flow** in the popup window
+4. **Grant permissions** when prompted
 
-### Marketing Attribution
-```bash
-# Combine ad spend and conversion data
-outrun sync google-ads:campaigns → mixpanel:events
-outrun sync facebook-ads:insights → mixpanel:events
-```
+<div class="bg-dark-light border border-gray-600 rounded-lg p-6 my-6">
+  <h4 class="text-light font-semibold mb-3">🔒 What We Store</h4>
+  <ul class="text-gray-300 space-y-2">
+    <li>• Your OAuth access token (encrypted)</li>
+    <li>• A refresh token so we can pull data continuously</li>
+    <li>• Permission scopes you've granted</li>
+  </ul>
+  <p class="text-gray-300 mt-3">This allows us to keep your data in sync automatically without you having to re-authenticate.</p>
+</div>
 
-### Customer Support
-```bash
-# Keep support tickets in sync with your CRM
-outrun sync zendesk:tickets → hubspot:deals
-```
+## Step 4: Name Your Source
 
-### E-commerce Analytics
-```bash
-# Track order data across platforms
-outrun sync shopify:orders → amplitude:events
-```
+We allow you to name your sources because some organizations have multiple instances of the same application.
+
+1. **Enter a descriptive name** (e.g., "HubSpot Production", "HubSpot EMEA", "Main HubSpot")
+2. **Add a description** (optional but recommended)
+3. **Click "Save Source"**
+
+## Step 5: Complete Your Integration
+
+Your source will start syncing immediately after setup.
+
+<div class="bg-dark-light border border-gray-600 rounded-lg p-6 my-6">
+  <h4 class="text-light font-semibold mb-3">⚡ Rate Limiting</h4>
+  <p class="text-gray-300">Outrun uses standard rate limiting to manage requests at a volume the service can handle. If you have higher API limits, let us know—we're interested in how this feature might offer some customization options.</p>
+</div>
+
+**What happens during sync:**
+
+1. **Initial data pull** - We fetch all existing data from your source
+2. **Stream creation** - Raw data goes into a `_stream` (all data we ever receive)
+3. **Consolidation** - Data gets merged and cleaned into `_consolidate` 
+4. **Standardization** - Data transforms into standardized objects:
+   - **Facts** - Events and activities
+   - **Organizations** - Companies and accounts  
+   - **People** - Contacts and users
+   - **Relationships** - Connections between entities
+
+## Step 6: Wait for Initial Sync
+
+**⏱️ Be patient!** Depending on your company size, initial syncs can take time. Systems with lots of data need more time to process.
+
+<div class="bg-yellow bg-opacity-10 border border-yellow rounded-lg p-6 my-6">
+  <h3 class="text-yellow text-lg font-semibold mb-3">⚠️ Important</h3>
+  <p class="text-gray-300">We recommend waiting for your initial sync to complete before adding your first destination. This ensures clean, complete data transfer.</p>
+</div>
+
+**You can monitor progress in:**
+- The Sources dashboard
+- Sync logs and status indicators
+- Real-time sync statistics
+
+## Step 7: Add Your First Destination
+
+Once your source sync is complete, add where you want the data to go.
+
+1. **Navigate to Destinations** in the sidebar
+2. **Click "Add Destination"**
+3. **Select your destination type** (Salesforce, data warehouse, etc.)
+4. **Follow the same authentication process** as with sources
+5. **Name your destination** descriptively
+6. **Configure field mappings** (optional - we provide smart defaults)
+
+## Step 8: Automatic Sync Begins
+
+🎉 **You're done!** Outrun now listens for changes to your standardized facts, organizations, people, and relationships, then alerts your destination system to changes automatically.
+
+**What happens next:**
+- Real-time change detection
+- Automatic data transformation
+- Continuous sync between systems
+- Conflict resolution and deduplication
+
+## Monitoring Your Sync
+
+Track your data synchronization through:
+
+- **Dashboard overview** - High-level sync statistics
+- **Sync logs** - Detailed operation history  
+- **Error alerts** - Immediate notification of issues
+- **Data lineage** - Track data flow between systems
 
 ## Next Steps
 
-Ready to get started? Choose your path:
-
-<div class="flex flex-col sm:flex-row gap-4 my-8">
-  <a href="/docs/getting-started/quick-start/" class="flex-1 bg-yellow text-dark text-center py-3 px-6 rounded-lg font-semibold hover:bg-yellow-light transition-colors">
-    🚀 Quick Start (5 minutes)
-  </a>
-  <a href="/docs/getting-started/installation/" class="flex-1 bg-dark-light border border-yellow text-yellow text-center py-3 px-6 rounded-lg font-semibold hover:bg-yellow hover:text-dark transition-colors">
-    📚 Full Installation Guide
-  </a>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
+    <h3 class="text-yellow text-lg font-semibold mb-3">📚 Core Concepts</h3>
+    <p class="text-gray-300 mb-4">Learn about standardized objects, data transformation, and Outrun's philosophy.</p>
+    <a href="/docs/concepts/" class="text-yellow hover:text-yellow-light transition-colors">Learn More →</a>
+  </div>
+  
+  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
+    <h3 class="text-yellow text-lg font-semibold mb-3">🔌 Browse Integrations</h3>
+    <p class="text-gray-300 mb-4">Explore all supported sources and destinations for your data ecosystem.</p>
+    <a href="/docs/integrations/" class="text-yellow hover:text-yellow-light transition-colors">View All →</a>
+  </div>
 </div>
 
 ## Need Help?
 
-- **Community Support**: Join our [Discord community](https://discord.gg/outrun) for real-time help
-- **Documentation**: Browse our comprehensive [API documentation](/docs/api/)
-- **Email Support**: Reach out to [support@getoutrun.com](mailto:support@getoutrun.com)
+- **Discord Community**: [Join our Discord](https://discord.gg/outrun) for real-time support
+- **Email Support**: [support@getoutrun.com](mailto:support@getoutrun.com)
+- **Documentation**: Browse our [full documentation](/docs/)
 
 ---
 
-*Ready to sync your data? Let's get started!* 
+*🚀 Congratulations! You've successfully set up your first data sync with Outrun.* 

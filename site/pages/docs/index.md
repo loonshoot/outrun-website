@@ -12,7 +12,29 @@ breadcrumbs:
 
 # Welcome to Outrun Documentation
 
-Outrun is a powerful data synchronization platform that helps you seamlessly sync data between your favorite tools and services. This documentation will guide you through everything you need to know to get started and make the most of Outrun.
+## What is Outrun?
+
+Outrun is an application that automatically imports your data, standardizes and cleans it, then pushes it to your destinations. This is essential for organizations that want to use data as a competitive advantage—it lets them keep their systems in sync, improving worker productivity, pushing data to systems that enable automated business processes and customer communications, and creating unified reporting on data that lives in disparate systems.
+
+In the age of AI, getting access to clean, standardized data is becoming the biggest blocker to creating next-generation systems. Outrun solves this fundamental challenge.
+
+### Our Philosophy: Standardization Over Customization
+
+Philosophically, Outrun focuses on creating standardized approaches to everything—from standard objects to data cleaning processes. While there are many tools available to create custom data flows, they require intricate system knowledge and significant engineering overhead.
+
+Our approach is different. You add HubSpot as a source, add Salesforce as a destination, and when a contact is updated in HubSpot (by a user or workflow), the same lead is automatically updated in Salesforce. No understanding of system mechanics required.
+
+**The Trade-off We Make**
+
+By not offering heavy customization, we allow teams to avoid spending time understanding how systems should be integrated or how their data model should be structured. Instead, we offer an opinionated set of tools that lets your team focus on what actually matters: attracting customers, delivering great experiences, growing accounts, and generating actionable insights.
+
+**This means Outrun isn't for everyone.** If you're using tools in ways the vendor doesn't expect—like using HubSpot's deal objects for order processing—this tool isn't for you. There are many other great tools to help you build fully customized solutions.
+
+**Our Vision**
+
+Our ambition extends beyond data synchronization. After establishing this standardization foundation, we plan to add a workflow builder with AI agents that will allow you to automate large portions of your business with a single tool. This will enable rapid adoption of best-in-class capabilities from specialized tools as they come to market, all with the full support of a team of experts in data models and integrations working alongside your team.
+
+---
 
 ## Quick Start
 
@@ -22,19 +44,19 @@ New to Outrun? Start with these essential guides:
   <div class="bg-dark-light border border-gray-600 rounded-lg p-6 hover:border-yellow transition-colors">
     <h3 class="text-yellow text-lg font-semibold mb-3">🚀 Quick Start</h3>
     <p class="text-gray-300 mb-4">Get up and running with Outrun in minutes. Create your first sync and see your data flow.</p>
-    <a href="/docs/getting-started/quick-start/" class="text-yellow hover:text-yellow-light transition-colors">Get Started →</a>
+    <a href="/docs/getting-started/" class="text-yellow hover:text-yellow-light transition-colors">Get Started →</a>
   </div>
   
   <div class="bg-dark-light border border-gray-600 rounded-lg p-6 hover:border-yellow transition-colors">
-    <h3 class="text-yellow text-lg font-semibold mb-3">⚙️ Installation</h3>
-    <p class="text-gray-300 mb-4">Learn how to install and configure Outrun for your specific environment and needs.</p>
-    <a href="/docs/getting-started/installation/" class="text-yellow hover:text-yellow-light transition-colors">Install Now →</a>
+    <h3 class="text-yellow text-lg font-semibold mb-3">📚 Core Concepts</h3>
+    <p class="text-gray-300 mb-4">Understand how Outrun standardizes data and creates seamless integrations.</p>
+    <a href="/docs/concepts/" class="text-yellow hover:text-yellow-light transition-colors">Learn More →</a>
   </div>
   
   <div class="bg-dark-light border border-gray-600 rounded-lg p-6 hover:border-yellow transition-colors">
-    <h3 class="text-yellow text-lg font-semibold mb-3">🔌 Your First Sync</h3>
-    <p class="text-gray-300 mb-4">Step-by-step guide to creating your first data synchronization between services.</p>
-    <a href="/docs/guides/first-sync/" class="text-yellow hover:text-yellow-light transition-colors">Create Sync →</a>
+    <h3 class="text-yellow text-lg font-semibold mb-3">🔌 Integrations</h3>
+    <p class="text-gray-300 mb-4">Browse our supported sources and destinations to plan your data flows.</p>
+    <a href="/docs/integrations/" class="text-yellow hover:text-yellow-light transition-colors">View All →</a>
   </div>
 </div>
 
