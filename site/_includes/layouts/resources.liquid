@@ -1,0 +1,178 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{ metaTitle | default: title }} - Outrun</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ metaDescription }}">
+    <meta name="author" content="Outrun">
+    {% if env.ELEVENTY_ENV == "production" %}
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' *.getoutrun.com; style-src 'self' *.getoutrun.com https://fonts.googleapis.com; img-src 'self' *.getoutrun.com; font-src 'self' *.getoutrun.com https://fonts.gstatic.com; connect-src 'self' *.getoutrun.com; frame-src 'self' *.getoutrun.com; media-src 'self' *.getoutrun.com;">
+    {% else %}
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' *.localhost *.getoutrun.com; style-src 'self' *.localhost *.getoutrun.com https://fonts.googleapis.com; img-src 'self' *.localhost *.getoutrun.com; font-src 'self' *.localhost *.getoutrun.com https://fonts.gstatic.com; connect-src 'self' *.localhost *.getoutrun.com; frame-src 'self' *.localhost *.getoutrun.com; media-src 'self' *.localhost *.getoutrun.com;">
+    {% endif %}
+    <link rel="stylesheet" href="/assets/tailwind.css">
+    <link rel="stylesheet" href="/assets/bookshop.css">
+    <link rel="stylesheet" href="/assets/css/resources.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/x-icon" href="https://cdn.getoutrun.com/website/brand/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&display=swap" rel="stylesheet">
+    <script defer src="https://cdn.getoutrun.com/sdk/outrun.min.js"></script>
+</head>
+<body class="bg-dark min-h-screen font-mono">
+    {% bookshop "block/menu" bind: menu %}
+    
+    <main class="resources-main">
+        <!-- Main Content Layout: Resources Title + Featured Article + Top Stories -->
+        <section class="main-content-section bg-dark py-12">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-3 gap-12">
+                    <!-- Left Side: Resources Title + Featured Article (2/3 width) -->
+                    <div class="lg:col-span-2">
+                        <!-- Learn Title -->
+                        <div class="page-header mb-8">
+                            <h1 class="text-4xl font-bold text-yellow-400 mb-2">Learn</h1>
+                            <p class="text-light text-lg">Master data management with our comprehensive guides, tutorials, and insights.</p>
+                        </div>
+                        
+                        <!-- Featured Article -->
+                        {% assign featured_article = collections.learn | first %}
+                        {% if featured_article %}
+                        <article class="featured-article-card">
+                            <div class="featured-image-large mb-6">
+                                <div class="placeholder-image bg-gradient-to-br from-yellow-400 to-orange-500 h-80"></div>
+                            </div>
+                            <div class="featured-content">
+                                <h2 class="featured-title text-4xl font-bold text-light mb-4 leading-tight">
+                                    <a href="{{ featured_article.url }}" class="hover:text-yellow-400 transition-colors">
+                                        {{ featured_article.data.title }}
+                                    </a>
+                                </h2>
+                                <p class="featured-subtitle text-xl text-gray-300 mb-6 leading-relaxed">
+                                    {{ featured_article.data.description }}
+                                </p>
+                                <div class="article-meta flex items-center text-gray-400">
+                                    <span class="author font-medium">{{ featured_article.data.author }}</span>
+                                    <span class="separator mx-2">|</span>
+                                    <span class="date">{{ featured_article.data.date | date: "%b %d, %Y" }}</span>
+                                </div>
+                            </div>
+                        </article>
+                        {% endif %}
+                    </div>
+                    
+                    <!-- Top Stories - Right Side (1/3 width) -->
+                    <div class="lg:col-span-1">
+                        <div class="top-stories-section">
+                            <h2 class="section-title text-2xl font-bold text-light mb-6 pb-3 border-b-2 border-yellow-400">
+                                Top Stories
+                            </h2>
+                            <div class="top-stories-list space-y-6">
+                                {% for article in collections.learn %}
+                                    {% if forloop.index <= 5 %}
+                                    <article class="top-story-item flex gap-4">
+                                        <div class="story-number flex-shrink-0 w-8 h-8 bg-yellow-400 text-dark font-bold text-lg flex items-center justify-center">
+                                            {{ forloop.index }}
+                                        </div>
+                                        <div class="story-content flex-1">
+                                            <h3 class="story-title text-lg font-semibold text-light mb-2 leading-tight">
+                                                <a href="{{ article.url }}" class="hover:text-yellow-400 transition-colors">
+                                                    {{ article.data.title }}
+                                                </a>
+                                            </h3>
+                                            <p class="story-excerpt text-gray-300 text-sm mb-2 line-clamp-2">
+                                                {{ article.data.description }}
+                                            </p>
+                                            <div class="story-meta text-xs text-gray-400">
+                                                <span class="author">{{ article.data.author }}</span>
+                                                <span class="separator mx-1">|</span>
+                                                <span class="date">{{ article.data.date | date: "%b %d" }}</span>
+                                            </div>
+                                        </div>
+                                        <div class="story-thumbnail flex-shrink-0 w-20 h-16">
+                                            <div class="placeholder-image bg-purple-500 w-full h-full"></div>
+                                        </div>
+                                    </article>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- All Articles Section -->
+        <section class="all-articles-section bg-purple-500 py-16">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-3xl font-bold text-light mb-8 pb-3 border-b-2 border-yellow-400">
+                    All Learn Articles
+                </h2>
+                <div class="articles-grid grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {% for article in collections.learn %}
+                        <article class="article-card bg-dark overflow-hidden hover:transform hover:scale-105 transition-all duration-300">
+                            <div class="article-image h-48">
+                                <div class="placeholder-image bg-gradient-to-br from-blue-500 to-cyan-500 w-full h-full"></div>
+                            </div>
+                            <div class="article-content p-6">
+                                <h3 class="article-title text-xl font-semibold text-light mb-3 leading-tight">
+                                    <a href="{{ article.url }}" class="hover:text-yellow-400 transition-colors">
+                                        {{ article.data.title }}
+                                    </a>
+                                </h3>
+                                <p class="article-excerpt text-gray-300 text-sm mb-4 line-clamp-3">
+                                    {{ article.data.description }}
+                                </p>
+                                <div class="article-meta text-xs text-gray-400">
+                                    <span class="author font-medium">{{ article.data.author }}</span>
+                                    <span class="separator mx-1">|</span>
+                                    <span class="date">{{ article.data.date | date: "%b %d, %Y" }}</span>
+                                </div>
+                            </div>
+                        </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <!-- Sidebar Section -->
+        <section class="sidebar-section bg-dark py-16">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="sidebar-content">
+                        <h3 class="sidebar-title text-2xl font-bold text-light mb-6 pb-3 border-b-2 border-yellow-400">
+                            Popular Topics
+                        </h3>
+                        <ul class="topic-list space-y-3">
+                            <li><a href="/learn/data-integration" class="text-gray-300 hover:text-yellow-400 transition-colors block py-1">Data Integration</a></li>
+                            <li><a href="/learn/what-is-a-data-lake" class="text-gray-300 hover:text-yellow-400 transition-colors block py-1">Data Lakes</a></li>
+                            <li><a href="/learn/what-is-a-data-warehouse" class="text-gray-300 hover:text-yellow-400 transition-colors block py-1">Data Warehouses</a></li>
+                            <li><a href="/learn/extract-transform-load" class="text-gray-300 hover:text-yellow-400 transition-colors block py-1">ETL vs ELT</a></li>
+                            <li><a href="/learn/data-problems-are-people-problems" class="text-gray-300 hover:text-yellow-400 transition-colors block py-1">Data Strategy</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-content">
+                        <h3 class="sidebar-title text-2xl font-bold text-light mb-6 pb-3 border-b-2 border-yellow-400">
+                            Quick Links
+                        </h3>
+                        <ul class="quick-links space-y-3">
+                            <li><a href="/docs" class="text-gray-300 hover:text-yellow-400 transition-colors block py-1">Documentation</a></li>
+                            <li><a href="/integrations" class="text-gray-300 hover:text-yellow-400 transition-colors block py-1">Integrations</a></li>
+                            <li><a href="/about" class="text-gray-300 hover:text-yellow-400 transition-colors block py-1">About</a></li>
+                            <li><a href="/contact" class="text-gray-300 hover:text-yellow-400 transition-colors block py-1">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    {% bookshop "block/footer" bind: footer %}
+    <script src="/assets/js/bundle.js"></script>
+</body>
+</html> 

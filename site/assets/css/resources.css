@@ -1,0 +1,274 @@
+/* Resources Page Styles - The Verge Layout Inspired */
+
+.resources-main {
+  color: #e5e5e5;
+  min-height: 100vh;
+}
+
+/* Page Header (in left column) */
+.page-header h1 {
+  color: #FFC403;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.page-header p {
+  color: #e5e5e5;
+  line-height: 1.6;
+}
+
+/* Main Content Layout */
+.main-content-section {
+  background: #1B1237;
+}
+
+/* Featured Article */
+.featured-article-card {
+  background: transparent;
+}
+
+.featured-image-large {
+  overflow: hidden;
+}
+
+.featured-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #e5e5e5;
+}
+
+.featured-title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.featured-title a:hover {
+  color: #FFC403;
+}
+
+.featured-subtitle {
+  color: #9ca3af;
+  line-height: 1.6;
+}
+
+/* Top Stories Section */
+.top-stories-section {
+  background: transparent;
+}
+
+.section-title {
+  color: #e5e5e5;
+  border-bottom: 2px solid #FFC403;
+  padding-bottom: 0.75rem;
+}
+
+.top-story-item {
+  border-bottom: 1px solid #374151;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.top-story-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.story-number {
+  background: #FFC403;
+  color: #1B1237;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.125rem;
+  flex-shrink: 0;
+}
+
+.story-title {
+  color: #e5e5e5;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.story-title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.story-title a:hover {
+  color: #FFC403;
+}
+
+.story-excerpt {
+  color: #9ca3af;
+  line-height: 1.5;
+}
+
+.story-meta {
+  color: #6b7280;
+  font-size: 0.75rem;
+}
+
+.story-thumbnail {
+  overflow: hidden;
+}
+
+/* All Articles Section */
+.all-articles-section {
+  background: #471695;
+}
+
+.articles-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.article-card {
+  background: #1B1237;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid #374151;
+}
+
+.article-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.article-image {
+  height: 12rem;
+}
+
+.article-content {
+  padding: 1.5rem;
+}
+
+.article-title {
+  color: #e5e5e5;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.article-title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.article-title a:hover {
+  color: #FFC403;
+}
+
+.article-excerpt {
+  color: #9ca3af;
+  line-height: 1.5;
+}
+
+.article-meta {
+  color: #6b7280;
+  font-size: 0.75rem;
+}
+
+/* Sidebar Section */
+.sidebar-section {
+  background: #1B1237;
+}
+
+.sidebar-title {
+  color: #e5e5e5;
+  border-bottom: 2px solid #FFC403;
+  padding-bottom: 0.75rem;
+}
+
+.topic-list a,
+.quick-links a {
+  color: #9ca3af;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: block;
+  padding: 0.25rem 0;
+}
+
+.topic-list a:hover,
+.quick-links a:hover {
+  color: #FFC403;
+}
+
+/* Utility Classes */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .main-content-section .grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .featured-title {
+    font-size: 2rem;
+  }
+  
+  .page-header h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .featured-title {
+    font-size: 1.75rem;
+  }
+  
+  .featured-subtitle {
+    font-size: 1rem;
+  }
+  
+  .articles-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .top-story-item {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .story-thumbnail {
+    width: 100%;
+    height: 8rem;
+    order: -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .main-content-section,
+  .all-articles-section,
+  .sidebar-section {
+    padding: 2rem 0;
+  }
+  
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+} 

@@ -1,0 +1,324 @@
+/* Homepage Specific Styles */
+
+/* Hero Section Styling */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-80vh {
+  min-height: 80vh;
+}
+
+.hero-container-80vh {
+  min-height: 80vh;
+}
+
+.grid-pattern {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  width: 100%;
+  height: 100%;
+}
+
+/* Hero text contrast improvements */
+.hero-title {
+  animation: slideInUp 0.8s ease-out;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8), 0px 0px 16px rgba(0, 0, 0, 0.6);
+}
+
+.hero-subtitle {
+  animation: slideInUp 0.8s ease-out 0.2s both;
+}
+
+/* Stats cards styling */
+.hero-section .text-center {
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Recommended Reads Section */
+.recommended-reads-section {
+  border-top: 2px solid #FFC403;
+}
+
+/* Integration Logos Scrolling Animation */
+.integration-logos-container {
+  mask: linear-gradient(
+    90deg,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+}
+
+.integration-logos-scroll {
+  animation: scroll-horizontal 30s linear infinite;
+}
+
+@keyframes scroll-horizontal {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause animation on hover */
+.integration-logos-container:hover .integration-logos-scroll {
+  animation-play-state: paused;
+}
+
+/* Button Hover Effects */
+.group button {
+  border: none;
+  outline: none;
+}
+
+.group:hover button {
+  transform: translateY(-2px);
+}
+
+/* Recommended Reads Cards */
+.recommended-reads-section a:hover > div {
+  transform: translateY(-4px) scale(1.05);
+  transition: all 0.3s ease;
+}
+
+/* Desktop improvements for recommended reads positioning */
+@media (min-width: 1024px) {
+  .recommended-reads-carousel {
+    margin-top: -6rem !important;
+  }
+  
+  .recommended-reads-carousel .bg-transparent {
+    padding-top: 2rem;
+  }
+}
+
+/* Value Propositions Section */
+.value-props-section img {
+  transition: transform 0.3s ease;
+}
+
+.value-props-section img:hover {
+  transform: scale(1.05);
+}
+
+/* Final CTA Section with Geometric Pattern */
+.final-cta-section {
+  position: relative;
+  overflow: hidden;
+  border-top: 2px solid #FFC403;
+}
+
+.geometric-pattern {
+  background-image: 
+    repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255, 196, 3, 0.1) 2px, rgba(255, 196, 3, 0.1) 4px),
+    repeating-linear-gradient(-45deg, transparent, transparent 2px, rgba(71, 22, 149, 0.1) 2px, rgba(71, 22, 149, 0.1) 4px);
+  width: 100%;
+  height: 100%;
+  animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1023px) {
+  .hero-title {
+    font-size: 3rem;
+    line-height: 1.1;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.125rem;
+    padding: 1rem;
+  }
+  
+  .value-props-section .grid {
+    gap: 2rem;
+  }
+  
+  .carousel-container {
+    overflow: hidden;
+    padding: 0 1rem;
+  }
+  
+  #carousel-track {
+    gap: 1rem;
+  }
+  
+  .article-card {
+    width: calc(100vw - 4rem);
+    max-width: 300px;
+    flex-shrink: 0;
+  }
+  
+  /* Hide carousel buttons on mobile */
+  #carousel-prev,
+  #carousel-next {
+    display: none;
+  }
+}
+
+/* Loading animation for hero */
+.hero-section > div {
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Section transitions */
+.recommended-reads-section,
+.value-props-section,
+.integrations-section,
+.final-cta-section {
+  position: relative;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus states for accessibility */
+button:focus,
+a:focus {
+  outline: 2px solid #FFC403;
+  outline-offset: 2px;
+}
+
+/* Improved hover states */
+.recommended-reads-section a,
+.value-props-section a,
+.integrations-section a,
+.final-cta-section a {
+  transition: all 0.3s ease;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .integration-logos-scroll {
+    animation: none;
+  }
+  
+  .geometric-pattern {
+    animation: none;
+  }
+}
+
+/* Animation Classes */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Square edges for all elements */
+* {
+  border-radius: 0 !important;
+}
+
+/* Override any rounded classes */
+.rounded,
+.rounded-sm,
+.rounded-md,
+.rounded-lg,
+.rounded-xl,
+.rounded-2xl,
+.rounded-3xl,
+.rounded-full {
+  border-radius: 0 !important;
+}
+
+/* Text shadows for better contrast */
+.hero-section h1,
+.hero-section p {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Backdrop blur containers */
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* Line clamp utility */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Enhanced carousel styles */
+.carousel-container {
+  position: relative;
+}
+
+.article-card {
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.article-card:hover {
+  border-color: #FFC403;
+}
+
+/* Responsive grid adjustments */
+@media (max-width: 1024px) {
+  .grid.lg\\:grid-cols-2 {
+    gap: 3rem;
+  }
+}
+
+/* Smooth transitions */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+} 

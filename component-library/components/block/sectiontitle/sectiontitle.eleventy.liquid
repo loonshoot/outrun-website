@@ -1,8 +1,31 @@
 
 <div class="w-full {% if background == "Yellow" %} bg-yellow-400 {% endif %} {% if background == "Blue" %} bg-gradient-to-r from-purple-500 to-cyan-500 {% endif %} {% if background == "Pink" %} bg-pink-600 {% endif %} relative">
     <div class="container mx-auto flex {% if flex == "reverse" %} flex-row-reverse {% endif %} pt-10 py-10 justify-between">
-        <div class="w-screen block self-center">
-            <h2 class="w-fit {% if textColor == "light" %} text-light {% else %} text-dark {% endif %} text-4xl font-semibold font-mono text-wrap leading-tight">{{ title }} <span class="hidden sm:inline-block">-&nbsp;</span><span class="">{{ subtitle }}</span></h2>
+        <div class="w-screen block self-center text-center">
+            <h2 class="w-fit mx-auto {% if textColor == "light" %} text-light {% else %} text-dark {% endif %} text-4xl lg:text-6xl font-bold font-mono text-wrap leading-tight mb-4">{{ title }}</h2>
+            <h3 class="w-fit mx-auto {% if textColor == "light" %} text-light {% else %} text-dark {% endif %} text-xl lg:text-2xl font-normal font-mono text-wrap leading-tight max-w-3xl opacity-80 mb-6">{{ subtitle }}</h3>
+            {% if cta_primary or cta_secondary %}
+            <div class="flex flex-col sm:flex-row gap-8 justify-center items-center">
+                {% if cta_primary %}
+                <div class="group h-10 relative w-48">
+                    <a href="{{ cta_primary.link }}">
+                        <button class="flex items-center w-48 h-10 absolute bg-dark">
+                            <div class="flex items-center w-full text-center text-light text-sm font-normal font-mono">
+                                <p class="text-center w-full pt-1 group-hover:pt-0">{{ cta_primary.text }}</p>
+                            </div>
+                        </button>
+                        <div class="flex w-48 h-10 top-1 left-1 group-hover:top-0 group-hover:left-0 absolute border-solid border-2 border-light">
+                        </div>
+                    </a>
+                </div>
+                {% endif %}
+                {% if cta_secondary %}
+                <a href="{{ cta_secondary.link }}" class="text-blue-600 hover:text-blue-500 font-mono text-base">
+                    {{ cta_secondary.text }} →
+                </a>
+                {% endif %}
+            </div>
+            {% endif %}
         </div>
     </div>
 </div>

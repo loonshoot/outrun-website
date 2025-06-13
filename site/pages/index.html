@@ -1,136 +1,338 @@
 ---
 permalink: /
 metaTitle: "Outrun: Simple Data Management Platform | Turbocharge Your Data"
-metaDescription: "Outrun is the modern data platform that unlocks your full potential. Connect any data source, build powerful automations, and leverage AI & ML apps to outrun the competition. Join the waitlist today!"
-content_blocks:
-  # An example of using bookshop via array structures.
-  # On CloudCannon, these structures are configured automatically for you.
-  # To follow this array being rendered, see layouts/default.liquid
-  - _bookshop_name: block/hero-with-form
-    title: "Turbo charge your data, Outrun the competition."
-    subtitle: "Outrun is the future of data, the modern data platform that unlocks your full potential."
-    image: "https://cdn.getoutrun.com/website/images/highway-to-future.png"
-    background: "Pink"
-  - _bookshop_name: block/carousel
-    title: Recommended Reads
-    cards:
-    - title: "What is a data lakehouse?"
-      description: "A single place for all your business data."
-      subtitle: ""
-      link: "#"
-      background: "Yellow"
-      button: 
-        background: "Pink"
-        border: "Light"
-        text: "Read more"
-        link: /learn/what-is-a-data-lakehouse
-    - title: "Why & what is a data lake?"
-      description: "Your tool to storing your data until you know what to do with it."
-      link: "#"
-      background: "Blue"
-      button: 
-        background: "Pink"
-        border: "Light"
-        text: "Read more"
-        link: /learn/what-is-a-data-lake
-    - title: "Data problems are people problems"
-      description: "Actionable tips to build a data-driven culture and unlock growth."
-      link: "#"
-      background: "Green"
-      button: 
-        background: "Pink"
-        border: "Light"
-        text: "Read more"
-        link: /learn/data-problems-are-people-problems
-    - title: "Data Lake vs Data Warehouse"
-      description: "Combining both unlocks hidden potential for your business."
-      subtitle: ""
-      link: "#"
-      background: "Yellow"
-      button: 
-        background: "Pink"
-        border: "Light"
-        text: "Read more"
-        link: /learn/data-lake-vs-data-warehouse
-    - title: "What is a data warehouse?"
-      description: "Where you store all things ordered and ready to use."
-      subtitle: ""
-      link: "#"
-      background: "Yellow"
-      button: 
-        background: "Pink"
-        border: "Light"
-        text: "Read more"
-        link: /learn/what-is-a-data-warehouse
-    - title: "How to build a Data Lake"
-      description: "A Step-by-step Guide to Building a Data Lake for Your Business."
-      subtitle: ""
-      link: "#"
-      background: "Yellow"
-      button: 
-        background: "Pink"
-        border: "Light"
-        text: "Read more"
-        link: /learn/how-to-build-a-data-lake
-    - title: "How to build a Data Warehouse"
-      description: "A Step-by-step Guide to Building a Data Warehouse for Your Business"
-      subtitle: ""
-      link: "#"
-      background: "Yellow"
-      button: 
-        background: "Pink"
-        border: "Light"
-        text: "Read more"
-        link: /learn/how-to-build-a-data-warehouse
-  - _bookshop_name: block/sectiontitle
-    title: "What is outrun?"
-    subtitle: "Your data HQ."
-    background: "Yellow"
-    textColor: dark
-  - _bookshop_name: block/twocolumn
-    title: "Turn data into your competitive advantage."
-    subtitle: "You have data, it's everywhere, it's hard to access. Outrun is the place that allows you to consolidate and harness its potential."
-    image: "https://cdn.getoutrun.com/website/images/highway-to-the-same-place.png"
-    background: "Pink"
-    linkUrl: "#"
-    linkText: "Read more"
-  - _bookshop_name: block/twocolumn
-    title: "Connect any data source or destination."
-    subtitle: "Connect to your data sources with premade connectors, build custom connectors for neiche apps & databases."
-    flex: reverse
-    image: "https://cdn.getoutrun.com/website/images/outrun-style-gps-map.png"
-    background:
-    textColor: light
-    linkUrl: "#"
-    linkText: "Read more"
-  - _bookshop_name: block/twocolumn
-    title: "Just drag, drop & press start."
-    subtitle: "Build data automations with our drag-and-drop workflow builder, and deliver data to the applications that power your business."
-    image: "https://cdn.getoutrun.com/website/images/mock-user-interface.png"
-    background: "cyan"
-    textColor: dark
-    linkUrl: "#"
-    linkText: "Read more"
-  - _bookshop_name: block/twocolumn
-    flex: reverse
-    title: "Apps that unlock exceptional potential."
-    subtitle: "Add high-octane AI, Machine Learning & Apps to your data, pushing the limits on what your can achieve."
-    image: "https://cdn.getoutrun.com/website/images/8-ball-app-icon.png"
-    textColor: light
-    linkUrl: "#"
-    linkText: "Read more"
-  - _bookshop_name: block/subscribebanner
-    title: "Join the waitlist. Stay up to date."
-    subtitle: "Subscribe to be the first to experience outrun."
-    background: "Yellow"
-    textColor: dark
-note_html: >-
-  <p>You can also use the bookshop tag directly.</p>
+metaDescription: "Outrun is the modern data platform that unlocks your full potential. Connect any data source, build powerful automations, and leverage AI & ML apps to outrun the competition."
+layout: layouts/default.liquid
 ---
 
-{% comment %}
-  # An example of using the bookshop tag directly,
-  # as you would use an include in standard liquid.
-  # Components are referenced by component name,
-  # rather than a fully qualified path.
-{% endcomment %}
+<link rel="stylesheet" href="/assets/css/homepage.css">
+
+<!-- Full Screen Hero Section -->
+<section class="hero-section bg-gradient-to-br from-yellow-400 via-pink-600 to-purple-600 relative overflow-hidden h-screen lg:h-[90vh]">
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="grid-pattern"></div>
+  </div>
+  
+
+  
+  <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-16 h-screen lg:h-[90vh] flex items-center">
+    <div class="grid lg:grid-cols-2 gap-12 items-start w-full">
+              <!-- Hero Content -->
+        <div class="space-y-8 -mt-16">
+        <div class="space-y-6">
+                      <h1 class="text-5xl lg:text-6xl font-bold font-mono text-white leading-tight hero-title">
+            Turbocharge your data,
+            <span class="text-yellow-300 drop-shadow-lg">Outrun</span> the competition
+          </h1>
+          <p class="text-xl text-white leading-relaxed max-w-2xl">
+            The modern data platform that connects everything, transforms anything, and unlocks your full potential with zero-code simplicity.
+          </p>
+        </div>
+        
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 items-start">
+          <div class="group h-12 relative w-64">
+            <a href="https://app.getoutrun.com">
+              <button class="flex items-center w-full h-12 absolute bg-dark hover:bg-gray-800 transition-colors">
+                <div class="flex items-center w-full text-center text-light text-lg font-normal font-mono">
+                  <p class="text-center w-full pt-1 group-hover:pt-0">Start Free Trial</p>
+                </div>
+              </button>
+              <div class="flex w-full h-12 top-1 left-1 group-hover:top-0 group-hover:left-0 absolute border-solid border-2 border-light">
+              </div>
+            </a>
+          </div>
+          
+          <a href="/pricing" class="text-white hover:text-yellow-300 font-mono text-lg mt-2">View Pricing →</a>
+        </div>
+      </div>
+      
+              <!-- Hero Image -->
+        <div class="relative self-end">
+          <img src="https://cdn.getoutrun.com/website/images/highway-to-future.png" 
+               alt="Data highway visualization" 
+               class="w-full h-auto max-w-lg mx-auto drop-shadow-2xl">
+        </div>
+    </div>
+  </div>
+</section>
+
+<!-- Recommended Reads Carousel - Overlapping -->
+<section class="recommended-reads-carousel relative -mt-32 z-20 w-full">
+  <div class="w-full">
+    <div class="bg-transparent pt-16 pb-8">
+      <div class="carousel-container overflow-hidden px-6">
+        <div id="carousel-track" class="flex transition-transform duration-300 gap-6">
+          {% for article in collections.learn limit: 6 %}
+          <article class="article-card bg-dark border-2 border-gray-600 overflow-hidden hover:transform hover:scale-105 transition-all duration-300 flex-shrink-0 w-80">
+            <div class="article-image h-48">
+              <div class="placeholder-image bg-gradient-to-br from-blue-500 to-cyan-500 w-full h-full"></div>
+            </div>
+            <div class="article-content p-6">
+              <h3 class="article-title text-xl font-semibold text-light mb-3 leading-tight">
+                <a href="{{ article.url }}" class="hover:text-yellow-400 transition-colors">
+                  {{ article.data.title }}
+                </a>
+              </h3>
+              <p class="article-excerpt text-gray-300 text-sm mb-4 line-clamp-3">
+                {{ article.data.description }}
+              </p>
+              <div class="article-meta text-xs text-light">
+                <span class="author font-medium">{{ article.data.author }}</span>
+                <span class="separator mx-1">|</span>
+                <span class="date">{{ article.data.date | date: "%b %d, %Y" }}</span>
+              </div>
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+      
+      <!-- Carousel Controls Below Cards -->
+      <div class="flex justify-center gap-4 mt-8">
+        <button id="carousel-prev" class="w-10 h-10 bg-yellow-400 text-dark font-mono font-bold hover:bg-yellow-300 transition-colors">
+          ←
+        </button>
+        <button id="carousel-next" class="w-10 h-10 bg-yellow-400 text-dark font-mono font-bold hover:bg-yellow-300 transition-colors">
+          →
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Value Propositions Section -->
+<section class="value-props-section bg-dark py-20">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl lg:text-5xl font-bold font-mono text-yellow-400 mb-6">
+        Why Choose Outrun?
+      </h2>
+      <p class="text-xl text-light max-w-3xl mx-auto leading-relaxed">
+        Transform your data operations with our modern platform built for speed, simplicity, and scale.
+      </p>
+    </div>
+    
+    <!-- Value Prop 1: Connect Everything -->
+    <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
+      <div class="space-y-6">
+        <div class="inline-flex items-center justify-center w-12 h-12 bg-yellow-400">
+          <span class="text-2xl">🔗</span>
+        </div>
+        <h3 class="text-2xl font-bold font-mono text-light">
+          Connect any data source or destination
+        </h3>
+        <p class="text-xl text-light leading-relaxed">
+          500+ pre-built connectors for databases, APIs, cloud services, and SaaS applications. 
+          No complex configurations, no vendor lock-in. Just plug and play.
+        </p>
+        <ul class="space-y-2 text-light">
+          <li class="flex items-center">
+            <span class="text-yellow-400 mr-3">✓</span>
+            Zero-code data imports
+          </li>
+          <li class="flex items-center">
+            <span class="text-yellow-400 mr-3">✓</span>
+            Real-time and batch processing
+          </li>
+          <li class="flex items-center">
+            <span class="text-yellow-400 mr-3">✓</span>
+            Custom connector builder
+          </li>
+        </ul>
+      </div>
+      <div class="relative">
+        <img src="https://cdn.getoutrun.com/website/images/outrun-style-gps-map.png" 
+             alt="Data connections visualization" 
+             class="w-full h-auto shadow-2xl">
+      </div>
+    </div>
+    
+    <!-- Value Prop 2: Visual Workflows -->
+    <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
+      <div class="order-2 lg:order-1 relative">
+        <img src="https://cdn.getoutrun.com/website/images/mock-user-interface.png" 
+             alt="Drag and drop interface" 
+             class="w-full h-auto shadow-2xl">
+      </div>
+      <div class="order-1 lg:order-2 space-y-6">
+        <div class="inline-flex items-center justify-center w-12 h-12 bg-pink-600">
+          <span class="text-2xl">🎯</span>
+        </div>
+        <h3 class="text-2xl font-bold font-mono text-light">
+          Just drag, drop & press start
+        </h3>
+        <p class="text-xl text-light leading-relaxed">
+          Build powerful data pipelines with our visual workflow builder. No coding required. 
+          Transform, clean, and route your data with simple drag-and-drop operations.
+        </p>
+        <ul class="space-y-2 text-light">
+          <li class="flex items-center">
+            <span class="text-pink-600 mr-3">✓</span>
+            Visual pipeline builder
+          </li>
+          <li class="flex items-center">
+            <span class="text-pink-600 mr-3">✓</span>
+            Advanced data transformations
+          </li>
+          <li class="flex items-center">
+            <span class="text-pink-600 mr-3">✓</span>
+            Real-time monitoring
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Value Prop 3: AI & ML Apps -->
+    <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+      <div class="space-y-6">
+        <div class="inline-flex items-center justify-center w-12 h-12 bg-cyan-400">
+          <span class="text-2xl">🚀</span>
+        </div>
+        <h3 class="text-2xl font-bold font-mono text-light">
+          AI & ML apps that unlock potential
+        </h3>
+        <p class="text-xl text-light leading-relaxed">
+          Supercharge your data with built-in AI and machine learning capabilities. 
+          From predictive analytics to automated insights, push the limits of what you can achieve.
+        </p>
+        <ul class="space-y-2 text-light">
+          <li class="flex items-center">
+            <span class="text-cyan-400 mr-3">✓</span>
+            Pre-built ML models
+          </li>
+          <li class="flex items-center">
+            <span class="text-cyan-400 mr-3">✓</span>
+            Automated data quality checks
+          </li>
+          <li class="flex items-center">
+            <span class="text-cyan-400 mr-3">✓</span>
+            Intelligent data profiling
+          </li>
+        </ul>
+      </div>
+      <div class="relative">
+        <img src="https://cdn.getoutrun.com/website/images/8-ball-app-icon.png" 
+             alt="AI and ML applications" 
+             class="w-full h-auto max-w-md mx-auto">
+      </div>
+    </div>
+    
+    <!-- Explore Features Link -->
+    <div class="text-center">
+      <a href="/features" class="text-pink-600 hover:text-pink-500 font-mono text-lg">Explore All Features →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Integrations Section -->
+<section class="integrations-section bg-yellow-400 py-20">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl lg:text-5xl font-bold font-mono text-dark mb-6">
+        Connect to everything
+      </h2>
+      <p class="text-xl text-dark max-w-3xl mx-auto leading-relaxed">
+        500+ connectors and growing. From databases to SaaS applications, we've got you covered.
+      </p>
+    </div>
+    
+    <!-- Scrolling Logo Section -->
+    <div class="integration-logos-container overflow-hidden relative mb-12">
+      <div class="integration-logos-scroll flex items-center space-x-12 animate-scroll">
+        <!-- Row 1 -->
+        <div class="flex items-center justify-center w-24 h-24 bg-dark flex-shrink-0">
+          <span class="text-2xl font-bold text-yellow-400">SF</span>
+        </div>
+        <div class="flex items-center justify-center w-24 h-24 bg-dark flex-shrink-0">
+          <span class="text-2xl font-bold text-pink-600">HS</span>
+        </div>
+        <div class="flex items-center justify-center w-24 h-24 bg-dark flex-shrink-0">
+          <span class="text-2xl font-bold text-cyan-400">PG</span>
+        </div>
+        <div class="flex items-center justify-center w-24 h-24 bg-dark flex-shrink-0">
+          <span class="text-2xl font-bold text-light">MY</span>
+        </div>
+        <div class="flex items-center justify-center w-24 h-24 bg-dark flex-shrink-0">
+          <span class="text-2xl font-bold text-yellow-400">ZH</span>
+        </div>
+        <div class="flex items-center justify-center w-24 h-24 bg-dark flex-shrink-0">
+          <span class="text-2xl font-bold text-pink-600">GS</span>
+        </div>
+        <div class="flex items-center justify-center w-24 h-24 bg-dark flex-shrink-0">
+          <span class="text-2xl font-bold text-cyan-400">CF</span>
+        </div>
+        <div class="flex items-center justify-center w-24 h-24 bg-dark flex-shrink-0">
+          <span class="text-2xl font-bold text-light">AW</span>
+        </div>
+        <!-- Duplicate for seamless scroll -->
+        <div class="flex items-center justify-center w-24 h-24 bg-dark flex-shrink-0">
+          <span class="text-2xl font-bold text-yellow-400">SF</span>
+        </div>
+        <div class="flex items-center justify-center w-24 h-24 bg-dark flex-shrink-0">
+          <span class="text-2xl font-bold text-pink-600">HS</span>
+        </div>
+        <div class="flex items-center justify-center w-24 h-24 bg-dark flex-shrink-0">
+          <span class="text-2xl font-bold text-cyan-400">PG</span>
+        </div>
+        <div class="flex items-center justify-center w-24 h-24 bg-dark flex-shrink-0">
+          <span class="text-2xl font-bold text-light">MY</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- View All Integrations Link -->
+    <div class="text-center">
+      <a href="/integrations" class="text-pink-600 hover:text-pink-500 font-mono text-lg">View all integrations →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA Section -->
+<section class="final-cta-section bg-dark py-20 relative">
+  <!-- Geometric Pattern Background -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="geometric-pattern"></div>
+  </div>
+  
+  <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center">
+    <div class="space-y-8">
+      <h2 class="text-4xl lg:text-5xl font-bold font-mono text-light leading-tight">
+        Ready to <span class="text-yellow-400">outrun</span> your competition?
+      </h2>
+      <p class="text-xl text-light leading-relaxed max-w-2xl mx-auto">
+        Join thousands of companies already using Outrun to transform their data operations. 
+        Start your free trial today, no credit card required.
+      </p>
+      
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+        <div class="group h-14 relative w-72">
+          <a href="https://app.getoutrun.com">
+            <button class="flex items-center w-full h-14 absolute bg-yellow-400 hover:bg-yellow-300 transition-colors">
+              <div class="flex items-center w-full text-center text-dark text-xl font-normal font-mono">
+                <p class="text-center w-full pt-1 group-hover:pt-0">Start Free Trial</p>
+              </div>
+            </button>
+            <div class="flex w-full h-14 top-1 left-1 group-hover:top-0 group-hover:left-0 absolute border-solid border-2 border-light">
+            </div>
+          </a>
+        </div>
+        
+        <a href="/pricing" class="text-pink-600 hover:text-pink-500 font-mono text-xl">View Pricing →</a>
+      </div>
+      
+
+      
+      <div class="text-center pt-4">
+        <p class="text-sm font-mono text-light">
+          ✓ No credit card required  ✓ Free tier available  ✓ Cancel anytime
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="/assets/js/carousel.js"></script> 
