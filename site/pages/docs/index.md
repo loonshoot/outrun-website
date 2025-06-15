@@ -129,6 +129,4 @@ We're here to support you every step of the way:
   </div>
 </div>
 
----
-
 *Last updated: {{ "now" | date: "%B %d, %Y" }}* 
