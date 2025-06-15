@@ -27,7 +27,7 @@
 .docs-content-wrapper {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 2rem 200px 2rem; /* No top padding */
+    padding: 0 2rem; /* No top or bottom padding */
     padding-right: 280px; /* Make space for fixed TOC */
 }
 
@@ -38,6 +38,7 @@
 /* Footer positioning fix */
 .docs-layout + * {
     margin-left: 280px; /* Push footer to the right of sidebar */
+    margin-top: 0; /* Remove any top margin */
     z-index: 10;
     position: relative;
 }
@@ -93,6 +94,7 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    padding-left: 0;
 }
 
 .docs-toc-container li {
@@ -229,7 +231,7 @@
 
     .docs-toc-mobile {
         display: block; /* Show on mobile */
-        margin: 2rem 0;
+        margin: 2rem 0 0 0; /* No bottom margin */
     }
 
     .docs-toc-toggle {
@@ -280,6 +282,14 @@
         margin-left: 0; /* Reset footer margin on mobile */
     }
 
+    /* Mobile-specific adjustments */
+    .docs-main {
+        margin-top: 0; /* No margin top on mobile */
+    }
+
+    .docs-content-wrapper {
+        padding-bottom: 0; /* No bottom padding on mobile */
+    }
 
 }
 
@@ -465,7 +475,7 @@
 
 /* Breadcrumbs */
 .docs-breadcrumbs {
-    margin: 1rem 0 2rem 0;
+    margin: 0;
 }
 
 .docs-breadcrumbs ol {
@@ -614,26 +624,34 @@
 
 /* Docs Footer Styles */
 .docs-footer {
-    margin-top: 4rem;
-    padding-top: 2rem;
-    border-top: 1px solid #334155;
     position: relative;
     z-index: 1;
+}
+
+/* Match footer padding to main content */
+.docs-footer .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 /* Ensure footer doesn't overlap sidebar */
 @media (min-width: 1024px) {
     .docs-footer {
-        margin-left: 0; /* Reset any margins */
-        width: 100%;
+        margin-left: 280px; /* Align with main content */
+        width: calc(100% - 280px);
     }
 }
 
 /* Mobile footer spacing */
 @media (max-width: 1023px) {
     .docs-footer {
-        margin-top: 2rem;
-        padding-top: 1rem;
+        /* No additional spacing on mobile */
+    }
+
+    /* Match footer padding to main content on mobile */
+    .docs-footer .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 }
 
