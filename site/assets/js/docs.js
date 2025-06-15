@@ -60,7 +60,7 @@
                 subsection.style.maxHeight = '1000px';
             }
         }, 300);
-        }
+    }
 
     function collapseSection(section) {
         const subsection = section.querySelector('.docs-subsection');
@@ -125,7 +125,7 @@
             // Navigate sections with arrow keys when focused
             if (document.activeElement.classList.contains('docs-section-toggle')) {
                 if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
-                    e.preventDefault();
+                e.preventDefault();
                     const toggles = Array.from(sectionToggles);
                     const currentIndex = toggles.indexOf(document.activeElement);
                     
@@ -137,7 +137,7 @@
                 }
                 
                 if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
+                e.preventDefault();
                     document.activeElement.click();
                 }
             }
@@ -242,7 +242,7 @@
                 const listItem = document.createElement('li');
                 listItem.className = `toc-${heading.tagName.toLowerCase()}`;
                 
-                const link = document.createElement('a');
+            const link = document.createElement('a');
             link.href = `#${heading.id}`;
             link.textContent = heading.textContent;
                 

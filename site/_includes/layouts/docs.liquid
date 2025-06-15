@@ -137,7 +137,7 @@
         <!-- Main Content -->
         <main class="docs-main">
             <div class="docs-content-wrapper">
-                <div class="docs-content">
+            <div class="docs-content">
                     <!-- Article Content -->
                     <article class="docs-article">
                         {{ content }}
@@ -145,8 +145,8 @@
                         <!-- Dynamic Breadcrumbs (inserted after H1 via CSS) -->
                         {% assign path_segments = page.url | split: '/' | where_exp: "segment", "segment != ''" %}
                         {% if path_segments.size > 0 and path_segments[0] == 'docs' %}
-                        <nav class="docs-breadcrumbs" aria-label="Breadcrumb">
-                            <ol>
+                <nav class="docs-breadcrumbs" aria-label="Breadcrumb">
+                    <ol>
                                 <!-- Home -->
                                 <li><a href="/">Home</a></li>
                                 <li aria-hidden="true">></li>
@@ -172,14 +172,14 @@
                                         <li><a href="{{ current_path }}/">{{ segment_title }}</a></li>
                                         <li aria-hidden="true">></li>
                                     {% endunless %}
-                                {% endfor %}
+                        {% endfor %}
                                 
                                 <!-- Current page (use title from frontmatter) -->
                                 <li class="current">{{ title }}</li>
-                            </ol>
-                        </nav>
-                        {% endif %}
-                    </article>
+                    </ol>
+                </nav>
+                {% endif %}
+                </article>
                 </div>
 
                 <!-- Desktop TOC (fixed positioned on desktop) -->
