@@ -2,13 +2,66 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
+    const mobileDocsNav = document.getElementById('mobile-docs-nav');
+    const mobileMainNav = document.getElementById('mobile-main-nav');
+    const backToMainMenuBtn = document.getElementById('back-to-main-menu');
     
     if (mobileMenuBtn && mobileMenu) {
         mobileMenuBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            mobileMenu.classList.toggle('hidden');
+            
+            // Check if we're on a docs page
+            if (window.location.pathname.startsWith('/docs/')) {
+                // Show docs navigation
+                mobileMenu.classList.toggle('hidden');
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileDocsNav.classList.remove('hidden');
+                    mobileMainNav.classList.add('hidden');
+                }
+            } else {
+                // Normal mobile menu behavior
+                mobileMenu.classList.toggle('hidden');
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMainNav.classList.remove('hidden');
+                    mobileDocsNav.classList.add('hidden');
+                }
+            }
         });
     }
+    
+    // Back to main menu button
+    if (backToMainMenuBtn) {
+        backToMainMenuBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            mobileDocsNav.classList.add('hidden');
+            mobileMainNav.classList.remove('hidden');
+        });
+    }
+    
+    // Mobile docs section toggles
+    const mobileDocsSectionBtns = document.querySelectorAll('.mobile-docs-section-btn');
+    mobileDocsSectionBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const section = this.getAttribute('data-section');
+            const subsection = document.querySelector(`.mobile-docs-subsection[data-section="${section}"]`);
+            const arrow = this.querySelector('.mobile-docs-arrow');
+            
+            if (subsection && arrow) {
+                subsection.classList.toggle('hidden');
+                arrow.classList.toggle('rotate-180');
+            }
+        });
+    });
+    
+    // Expose function for docs pages
+    window.openDocsNav = function() {
+        if (mobileMenu && mobileDocsNav && mobileMainNav) {
+            mobileMenu.classList.remove('hidden');
+            mobileDocsNav.classList.remove('hidden');
+            mobileMainNav.classList.add('hidden');
+        }
+    };
     
     // Mobile features toggle
     const mobileFeaturesBtn = document.querySelector('.mobile-features-btn');

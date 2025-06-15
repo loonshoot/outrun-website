@@ -35,45 +35,40 @@
     {% bookshop "block/menu" bind: menu %}
     
     <div class="docs-layout">
-        <!-- Mobile menu toggle -->
-        <button 
-            id="mobile-menu-toggle" 
-            class="fixed top-4 left-4 z-50 p-2 rounded-md lg:hidden"
-            aria-label="Toggle navigation menu"
-        >
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-        </button>
+
 
         <!-- Sidebar Navigation -->
         <nav class="docs-sidebar" id="docs-sidebar">
             <!-- Header Section -->
             <div class="docs-header">
                 <h2 class="docs-title">Documentation</h2>
-                <input 
-                    type="text" 
-                    id="docs-search" 
-                    placeholder="Search docs..."
-                    autocomplete="off"
-                >
             </div>
 
             <!-- Navigation Groups -->
             <div class="docs-nav">
                 <!-- Getting Started Group -->
-                <div class="docs-nav-group">
-                    <div class="docs-nav-group-title">Getting Started</div>
-                    <div class="docs-nav-items">
+                <div class="docs-nav-group docs-section" data-section="getting-started">
+                    <button class="docs-section-toggle" aria-expanded="false">
+                        <span>Getting Started</span>
+                        <svg class="docs-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                    <div class="docs-subsection">
                         <a href="/docs/" class="docs-nav-link">Overview</a>
                         <a href="/docs/getting-started/" class="docs-nav-link">Quick Start</a>
                     </div>
                 </div>
 
                 <!-- Core Concepts Group -->
-                <div class="docs-nav-group">
-                    <div class="docs-nav-group-title">Core Concepts</div>
-                    <div class="docs-nav-items">
+                <div class="docs-nav-group docs-section" data-section="concepts">
+                    <button class="docs-section-toggle" aria-expanded="false">
+                        <span>Core Concepts</span>
+                        <svg class="docs-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                    <div class="docs-subsection">
                         <a href="/docs/concepts/" class="docs-nav-link">Overview</a>
                         <a href="/docs/concepts/objects/" class="docs-nav-link">Objects</a>
                         <a href="/docs/concepts/ingestion/" class="docs-nav-link">Ingestion</a>
@@ -85,9 +80,14 @@
                 </div>
 
                 <!-- Sources Group -->
-                <div class="docs-nav-group">
-                    <div class="docs-nav-group-title">Sources</div>
-                    <div class="docs-nav-items">
+                <div class="docs-nav-group docs-section" data-section="sources">
+                    <button class="docs-section-toggle" aria-expanded="false">
+                        <span>Sources</span>
+                        <svg class="docs-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                    <div class="docs-subsection">
                         <a href="/docs/sources/" class="docs-nav-link">Overview</a>
                         <a href="/docs/sources/hubspot/" class="docs-nav-link">HubSpot</a>
                         <a href="/docs/sources/salesforce/" class="docs-nav-link">Salesforce</a>
@@ -98,9 +98,14 @@
                 </div>
 
                 <!-- Destinations Group -->
-                <div class="docs-nav-group">
-                    <div class="docs-nav-group-title">Destinations</div>
-                    <div class="docs-nav-items">
+                <div class="docs-nav-group docs-section" data-section="destinations">
+                    <button class="docs-section-toggle" aria-expanded="false">
+                        <span>Destinations</span>
+                        <svg class="docs-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                    <div class="docs-subsection">
                         <a href="/docs/destinations/" class="docs-nav-link">Overview</a>
                         <a href="/docs/destinations/hubspot/" class="docs-nav-link">HubSpot</a>
                         <a href="/docs/destinations/salesforce/" class="docs-nav-link">Salesforce</a>
@@ -109,9 +114,14 @@
                 </div>
 
                 <!-- Support Group -->
-                <div class="docs-nav-group">
-                    <div class="docs-nav-group-title">Support</div>
-                    <div class="docs-nav-items">
+                <div class="docs-nav-group docs-section" data-section="support">
+                    <button class="docs-section-toggle" aria-expanded="false">
+                        <span>Support</span>
+                        <svg class="docs-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                    <div class="docs-subsection">
                         <a href="/docs/support/" class="docs-nav-link">Overview</a>
                         <a href="/docs/support/faq/" class="docs-nav-link">FAQ</a>
                         <a href="/docs/support/changelog/" class="docs-nav-link">Changelog</a>
@@ -126,27 +136,59 @@
 
         <!-- Main Content -->
         <main class="docs-main">
-            <div class="docs-content">
-                <!-- Breadcrumbs -->
-                {% if breadcrumbs and breadcrumbs.size > 0 %}
-                <nav class="docs-breadcrumbs" aria-label="Breadcrumb">
-                    <ol>
-                        {% for crumb in breadcrumbs %}
-                            {% if forloop.last %}
-                                <li class="current">{{ crumb.title }}</li>
-                            {% else %}
-                                <li><a href="{{ crumb.url }}">{{ crumb.title }}</a></li>
-                                <li aria-hidden="true">/</li>
-                            {% endif %}
-                        {% endfor %}
-                    </ol>
-                </nav>
-                {% endif %}
+            <div class="docs-content-wrapper">
+                <div class="docs-content">
+                    <!-- Article Content -->
+                    <article class="docs-article">
+                        {{ content }}
+                        
+                        <!-- Dynamic Breadcrumbs (inserted after H1 via CSS) -->
+                        {% assign path_segments = page.url | split: '/' | where_exp: "segment", "segment != ''" %}
+                        {% if path_segments.size > 0 and path_segments[0] == 'docs' %}
+                        <nav class="docs-breadcrumbs" aria-label="Breadcrumb">
+                            <ol>
+                                <!-- Home -->
+                                <li><a href="/">Home</a></li>
+                                <li aria-hidden="true">></li>
+                                
+                                <!-- Documentation -->
+                                <li><a href="/docs/">Documentation</a></li>
+                                <li aria-hidden="true">></li>
+                                
+                                <!-- Intermediate segments -->
+                                {% assign current_path = '/docs' %}
+                                {% for segment in path_segments offset: 1 %}
+                                    {% assign current_path = current_path | append: '/' | append: segment %}
+                                    {% unless forloop.last %}
+                                        {% assign segment_title = segment | replace: '-', ' ' | capitalize %}
+                                        {% case segment_title %}
+                                            {% when 'Hubspot' %}
+                                                {% assign segment_title = 'HubSpot' %}
+                                            {% when 'Zoho crm' %}
+                                                {% assign segment_title = 'Zoho CRM' %}
+                                            {% when 'Google search console' %}
+                                                {% assign segment_title = 'Google Search Console' %}
+                                        {% endcase %}
+                                        <li><a href="{{ current_path }}/">{{ segment_title }}</a></li>
+                                        <li aria-hidden="true">></li>
+                                    {% endunless %}
+                                {% endfor %}
+                                
+                                <!-- Current page (use title from frontmatter) -->
+                                <li class="current">{{ title }}</li>
+                            </ol>
+                        </nav>
+                        {% endif %}
+                    </article>
+                </div>
 
-                <!-- Article Content -->
-                <article class="docs-article">
-                    {{ content }}
-                </article>
+                <!-- Desktop TOC (fixed positioned on desktop) -->
+                <div class="docs-toc-desktop">
+                    <div class="docs-toc-container">
+                        <!-- TOC will be generated by JavaScript -->
+                    </div>
+                </div>
+            </div>
 
                 <!-- Pagination -->
                 {% if pagination %}

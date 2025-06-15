@@ -23,7 +23,7 @@ Your Outrun account is personal to you and designed for security and simplicity.
 <div class="bg-dark-light border border-gray-600 rounded-lg p-6 my-6">
   <h3 class="text-yellow text-lg font-semibold mb-3">🔐 Why Magic Links?</h3>
   <p class="text-gray-300">We use magic links instead of passwords because we don't want to store your passwords. This approach also sets us up perfectly for the SSO features we have planned for later.</p>
-</div>
+    </div>
 
 1. **Visit** [app.getoutrun.com](https://app.getoutrun.com)
 2. **Enter your email** address
@@ -43,8 +43,8 @@ Sources are where your data comes from. We currently support **{{ sources.count 
 <div class="bg-yellow bg-opacity-10 border border-yellow rounded-lg p-6 my-6">
   <h3 class="text-yellow text-lg font-semibold mb-3">💡 Pro Tip</h3>
   <p class="text-gray-300">Start with a source that has data you're familiar with. HubSpot is great for testing because it has clear contact and company structures.</p>
-</div>
-
+  </div>
+  
 ## Step 3: Authenticate Your Source
 
 Next, you'll need to connect Outrun to your HubSpot account.
@@ -62,8 +62,8 @@ Next, you'll need to connect Outrun to your HubSpot account.
     <li>• Permission scopes you've granted</li>
   </ul>
   <p class="text-gray-300 mt-3">This allows us to keep your data in sync automatically without you having to re-authenticate.</p>
-</div>
-
+  </div>
+  
 ## Step 4: Name Your Source
 
 We allow you to name your sources because some organizations have multiple instances of the same application.
@@ -79,8 +79,8 @@ Your source will start syncing immediately after setup.
 <div class="bg-dark-light border border-gray-600 rounded-lg p-6 my-6">
   <h4 class="text-light font-semibold mb-3">⚡ Rate Limiting</h4>
   <p class="text-gray-300">Outrun uses standard rate limiting to manage requests at a volume the service can handle. If you have higher API limits, let us know—we're interested in how this feature might offer some customization options.</p>
-</div>
-
+  </div>
+  
 **What happens during sync:**
 
 1. **Initial data pull** - We fetch all existing data from your source

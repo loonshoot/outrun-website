@@ -8,24 +8,22 @@ layout: layouts/default.liquid
 <link rel="stylesheet" href="/assets/css/homepage.css">
 
 <!-- Full Screen Hero Section -->
-<section class="hero-section bg-gradient-to-br from-yellow-400 via-pink-600 to-purple-600 relative overflow-hidden h-screen lg:h-[90vh]">
+<section class="hero-section bg-gradient-to-br from-yellow-400 via-pink-600 to-purple-600 min-h-screen relative overflow-hidden">
   <!-- Background Pattern -->
   <div class="absolute inset-0 opacity-10">
     <div class="grid-pattern"></div>
   </div>
   
-
-  
-  <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-16 h-screen lg:h-[90vh] flex items-center">
-    <div class="grid lg:grid-cols-2 gap-12 items-start w-full">
-              <!-- Hero Content -->
-        <div class="space-y-8 -mt-16">
+  <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-20 min-h-screen flex items-center">
+    <div class="grid lg:grid-cols-2 gap-12 items-center w-full">
+      <!-- Hero Content -->
+      <div class="space-y-8">
         <div class="space-y-6">
-                      <h1 class="text-5xl lg:text-6xl font-bold font-mono text-white leading-tight hero-title">
+          <h1 class="text-4xl lg:text-5xl font-bold font-mono text-white leading-tight hero-title">
             Turbocharge your data,
             <span class="text-yellow-300 drop-shadow-lg">Outrun</span> the competition
           </h1>
-          <p class="text-xl text-white leading-relaxed max-w-2xl">
+          <p class="text-xl text-white leading-relaxed max-w-2xl hero-subtitle bg-black/30 p-6">
             The modern data platform that connects everything, transforms anything, and unlocks your full potential with zero-code simplicity.
           </p>
         </div>
@@ -48,18 +46,18 @@ layout: layouts/default.liquid
         </div>
       </div>
       
-              <!-- Hero Image -->
-        <div class="relative self-end">
-          <img src="https://cdn.getoutrun.com/website/images/highway-to-future.png" 
-               alt="Data highway visualization" 
-               class="w-full h-auto max-w-lg mx-auto drop-shadow-2xl">
-        </div>
+      <!-- Hero Image -->
+      <div class="relative">
+        <img src="https://cdn.getoutrun.com/website/images/highway-to-future.png" 
+             alt="Data highway visualization" 
+             class="w-full h-auto max-w-lg mx-auto drop-shadow-2xl">
+      </div>
     </div>
   </div>
 </section>
 
 <!-- Recommended Reads Carousel - Overlapping -->
-<section class="recommended-reads-carousel relative -mt-32 z-20 w-full">
+<section class="recommended-reads-carousel relative -mt-24 z-20 w-full">
   <div class="w-full">
     <div class="bg-transparent pt-16 pb-8">
       <div class="carousel-container overflow-hidden px-6">
@@ -78,7 +76,7 @@ layout: layouts/default.liquid
               <p class="article-excerpt text-gray-300 text-sm mb-4 line-clamp-3">
                 {{ article.data.description }}
               </p>
-              <div class="article-meta text-xs text-light">
+              <div class="article-meta text-xs text-gray-400">
                 <span class="author font-medium">{{ article.data.author }}</span>
                 <span class="separator mx-1">|</span>
                 <span class="date">{{ article.data.date | date: "%b %d, %Y" }}</span>
@@ -302,7 +300,7 @@ layout: layouts/default.liquid
       <h2 class="text-4xl lg:text-5xl font-bold font-mono text-light leading-tight">
         Ready to <span class="text-yellow-400">outrun</span> your competition?
       </h2>
-      <p class="text-xl text-light leading-relaxed max-w-2xl mx-auto">
+      <p class="text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto">
         Join thousands of companies already using Outrun to transform their data operations. 
         Start your free trial today, no credit card required.
       </p>
@@ -324,15 +322,82 @@ layout: layouts/default.liquid
         <a href="/pricing" class="text-pink-600 hover:text-pink-500 font-mono text-xl">View Pricing →</a>
       </div>
       
-
+      <!-- Trust Indicators -->
+      <div class="pt-8 border-t border-gray-600">
+        <p class="text-sm font-mono text-gray-400 mb-4">Trusted by data teams at</p>
+        <div class="flex flex-wrap justify-center items-center gap-8">
+          <div class="text-lg font-bold font-mono text-gray-400">TechCorp</div>
+          <div class="text-lg font-bold font-mono text-gray-400">DataFlow Inc</div>
+          <div class="text-lg font-bold font-mono text-gray-400">Analytics Pro</div>
+          <div class="text-lg font-bold font-mono text-gray-400">CloudSync</div>
+        </div>
+      </div>
       
       <div class="text-center pt-4">
-        <p class="text-sm font-mono text-light">
-          ✓ No credit card required  ✓ Free tier available  ✓ Cancel anytime
+        <p class="text-sm font-mono text-gray-400">
+          ✓ No credit card required  ✓ 14-day free trial  ✓ Cancel anytime
         </p>
       </div>
     </div>
   </div>
 </section>
 
-<script src="/assets/js/carousel.js"></script> 
+<script>
+// Carousel functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const track = document.getElementById('carousel-track');
+  const prevBtn = document.getElementById('carousel-prev');
+  const nextBtn = document.getElementById('carousel-next');
+  const cards = track.querySelectorAll('.article-card');
+  const cardWidth = 320; // 80 * 4 (w-80 + gap)
+  let currentIndex = 0;
+  const maxIndex = Math.max(0, cards.length - 3); // Show 3 cards at a time
+
+  function updateCarousel() {
+    const translateX = -currentIndex * cardWidth;
+    track.style.transform = `translateX(${translateX}px)`;
+  }
+
+  prevBtn.addEventListener('click', function() {
+    currentIndex = Math.max(0, currentIndex - 1);
+    updateCarousel();
+  });
+
+  nextBtn.addEventListener('click', function() {
+    currentIndex = Math.min(maxIndex, currentIndex + 1);
+    updateCarousel();
+  });
+
+  // Touch/swipe support for mobile
+  let startX = 0;
+  let isDragging = false;
+
+  track.addEventListener('touchstart', function(e) {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+  });
+
+  track.addEventListener('touchmove', function(e) {
+    if (!isDragging) return;
+    e.preventDefault();
+  });
+
+  track.addEventListener('touchend', function(e) {
+    if (!isDragging) return;
+    const endX = e.changedTouches[0].clientX;
+    const diff = startX - endX;
+
+    if (Math.abs(diff) > 50) { // Minimum swipe distance
+      if (diff > 0) {
+        // Swipe left - next
+        currentIndex = Math.min(maxIndex, currentIndex + 1);
+      } else {
+        // Swipe right - prev
+        currentIndex = Math.max(0, currentIndex - 1);
+      }
+      updateCarousel();
+    }
+    isDragging = false;
+  });
+});
+</script> 

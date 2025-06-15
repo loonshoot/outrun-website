@@ -216,7 +216,117 @@
     <!-- Mobile menu -->
     <div id="mobile-menu" class="hidden md:hidden bg-dark border-b border-gray-800 absolute bottom-full left-0 right-0">
         <div class="container mx-auto py-4 space-y-2">
-            <div class="space-y-2">
+            <!-- Docs Navigation (only shown on docs pages) -->
+            <div id="mobile-docs-nav" class="hidden space-y-2">
+                <!-- Back to main menu button -->
+                <button type="button" class="w-full text-left text-light hover:text-pink-600 transition-colors font-mono px-4 py-2 flex items-center space-x-2 border-b border-gray-700 pb-4 mb-4" id="back-to-main-menu">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    <span>Back to main menu</span>
+                </button>
+                
+                <!-- Documentation Title -->
+                <div class="px-4 py-2">
+                    <h3 class="text-light font-mono text-lg font-semibold">Documentation</h3>
+                </div>
+                
+                <!-- Getting Started -->
+                <div class="space-y-2">
+                    <button type="button" class="w-full text-left text-light hover:text-pink-600 transition-colors font-mono px-4 py-2 flex items-center justify-between mobile-docs-section-btn" data-section="getting-started">
+                        Getting Started
+                        <svg class="w-4 h-4 transform transition-transform mobile-docs-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="hidden bg-grey-800 mx-4 mobile-docs-subsection" data-section="getting-started">
+                        <div class="p-4 space-y-2">
+                            <a href="/docs/" class="block text-light hover:text-pink-600 text-sm py-1">Overview</a>
+                            <a href="/docs/getting-started/" class="block text-light hover:text-pink-600 text-sm py-1">Quick Start</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Core Concepts -->
+                <div class="space-y-2">
+                    <button type="button" class="w-full text-left text-light hover:text-pink-600 transition-colors font-mono px-4 py-2 flex items-center justify-between mobile-docs-section-btn" data-section="concepts">
+                        Core Concepts
+                        <svg class="w-4 h-4 transform transition-transform mobile-docs-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="hidden bg-grey-800 mx-4 mobile-docs-subsection" data-section="concepts">
+                        <div class="p-4 space-y-2">
+                            <a href="/docs/concepts/" class="block text-light hover:text-pink-600 text-sm py-1">Overview</a>
+                            <a href="/docs/concepts/objects/" class="block text-light hover:text-pink-600 text-sm py-1">Objects</a>
+                            <a href="/docs/concepts/ingestion/" class="block text-light hover:text-pink-600 text-sm py-1">Ingestion</a>
+                            <a href="/docs/concepts/standardization/" class="block text-light hover:text-pink-600 text-sm py-1">Standardization</a>
+                            <a href="/docs/concepts/delivery/" class="block text-light hover:text-pink-600 text-sm py-1">Delivery</a>
+                            <a href="/docs/concepts/storage/" class="block text-light hover:text-pink-600 text-sm py-1">Storage</a>
+                            <a href="/docs/concepts/security/" class="block text-light hover:text-pink-600 text-sm py-1">Security & Compliance</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sources -->
+                <div class="space-y-2">
+                    <button type="button" class="w-full text-left text-light hover:text-pink-600 transition-colors font-mono px-4 py-2 flex items-center justify-between mobile-docs-section-btn" data-section="sources">
+                        Sources
+                        <svg class="w-4 h-4 transform transition-transform mobile-docs-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="hidden bg-grey-800 mx-4 mobile-docs-subsection" data-section="sources">
+                        <div class="p-4 space-y-2">
+                            <a href="/docs/sources/" class="block text-light hover:text-pink-600 text-sm py-1">Overview</a>
+                            <a href="/docs/sources/hubspot/" class="block text-light hover:text-pink-600 text-sm py-1">HubSpot</a>
+                            <a href="/docs/sources/salesforce/" class="block text-light hover:text-pink-600 text-sm py-1">Salesforce</a>
+                            <a href="/docs/sources/zoho-crm/" class="block text-light hover:text-pink-600 text-sm py-1">Zoho CRM</a>
+                            <a href="/docs/sources/confluence/" class="block text-light hover:text-pink-600 text-sm py-1">Confluence</a>
+                            <a href="/docs/sources/google-search-console/" class="block text-light hover:text-pink-600 text-sm py-1">Google Search Console</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Destinations -->
+                <div class="space-y-2">
+                    <button type="button" class="w-full text-left text-light hover:text-pink-600 transition-colors font-mono px-4 py-2 flex items-center justify-between mobile-docs-section-btn" data-section="destinations">
+                        Destinations
+                        <svg class="w-4 h-4 transform transition-transform mobile-docs-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="hidden bg-grey-800 mx-4 mobile-docs-subsection" data-section="destinations">
+                        <div class="p-4 space-y-2">
+                            <a href="/docs/destinations/" class="block text-light hover:text-pink-600 text-sm py-1">Overview</a>
+                            <a href="/docs/destinations/hubspot/" class="block text-light hover:text-pink-600 text-sm py-1">HubSpot</a>
+                            <a href="/docs/destinations/salesforce/" class="block text-light hover:text-pink-600 text-sm py-1">Salesforce</a>
+                            <a href="/docs/destinations/zoho-crm/" class="block text-light hover:text-pink-600 text-sm py-1">Zoho CRM</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Support -->
+                <div class="space-y-2">
+                    <button type="button" class="w-full text-left text-light hover:text-pink-600 transition-colors font-mono px-4 py-2 flex items-center justify-between mobile-docs-section-btn" data-section="support">
+                        Support
+                        <svg class="w-4 h-4 transform transition-transform mobile-docs-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="hidden bg-grey-800 mx-4 mobile-docs-subsection" data-section="support">
+                        <div class="p-4 space-y-2">
+                            <a href="/docs/support/" class="block text-light hover:text-pink-600 text-sm py-1">Overview</a>
+                            <a href="/docs/support/faq/" class="block text-light hover:text-pink-600 text-sm py-1">FAQ</a>
+                            <a href="/docs/support/changelog/" class="block text-light hover:text-pink-600 text-sm py-1">Changelog</a>
+                            <a href="/docs/support/contact/" class="block text-light hover:text-pink-600 text-sm py-1">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Regular Mobile Menu (hidden when docs nav is shown) -->
+            <div id="mobile-main-nav" class="space-y-2">
                 <button type="button" class="w-full text-left text-light hover:text-pink-600 transition-colors font-mono px-4 py-2 flex items-center justify-between mobile-features-btn">
                     Features
                     <svg class="w-4 h-4 transform transition-transform mobile-features-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -275,6 +385,7 @@
                     <div class="flex w-48 h-10 top-1 left-1 group-hover:top-0 group-hover:left-0 absolute border-solid border-2 border-light">
                     </div>
                 </a>
+            </div>
             </div>
         </div>
     </div>

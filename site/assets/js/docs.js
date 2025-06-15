@@ -1,155 +1,145 @@
-// Documentation Navigation & Search
+// Documentation Navigation with Accordion Functionality
 (function() {
     'use strict';
 
     // DOM Elements
-    const sidebar = document.getElementById('docs-sidebar');
-    const overlay = document.getElementById('docs-overlay');
-    const mobileToggle = document.getElementById('mobile-menu-toggle');
-    const searchInput = document.getElementById('docs-search');
     const navLinks = document.querySelectorAll('.docs-nav-link');
+    const sectionToggles = document.querySelectorAll('.docs-section-toggle');
+    const sections = document.querySelectorAll('.docs-section');
 
     // State Management
     let currentPath = window.location.pathname;
 
     // Initialize
     function init() {
-        setupMobileNavigation();
-        setupSearch();
+        setupAccordionNavigation();
         highlightCurrentPage();
+        expandCurrentSection();
         setupKeyboardNavigation();
+        setupSmoothScrolling();
+        setupCodeCopyButtons();
+        generateTableOfContents();
     }
 
-    // Mobile Navigation
-    function setupMobileNavigation() {
-        if (mobileToggle && sidebar && overlay) {
-            mobileToggle.addEventListener('click', toggleMobileNav);
-            overlay.addEventListener('click', closeMobileNav);
-            
-            // Close on escape key
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && sidebar.classList.contains('open')) {
-                    closeMobileNav();
-                }
+
+
+    // Accordion Navigation
+    function setupAccordionNavigation() {
+        sectionToggles.forEach(toggle => {
+            toggle.addEventListener('click', function() {
+                const section = this.closest('.docs-section');
+                toggleSection(section);
             });
-
-            // Handle window resize
-            window.addEventListener('resize', function() {
-                if (window.innerWidth >= 1024) {
-                    closeMobileNav();
-                }
-            });
-        }
-    }
-
-    function toggleMobileNav() {
-        if (sidebar.classList.contains('open')) {
-            closeMobileNav();
-        } else {
-            openMobileNav();
-        }
-    }
-
-    function openMobileNav() {
-        sidebar.classList.add('open');
-        overlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
-        mobileToggle.setAttribute('aria-expanded', 'true');
-    }
-
-    function closeMobileNav() {
-        sidebar.classList.remove('open');
-        overlay.classList.remove('active');
-        document.body.style.overflow = '';
-        mobileToggle.setAttribute('aria-expanded', 'false');
-    }
-
-    // Search Functionality
-    function setupSearch() {
-        if (!searchInput) return;
-
-        let searchTimeout;
-        searchInput.addEventListener('input', function(e) {
-            clearTimeout(searchTimeout);
-            searchTimeout = setTimeout(() => {
-                filterNavigation(e.target.value.toLowerCase().trim());
-            }, 150);
-        });
-
-        // Clear search on escape
-        searchInput.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                this.value = '';
-                filterNavigation('');
-                this.blur();
-            }
         });
     }
 
-    function filterNavigation(query) {
-        const navGroups = document.querySelectorAll('.docs-nav-group');
+    function toggleSection(section) {
+        const isExpanded = section.classList.contains('expanded');
+        const toggle = section.querySelector('.docs-section-toggle');
         
-        if (!query) {
-            // Show all groups and links
-            navGroups.forEach(group => {
-                group.style.display = 'block';
-                const links = group.querySelectorAll('.docs-nav-link');
-                links.forEach(link => link.style.display = 'block');
-            });
-            return;
+        if (isExpanded) {
+            collapseSection(section);
+        } else {
+            expandSection(section);
         }
-
-        navGroups.forEach(group => {
-            const links = group.querySelectorAll('.docs-nav-link');
-            let hasVisibleLinks = false;
-
-            links.forEach(link => {
-                const text = link.textContent.toLowerCase();
-                const isMatch = text.includes(query);
-                
-                link.style.display = isMatch ? 'block' : 'none';
-                if (isMatch) hasVisibleLinks = true;
-            });
-
-            // Hide group if no links match
-            group.style.display = hasVisibleLinks ? 'block' : 'none';
-        });
+        
+        // Update aria-expanded attribute
+        toggle.setAttribute('aria-expanded', !isExpanded);
     }
 
-    // Page Highlighting
+    function expandSection(section) {
+        section.classList.add('expanded');
+        const subsection = section.querySelector('.docs-subsection');
+        
+        // Calculate the actual height needed
+        subsection.style.maxHeight = subsection.scrollHeight + 'px';
+        
+        // Reset to CSS value after animation
+        setTimeout(() => {
+            if (section.classList.contains('expanded')) {
+                subsection.style.maxHeight = '1000px';
+            }
+        }, 300);
+        }
+
+    function collapseSection(section) {
+        const subsection = section.querySelector('.docs-subsection');
+        
+        // Set explicit height before collapsing
+        subsection.style.maxHeight = subsection.scrollHeight + 'px';
+        
+        // Force reflow
+        subsection.offsetHeight;
+
+        // Collapse
+        subsection.style.maxHeight = '0';
+        section.classList.remove('expanded');
+    }
+
+    // Page Highlighting and Section Expansion
     function highlightCurrentPage() {
         navLinks.forEach(link => {
             link.classList.remove('active');
             
-            // Check if this link matches current page
+            // Check if this link exactly matches current page
             const linkPath = new URL(link.href).pathname;
-            if (linkPath === currentPath || 
-                (currentPath !== '/docs/' && currentPath.startsWith(linkPath) && linkPath !== '/docs/')) {
+            if (linkPath === currentPath) {
                 link.classList.add('active');
             }
         });
     }
 
+    function expandCurrentSection() {
+        // Find which section contains the current page
+        let currentSection = null;
+        
+        navLinks.forEach(link => {
+            const linkPath = new URL(link.href).pathname;
+            // Exact match gets priority
+            if (linkPath === currentPath) {
+                currentSection = link.closest('.docs-section');
+            }
+        });
+
+        // If no exact match, find section that contains the current path
+        if (!currentSection) {
+            navLinks.forEach(link => {
+                const linkPath = new URL(link.href).pathname;
+                if (currentPath.startsWith(linkPath) && linkPath !== '/docs/') {
+                    currentSection = link.closest('.docs-section');
+                }
+            });
+        }
+
+        // If we found a current section, expand it
+        if (currentSection) {
+            expandSection(currentSection);
+            const toggle = currentSection.querySelector('.docs-section-toggle');
+            toggle.setAttribute('aria-expanded', 'true');
+        }
+    }
+
     // Keyboard Navigation
     function setupKeyboardNavigation() {
         document.addEventListener('keydown', function(e) {
-            // Focus search on 'S' key (when not in input)
-            if (e.key.toLowerCase() === 's' && 
-                document.activeElement.tagName !== 'INPUT' && 
-                document.activeElement.tagName !== 'TEXTAREA') {
-                e.preventDefault();
-                if (searchInput) {
-                    searchInput.focus();
+            // Navigate sections with arrow keys when focused
+            if (document.activeElement.classList.contains('docs-section-toggle')) {
+                if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    const toggles = Array.from(sectionToggles);
+                    const currentIndex = toggles.indexOf(document.activeElement);
+                    
+                    if (e.key === 'ArrowUp' && currentIndex > 0) {
+                        toggles[currentIndex - 1].focus();
+                    } else if (e.key === 'ArrowDown' && currentIndex < toggles.length - 1) {
+                        toggles[currentIndex + 1].focus();
+                    }
                 }
-            }
-
-            // Toggle mobile nav on 'M' key
-            if (e.key.toLowerCase() === 'm' && 
-                document.activeElement.tagName !== 'INPUT' && 
-                document.activeElement.tagName !== 'TEXTAREA' &&
-                window.innerWidth < 1024) {
-                e.preventDefault();
-                toggleMobileNav();
+                
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    document.activeElement.click();
+                }
             }
         });
     }
@@ -216,57 +206,152 @@
                         `;
                     }, 2000);
                 } catch (err) {
-                    console.error('Failed to copy code:', err);
+                    console.error('Failed to copy text: ', err);
                 }
             });
         });
     }
 
-    // Table of Contents
+    // Table of Contents Generation
     function generateTableOfContents() {
-        const headings = document.querySelectorAll('.docs-article h2, .docs-article h3, .docs-article h4');
-        if (headings.length === 0) return;
-
-        const toc = document.createElement('nav');
-        toc.className = 'docs-toc';
-        toc.innerHTML = '<h3>On this page</h3><ul></ul>';
+        const article = document.querySelector('.docs-article');
+        const tocDesktop = document.querySelector('.docs-toc-desktop .docs-toc-container');
         
-        const tocList = toc.querySelector('ul');
+        if (!article) return;
+
+        const headings = article.querySelectorAll('h2, h3, h4, h5, h6');
+        if (headings.length === 0) {
+            // Hide TOC containers if no headings
+            if (tocDesktop) tocDesktop.parentElement.style.display = 'none';
+            return;
+        }
+
+        // Create TOC content
+        function createTOCContent() {
+            const tocList = document.createElement('ul');
         
         headings.forEach((heading, index) => {
-            // Add ID if not present
+                // Generate ID if it doesn't exist
             if (!heading.id) {
-                heading.id = `heading-${index}`;
+                    heading.id = heading.textContent
+                        .toLowerCase()
+                        .replace(/[^\w\s-]/g, '')
+                        .replace(/\s+/g, '-');
             }
             
-            const li = document.createElement('li');
-            const link = document.createElement('a');
-            
+                const listItem = document.createElement('li');
+                listItem.className = `toc-${heading.tagName.toLowerCase()}`;
+                
+                const link = document.createElement('a');
             link.href = `#${heading.id}`;
             link.textContent = heading.textContent;
-            link.className = `toc-${heading.tagName.toLowerCase()}`;
-            
-            li.appendChild(link);
-            tocList.appendChild(li);
+                
+                listItem.appendChild(link);
+                tocList.appendChild(listItem);
         });
         
-        // Insert TOC after the first paragraph or at the beginning
-        const firstParagraph = document.querySelector('.docs-article p');
-        if (firstParagraph) {
-            firstParagraph.parentNode.insertBefore(toc, firstParagraph.nextSibling);
-        } else {
-            const article = document.querySelector('.docs-article');
-            if (article) {
-                article.insertBefore(toc, article.firstChild);
+            return tocList;
+        }
+
+        // Create mobile TOC and insert after H1
+        function createMobileTOC() {
+            const firstH1 = article.querySelector('h1');
+            if (firstH1) {
+                // Create mobile TOC container
+                const mobileTocContainer = document.createElement('div');
+                mobileTocContainer.className = 'docs-toc-mobile';
+                
+                // Create accordion toggle
+                const toggleButton = document.createElement('button');
+                toggleButton.className = 'docs-toc-toggle';
+                toggleButton.innerHTML = `
+                    <span>On this page</span>
+                    <svg class="docs-toc-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6,9 12,15 18,9"></polyline>
+                    </svg>
+                `;
+                toggleButton.setAttribute('aria-expanded', 'false');
+                
+                // Create collapsible content
+                const tocContainer = document.createElement('div');
+                tocContainer.className = 'docs-toc-container';
+                tocContainer.appendChild(createTOCContent());
+                
+                // Add click handler for accordion
+                toggleButton.addEventListener('click', () => {
+                    const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
+                    toggleButton.setAttribute('aria-expanded', !isExpanded);
+                    mobileTocContainer.classList.toggle('expanded', !isExpanded);
+                });
+                
+                mobileTocContainer.appendChild(toggleButton);
+                mobileTocContainer.appendChild(tocContainer);
+                
+                // Insert after H1
+                firstH1.parentNode.insertBefore(mobileTocContainer, firstH1.nextSibling);
+            }
+        }
+
+        // Populate desktop TOC
+        if (tocDesktop) {
+            tocDesktop.innerHTML = '<h3>On this page</h3>';
+            tocDesktop.appendChild(createTOCContent());
+        }
+        
+        // Create mobile TOC
+        createMobileTOC();
+        
+        // Setup scroll spy for active section highlighting
+        setupScrollSpy(headings);
+    }
+
+
+
+    // Scroll Spy for TOC
+    function setupScrollSpy(headings) {
+        function updateActiveLink() {
+            let activeHeading = null;
+            const scrollPosition = window.scrollY + 100; // Offset for better UX
+            
+            // Find the current heading
+            for (let i = headings.length - 1; i >= 0; i--) {
+                const heading = headings[i];
+                if (heading.offsetTop <= scrollPosition) {
+                    activeHeading = heading;
+                    break;
+                }
+            }
+            
+            // Update active states for both mobile and desktop TOC
+            const allTocLinks = document.querySelectorAll('.docs-toc-mobile .docs-toc-container a, .docs-toc-desktop .docs-toc-container a');
+            allTocLinks.forEach(link => link.classList.remove('active'));
+            
+            if (activeHeading) {
+                // Update both mobile and desktop TOC links
+                const mobileActiveLink = document.querySelector(`.docs-toc-mobile .docs-toc-container a[href="#${activeHeading.id}"]`);
+                const desktopActiveLink = document.querySelector(`.docs-toc-desktop .docs-toc-container a[href="#${activeHeading.id}"]`);
+                
+                if (mobileActiveLink) {
+                    mobileActiveLink.classList.add('active');
+                }
+                if (desktopActiveLink) {
+                    desktopActiveLink.classList.add('active');
             }
         }
     }
 
-    // Performance: Throttle scroll events
+        // Throttled scroll listener
+        const throttledUpdate = throttle(updateActiveLink, 100);
+        window.addEventListener('scroll', throttledUpdate);
+        
+        // Initial update
+        updateActiveLink();
+    }
+
+    // Utility function for throttling
     function throttle(func, delay) {
         let timeoutId;
         let lastExecTime = 0;
-        
         return function (...args) {
             const currentTime = Date.now();
             
@@ -289,10 +374,5 @@
     } else {
         init();
     }
-
-    // Initialize additional features
-    setupSmoothScrolling();
-    setupCodeCopyButtons();
-    generateTableOfContents();
 
 })();
