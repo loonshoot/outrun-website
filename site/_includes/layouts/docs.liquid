@@ -140,7 +140,8 @@
             <div class="docs-content">
                     <!-- Article Content -->
                     <article class="docs-article">
-                        {{ content }}
+                        <!-- H1 from frontmatter title -->
+                        <h1>{{ title }}</h1>
                         
                         <!-- Dynamic Breadcrumbs (inserted after H1 via CSS) -->
                         {% assign path_segments = page.url | split: '/' | where_exp: "segment", "segment != ''" %}
@@ -179,6 +180,9 @@
                     </ol>
                 </nav>
                 {% endif %}
+                
+                        <!-- Page content -->
+                        {{ content }}
                 </article>
                 </div>
 

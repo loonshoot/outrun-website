@@ -1,6 +1,6 @@
 ---
 layout: layouts/docs.liquid
-title: Documentation
+title: Documentation Overview
 description: Complete documentation for Outrun's data synchronization platform. Learn how to integrate, configure, and manage your data pipelines.
 metaTitle: Outrun Documentation - Data Sync Platform Guide
 metaDescription: Comprehensive documentation for Outrun's data synchronization platform. Integration guides, API reference, and best practices.
@@ -9,8 +9,6 @@ breadcrumbs:
   - title: Documentation
     url: /docs/
 ---
-
-# Welcome to Outrun Documentation
 
 ## What is Outrun?
 
