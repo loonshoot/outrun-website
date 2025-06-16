@@ -56,49 +56,7 @@ layout: layouts/default.liquid
   </div>
 </section>
 
-<!-- Recommended Reads Carousel - Overlapping -->
-<section class="recommended-reads-carousel relative -mt-24 z-20 w-full">
-  <div class="w-full">
-    <div class="bg-transparent pt-16 pb-8">
-      <div class="carousel-container overflow-hidden px-6">
-        <div id="carousel-track" class="flex transition-transform duration-300 gap-6">
-          {% for article in collections.learn limit: 6 %}
-          <article class="article-card bg-dark border-2 border-gray-600 overflow-hidden hover:transform hover:scale-105 transition-all duration-300 flex-shrink-0 w-80">
-            <div class="article-image h-48">
-              <div class="placeholder-image bg-gradient-to-br from-blue-500 to-cyan-500 w-full h-full"></div>
-            </div>
-            <div class="article-content p-6">
-              <h3 class="article-title text-xl font-semibold text-light mb-3 leading-tight">
-                <a href="{{ article.url }}" class="hover:text-yellow-400 transition-colors">
-                  {{ article.data.title }}
-                </a>
-              </h3>
-              <p class="article-excerpt text-gray-300 text-sm mb-4 line-clamp-3">
-                {{ article.data.description }}
-              </p>
-              <div class="article-meta text-xs text-gray-400">
-                <span class="author font-medium">{{ article.data.author }}</span>
-                <span class="separator mx-1">|</span>
-                <span class="date">{{ article.data.date | date: "%b %d, %Y" }}</span>
-              </div>
-            </div>
-          </article>
-          {% endfor %}
-        </div>
-      </div>
-      
-      <!-- Carousel Controls Below Cards -->
-      <div class="flex justify-center gap-4 mt-8">
-        <button id="carousel-prev" class="w-10 h-10 bg-yellow-400 text-dark font-mono font-bold hover:bg-yellow-300 transition-colors">
-          ←
-        </button>
-        <button id="carousel-next" class="w-10 h-10 bg-yellow-400 text-dark font-mono font-bold hover:bg-yellow-300 transition-colors">
-          →
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <!-- Value Propositions Section -->
 <section class="value-props-section bg-dark py-20">

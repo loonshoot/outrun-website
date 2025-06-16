@@ -1,0 +1,11 @@
+/* Changelog page styles */
+
+/* Consistent margin-top for main content to match docs */
+main {
+  margin-top: 4rem;
+}
+
+/* Target the first content block (sectiontitle) to add top margin */
+main > div:first-child {
+  margin-top: 4rem;
+} 

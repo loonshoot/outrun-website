@@ -271,4 +271,9 @@
     padding-left: 1rem;
     padding-right: 1rem;
   }
+}
+
+/* Consistent margin-top for main content to match docs */
+.resources-main {
+    margin-top: 4rem;
 } 

@@ -321,4 +321,9 @@ a:focus {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
+}
+
+/* Consistent margin-top for main content to match docs */
+main {
+    margin-top: 4rem;
 } 
