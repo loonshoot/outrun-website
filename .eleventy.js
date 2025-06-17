@@ -54,9 +54,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.htmlTemplateEngine = "liquid";
   eleventyConfig.markdownTemplateEngine = "liquid";
   
-  // Configure markdown files to output as HTML
-  eleventyConfig.addExtension("md", {
-    outputFileExtension: "html"
+  // Add collections
+  eleventyConfig.addCollection("learn", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("site/pages/learn/*.md");
   });
   
   // eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
