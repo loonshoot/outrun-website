@@ -30,9 +30,9 @@ When you configure a destination in Outrun:
 We currently support **3** destination systems that also function as sources:
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-  <a href="/docs/destinations/hubspot/" class="bg-dark-light border border-gray-600 rounded-lg p-6 hover:border-yellow transition-colors">
+  <a href="/docs/destinations/hubspot/" class="bg-dark-light border border-gray-600  p-6 hover:border-yellow transition-colors">
     <div class="flex items-center space-x-4 mb-4">
-      <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center text-white font-bold text-lg">HS</div>
+      <div class="w-12 h-12 bg-orange-500  flex items-center justify-center text-white font-bold text-lg">HS</div>
       <div>
         <h3 class="text-yellow text-lg font-semibold">HubSpot</h3>
         <p class="text-gray-400 text-sm">CRM & Marketing Platform</p>
@@ -40,14 +40,14 @@ We currently support **3** destination systems that also function as sources:
     </div>
     <p class="text-gray-300 text-sm mb-3">Send People and Organizations to HubSpot Contacts and Companies.</p>
     <div class="flex flex-wrap gap-2">
-      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs rounded">People → Contacts</span>
-      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs rounded">Organizations → Companies</span>
+      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs ">People → Contacts</span>
+      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs ">Organizations → Companies</span>
     </div>
   </a>
 
-  <a href="/docs/destinations/salesforce/" class="bg-dark-light border border-gray-600 rounded-lg p-6 hover:border-yellow transition-colors">
+  <a href="/docs/destinations/salesforce/" class="bg-dark-light border border-gray-600  p-6 hover:border-yellow transition-colors">
     <div class="flex items-center space-x-4 mb-4">
-      <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-lg">SF</div>
+      <div class="w-12 h-12 bg-blue-500  flex items-center justify-center text-white font-bold text-lg">SF</div>
       <div>
         <h3 class="text-yellow text-lg font-semibold">Salesforce</h3>
         <p class="text-gray-400 text-sm">Enterprise CRM Platform</p>
@@ -55,14 +55,14 @@ We currently support **3** destination systems that also function as sources:
     </div>
     <p class="text-gray-300 text-sm mb-3">Send People and Organizations to Salesforce Contacts and Accounts.</p>
     <div class="flex flex-wrap gap-2">
-      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs rounded">People → Contacts</span>
-      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs rounded">Organizations → Accounts</span>
+      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs ">People → Contacts</span>
+      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs ">Organizations → Accounts</span>
     </div>
   </a>
 
-  <a href="/docs/destinations/zoho-crm/" class="bg-dark-light border border-gray-600 rounded-lg p-6 hover:border-yellow transition-colors">
+  <a href="/docs/destinations/zoho-crm/" class="bg-dark-light border border-gray-600  p-6 hover:border-yellow transition-colors">
     <div class="flex items-center space-x-4 mb-4">
-      <div class="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center text-white font-bold text-lg">Z</div>
+      <div class="w-12 h-12 bg-red-500  flex items-center justify-center text-white font-bold text-lg">Z</div>
       <div>
         <h3 class="text-yellow text-lg font-semibold">Zoho CRM</h3>
         <p class="text-gray-400 text-sm">Business CRM Suite</p>
@@ -70,8 +70,8 @@ We currently support **3** destination systems that also function as sources:
     </div>
     <p class="text-gray-300 text-sm mb-3">Send People to Contacts or Leads, Organizations to Accounts.</p>
     <div class="flex flex-wrap gap-2">
-      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs rounded">People → Contacts/Leads</span>
-      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs rounded">Organizations → Accounts</span>
+      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs ">People → Contacts/Leads</span>
+      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs ">Organizations → Accounts</span>
     </div>
   </a>
 </div>
@@ -81,7 +81,7 @@ We currently support **3** destination systems that also function as sources:
 All our destination systems also function as sources, enabling powerful bi-directional sync scenarios:
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
+  <div class="bg-dark-light border border-gray-600  p-6">
     <h3 class="text-yellow text-lg font-semibold mb-3">🔄 Two-Way Sync</h3>
     <p class="text-gray-300 mb-3">Configure the same system as both source and destination for true bi-directional synchronization.</p>
     <ul class="text-gray-400 text-sm space-y-1">
@@ -91,7 +91,7 @@ All our destination systems also function as sources, enabling powerful bi-direc
     </ul>
   </div>
 
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
+  <div class="bg-dark-light border border-gray-600  p-6">
     <h3 class="text-yellow text-lg font-semibold mb-3">🌐 Multi-System Sync</h3>
     <p class="text-gray-300 mb-3">Use multiple sources feeding into multiple destinations for comprehensive data distribution.</p>
     <ul class="text-gray-400 text-sm space-y-1">
@@ -156,7 +156,7 @@ Each destination has specific rate limits that Outrun respects:
 - **Salesforce**: 10 requests per second for destination writes  
 - **Zoho CRM**: 3 requests per 10 seconds for write operations
 
-<div class="bg-yellow bg-opacity-10 border border-yellow rounded-lg p-6 my-6">
+<div class="bg-yellow bg-opacity-10 border border-yellow  p-6 my-6">
   <h3 class="text-yellow text-lg font-semibold mb-3">⚡ Performance Optimization</h3>
   <p class="text-gray-300">Outrun automatically optimizes destination writes with intelligent batching, retry logic, and rate limit management to ensure reliable data delivery.</p>
 </div>
@@ -204,13 +204,13 @@ Each destination has specific required fields that must be populated:
 ## Next Steps
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
+  <div class="bg-dark-light border border-gray-600  p-6">
     <h3 class="text-yellow text-lg font-semibold mb-3">🚀 Add Your First Destination</h3>
     <p class="text-gray-300 mb-4">Follow our step-by-step guide to configure your first data destination.</p>
     <a href="/docs/getting-started/" class="text-yellow hover:text-yellow-light transition-colors">Get Started →</a>
   </div>
   
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
+  <div class="bg-dark-light border border-gray-600  p-6">
     <h3 class="text-yellow text-lg font-semibold mb-3">📥 Browse Sources</h3>
     <p class="text-gray-300 mb-4">See where you can get your data from to feed into destinations.</p>
     <a href="/docs/sources/" class="text-yellow hover:text-yellow-light transition-colors">View Sources →</a>

@@ -1,0 +1,142 @@
+/* Outrun Highway Background Effects - Standalone */
+
+/* CSS Variables for the outrun theme */
+:root {
+  --c1: hsl(219, 79%, 66%);        /* Cornflower blue for highway lines */
+  --c2: hsl(319, 100%, 60%);       /* Pink/magenta for main color */
+  --c3: hsl(266, 49%, 25%);        /* Dark purple for mountains */
+  --c4: hsl(60, 82%, 58%);         /* Yellow for sun */
+  --c5: hsl(0, 67%, 55%);          /* Red for horizon lines */
+  --c6: hsl(213, 96%, 11%);        /* Dark blue */
+  --c2hsl: 319, 100%, 60%;         /* HSL values for transparency effects */
+}
+
+/* CSS Houdini property for smooth animation */
+@property --outrun {
+  syntax: "<number>";
+  initial-value: 0;
+  inherits: false;
+}
+
+/* Main animation keyframes */
+@keyframes outrun {
+  to { --outrun: 1; }
+}
+
+/* Complete Outrun Highway Hero Section with all effects */
+.outrun-complete-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  pointer-events: none;
+  filter: brightness(1.125);
+  animation: outrun 0.6s linear infinite;
+  transform: translateZ(0);
+  will-change: transform;
+
+  /* Calculate animated positions for highway lines */
+  --outrun: 0;
+  --pos: var(--outrun, 0);
+  --distance: 0.5%;
+  --hor: 60%;
+  --l0: var(--hor) + 0 * 0 * var(--distance) + (((0 + 1) * (0 + 1) * var(--distance) - 0 * 0 * var(--distance)) * var(--pos));
+  --l1: var(--hor) + 1 * 1 * var(--distance) + (((1 + 1) * (1 + 1) * var(--distance) - 1 * 1 * var(--distance)) * var(--pos));
+  --l2: var(--hor) + 2 * 2 * var(--distance) + (((2 + 1) * (2 + 1) * var(--distance) - 2 * 2 * var(--distance)) * var(--pos));
+  --l3: var(--hor) + 3 * 3 * var(--distance) + (((3 + 1) * (3 + 1) * var(--distance) - 3 * 3 * var(--distance)) * var(--pos));
+  --l4: var(--hor) + 4 * 4 * var(--distance) + (((4 + 1) * (4 + 1) * var(--distance) - 4 * 4 * var(--distance)) * var(--pos));
+  --l5: var(--hor) + 5 * 5 * var(--distance) + (((5 + 1) * (5 + 1) * var(--distance) - 5 * 5 * var(--distance)) * var(--pos));
+  --l6: var(--hor) + 6 * 6 * var(--distance) + (((6 + 1) * (6 + 1) * var(--distance) - 6 * 6 * var(--distance)) * var(--pos));
+  --l7: var(--hor) + 7 * 7 * var(--distance) + (((7 + 1) * (7 + 1) * var(--distance) - 7 * 7 * var(--distance)) * var(--pos));
+  --l8: var(--hor) + 8 * 8 * var(--distance) + (((8 + 1) * (8 + 1) * var(--distance) - 8 * 8 * var(--distance)) * var(--pos));
+  --l9: var(--hor) + 9 * 9 * var(--distance) + (((9 + 1) * (9 + 1) * var(--distance) - 9 * 9 * var(--distance)) * var(--pos));
+
+  /* Create gradient lines for highway effect */
+  --lgh: linear-gradient(transparent 0px var(--hor), var(--c1) var(--hor) calc(var(--hor) + 2px), transparent calc(var(--hor) + 2px));
+  --lg0: linear-gradient(transparent 0px calc(var(--l0)), var(--c1) calc(var(--l0)) calc(var(--l0) + 2px), transparent calc(var(--l0) + 2px));
+  --lg1: linear-gradient(transparent 0px calc(var(--l1)), var(--c1) calc(var(--l1)) calc(var(--l1) + 2px), transparent calc(var(--l1) + 2px));
+  --lg2: linear-gradient(transparent 0px calc(var(--l2)), var(--c1) calc(var(--l2)) calc(var(--l2) + 2px), transparent calc(var(--l2) + 2px));
+  --lg3: linear-gradient(transparent 0px calc(var(--l3)), var(--c1) calc(var(--l3)) calc(var(--l3) + 2px), transparent calc(var(--l3) + 2px));
+  --lg4: linear-gradient(transparent 0px calc(var(--l4)), var(--c1) calc(var(--l4)) calc(var(--l4) + 2px), transparent calc(var(--l4) + 2px));
+  --lg5: linear-gradient(transparent 0px calc(var(--l5)), var(--c1) calc(var(--l5)) calc(var(--l5) + 2px), transparent calc(var(--l5) + 2px));
+  --lg6: linear-gradient(transparent 0px calc(var(--l6)), var(--c1) calc(var(--l6)) calc(var(--l6) + 2px), transparent calc(var(--l6) + 2px));
+  --lg7: linear-gradient(transparent 0px calc(var(--l7)), var(--c1) calc(var(--l7)) calc(var(--l7) + 2px), transparent calc(var(--l7) + 2px));
+  --lg8: linear-gradient(transparent 0px calc(var(--l8)), var(--c1) calc(var(--l8)) calc(var(--l8) + 2px), transparent calc(var(--l8) + 2px));
+  --lg9: linear-gradient(transparent 0px calc(var(--l9)), var(--c1) calc(var(--l9)) calc(var(--l9) + 2px), transparent calc(var(--l9) + 2px));
+
+  /* Combine all background layers for complete outrun effect */
+  background:
+    /* Highway perspective lines */
+    url("/assets/images/outrun/highway-lines.svg") left bottom / 100% 40% no-repeat,
+    /* Horizontal grid lines */
+    var(--lgh),
+    var(--lg0),
+    var(--lg1),
+    var(--lg2),
+    var(--lg3),
+    var(--lg4),
+    var(--lg5),
+    var(--lg6),
+    var(--lg7),
+    var(--lg8),
+    var(--lg9),
+    /* Mountain silhouette */
+    url("/assets/images/outrun/mountain.png") center 60% / min(75vh, 75vw) no-repeat,
+    /* Mountain pattern repeat (optional texture) */
+    url("/assets/images/outrun/mountain.png") center 60% / min(75vh, 75vw) repeat-x,
+    /* Sky gradient with horizon */
+    linear-gradient(transparent 20%, var(--c5) 60%, var(--c3) 60% 70%, hsla(var(--c2hsl), 0.75), transparent 150%),
+    /* Vertical grid lines */
+    repeating-linear-gradient(90deg, transparent 0px 2px, var(--c3) 3px 4px),
+    /* Sun/moon glow */
+    radial-gradient(circle at center, transparent min(45vh, 45vw), hsla(var(--c2hsl), 0.75) min(65vh, 65vw), var(--c3) 120%),
+    /* Horizon scan lines */
+    linear-gradient(
+      transparent 30vh,
+        var(--c5) 30vh 30.2vh,
+           transparent 30.2vh 35.2vh,
+                    var(--c5) 35.2vh 36vh,
+                         transparent 36vh 40vh,
+                                var(--c5) 40vh 41.6vh,
+                                   transparent 41.6vh 45.1vh,
+                                            var(--c5) 45.1vh 48.6vh,
+                                                 transparent 48.6vh 52.5vh,
+                                                          var(--c5) 52.5vh 57.5vh,
+                                                               transparent 57.5vh
+    ),
+    /* Central sun/light source */
+    radial-gradient(circle at center, var(--c4) min(45vh, 45vw), transparent min(45vh, 45vw)),
+    /* Base gradient background */
+    linear-gradient(var(--c5) 60%, var(--c3) 60%, var(--c2) 150%);
+}
+
+/* Optimize rendering performance */
+.outrun-complete-hero {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Disable heavy effects on mobile for better performance */
+@media (max-width: 768px) {
+  .outrun-complete-hero::before {
+    /* Simplified background for mobile */
+    background:
+      url("/assets/images/outrun/highway-lines.svg") left bottom / 100% 40% no-repeat,
+      url("/assets/images/outrun/mountain.png") center 60% / min(75vh, 75vw) no-repeat,
+      linear-gradient(transparent 20%, var(--c5) 60%, var(--c3) 60% 70%, hsla(var(--c2hsl), 0.75), transparent 150%),
+      radial-gradient(circle at center, var(--c4) min(45vh, 45vw), transparent min(45vh, 45vw)),
+      linear-gradient(var(--c5) 60%, var(--c3) 60%, var(--c2) 150%);
+
+    /* Reduce animation intensity on mobile */
+    animation: outrun 1.2s linear infinite;
+  }
+}

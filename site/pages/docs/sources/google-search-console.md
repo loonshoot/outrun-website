@@ -18,7 +18,7 @@ breadcrumbs:
 
 Connect your Google Search Console to Outrun for comprehensive SEO and search performance data synchronization. This source specializes in analytics data and performance metrics rather than traditional CRM objects.
 
-<div class="bg-green-500 bg-opacity-10 border border-green-500 rounded-lg p-6 my-6">
+<div class="bg-green-500 bg-opacity-10 border border-green-500  p-6 my-6">
   <h3 class="text-green-400 text-lg font-semibold mb-3">📊 Analytics-Focused Integration</h3>
   <p class="text-gray-300">Google Search Console integration focuses on search analytics and performance data, mapping to Facts objects for time-series analysis and reporting.</p>
 </div>
@@ -81,7 +81,7 @@ Google Search Console has generous rate limits:
 - **Daily Quota**: Typically sufficient for most use cases
 - **Batch Processing**: Efficient bulk data retrieval
 
-<div class="bg-yellow bg-opacity-10 border border-yellow rounded-lg p-6 my-6">
+<div class="bg-yellow bg-opacity-10 border border-yellow  p-6 my-6">
   <h3 class="text-yellow text-lg font-semibold mb-3">📈 High-Volume Analytics</h3>
   <p class="text-gray-300">Google Search Console can generate large volumes of analytics data. Outrun efficiently processes and aggregates this data while respecting API quotas and optimizing for performance.</p>
 </div>

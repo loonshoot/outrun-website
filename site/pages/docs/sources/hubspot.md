@@ -18,7 +18,7 @@ breadcrumbs:
 
 Connect your HubSpot CRM to Outrun for seamless data synchronization. HubSpot is one of our most popular sources, offering comprehensive contact and company data with rich relationship mapping.
 
-<div class="bg-orange-500 bg-opacity-10 border border-orange-500 rounded-lg p-6 my-6">
+<div class="bg-orange-500 bg-opacity-10 border border-orange-500  p-6 my-6">
   <h3 class="text-orange-400 text-lg font-semibold mb-3">🔶 HubSpot Integration</h3>
   <p class="text-gray-300">This source supports both data extraction and destination capabilities, making it perfect for bi-directional sync scenarios.</p>
 </div>
@@ -103,7 +103,7 @@ HubSpot has specific rate limits that Outrun respects:
 - **Search Operations**: 5 requests per second
 - **Destination Writes**: 10 requests per second
 
-<div class="bg-yellow bg-opacity-10 border border-yellow rounded-lg p-6 my-6">
+<div class="bg-yellow bg-opacity-10 border border-yellow  p-6 my-6">
   <h3 class="text-yellow text-lg font-semibold mb-3">⚡ Rate Limit Optimization</h3>
   <p class="text-gray-300">If your HubSpot account has higher API limits, contact us. We can customize rate limiting to match your specific quotas for faster sync performance.</p>
 </div>

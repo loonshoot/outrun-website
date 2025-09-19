@@ -18,7 +18,7 @@ breadcrumbs:
 
 Standardization is the core transformation process that converts raw data from various sources into consistent, unified objects. This enables seamless data synchronization across different systems regardless of their native data formats.
 
-<div class="bg-purple-500 bg-opacity-10 border border-purple-500 rounded-lg p-6 my-6">
+<div class="bg-purple-500 bg-opacity-10 border border-purple-500  p-6 my-6">
   <h3 class="text-purple-400 text-lg font-semibold mb-3">🔄 Transformation Philosophy</h3>
   <p class="text-gray-300">Rather than forcing complex custom mappings, Outrun standardizes data into four universal object types that represent how businesses naturally think about their data.</p>
 </div>
@@ -56,7 +56,7 @@ Consolidated data transforms into standardized objects ready for destination syn
 Outrun standardizes all data into four universal object types that represent the fundamental building blocks of business data:
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-  <div class="bg-dark-light border border-blue-500 rounded-lg p-6">
+  <div class="bg-dark-light border border-blue-500  p-6">
     <h3 class="text-blue-400 text-lg font-semibold mb-3">👤 People</h3>
     <p class="text-gray-300 text-sm mb-3">Individual humans in your business ecosystem</p>
     <ul class="text-gray-300 space-y-1 text-sm">
@@ -67,7 +67,7 @@ Outrun standardizes all data into four universal object types that represent the
     </ul>
   </div>
 
-  <div class="bg-dark-light border border-green-500 rounded-lg p-6">
+  <div class="bg-dark-light border border-green-500  p-6">
     <h3 class="text-green-400 text-lg font-semibold mb-3">🏢 Organizations</h3>
     <p class="text-gray-300 text-sm mb-3">Companies and business entities</p>
     <ul class="text-gray-300 space-y-1 text-sm">
@@ -78,7 +78,7 @@ Outrun standardizes all data into four universal object types that represent the
     </ul>
   </div>
 
-  <div class="bg-dark-light border border-yellow-500 rounded-lg p-6">
+  <div class="bg-dark-light border border-yellow-500  p-6">
     <h3 class="text-yellow-400 text-lg font-semibold mb-3">📊 Facts</h3>
     <p class="text-gray-300 text-sm mb-3">Measurable data points and metrics</p>
     <ul class="text-gray-300 space-y-1 text-sm">
@@ -89,7 +89,7 @@ Outrun standardizes all data into four universal object types that represent the
     </ul>
   </div>
 
-  <div class="bg-dark-light border border-purple-500 rounded-lg p-6">
+  <div class="bg-dark-light border border-purple-500  p-6">
     <h3 class="text-purple-400 text-lg font-semibold mb-3">🔗 Relationships</h3>
     <p class="text-gray-300 text-sm mb-3">Connections between other objects</p>
     <ul class="text-gray-300 space-y-1 text-sm">
@@ -412,13 +412,13 @@ Outrun assigns quality scores to help prioritize and validate data:
 ## Next Steps
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
+  <div class="bg-dark-light border border-gray-600  p-6">
     <h3 class="text-yellow text-lg font-semibold mb-3">📤 Learn About Delivery</h3>
     <p class="text-gray-300 mb-4">Discover how standardized objects sync to your destinations.</p>
     <a href="/docs/concepts/delivery/" class="text-yellow hover:text-yellow-light transition-colors">Delivery Process →</a>
   </div>
   
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
+  <div class="bg-dark-light border border-gray-600  p-6">
     <h3 class="text-yellow text-lg font-semibold mb-3">🎯 Explore Destinations</h3>
     <p class="text-gray-300 mb-4">See how standardized objects map to destination systems.</p>
     <a href="/docs/destinations/" class="text-yellow hover:text-yellow-light transition-colors">View Destinations →</a>

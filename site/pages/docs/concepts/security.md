@@ -18,7 +18,7 @@ breadcrumbs:
 
 Security and compliance are fundamental to Outrun's architecture. We implement comprehensive security measures and maintain strict compliance standards to protect your data while enabling global business operations.
 
-<div class="bg-red-500 bg-opacity-10 border border-red-500 rounded-lg p-6 my-6">
+<div class="bg-red-500 bg-opacity-10 border border-red-500  p-6 my-6">
   <h3 class="text-red-400 text-lg font-semibold mb-3">🔒 Security First</h3>
   <p class="text-gray-300">Your data security and privacy are our top priorities. We implement enterprise-grade security measures and maintain transparent compliance practices across all regions.</p>
 </div>
@@ -37,7 +37,7 @@ We are actively working towards SOC 2 Type II certification:
 Our compliance framework addresses all five trust principles:
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-  <div class="bg-dark-light border border-blue-500 rounded-lg p-6">
+  <div class="bg-dark-light border border-blue-500  p-6">
     <h3 class="text-blue-400 text-lg font-semibold mb-3">🛡️ Security</h3>
     <ul class="text-gray-300 space-y-2 text-sm">
       <li>• Multi-factor authentication</li>
@@ -47,7 +47,7 @@ Our compliance framework addresses all five trust principles:
     </ul>
   </div>
 
-  <div class="bg-dark-light border border-green-500 rounded-lg p-6">
+  <div class="bg-dark-light border border-green-500  p-6">
     <h3 class="text-green-400 text-lg font-semibold mb-3">📊 Availability</h3>
     <ul class="text-gray-300 space-y-2 text-sm">
       <li>• 99.9% uptime SLA</li>
@@ -57,7 +57,7 @@ Our compliance framework addresses all five trust principles:
     </ul>
   </div>
 
-  <div class="bg-dark-light border border-purple-500 rounded-lg p-6">
+  <div class="bg-dark-light border border-purple-500  p-6">
     <h3 class="text-purple-400 text-lg font-semibold mb-3">🔄 Processing Integrity</h3>
     <ul class="text-gray-300 space-y-2 text-sm">
       <li>• Data validation and verification</li>
@@ -67,7 +67,7 @@ Our compliance framework addresses all five trust principles:
     </ul>
   </div>
 
-  <div class="bg-dark-light border border-yellow-500 rounded-lg p-6">
+  <div class="bg-dark-light border border-yellow-500  p-6">
     <h3 class="text-yellow-400 text-lg font-semibold mb-3">🔐 Confidentiality</h3>
     <ul class="text-gray-300 space-y-2 text-sm">
       <li>• Data encryption and protection</li>
@@ -91,7 +91,7 @@ Our regional provider strategy enhances compliance:
 #### Multi-Jurisdiction Support
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
+  <div class="bg-dark-light border border-gray-600  p-6">
     <h3 class="text-blue-400 text-lg font-semibold mb-3">🇪🇺 GDPR Compliance</h3>
     <ul class="text-gray-300 space-y-2 text-sm">
       <li>• EU data stored within EU boundaries</li>
@@ -102,7 +102,7 @@ Our regional provider strategy enhances compliance:
     </ul>
   </div>
 
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
+  <div class="bg-dark-light border border-gray-600  p-6">
     <h3 class="text-purple-400 text-lg font-semibold mb-3">🇺🇸 US Privacy Laws</h3>
     <ul class="text-gray-300 space-y-2 text-sm">
       <li>• CCPA compliance for California data</li>
@@ -113,7 +113,7 @@ Our regional provider strategy enhances compliance:
     </ul>
   </div>
 
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
+  <div class="bg-dark-light border border-gray-600  p-6">
     <h3 class="text-green-400 text-lg font-semibold mb-3">🇦🇺 Australian Privacy</h3>
     <ul class="text-gray-300 space-y-2 text-sm">
       <li>• Privacy Act 1988 compliance</li>
@@ -124,7 +124,7 @@ Our regional provider strategy enhances compliance:
     </ul>
   </div>
 
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
+  <div class="bg-dark-light border border-gray-600  p-6">
     <h3 class="text-orange-400 text-lg font-semibold mb-3">🇨🇦 PIPEDA Compliance</h3>
     <ul class="text-gray-300 space-y-2 text-sm">
       <li>• Personal Information Protection</li>
@@ -377,13 +377,13 @@ Limited use of tracking pixels for user experience optimization:
 ## Next Steps
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
+  <div class="bg-dark-light border border-gray-600  p-6">
     <h3 class="text-yellow text-lg font-semibold mb-3">🏗️ Learn About Storage</h3>
     <p class="text-gray-300 mb-4">Understand Outrun's multi-region storage architecture and data placement.</p>
     <a href="/docs/concepts/storage/" class="text-yellow hover:text-yellow-light transition-colors">Storage Architecture →</a>
   </div>
   
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
+  <div class="bg-dark-light border border-gray-600  p-6">
     <h3 class="text-yellow text-lg font-semibold mb-3">🚀 Get Started</h3>
     <p class="text-gray-300 mb-4">Set up your first secure data synchronization workflow.</p>
     <a href="/docs/getting-started/quick-start/" class="text-yellow hover:text-yellow-light transition-colors">Quick Start Guide →</a>

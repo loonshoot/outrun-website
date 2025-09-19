@@ -18,7 +18,7 @@ breadcrumbs:
 
 Connect your Zoho CRM to Outrun for comprehensive business data synchronization. Zoho CRM offers a unique data structure with both Leads and Contacts mapping to People, plus powerful Related Records capabilities.
 
-<div class="bg-red-500 bg-opacity-10 border border-red-500 rounded-lg p-6 my-6">
+<div class="bg-red-500 bg-opacity-10 border border-red-500  p-6 my-6">
   <h3 class="text-red-400 text-lg font-semibold mb-3">🔴 Zoho CRM Integration</h3>
   <p class="text-gray-300">Zoho CRM has a unique data structure where both Leads and Contacts represent people. This source includes advanced Related Records API integration for comprehensive relationship mapping.</p>
 </div>
@@ -122,7 +122,7 @@ Zoho CRM has conservative rate limits that Outrun carefully manages:
 - **Write Operations**: 3 requests per 10 seconds
 - **Bulk Write**: 2 requests per 10 seconds
 
-<div class="bg-yellow bg-opacity-10 border border-yellow rounded-lg p-6 my-6">
+<div class="bg-yellow bg-opacity-10 border border-yellow  p-6 my-6">
   <h3 class="text-yellow text-lg font-semibold mb-3">⚠️ Rate Limit Management</h3>
   <p class="text-gray-300">Zoho CRM has the most restrictive rate limits among our sources. Outrun automatically manages these limits with intelligent batching and retry logic to ensure reliable sync performance.</p>
 </div>

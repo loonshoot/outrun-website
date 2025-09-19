@@ -18,7 +18,7 @@ breadcrumbs:
 
 Send your standardized People and Organizations data to HubSpot CRM. HubSpot destination provides reliable data delivery with automatic field mapping and validation.
 
-<div class="bg-orange-500 bg-opacity-10 border border-orange-500 rounded-lg p-6 my-6">
+<div class="bg-orange-500 bg-opacity-10 border border-orange-500  p-6 my-6">
   <h3 class="text-orange-400 text-lg font-semibold mb-3">🔶 HubSpot Destination</h3>
   <p class="text-gray-300">HubSpot destination supports both People → Contacts and Organizations → Companies with comprehensive field validation and automatic deduplication.</p>
 </div>
@@ -99,7 +99,7 @@ HubSpot destination has specific rate limits for write operations:
 - **Batch Operations**: Efficient bulk processing where possible
 - **Retry Logic**: Automatic retry for transient failures
 
-<div class="bg-yellow bg-opacity-10 border border-yellow rounded-lg p-6 my-6">
+<div class="bg-yellow bg-opacity-10 border border-yellow  p-6 my-6">
   <h3 class="text-yellow text-lg font-semibold mb-3">⚡ Write Optimization</h3>
   <p class="text-gray-300">Outrun optimizes HubSpot writes with intelligent batching and deduplication to minimize API calls while ensuring data accuracy.</p>
 </div>

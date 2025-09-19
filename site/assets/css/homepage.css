@@ -325,4 +325,479 @@ a:focus {
 /* Consistent margin-top for main content to match docs */
 main {
     margin-top: 4rem;
+}
+
+/* ========== OUTRUN STYLE HEADER LAYOUTS ========== */
+
+/* Better text contrast for all outrun layouts */
+.highway-hero h1, .highway-hero p,
+.synthwave-hero h1, .synthwave-hero p,
+.arcade-hero h1, .arcade-hero p,
+.city-hero h1, .city-hero p {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9), 0px 0px 16px rgba(0, 0, 0, 0.7);
+}
+
+/* Improved text backgrounds for better readability */
+.highway-hero p,
+.synthwave-hero p,
+.city-hero p {
+  background: rgba(0, 0, 0, 0.6) !important;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.arcade-hero p {
+  background: rgba(0, 0, 0, 0.8) !important;
+  border: 1px solid rgba(0, 255, 0, 0.3);
+}
+
+/* Layout 1: Highway with Moving Cars */
+.highway-grid {
+  background:
+    linear-gradient(90deg, transparent 24%, rgba(255,0,255,0.3) 25%, rgba(255,0,255,0.3) 26%, transparent 27%, transparent 74%, rgba(255,0,255,0.3) 75%, rgba(255,0,255,0.3) 76%, transparent 77%, transparent),
+    linear-gradient(0deg, transparent 24%, rgba(0,255,255,0.3) 25%, rgba(0,255,255,0.3) 26%, transparent 27%, transparent 74%, rgba(0,255,255,0.3) 75%, rgba(0,255,255,0.3) 76%, transparent 77%, transparent);
+  background-size: 50px 50px;
+  animation: grid-move 3s linear infinite;
+}
+
+@keyframes grid-move {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(50px, 50px); }
+}
+
+.car {
+  position: absolute;
+  font-size: 2rem;
+  animation: drive 4s linear infinite;
+}
+
+.car-1 { animation-delay: 0s; top: 20%; }
+.car-2 { animation-delay: 1.5s; top: 50%; }
+.car-3 { animation-delay: 3s; top: 80%; }
+
+@keyframes drive {
+  0% { left: -10%; }
+  100% { left: 110%; }
+}
+
+.neon-glow {
+  text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 40px #ffd700;
+}
+
+/* Layout 2: Synthwave Grid */
+.synthwave-grid {
+  background:
+    linear-gradient(0deg, rgba(255,0,255,0.1) 50%, transparent 50%),
+    linear-gradient(90deg, rgba(0,255,255,0.1) 50%, transparent 50%);
+  background-size: 40px 40px;
+  animation: synthwave-pulse 2s ease-in-out infinite alternate;
+  perspective: 1000px;
+  transform: rotateX(85deg) translateZ(-100px);
+}
+
+@keyframes synthwave-pulse {
+  0% { opacity: 0.3; }
+  100% { opacity: 0.6; }
+}
+
+.crm-node {
+  position: absolute;
+  animation: float-nodes 3s ease-in-out infinite;
+}
+
+.crm-node:nth-child(2) { animation-delay: 1s; }
+.crm-node:nth-child(3) { animation-delay: 2s; }
+
+@keyframes float-nodes {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.neon-border {
+  border: 2px solid #00ffff;
+  box-shadow: 0 0 10px #00ffff, inset 0 0 10px #00ffff;
+}
+
+.data-beam {
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00ffff, transparent);
+  animation: beam-pulse 2s linear infinite;
+}
+
+.beam-1 {
+  top: 25%;
+  left: 25%;
+  width: 200px;
+  transform: rotate(45deg);
+}
+
+.beam-2 {
+  top: 35%;
+  right: 30%;
+  width: 150px;
+  transform: rotate(-30deg);
+  animation-delay: 0.7s;
+}
+
+.beam-3 {
+  bottom: 45%;
+  left: 35%;
+  width: 180px;
+  transform: rotate(15deg);
+  animation-delay: 1.4s;
+}
+
+@keyframes beam-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+.neon-glow-cyan {
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff;
+}
+
+.neon-button {
+  box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+  border: 2px solid #00ffff;
+}
+
+.neon-button:hover {
+  box-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff;
+}
+
+/* Layout 3: Arcade Dashboard */
+.gauge-container {
+  width: 80px;
+  height: 80px;
+}
+
+.gauge {
+  width: 100%;
+  height: 100%;
+  border: 3px solid #00ff00;
+  border-radius: 50%;
+  position: relative;
+  background: radial-gradient(circle, rgba(0,255,0,0.1), transparent);
+}
+
+.gauge-meter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 30px;
+  background: #00ff00;
+  transform-origin: bottom center;
+  transform: translate(-50%, -100%) rotate(45deg);
+  animation: gauge-sweep 3s ease-in-out infinite;
+}
+
+.gauge-2 {
+  animation: gauge-sweep-2 2.5s ease-in-out infinite;
+}
+
+@keyframes gauge-sweep {
+  0% { transform: translate(-50%, -100%) rotate(-90deg); }
+  50% { transform: translate(-50%, -100%) rotate(45deg); }
+  100% { transform: translate(-50%, -100%) rotate(-90deg); }
+}
+
+@keyframes gauge-sweep-2 {
+  0% { transform: translate(-50%, -100%) rotate(90deg); }
+  50% { transform: translate(-50%, -100%) rotate(-45deg); }
+  100% { transform: translate(-50%, -100%) rotate(90deg); }
+}
+
+.gauge-label {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #00ff00;
+  font-family: 'Fira Code', monospace;
+  font-size: 10px;
+}
+
+.scanlines {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 2px,
+    rgba(0,255,0,0.1) 2px,
+    rgba(0,255,0,0.1) 4px
+  );
+  animation: scanline-move 0.1s linear infinite;
+}
+
+@keyframes scanline-move {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(4px); }
+}
+
+.terminal-glow {
+  text-shadow: 0 0 10px #ffff00, 0 0 20px #ffff00;
+}
+
+.terminal-button {
+  box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+  border: 2px solid #00ff00;
+}
+
+.terminal-button:hover {
+  box-shadow: 0 0 15px #00ff00, 0 0 30px #00ff00;
+}
+
+.retro-text {
+  animation: text-flicker 0.5s infinite alternate;
+}
+
+@keyframes text-flicker {
+  0% { opacity: 1; }
+  100% { opacity: 0.8; }
+}
+
+/* Layout 4: City Skyline */
+.building {
+  position: absolute;
+  bottom: 0;
+  width: 60px;
+  background: linear-gradient(180deg,
+    rgba(255,0,255,0.3) 0%,
+    rgba(255,0,255,0.1) 50%,
+    rgba(0,255,255,0.3) 100%);
+  border: 1px solid #ff00ff;
+  animation: building-glow 3s ease-in-out infinite alternate;
+}
+
+.building:nth-child(2n) {
+  animation-delay: 1s;
+}
+
+.building:nth-child(3n) {
+  animation-delay: 2s;
+}
+
+@keyframes building-glow {
+  0% {
+    border-color: #ff00ff;
+    box-shadow: 0 0 10px #ff00ff;
+  }
+  100% {
+    border-color: #00ffff;
+    box-shadow: 0 0 20px #00ffff;
+  }
+}
+
+.packet {
+  position: absolute;
+  font-size: 1.5rem;
+  animation: packet-fly 5s linear infinite;
+}
+
+.packet-1 {
+  top: 20%;
+  animation-delay: 0s;
+}
+
+.packet-2 {
+  top: 40%;
+  animation-delay: 2s;
+}
+
+.packet-3 {
+  top: 60%;
+  animation-delay: 4s;
+}
+
+@keyframes packet-fly {
+  0% {
+    left: -5%;
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-15px);
+  }
+  100% {
+    left: 105%;
+    transform: translateY(0);
+  }
+}
+
+.neon-glow-pink {
+  text-shadow: 0 0 10px #ff1493, 0 0 20px #ff1493, 0 0 40px #ff1493;
+}
+
+.neon-button-pink {
+  box-shadow: 0 0 10px #ff1493, 0 0 20px #ff1493;
+  border: 2px solid #ff1493;
+}
+
+.neon-button-pink:hover {
+  box-shadow: 0 0 15px #ff1493, 0 0 30px #ff1493;
+}
+
+.city-text {
+  animation: city-pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes city-pulse {
+  0% { text-shadow: 0 0 10px #ffffff; }
+  100% { text-shadow: 0 0 20px #ff1493, 0 0 30px #ff1493; }
+}
+
+/* ========== CLASSIC OUTRUN HIGHWAY GRID ========== */
+
+/* Enhanced Outrun Highway with Animation */
+@property --outrun-progress {
+  syntax: "<number>";
+  initial-value: 0;
+  inherits: false;
+}
+
+@keyframes outrunDrive {
+  to { --outrun-progress: 1; }
+}
+
+.outrun-highway {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  animation: outrunDrive 2s linear infinite;
+  --outrun-progress: 0;
+  --horizon: 60%;
+  --distance: 0.8%;
+  background:
+    /* Vertical grid lines */
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 99px,
+      #ff1493 100px,
+      #ff1493 101px
+    ),
+    /* Horizontal grid lines */
+    repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      transparent 49px,
+      #ff1493 50px,
+      #ff1493 51px
+    );
+
+  /* Apply perspective to create the highway effect */
+  transform: perspective(600px) rotateX(75deg) translateZ(-200px);
+  transform-origin: center bottom;
+
+  /* Animate the grid moving toward the viewer */
+  animation: highway-scroll 2s linear infinite;
+
+  /* Make it cover the full area */
+  width: 200%;
+  height: 200%;
+  left: -50%;
+  top: -50%;
+}
+
+/* Animation that makes the grid continuously move down/toward viewer */
+@keyframes highway-scroll {
+  0% {
+    transform: perspective(600px) rotateX(75deg) translateZ(-200px) translateY(0px);
+  }
+  100% {
+    transform: perspective(600px) rotateX(75deg) translateZ(-200px) translateY(100px);
+  }
+}
+
+/* Mountain Silhouettes for Outrun Aesthetic */
+.outrun-mountains {
+  position: absolute;
+  bottom: 40%;
+  left: 0;
+  right: 0;
+  height: 40%;
+  z-index: 2;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1200 400' xmlns='http://www.w3.org/2000/svg'><path d='M0,400 L0,200 L100,100 L200,150 L300,80 L400,120 L500,60 L600,100 L700,40 L800,80 L900,20 L1000,60 L1100,30 L1200,50 L1200,400 Z' fill='%23331155' opacity='0.9'/><path d='M0,400 L0,250 L150,180 L250,220 L350,160 L450,200 L550,140 L650,180 L750,120 L850,160 L950,100 L1050,140 L1150,110 L1200,130 L1200,400 Z' fill='%23441166' opacity='0.7'/></svg>");
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+/* Add a subtle glow effect to the grid lines for more synthwave feel */
+/* SVG Grid Lines for Perspective */
+.outrun-highway::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background-image: url("data:image/svg+xml;utf8,<svg width='1808' height='230' xmlns='http://www.w3.org/2000/svg'><path d='M904 -46 L-3616 230 M904 -46 L-3254.4 230 M904 -46 L-2892.8 230 M904 -46 L-2531.2000000000003 230 M904 -46 L-2169.6000000000004 230 M904 -46 L-1808 230 M904 -46 L-1446.4 230 M904 -46 L-1084.8000000000002 230 M904 -46 L-723.2 230 M904 -46 L-361.6 230 M904 -46 L0 230 M904 -46 L361.6 230 M904 -46 L723.2 230 M904 -46 L1084.8000000000002 230 M904 -46 L1446.4 230 M904 -46 L1808 230 M904 -46 L2169.6000000000004 230 M904 -46 L2531.2000000000003 230 M904 -46 L2892.8 230 M904 -46 L3254.4 230 M904 -46 L3616 230 M904 -46 L3977.6000000000004 230 M904 -46 L4339.200000000001 230 M904 -46 L4700.8 230 M904 -46 L5062.400000000001 230 M904 -46 L5424 230' stroke='%23FF0080' stroke-width='2' vector-effect='non-scaling-stroke' opacity='0.8' /></svg>");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+/* Horizontal Grid Lines with Animation */
+.outrun-highway::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  --pos: var(--outrun-progress, 0);
+  --l0: calc(var(--horizon) + 0 * 0 * var(--distance) + (((0 + 1) * (0 + 1) * var(--distance) - 0 * 0 * var(--distance)) * var(--pos)));
+  --l1: calc(var(--horizon) + 1 * 1 * var(--distance) + (((1 + 1) * (1 + 1) * var(--distance) - 1 * 1 * var(--distance)) * var(--pos)));
+  --l2: calc(var(--horizon) + 2 * 2 * var(--distance) + (((2 + 1) * (2 + 1) * var(--distance) - 2 * 2 * var(--distance)) * var(--pos)));
+  --l3: calc(var(--horizon) + 3 * 3 * var(--distance) + (((3 + 1) * (3 + 1) * var(--distance) - 3 * 3 * var(--distance)) * var(--pos)));
+  --l4: calc(var(--horizon) + 4 * 4 * var(--distance) + (((4 + 1) * (4 + 1) * var(--distance) - 4 * 4 * var(--distance)) * var(--pos)));
+  --l5: calc(var(--horizon) + 5 * 5 * var(--distance) + (((5 + 1) * (5 + 1) * var(--distance) - 5 * 5 * var(--distance)) * var(--pos)));
+
+  background:
+    linear-gradient(transparent 0 var(--horizon), #6495ED var(--horizon) calc(var(--horizon) + 2px), transparent calc(var(--horizon) + 2px)),
+    linear-gradient(transparent 0 var(--l0), #6495ED var(--l0) calc(var(--l0) + 2px), transparent calc(var(--l0) + 2px)),
+    linear-gradient(transparent 0 var(--l1), #6495ED var(--l1) calc(var(--l1) + 2px), transparent calc(var(--l1) + 2px)),
+    linear-gradient(transparent 0 var(--l2), #6495ED var(--l2) calc(var(--l2) + 2px), transparent calc(var(--l2) + 2px)),
+    linear-gradient(transparent 0 var(--l3), #6495ED var(--l3) calc(var(--l3) + 2px), transparent calc(var(--l3) + 2px)),
+    linear-gradient(transparent 0 var(--l4), #6495ED var(--l4) calc(var(--l4) + 2px), transparent calc(var(--l4) + 2px)),
+    linear-gradient(transparent 0 var(--l5), #6495ED var(--l5) calc(var(--l5) + 2px), transparent calc(var(--l5) + 2px));
+}
+
+/* Fallback for older browser support */
+.outrun-highway-fallback::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 99px,
+      rgba(255, 20, 147, 0.5) 100px,
+      rgba(255, 20, 147, 0.5) 101px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      transparent 49px,
+      rgba(255, 20, 147, 0.5) 50px,
+      rgba(255, 20, 147, 0.5) 51px
+    );
+  filter: blur(1px);
+  opacity: 0.7;
 } 

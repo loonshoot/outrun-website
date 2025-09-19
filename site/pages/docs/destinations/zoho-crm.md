@@ -18,7 +18,7 @@ breadcrumbs:
 
 Send your standardized People and Organizations data to Zoho CRM. Zoho CRM destination offers unique flexibility with People mapping to either Contacts or Leads based on your business needs.
 
-<div class="bg-red-500 bg-opacity-10 border border-red-500 rounded-lg p-6 my-6">
+<div class="bg-red-500 bg-opacity-10 border border-red-500  p-6 my-6">
   <h3 class="text-red-400 text-lg font-semibold mb-3">🔴 Flexible Destination Mapping</h3>
   <p class="text-gray-300">Zoho CRM destination uniquely supports mapping People to either Contacts or Leads, allowing you to route prospects and established contacts appropriately.</p>
 </div>
@@ -120,7 +120,7 @@ Zoho CRM destination has conservative rate limits that require careful managemen
 - **Retry Logic**: Intelligent retry with exponential backoff
 - **Batch Processing**: Optimized batching within rate limits
 
-<div class="bg-yellow bg-opacity-10 border border-yellow rounded-lg p-6 my-6">
+<div class="bg-yellow bg-opacity-10 border border-yellow  p-6 my-6">
   <h3 class="text-yellow text-lg font-semibold mb-3">⚠️ Rate Limit Management</h3>
   <p class="text-gray-300">Zoho CRM has the most restrictive rate limits among our destinations. Outrun automatically manages these with intelligent batching and retry logic to ensure reliable data delivery.</p>
 </div>

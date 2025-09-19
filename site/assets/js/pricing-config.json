@@ -1,63 +1,73 @@
 {
   "freeTier": {
     "storage": "100MB",
-    "syncs": 200
+    "syncs": 0
   },
-  "syncLevels": [200, 500, 1000, 2500, 5000, 10000, 25000],
   "plans": {
     "starter": {
       "name": "Starter",
       "color": "yellow-400",
       "description": "Best for getting started",
-      "unitRates": [0, 0.05, 0.04, 0.046, 0.048, 0.049, 0.049],
+      "basePrice": 49,
+      "includedSyncs": 500,
+      "overageRate": 0.15,
       "features": [
+        "500 syncs included",
         "100MB storage",
         "2 connectors",
         "1 user",
         "Community support"
       ],
-      "ctaText": "Start Free",
+      "ctaText": "Start Free Trial",
       "ctaColor": "yellow-400"
     },
     "pro": {
       "name": "Pro",
       "color": "pink-600",
       "description": "Best for individuals",
-      "unitRates": [0, 0.12375, 0.099, 0.1136, 0.1188, 0.1219, 0.1238],
+      "basePrice": 149,
+      "includedSyncs": 2000,
+      "overageRate": 0.10,
       "popular": true,
       "features": [
+        "2,000 syncs included",
         "500MB storage",
         "5 connectors",
         "5 users",
         "Priority support",
         "Advanced transformations"
       ],
-      "ctaText": "Start Trial",
+      "ctaText": "Start Free Trial",
       "ctaColor": "pink-600"
     },
     "team": {
       "name": "Team",
       "color": "cyan-400",
       "description": "Best for teams",
-      "unitRates": [0, 0.31667, 0.25, 0.29, 0.305, 0.3125, 0.319],
-      "popular": true,
+      "basePrice": 399,
+      "includedSyncs": 5000,
+      "overageRate": 0.08,
       "features": [
+        "5,000 syncs included",
         "2TB storage",
         "10 connectors",
         "15 users",
         "Advanced analytics",
         "Audit trails"
       ],
-      "ctaText": "Start Trial",
+      "ctaText": "Start Free Trial",
       "ctaColor": "cyan-400"
     },
     "enterprise": {
       "name": "Enterprise",
       "color": "yellow-400",
       "description": "Best for large organizations",
-      "unitRates": [0, 0.63333, 0.5, 0.58, 0.61, 0.625, 0.638],
+      "basePrice": "Custom",
+      "includedSyncs": 25000,
+      "overageRate": 0.05,
       "customPricing": true,
       "features": [
+        "25,000+ syncs included",
         "Custom storage",
         "Unlimited connectors",
         "Unlimited users",
@@ -68,10 +78,14 @@
       "ctaColor": "yellow-400"
     }
   },
-  "thresholds": {
-    "pro": 500,
-    "team": 1000,
-    "enterprise": 2000
-  }
+  "syncRanges": [
+    { "label": "500", "value": 500 },
+    { "label": "1K", "value": 1000 },
+    { "label": "2K", "value": 2000 },
+    { "label": "5K", "value": 5000 },
+    { "label": "10K", "value": 10000 },
+    { "label": "25K", "value": 25000 },
+    { "label": "50K+", "value": 50000 }
+  ]
 }
  

@@ -21,26 +21,26 @@ Understanding these fundamental concepts will help you make the most of Outrun's
 Outrun follows a systematic approach to data synchronization:
 
 <div class="grid grid-cols-1 md:grid-cols-4 gap-4 my-8">
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-4 text-center">
-    <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-3">1</div>
+  <div class="bg-dark-light border border-gray-600  p-4 text-center">
+    <div class="w-12 h-12 bg-blue-500  flex items-center justify-center text-white font-bold text-lg mx-auto mb-3">1</div>
     <h3 class="text-yellow text-sm font-semibold mb-2">Ingestion</h3>
     <p class="text-gray-400 text-xs">Raw data collected from sources</p>
   </div>
   
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-4 text-center">
-    <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-3">2</div>
+  <div class="bg-dark-light border border-gray-600  p-4 text-center">
+    <div class="w-12 h-12 bg-green-500  flex items-center justify-center text-white font-bold text-lg mx-auto mb-3">2</div>
     <h3 class="text-yellow text-sm font-semibold mb-2">Consolidation</h3>
     <p class="text-gray-400 text-xs">Data merged and cleaned</p>
   </div>
   
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-4 text-center">
-    <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-3">3</div>
+  <div class="bg-dark-light border border-gray-600  p-4 text-center">
+    <div class="w-12 h-12 bg-purple-500  flex items-center justify-center text-white font-bold text-lg mx-auto mb-3">3</div>
     <h3 class="text-yellow text-sm font-semibold mb-2">Standardization</h3>
     <p class="text-gray-400 text-xs">Transformed into standard objects</p>
   </div>
   
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-4 text-center">
-    <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-3">4</div>
+  <div class="bg-dark-light border border-gray-600  p-4 text-center">
+    <div class="w-12 h-12 bg-orange-500  flex items-center justify-center text-white font-bold text-lg mx-auto mb-3">4</div>
     <h3 class="text-yellow text-sm font-semibold mb-2">Delivery</h3>
     <p class="text-gray-400 text-xs">Sent to destinations</p>
   </div>
@@ -49,7 +49,7 @@ Outrun follows a systematic approach to data synchronization:
 ## Key Concepts
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-  <a href="/docs/concepts/objects/" class="bg-dark-light border border-gray-600 rounded-lg p-6 hover:border-yellow transition-colors">
+  <a href="/docs/concepts/objects/" class="bg-dark-light border border-gray-600  p-6 hover:border-yellow transition-colors">
     <h3 class="text-yellow text-lg font-semibold mb-3">🧩 Objects</h3>
     <p class="text-gray-300 mb-3">The four standardized object types that represent all business data: People, Organizations, Facts, and Relationships.</p>
     <ul class="text-gray-400 text-sm space-y-1">
@@ -59,7 +59,7 @@ Outrun follows a systematic approach to data synchronization:
     </ul>
   </a>
 
-  <a href="/docs/concepts/ingestion/" class="bg-dark-light border border-gray-600 rounded-lg p-6 hover:border-yellow transition-colors">
+  <a href="/docs/concepts/ingestion/" class="bg-dark-light border border-gray-600  p-6 hover:border-yellow transition-colors">
     <h3 class="text-yellow text-lg font-semibold mb-3">📥 Ingestion</h3>
     <p class="text-gray-300 mb-3">How Outrun collects and stores raw data from your sources using real-time streams or batch jobs.</p>
     <ul class="text-gray-400 text-sm space-y-1">
@@ -69,7 +69,7 @@ Outrun follows a systematic approach to data synchronization:
     </ul>
   </a>
 
-  <a href="/docs/concepts/standardization/" class="bg-dark-light border border-gray-600 rounded-lg p-6 hover:border-yellow transition-colors">
+  <a href="/docs/concepts/standardization/" class="bg-dark-light border border-gray-600  p-6 hover:border-yellow transition-colors">
     <h3 class="text-yellow text-lg font-semibold mb-3">🔄 Standardization</h3>
     <p class="text-gray-300 mb-3">How raw data transforms into standardized People, Organizations, Facts, and Relationships.</p>
     <ul class="text-gray-400 text-sm space-y-1">
@@ -79,7 +79,7 @@ Outrun follows a systematic approach to data synchronization:
     </ul>
   </a>
 
-  <a href="/docs/concepts/delivery/" class="bg-dark-light border border-gray-600 rounded-lg p-6 hover:border-yellow transition-colors">
+  <a href="/docs/concepts/delivery/" class="bg-dark-light border border-gray-600  p-6 hover:border-yellow transition-colors">
     <h3 class="text-yellow text-lg font-semibold mb-3">📤 Delivery</h3>
     <p class="text-gray-300 mb-3">How standardized data is delivered to your target systems with intelligent mapping and rate limiting.</p>
     <ul class="text-gray-400 text-sm space-y-1">
@@ -89,7 +89,7 @@ Outrun follows a systematic approach to data synchronization:
     </ul>
   </a>
 
-  <a href="/docs/concepts/storage/" class="bg-dark-light border border-gray-600 rounded-lg p-6 hover:border-yellow transition-colors">
+  <a href="/docs/concepts/storage/" class="bg-dark-light border border-gray-600  p-6 hover:border-yellow transition-colors">
     <h3 class="text-yellow text-lg font-semibold mb-3">🏗️ Storage</h3>
     <p class="text-gray-300 mb-3">Multi-region storage architecture with intelligent regional data placement for optimal compliance.</p>
     <ul class="text-gray-400 text-sm space-y-1">
@@ -101,7 +101,7 @@ Outrun follows a systematic approach to data synchronization:
 </div>
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-  <a href="/docs/concepts/security/" class="bg-dark-light border border-gray-600 rounded-lg p-6 hover:border-yellow transition-colors">
+  <a href="/docs/concepts/security/" class="bg-dark-light border border-gray-600  p-6 hover:border-yellow transition-colors">
     <h3 class="text-yellow text-lg font-semibold mb-3">🔒 Security & Compliance</h3>
     <p class="text-gray-300 mb-3">Comprehensive security measures, SOC 2 compliance, and data ownership policies.</p>
     <ul class="text-gray-400 text-sm space-y-1">
@@ -111,7 +111,7 @@ Outrun follows a systematic approach to data synchronization:
     </ul>
   </a>
 
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6 opacity-60">
+  <div class="bg-dark-light border border-gray-600  p-6 opacity-60">
     <h3 class="text-gray-400 text-lg font-semibold mb-3">🔗 Data Relationships</h3>
     <p class="text-gray-300 mb-3">How Outrun maintains connections between data objects across different systems.</p>
     <ul class="text-gray-400 text-sm space-y-1">
@@ -174,13 +174,13 @@ Built for enterprise-scale data synchronization:
 ## Next Steps
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
+  <div class="bg-dark-light border border-gray-600  p-6">
     <h3 class="text-yellow text-lg font-semibold mb-3">🚀 Start with Ingestion</h3>
     <p class="text-gray-300 mb-4">Learn how Outrun collects and stores data from your sources.</p>
     <a href="/docs/concepts/ingestion/" class="text-yellow hover:text-yellow-light transition-colors">Learn About Ingestion →</a>
   </div>
   
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
+  <div class="bg-dark-light border border-gray-600  p-6">
     <h3 class="text-yellow text-lg font-semibold mb-3">📚 Browse Sources</h3>
     <p class="text-gray-300 mb-4">See what data sources Outrun can connect to.</p>
     <a href="/docs/sources/" class="text-yellow hover:text-yellow-light transition-colors">View Sources →</a>

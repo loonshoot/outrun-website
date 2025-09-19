@@ -18,7 +18,7 @@ breadcrumbs:
 
 Ingestion is the first step in Outrun's data synchronization process. After adding a source, Outrun begins collecting and storing raw data from your systems using the most appropriate method for each source type.
 
-<div class="bg-blue-500 bg-opacity-10 border border-blue-500 rounded-lg p-6 my-6">
+<div class="bg-blue-500 bg-opacity-10 border border-blue-500  p-6 my-6">
   <h3 class="text-blue-400 text-lg font-semibold mb-3">📥 Data Collection Strategy</h3>
   <p class="text-gray-300">Outrun automatically selects the optimal ingestion method for each source - real-time streams when available, or intelligent batch jobs for comprehensive data collection.</p>
 </div>
@@ -44,7 +44,7 @@ For sources without real-time capabilities, Outrun runs periodic batch jobs:
 - **Incremental Updates**: Only collects changed data after initial sync
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
+  <div class="bg-dark-light border border-gray-600  p-6">
     <h3 class="text-green-400 text-lg font-semibold mb-3">⚡ Real-Time Streams</h3>
     <ul class="text-gray-300 space-y-2 text-sm">
       <li>• <strong>Salesforce PubSub</strong> - Enterprise/Unlimited editions</li>
@@ -54,7 +54,7 @@ For sources without real-time capabilities, Outrun runs periodic batch jobs:
     </ul>
   </div>
 
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
+  <div class="bg-dark-light border border-gray-600  p-6">
     <h3 class="text-blue-400 text-lg font-semibold mb-3">🔄 Batch Jobs</h3>
     <ul class="text-gray-300 space-y-2 text-sm">
       <li>• <strong>HubSpot</strong> - 60-minute polling intervals</li>
@@ -214,13 +214,13 @@ Configure real-time data collection parameters:
 ## Next Steps
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
+  <div class="bg-dark-light border border-gray-600  p-6">
     <h3 class="text-yellow text-lg font-semibold mb-3">🔄 Learn About Standardization</h3>
     <p class="text-gray-300 mb-4">Discover how raw ingested data transforms into standardized objects.</p>
     <a href="/docs/concepts/standardization/" class="text-yellow hover:text-yellow-light transition-colors">Standardization Process →</a>
   </div>
   
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
+  <div class="bg-dark-light border border-gray-600  p-6">
     <h3 class="text-yellow text-lg font-semibold mb-3">📚 Explore Sources</h3>
     <p class="text-gray-300 mb-4">See specific ingestion methods for each supported source.</p>
     <a href="/docs/sources/" class="text-yellow hover:text-yellow-light transition-colors">View Sources →</a>
