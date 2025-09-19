@@ -20,7 +20,7 @@ Get your first data sync running in under 10 minutes. This guide will walk you t
 
 Your Outrun account is personal to you and designed for security and simplicity.
 
-<div class="bg-dark-light border border-gray-600 rounded-lg p-6 my-6">
+<div class="bg-dark-light border border-gray-600  p-6 my-6">
   <h3 class="text-yellow text-lg font-semibold mb-3">🔐 Why Magic Links?</h3>
   <p class="text-gray-300">We use magic links instead of passwords because we don't want to store your passwords. This approach also sets us up perfectly for the SSO features we have planned for later.</p>
     </div>
@@ -40,7 +40,7 @@ Sources are where your data comes from. We currently support **{{ sources.count 
 2. **Click "Add Source"** 
 3. **Select your source type** - for this guide, we'll use **HubSpot**
 
-<div class="bg-yellow bg-opacity-10 border border-yellow rounded-lg p-6 my-6">
+<div class="bg-yellow bg-opacity-10 border border-yellow  p-6 my-6">
   <h3 class="text-yellow text-lg font-semibold mb-3">💡 Pro Tip</h3>
   <p class="text-gray-300">Start with a source that has data you're familiar with. HubSpot is great for testing because it has clear contact and company structures.</p>
   </div>
@@ -54,7 +54,7 @@ Next, you'll need to connect Outrun to your HubSpot account.
 3. **Complete the OAuth flow** in the popup window
 4. **Grant permissions** when prompted
 
-<div class="bg-dark-light border border-gray-600 rounded-lg p-6 my-6">
+<div class="bg-dark-light border border-gray-600  p-6 my-6">
   <h4 class="text-light font-semibold mb-3">🔒 What We Store</h4>
   <ul class="text-gray-300 space-y-2">
     <li>• Your OAuth access token (encrypted)</li>
@@ -76,7 +76,7 @@ We allow you to name your sources because some organizations have multiple insta
 
 Your source will start syncing immediately after setup.
 
-<div class="bg-dark-light border border-gray-600 rounded-lg p-6 my-6">
+<div class="bg-dark-light border border-gray-600  p-6 my-6">
   <h4 class="text-light font-semibold mb-3">⚡ Rate Limiting</h4>
   <p class="text-gray-300">Outrun uses standard rate limiting to manage requests at a volume the service can handle. If you have higher API limits, let us know—we're interested in how this feature might offer some customization options.</p>
   </div>
@@ -96,7 +96,7 @@ Your source will start syncing immediately after setup.
 
 **⏱️ Be patient!** Depending on your company size, initial syncs can take time. Systems with lots of data need more time to process.
 
-<div class="bg-yellow bg-opacity-10 border border-yellow rounded-lg p-6 my-6">
+<div class="bg-yellow bg-opacity-10 border border-yellow  p-6 my-6">
   <h3 class="text-yellow text-lg font-semibold mb-3">⚠️ Important</h3>
   <p class="text-gray-300">We recommend waiting for your initial sync to complete before adding your first destination. This ensures clean, complete data transfer.</p>
 </div>
@@ -139,13 +139,13 @@ Track your data synchronization through:
 ## Next Steps
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
+  <div class="bg-dark-light border border-gray-600  p-6">
     <h3 class="text-yellow text-lg font-semibold mb-3">📚 Core Concepts</h3>
     <p class="text-gray-300 mb-4">Learn about standardized objects, data transformation, and Outrun's philosophy.</p>
     <a href="/docs/concepts/" class="text-yellow hover:text-yellow-light transition-colors">Learn More →</a>
   </div>
   
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
+  <div class="bg-dark-light border border-gray-600  p-6">
     <h3 class="text-yellow text-lg font-semibold mb-3">🔌 Browse Integrations</h3>
     <p class="text-gray-300 mb-4">Explore all supported sources and destinations for your data ecosystem.</p>
     <a href="/docs/integrations/" class="text-yellow hover:text-yellow-light transition-colors">View All →</a>

@@ -1,0 +1,274 @@
+/* Outrun Highway Hero Section - Enhanced from example */
+
+/* CSS Variables for Outrun Color Palette */
+:root {
+  --outrun-blue: hsl(219, 79%, 66%);
+  --outrun-pink: hsl(319, 100%, 60%);
+  --outrun-purple: hsl(266, 49%, 25%);
+  --outrun-yellow: hsl(60, 82%, 58%);
+  --outrun-red: hsl(0, 67%, 55%);
+  --outrun-dark: hsl(213, 96%, 11%);
+  --outrun-pink-hsl: 319, 100%, 60%;
+}
+
+/* Custom Property for Animation */
+@property --outrun-progress {
+  syntax: "<number>";
+  initial-value: 0;
+  inherits: false;
+}
+
+/* Outrun Highway Animation */
+@keyframes outrunDrive {
+  to { --outrun-progress: 1; }
+}
+
+/* Main Hero Section */
+.outrun-hero {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(180deg,
+    var(--outrun-dark) 0%,
+    var(--outrun-purple) 40%,
+    hsla(var(--outrun-pink-hsl), 0.8) 70%,
+    var(--outrun-yellow) 100%
+  );
+}
+
+/* Highway Grid Background */
+.outrun-highway {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: none;
+  animation: outrunDrive 2s linear infinite;
+  --outrun-progress: 0;
+  --horizon: 60%;
+  --distance: 0.8%;
+}
+
+/* SVG Grid Lines for Perspective */
+.outrun-highway::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background-image: url("data:image/svg+xml;utf8,<svg width='1808' height='230' xmlns='http://www.w3.org/2000/svg'><path d='M904 -46 L-3616 230 M904 -46 L-3254.4 230 M904 -46 L-2892.8 230 M904 -46 L-2531.2000000000003 230 M904 -46 L-2169.6000000000004 230 M904 -46 L-1808 230 M904 -46 L-1446.4 230 M904 -46 L-1084.8000000000002 230 M904 -46 L-723.2 230 M904 -46 L-361.6 230 M904 -46 L0 230 M904 -46 L361.6 230 M904 -46 L723.2 230 M904 -46 L1084.8000000000002 230 M904 -46 L1446.4 230 M904 -46 L1808 230 M904 -46 L2169.6000000000004 230 M904 -46 L2531.2000000000003 230 M904 -46 L2892.8 230 M904 -46 L3254.4 230 M904 -46 L3616 230 M904 -46 L3977.6000000000004 230 M904 -46 L4339.200000000001 230 M904 -46 L4700.8 230 M904 -46 L5062.400000000001 230 M904 -46 L5424 230' stroke='%23FF0080' stroke-width='2' vector-effect='non-scaling-stroke' opacity='0.8' /></svg>");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+/* Horizontal Grid Lines */
+.outrun-highway::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  --pos: var(--outrun-progress, 0);
+  --l0: calc(var(--horizon) + 0 * 0 * var(--distance) + (((0 + 1) * (0 + 1) * var(--distance) - 0 * 0 * var(--distance)) * var(--pos)));
+  --l1: calc(var(--horizon) + 1 * 1 * var(--distance) + (((1 + 1) * (1 + 1) * var(--distance) - 1 * 1 * var(--distance)) * var(--pos)));
+  --l2: calc(var(--horizon) + 2 * 2 * var(--distance) + (((2 + 1) * (2 + 1) * var(--distance) - 2 * 2 * var(--distance)) * var(--pos)));
+  --l3: calc(var(--horizon) + 3 * 3 * var(--distance) + (((3 + 1) * (3 + 1) * var(--distance) - 3 * 3 * var(--distance)) * var(--pos)));
+  --l4: calc(var(--horizon) + 4 * 4 * var(--distance) + (((4 + 1) * (4 + 1) * var(--distance) - 4 * 4 * var(--distance)) * var(--pos)));
+  --l5: calc(var(--horizon) + 5 * 5 * var(--distance) + (((5 + 1) * (5 + 1) * var(--distance) - 5 * 5 * var(--distance)) * var(--pos)));
+  --l6: calc(var(--horizon) + 6 * 6 * var(--distance) + (((6 + 1) * (6 + 1) * var(--distance) - 6 * 6 * var(--distance)) * var(--pos)));
+  --l7: calc(var(--horizon) + 7 * 7 * var(--distance) + (((7 + 1) * (7 + 1) * var(--distance) - 7 * 7 * var(--distance)) * var(--pos)));
+
+  background:
+    linear-gradient(transparent 0 var(--horizon), var(--outrun-blue) var(--horizon) calc(var(--horizon) + 2px), transparent calc(var(--horizon) + 2px)),
+    linear-gradient(transparent 0 var(--l0), var(--outrun-blue) var(--l0) calc(var(--l0) + 2px), transparent calc(var(--l0) + 2px)),
+    linear-gradient(transparent 0 var(--l1), var(--outrun-blue) var(--l1) calc(var(--l1) + 2px), transparent calc(var(--l1) + 2px)),
+    linear-gradient(transparent 0 var(--l2), var(--outrun-blue) var(--l2) calc(var(--l2) + 2px), transparent calc(var(--l2) + 2px)),
+    linear-gradient(transparent 0 var(--l3), var(--outrun-blue) var(--l3) calc(var(--l3) + 2px), transparent calc(var(--l3) + 2px)),
+    linear-gradient(transparent 0 var(--l4), var(--outrun-blue) var(--l4) calc(var(--l4) + 2px), transparent calc(var(--l4) + 2px)),
+    linear-gradient(transparent 0 var(--l5), var(--outrun-blue) var(--l5) calc(var(--l5) + 2px), transparent calc(var(--l5) + 2px)),
+    linear-gradient(transparent 0 var(--l6), var(--outrun-blue) var(--l6) calc(var(--l6) + 2px), transparent calc(var(--l6) + 2px)),
+    linear-gradient(transparent 0 var(--l7), var(--outrun-blue) var(--l7) calc(var(--l7) + 2px), transparent calc(var(--l7) + 2px));
+}
+
+/* Mountain Silhouettes */
+.outrun-mountains {
+  position: absolute;
+  bottom: 40%;
+  left: 0;
+  right: 0;
+  height: 40%;
+  z-index: 2;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1200 400' xmlns='http://www.w3.org/2000/svg'><path d='M0,400 L0,200 L100,100 L200,150 L300,80 L400,120 L500,60 L600,100 L700,40 L800,80 L900,20 L1000,60 L1100,30 L1200,50 L1200,400 Z' fill='%23331155' opacity='0.9'/><path d='M0,400 L0,250 L150,180 L250,220 L350,160 L450,200 L550,140 L650,180 L750,120 L850,160 L950,100 L1050,140 L1150,110 L1200,130 L1200,400 Z' fill='%23441166' opacity='0.7'/></svg>");
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+/* Neon Glow Effects */
+.neon-glow-pink {
+  text-shadow:
+    0 0 5px var(--outrun-pink),
+    0 0 10px var(--outrun-pink),
+    0 0 20px var(--outrun-pink),
+    0 0 40px var(--outrun-pink);
+  color: var(--outrun-pink);
+}
+
+.neon-glow-blue {
+  text-shadow:
+    0 0 5px var(--outrun-blue),
+    0 0 10px var(--outrun-blue),
+    0 0 20px var(--outrun-blue),
+    0 0 40px var(--outrun-blue);
+  color: var(--outrun-blue);
+}
+
+.neon-glow-yellow {
+  text-shadow:
+    0 0 5px var(--outrun-yellow),
+    0 0 10px var(--outrun-yellow),
+    0 0 20px var(--outrun-yellow),
+    0 0 40px var(--outrun-yellow);
+  color: var(--outrun-yellow);
+}
+
+/* Neon Button Effect */
+.neon-button {
+  position: relative;
+  background: transparent;
+  border: 2px solid var(--outrun-pink);
+  color: var(--outrun-pink);
+  padding: 1rem 2rem;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.neon-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, var(--outrun-pink), transparent);
+  transition: left 0.5s ease;
+}
+
+.neon-button:hover {
+  box-shadow:
+    0 0 10px var(--outrun-pink),
+    0 0 20px var(--outrun-pink),
+    0 0 40px var(--outrun-pink),
+    inset 0 0 10px rgba(255, 0, 128, 0.2);
+  color: white;
+  background: rgba(255, 0, 128, 0.1);
+}
+
+.neon-button:hover::before {
+  left: 100%;
+}
+
+/* Grid Pattern Overlay */
+.grid-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(rgba(255, 0, 128, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 0, 128, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: 1;
+  opacity: 0.3;
+  animation: gridPulse 4s ease-in-out infinite;
+}
+
+@keyframes gridPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+/* Content Positioning */
+.outrun-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Hero Title Styling */
+.outrun-title {
+  font-family: 'Courier New', monospace;
+  font-size: clamp(2rem, 8vw, 6rem);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 1rem;
+  animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+  from {
+    text-shadow:
+      0 0 10px var(--outrun-pink),
+      0 0 20px var(--outrun-pink),
+      0 0 30px var(--outrun-pink);
+  }
+  to {
+    text-shadow:
+      0 0 20px var(--outrun-pink),
+      0 0 30px var(--outrun-pink),
+      0 0 40px var(--outrun-pink),
+      0 0 50px var(--outrun-pink);
+  }
+}
+
+/* Subtitle Styling */
+.outrun-subtitle {
+  font-family: 'Courier New', monospace;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  color: var(--outrun-blue);
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .outrun-content {
+    padding: 1rem;
+  }
+
+  .outrun-title {
+    letter-spacing: 2px;
+  }
+
+  .neon-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .outrun-highway::before {
+    opacity: 0.6;
+  }
+
+  .grid-overlay {
+    background-size: 30px 30px;
+  }
+}

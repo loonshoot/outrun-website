@@ -27,9 +27,9 @@ Your standardized data becomes accessible to AI models through secure, protocol-
 ## Supported AI Integrations
 
 <div class="grid grid-cols-1 md:grid-cols-1 gap-6 my-8">
-  <a href="/docs/ai/model-context-protocol/" class="bg-dark-light border border-gray-600 rounded-lg p-6 hover:border-yellow transition-colors">
+  <a href="/docs/ai/model-context-protocol/" class="bg-dark-light border border-gray-600  p-6 hover:border-yellow transition-colors">
     <div class="flex items-center space-x-4 mb-4">
-      <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center text-white font-bold text-lg">🤖</div>
+      <div class="w-12 h-12 bg-purple-500  flex items-center justify-center text-white font-bold text-lg">🤖</div>
       <div>
         <h3 class="text-yellow text-lg font-semibold">Model Context Protocol (MCP)</h3>
         <p class="text-gray-400 text-sm">Standard AI Model Integration</p>
@@ -37,9 +37,9 @@ Your standardized data becomes accessible to AI models through secure, protocol-
     </div>
     <p class="text-gray-300 text-sm mb-3">Enable AI models to directly query and analyze your standardized data through the Model Context Protocol.</p>
     <div class="flex flex-wrap gap-2">
-      <span class="px-2 py-1 bg-purple-500 bg-opacity-20 text-purple-400 text-xs rounded">Direct Data Access</span>
-      <span class="px-2 py-1 bg-purple-500 bg-opacity-20 text-purple-400 text-xs rounded">Real-time Queries</span>
-      <span class="px-2 py-1 bg-purple-500 bg-opacity-20 text-purple-400 text-xs rounded">Schema Discovery</span>
+      <span class="px-2 py-1 bg-purple-500 bg-opacity-20 text-purple-400 text-xs ">Direct Data Access</span>
+      <span class="px-2 py-1 bg-purple-500 bg-opacity-20 text-purple-400 text-xs ">Real-time Queries</span>
+      <span class="px-2 py-1 bg-purple-500 bg-opacity-20 text-purple-400 text-xs ">Schema Discovery</span>
     </div>
   </a>
 </div>

@@ -4,10 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const syncCount = document.getElementById('syncCount');
   const pricingPlans = document.querySelectorAll('.pricing-plan');
 
-  // Updated sync values starting from 200 (free tier)
-  const syncValues = [200, 500, 1000, 2500, 5000, 10000, 25000];
-  const syncLabels = ['200', '500', '1K', '2.5K', '5K', '10K', '25K+'];
-
   let pricingConfig = null;
 
   // Load pricing configuration
@@ -25,41 +21,52 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!pricingConfig) return 0;
     
     const plan = pricingConfig.plans[planKey];
-    const freeTierSyncs = pricingConfig.freeTier.syncs;
+    if (!plan) return 0;
     
-    if (plan.customPricing && syncs > freeTierSyncs) return 'Custom';
+    if (plan.customPricing) return 'Custom';
     
-    // Find the index of the current sync level
-    const syncIndex = pricingConfig.syncLevels.indexOf(syncs);
-    if (syncIndex === -1) return 0; // Invalid sync level
+    // Calculate base price + overage
+    let totalPrice = plan.basePrice;
     
-    // Calculate billable units: syncs - free tier
-    const units = Math.max(0, syncs - freeTierSyncs);
+    // Calculate overage if syncs exceed included amount
+    if (syncs > plan.includedSyncs) {
+      const overageAmount = syncs - plan.includedSyncs;
+      const overageCost = overageAmount * plan.overageRate;
+      totalPrice += overageCost;
+    }
     
-    // Get the unit rate for this tier and calculate price
-    const unitRate = plan.unitRates[syncIndex];
-    const monthlyPrice = units * unitRate;
-    
-    // Apply yearly discount if needed
-    return isYearly ? (monthlyPrice * 0.8) : monthlyPrice;
+    // Apply yearly discount if needed (20% off)
+    return isYearly ? (totalPrice * 0.8) : totalPrice;
   }
 
   function formatPrice(price) {
     if (price === 'Custom') return 'Custom';
     if (price === 0) return '$0';
-    if (price < 1) return '$' + price.toFixed(3);
-    return '$' + price.toFixed(2);
+    if (price < 1) return '$' + price.toFixed(2);
+    return '$' + Math.round(price);
+  }
+
+  function getSyncValueFromSlider(sliderValue) {
+    const ranges = pricingConfig.syncRanges;
+    if (!ranges || sliderValue >= ranges.length) return 50000;
+    return ranges[sliderValue].value;
+  }
+
+  function getSyncLabelFromSlider(sliderValue) {
+    const ranges = pricingConfig.syncRanges;
+    if (!ranges || sliderValue >= ranges.length) return '50K+';
+    return ranges[sliderValue].label;
   }
 
   function updatePricing() {
     if (!pricingConfig) return;
     
     const sliderValue = parseInt(syncSlider.value);
-    const currentSyncs = syncValues[sliderValue];
+    const currentSyncs = getSyncValueFromSlider(sliderValue);
     const isYearly = document.querySelector('input[name="billing"]:checked').value === 'yearly';
     
     // Update sync count display
-    syncCount.textContent = syncLabels[sliderValue];
+    syncCount.textContent = getSyncLabelFromSlider(sliderValue);
     
     // Remove all disabled states first
     pricingPlans.forEach(plan => {
@@ -71,42 +78,26 @@ document.addEventListener('DOMContentLoaded', function() {
       const planElement = document.querySelector(`[data-plan="${planKey}"]`);
       if (!planElement) return;
       
-      const price = calculatePrice(planKey, currentSyncs, isYearly);
+      const monthlyPrice = calculatePrice(planKey, currentSyncs, false);
+      const yearlyPrice = calculatePrice(planKey, currentSyncs, true);
+      
       const monthlyPriceEl = planElement.querySelector('.monthly-price');
       const yearlyPriceEl = planElement.querySelector('.yearly-price');
       
       if (monthlyPriceEl) {
-        monthlyPriceEl.textContent = formatPrice(calculatePrice(planKey, currentSyncs, false));
+        monthlyPriceEl.textContent = formatPrice(monthlyPrice);
       }
       if (yearlyPriceEl) {
-        yearlyPriceEl.textContent = formatPrice(calculatePrice(planKey, currentSyncs, true));
+        yearlyPriceEl.textContent = formatPrice(yearlyPrice);
       }
-    });
-    
-    // Apply disabled state based on sync count
-    if (currentSyncs < pricingConfig.thresholds.pro) {
-      // Only Starter plan available
-      const proPlan = document.querySelector('[data-plan="pro"]');
-      const teamPlan = document.querySelector('[data-plan="team"]');
-      const enterprisePlan = document.querySelector('[data-plan="enterprise"]');
-      
-      if (proPlan) proPlan.classList.add('plan-disabled');
-      if (teamPlan) teamPlan.classList.add('plan-disabled');
-      if (enterprisePlan) enterprisePlan.classList.add('plan-disabled');
-    } else if (currentSyncs < pricingConfig.thresholds.team) {
-      // Starter + Pro available
-      const teamPlan = document.querySelector('[data-plan="team"]');
-      const enterprisePlan = document.querySelector('[data-plan="enterprise"]');
-      
-      if (teamPlan) teamPlan.classList.add('plan-disabled');
-      if (enterprisePlan) enterprisePlan.classList.add('plan-disabled');
-    } else if (currentSyncs < pricingConfig.thresholds.enterprise) {
-      // Starter + Pro + Team available
-      const enterprisePlan = document.querySelector('[data-plan="enterprise"]');
-      
-      if (enterprisePlan) enterprisePlan.classList.add('plan-disabled');
+
+      // Update overage display
+      const plan = pricingConfig.plans[planKey];
+      const overageEl = planElement.querySelector('.overage-rate');
+      if (overageEl && plan.overageRate) {
+        overageEl.textContent = `$${plan.overageRate}/sync over ${plan.includedSyncs.toLocaleString()}`;
     }
-    // If currentSyncs >= 2000, all plans are available (no disabled state)
+    });
   }
 
   // Handle billing toggle
@@ -149,6 +140,23 @@ document.addEventListener('DOMContentLoaded', function() {
     updatePricing();
   }
 
+  // Set up slider range based on sync options
+  function initializeSlider() {
+    if (!pricingConfig || !pricingConfig.syncRanges) return;
+    
+    syncSlider.min = 0;
+    syncSlider.max = pricingConfig.syncRanges.length - 1;
+    syncSlider.value = 0; // Start at first option
+    
+    // Update slider labels
+    const sliderLabels = document.querySelector('.slider-labels');
+    if (sliderLabels) {
+      sliderLabels.innerHTML = pricingConfig.syncRanges
+        .map(range => `<span>${range.label}</span>`)
+        .join('');
+    }
+  }
+
   // Event listeners
   if (syncSlider) {
     syncSlider.addEventListener('input', updatePricing);
@@ -159,6 +167,8 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Initialize
-  loadPricingConfig();
+  loadPricingConfig().then(() => {
+    initializeSlider();
   updateBilling();
+  });
 }); 

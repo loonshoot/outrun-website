@@ -18,7 +18,7 @@ breadcrumbs:
 
 Connect your Salesforce org to Outrun for enterprise-grade data synchronization. Salesforce offers the most comprehensive object support with real-time capabilities through PubSub integration.
 
-<div class="bg-blue-500 bg-opacity-10 border border-blue-500 rounded-lg p-6 my-6">
+<div class="bg-blue-500 bg-opacity-10 border border-blue-500  p-6 my-6">
   <h3 class="text-blue-400 text-lg font-semibold mb-3">⚡ Enterprise Features</h3>
   <p class="text-gray-300">Salesforce integration includes PubSub real-time sync for Enterprise, Unlimited, and Performance editions, with automatic fallback to polling for other editions.</p>
 </div>
@@ -143,7 +143,7 @@ Salesforce has sophisticated rate limiting that Outrun optimizes:
 - **Destination Writes**: 10 requests per second
 - **PubSub Events**: Real-time (no polling limits)
 
-<div class="bg-yellow bg-opacity-10 border border-yellow rounded-lg p-6 my-6">
+<div class="bg-yellow bg-opacity-10 border border-yellow  p-6 my-6">
   <h3 class="text-yellow text-lg font-semibold mb-3">🏢 Enterprise Optimization</h3>
   <p class="text-gray-300">Enterprise orgs often have higher API limits. Contact us to configure custom rate limits that match your Salesforce API allocation for maximum performance.</p>
 </div>

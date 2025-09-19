@@ -39,19 +39,19 @@ Our ambition extends beyond data synchronization. After establishing this standa
 New to Outrun? Start with these essential guides:
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-8">
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6 hover:border-yellow transition-colors">
+  <div class="bg-dark-light border border-gray-600  p-6 hover:border-yellow transition-colors">
     <h3 class="text-yellow text-lg font-semibold mb-3">🚀 Quick Start</h3>
     <p class="text-gray-300 mb-4">Get up and running with Outrun in minutes. Create your first sync and see your data flow.</p>
     <a href="/docs/getting-started/" class="text-yellow hover:text-yellow-light transition-colors">Get Started →</a>
   </div>
   
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6 hover:border-yellow transition-colors">
+  <div class="bg-dark-light border border-gray-600  p-6 hover:border-yellow transition-colors">
     <h3 class="text-yellow text-lg font-semibold mb-3">📚 Core Concepts</h3>
     <p class="text-gray-300 mb-4">Understand how Outrun standardizes data and creates seamless integrations.</p>
     <a href="/docs/concepts/" class="text-yellow hover:text-yellow-light transition-colors">Learn More →</a>
   </div>
   
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6 hover:border-yellow transition-colors">
+  <div class="bg-dark-light border border-gray-600  p-6 hover:border-yellow transition-colors">
     <h3 class="text-yellow text-lg font-semibold mb-3">🔌 Integrations</h3>
     <p class="text-gray-300 mb-4">Browse our supported sources and destinations to plan your data flows.</p>
     <a href="/docs/integrations/" class="text-yellow hover:text-yellow-light transition-colors">View All →</a>
@@ -72,23 +72,23 @@ Understanding these fundamental concepts will help you make the most of Outrun:
 Connect your most-used tools and services:
 
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 my-8">
-  <a href="/docs/providers/salesforce/" class="flex items-center space-x-3 p-4 bg-dark-light border border-gray-600 rounded-lg hover:border-yellow transition-colors">
-    <div class="w-8 h-8 bg-blue-500 rounded flex items-center justify-center text-white font-bold text-sm">SF</div>
+  <a href="/docs/providers/salesforce/" class="flex items-center space-x-3 p-4 bg-dark-light border border-gray-600  hover:border-yellow transition-colors">
+    <div class="w-8 h-8 bg-blue-500  flex items-center justify-center text-white font-bold text-sm">SF</div>
     <span class="text-light">Salesforce</span>
   </a>
   
-  <a href="/docs/providers/hubspot/" class="flex items-center space-x-3 p-4 bg-dark-light border border-gray-600 rounded-lg hover:border-yellow transition-colors">
-    <div class="w-8 h-8 bg-orange-500 rounded flex items-center justify-center text-white font-bold text-sm">HS</div>
+  <a href="/docs/providers/hubspot/" class="flex items-center space-x-3 p-4 bg-dark-light border border-gray-600  hover:border-yellow transition-colors">
+    <div class="w-8 h-8 bg-orange-500  flex items-center justify-center text-white font-bold text-sm">HS</div>
     <span class="text-light">HubSpot</span>
   </a>
   
-  <a href="/docs/providers/google-search-console/" class="flex items-center space-x-3 p-4 bg-dark-light border border-gray-600 rounded-lg hover:border-yellow transition-colors">
-    <div class="w-8 h-8 bg-red-500 rounded flex items-center justify-center text-white font-bold text-sm">G</div>
+  <a href="/docs/providers/google-search-console/" class="flex items-center space-x-3 p-4 bg-dark-light border border-gray-600  hover:border-yellow transition-colors">
+    <div class="w-8 h-8 bg-red-500  flex items-center justify-center text-white font-bold text-sm">G</div>
     <span class="text-light">Google SC</span>
   </a>
   
-  <a href="/docs/providers/confluence/" class="flex items-center space-x-3 p-4 bg-dark-light border border-gray-600 rounded-lg hover:border-yellow transition-colors">
-    <div class="w-8 h-8 bg-blue-600 rounded flex items-center justify-center text-white font-bold text-sm">C</div>
+  <a href="/docs/providers/confluence/" class="flex items-center space-x-3 p-4 bg-dark-light border border-gray-600  hover:border-yellow transition-colors">
+    <div class="w-8 h-8 bg-blue-600  flex items-center justify-center text-white font-bold text-sm">C</div>
     <span class="text-light">Confluence</span>
   </a>
 </div>
@@ -107,7 +107,7 @@ Build custom integrations with our comprehensive API:
 
 We're here to support you every step of the way:
 
-<div class="bg-yellow bg-opacity-10 border border-yellow rounded-lg p-6 my-8">
+<div class="bg-yellow bg-opacity-10 border border-yellow  p-6 my-8">
   <h3 class="text-yellow text-lg font-semibold mb-3">💬 Get Support</h3>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
     <div>

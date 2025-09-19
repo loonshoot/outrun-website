@@ -18,7 +18,7 @@ breadcrumbs:
 
 Send your standardized People and Organizations data to Salesforce CRM. Salesforce destination provides enterprise-grade data delivery with comprehensive validation and Salesforce-specific features.
 
-<div class="bg-blue-500 bg-opacity-10 border border-blue-500 rounded-lg p-6 my-6">
+<div class="bg-blue-500 bg-opacity-10 border border-blue-500  p-6 my-6">
   <h3 class="text-blue-400 text-lg font-semibold mb-3">⚡ Enterprise Destination</h3>
   <p class="text-gray-300">Salesforce destination includes enterprise features like validation rule compliance, trigger compatibility, and comprehensive field-level security support.</p>
 </div>
@@ -97,7 +97,7 @@ Salesforce destination has enterprise-grade rate limiting:
 - **Governor Limits**: All Salesforce limits respected
 - **Retry Logic**: Intelligent retry with exponential backoff
 
-<div class="bg-yellow bg-opacity-10 border border-yellow rounded-lg p-6 my-6">
+<div class="bg-yellow bg-opacity-10 border border-yellow  p-6 my-6">
   <h3 class="text-yellow text-lg font-semibold mb-3">🏢 Enterprise Performance</h3>
   <p class="text-gray-300">Salesforce destination leverages Bulk API for large operations and respects all governor limits while providing enterprise-grade performance and reliability.</p>
 </div>

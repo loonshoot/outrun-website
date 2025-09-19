@@ -30,9 +30,9 @@ When you connect a source to Outrun:
 We currently support **{{ sources.count }}** different source systems:
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-  <a href="/docs/sources/hubspot/" class="bg-dark-light border border-gray-600 rounded-lg p-6 hover:border-yellow transition-colors">
+  <a href="/docs/sources/hubspot/" class="bg-dark-light border border-gray-600  p-6 hover:border-yellow transition-colors">
     <div class="flex items-center space-x-4 mb-4">
-      <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center text-white font-bold text-lg">HS</div>
+      <div class="w-12 h-12 bg-orange-500  flex items-center justify-center text-white font-bold text-lg">HS</div>
       <div>
         <h3 class="text-yellow text-lg font-semibold">HubSpot</h3>
         <p class="text-gray-400 text-sm">CRM & Marketing Platform</p>
@@ -40,15 +40,15 @@ We currently support **{{ sources.count }}** different source systems:
     </div>
     <p class="text-gray-300 text-sm mb-3">Contacts, Companies, and relationship data from your HubSpot CRM.</p>
     <div class="flex flex-wrap gap-2">
-      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs rounded">People</span>
-      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs rounded">Organizations</span>
-      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs rounded">Relationships</span>
+      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs ">People</span>
+      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs ">Organizations</span>
+      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs ">Relationships</span>
     </div>
   </a>
 
-  <a href="/docs/sources/salesforce/" class="bg-dark-light border border-gray-600 rounded-lg p-6 hover:border-yellow transition-colors">
+  <a href="/docs/sources/salesforce/" class="bg-dark-light border border-gray-600  p-6 hover:border-yellow transition-colors">
     <div class="flex items-center space-x-4 mb-4">
-      <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-lg">SF</div>
+      <div class="w-12 h-12 bg-blue-500  flex items-center justify-center text-white font-bold text-lg">SF</div>
       <div>
         <h3 class="text-yellow text-lg font-semibold">Salesforce</h3>
         <p class="text-gray-400 text-sm">Enterprise CRM Platform</p>
@@ -56,16 +56,16 @@ We currently support **{{ sources.count }}** different source systems:
     </div>
     <p class="text-gray-300 text-sm mb-3">Contacts, Accounts, Leads, and Products from your Salesforce org.</p>
     <div class="flex flex-wrap gap-2">
-      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs rounded">People</span>
-      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs rounded">Organizations</span>
-      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs rounded">Products</span>
-      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs rounded">Relationships</span>
+      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs ">People</span>
+      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs ">Organizations</span>
+      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs ">Products</span>
+      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs ">Relationships</span>
     </div>
   </a>
 
-  <a href="/docs/sources/zoho-crm/" class="bg-dark-light border border-gray-600 rounded-lg p-6 hover:border-yellow transition-colors">
+  <a href="/docs/sources/zoho-crm/" class="bg-dark-light border border-gray-600  p-6 hover:border-yellow transition-colors">
     <div class="flex items-center space-x-4 mb-4">
-      <div class="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center text-white font-bold text-lg">Z</div>
+      <div class="w-12 h-12 bg-red-500  flex items-center justify-center text-white font-bold text-lg">Z</div>
       <div>
         <h3 class="text-yellow text-lg font-semibold">Zoho CRM</h3>
         <p class="text-gray-400 text-sm">Business CRM Suite</p>
@@ -73,15 +73,15 @@ We currently support **{{ sources.count }}** different source systems:
     </div>
     <p class="text-gray-300 text-sm mb-3">Leads, Contacts, Accounts, and related records from Zoho CRM.</p>
     <div class="flex flex-wrap gap-2">
-      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs rounded">People</span>
-      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs rounded">Organizations</span>
-      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs rounded">Relationships</span>
+      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs ">People</span>
+      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs ">Organizations</span>
+      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs ">Relationships</span>
     </div>
   </a>
 
-  <a href="/docs/sources/confluence/" class="bg-dark-light border border-gray-600 rounded-lg p-6 hover:border-yellow transition-colors">
+  <a href="/docs/sources/confluence/" class="bg-dark-light border border-gray-600  p-6 hover:border-yellow transition-colors">
     <div class="flex items-center space-x-4 mb-4">
-      <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-lg">C</div>
+      <div class="w-12 h-12 bg-blue-600  flex items-center justify-center text-white font-bold text-lg">C</div>
       <div>
         <h3 class="text-yellow text-lg font-semibold">Confluence</h3>
         <p class="text-gray-400 text-sm">Team Collaboration</p>
@@ -89,14 +89,14 @@ We currently support **{{ sources.count }}** different source systems:
     </div>
     <p class="text-gray-300 text-sm mb-3">Pages, blog posts, and document relationships from Confluence.</p>
     <div class="flex flex-wrap gap-2">
-      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs rounded">Documents</span>
-      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs rounded">Relationships</span>
+      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs ">Documents</span>
+      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs ">Relationships</span>
     </div>
   </a>
 
-  <a href="/docs/sources/google-search-console/" class="bg-dark-light border border-gray-600 rounded-lg p-6 hover:border-yellow transition-colors">
+  <a href="/docs/sources/google-search-console/" class="bg-dark-light border border-gray-600  p-6 hover:border-yellow transition-colors">
     <div class="flex items-center space-x-4 mb-4">
-      <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center text-white font-bold text-lg">G</div>
+      <div class="w-12 h-12 bg-green-500  flex items-center justify-center text-white font-bold text-lg">G</div>
       <div>
         <h3 class="text-yellow text-lg font-semibold">Google Search Console</h3>
         <p class="text-gray-400 text-sm">SEO Analytics</p>
@@ -104,7 +104,7 @@ We currently support **{{ sources.count }}** different source systems:
     </div>
     <p class="text-gray-300 text-sm mb-3">Search analytics, clicks, impressions, and performance data.</p>
     <div class="flex flex-wrap gap-2">
-      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs rounded">Facts</span>
+      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs ">Facts</span>
     </div>
   </a>
 </div>
@@ -114,7 +114,7 @@ We currently support **{{ sources.count }}** different source systems:
 All sources transform their native data into these standardized objects:
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
+  <div class="bg-dark-light border border-gray-600  p-6">
     <h3 class="text-yellow text-lg font-semibold mb-3">👥 People</h3>
     <p class="text-gray-300 mb-3">Contacts, leads, users, and individuals from any system.</p>
     <ul class="text-gray-400 text-sm space-y-1">
@@ -125,7 +125,7 @@ All sources transform their native data into these standardized objects:
     </ul>
   </div>
 
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
+  <div class="bg-dark-light border border-gray-600  p-6">
     <h3 class="text-yellow text-lg font-semibold mb-3">🏢 Organizations</h3>
     <p class="text-gray-300 mb-3">Companies, accounts, and business entities.</p>
     <ul class="text-gray-400 text-sm space-y-1">
@@ -136,7 +136,7 @@ All sources transform their native data into these standardized objects:
     </ul>
   </div>
 
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
+  <div class="bg-dark-light border border-gray-600  p-6">
     <h3 class="text-yellow text-lg font-semibold mb-3">🔗 Relationships</h3>
     <p class="text-gray-300 mb-3">Connections between people and organizations.</p>
     <ul class="text-gray-400 text-sm space-y-1">
@@ -147,7 +147,7 @@ All sources transform their native data into these standardized objects:
     </ul>
   </div>
 
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
+  <div class="bg-dark-light border border-gray-600  p-6">
     <h3 class="text-yellow text-lg font-semibold mb-3">📊 Facts</h3>
     <p class="text-gray-300 mb-3">Events, activities, and measurable data points.</p>
     <ul class="text-gray-400 text-sm space-y-1">
@@ -172,13 +172,13 @@ Each source has carefully tuned rate limits to respect API quotas while maximizi
 ## Next Steps
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
+  <div class="bg-dark-light border border-gray-600  p-6">
     <h3 class="text-yellow text-lg font-semibold mb-3">🚀 Add Your First Source</h3>
     <p class="text-gray-300 mb-4">Follow our step-by-step guide to connect your first data source.</p>
     <a href="/docs/getting-started/" class="text-yellow hover:text-yellow-light transition-colors">Get Started →</a>
   </div>
   
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
+  <div class="bg-dark-light border border-gray-600  p-6">
     <h3 class="text-yellow text-lg font-semibold mb-3">🎯 Browse Destinations</h3>
     <p class="text-gray-300 mb-4">See where you can send your standardized data.</p>
     <a href="/docs/destinations/" class="text-yellow hover:text-yellow-light transition-colors">View Destinations →</a>

@@ -4,7 +4,7 @@ permalink: /pricing/
 title: Pricing - Outrun
 social_meta:
   title: Pricing - Outrun
-  description: Simple, transparent pricing for data integration. Start free with 100MB, then scale with Pro plans.
+  description: Tiered pricing with included syncs and affordable overage rates. Start with 500 syncs for $49/mo.
 ---
 
 <link rel="stylesheet" href="/assets/css/pricing.css">
@@ -16,18 +16,18 @@ social_meta:
         Simple, transparent pricing
       </h1>
       <p class="text-xl text-dark mb-8 leading-relaxed max-w-3xl mx-auto">
-        Start free and scale as you grow. No hidden fees, no vendor lock-in. Clear limits, predictable costs.
+        Fixed monthly price with included syncs. Need more? Pay only for what you use with affordable overage rates.
       </p>
       
       <!-- Billing Toggle -->
       <div class="flex items-center justify-center gap-4 mb-12">
         <label class="flex items-center cursor-pointer">
           <input type="radio" name="billing" value="monthly" checked class="sr-only billing-toggle">
-          <span class="billing-label px-4 py-2 font-mono text-sm bg-dark text-light rounded-md">Pay monthly</span>
+          <span class="billing-label px-4 py-2 font-mono text-sm bg-dark text-light ">Pay monthly</span>
         </label>
         <label class="flex items-center cursor-pointer">
           <input type="radio" name="billing" value="yearly" class="sr-only billing-toggle">
-          <span class="billing-label px-4 py-2 font-mono text-sm text-dark hover:bg-dark hover:text-light rounded-md transition-colors">Pay yearly (Save 20%)</span>
+          <span class="billing-label px-4 py-2 font-mono text-sm text-dark hover:bg-dark hover:text-light  transition-colors">Pay yearly (Save 20%)</span>
         </label>
       </div>
     </div>
@@ -47,20 +47,20 @@ social_meta:
             max="6" 
             value="0" 
             step="1"
-            class="w-full h-2 bg-dark rounded-lg appearance-none cursor-pointer slider"
+            class="w-full h-2 bg-dark  appearance-none cursor-pointer slider"
           >
-          <div class="flex justify-between text-sm font-mono text-dark mt-2">
-            <span>200</span>
+          <div class="flex justify-between text-sm font-mono text-dark mt-2 slider-labels">
             <span>500</span>
             <span>1K</span>
-            <span>2.5K</span>
+            <span>2K</span>
             <span>5K</span>
             <span>10K</span>
-            <span>25K+</span>
+            <span>25K</span>
+            <span>50K+</span>
           </div>
         </div>
         <div class="text-center mt-4">
-          <span id="syncCount" class="text-2xl font-bold font-mono text-dark">200</span>
+          <span id="syncCount" class="text-2xl font-bold font-mono text-dark">500</span>
           <span class="text-dark font-mono"> syncs/month</span>
         </div>
       </div>
@@ -69,24 +69,28 @@ social_meta:
     <!-- Pricing Cards -->
     <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
       <!-- Starter Plan -->
-      <div class="pricing-plan bg-dark p-6 rounded-lg border-2 border-grey-600 relative" data-plan="starter">
+      <div class="pricing-plan bg-dark p-6  border-2 border-grey-600 relative" data-plan="starter">
         <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <span class="bg-transparent text-transparent px-3 py-1 rounded-full text-xs font-mono">SPACER</span>
+          <span class="bg-transparent text-transparent px-3 py-1  text-xs font-mono">SPACER</span>
         </div>
         
         <div class="text-center mb-6">
           <p class="text-grey-300 text-xs mb-2 font-mono">Best for getting started</p>
           <h3 class="text-xl font-bold font-mono text-light mb-2">Starter</h3>
           <div class="text-3xl font-bold font-mono text-yellow-400 mb-2">
-            <span class="monthly-price">$0</span>
-            <span class="yearly-price hidden">$0</span>
+            <span class="monthly-price">$49</span>
+            <span class="yearly-price hidden">$39</span>
             <span class="text-sm text-grey-300">/mo</span>
           </div>
           <p class="text-grey-300 text-sm yearly-savings hidden">Billed annually</p>
-          <p class="text-grey-300 text-sm yearly-not-shown">200 syncs included</p>
+          <p class="text-grey-300 text-sm yearly-not-shown">500 syncs included</p>
         </div>
         
         <div class="space-y-3 mb-8">
+          <div class="flex items-start">
+            <span class="text-yellow-400 mr-3 text-sm">✓</span>
+            <span class="text-light text-sm">500 syncs included</span>
+          </div>
           <div class="flex items-start">
             <span class="text-yellow-400 mr-3 text-sm">✓</span>
             <span class="text-light text-sm">100MB storage</span>
@@ -103,12 +107,16 @@ social_meta:
             <span class="text-yellow-400 mr-3 text-sm">✓</span>
             <span class="text-light text-sm">Community support</span>
           </div>
+          <div class="flex items-start">
+            <span class="text-grey-400 mr-3 text-sm">+</span>
+            <span class="text-grey-300 text-xs overage-rate">$0.15/sync over 500</span>
+          </div>
         </div>
 
         <div class="group h-10 relative w-full">
           <button class="flex items-center w-full h-10 absolute bg-yellow-400">
             <div class="flex items-center w-full text-center text-dark text-sm font-normal font-mono">
-              <p class="text-center w-full pt-1 group-hover:pt-0">Start Free</p>
+              <p class="text-center w-full pt-1 group-hover:pt-0">Start Free Trial</p>
             </div>
           </button>
           <div class="flex w-full h-10 top-1 left-1 group-hover:top-0 group-hover:left-0 absolute border-solid border-2 border-light">
@@ -117,23 +125,28 @@ social_meta:
       </div>
 
       <!-- Pro Plan -->
-      <div class="pricing-plan bg-dark p-6 rounded-lg border-2 border-pink-600 relative" data-plan="pro">
+      <div class="pricing-plan bg-dark p-6  border-2 border-pink-600 relative" data-plan="pro">
         <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <span class="bg-pink-600 text-light px-3 py-1 rounded-full text-xs font-mono">POPULAR</span>
+          <span class="bg-pink-600 text-light px-3 py-1  text-xs font-mono">POPULAR</span>
         </div>
         
         <div class="text-center mb-6">
           <p class="text-grey-300 text-xs mb-2 font-mono">Best for individuals</p>
           <h3 class="text-xl font-bold font-mono text-light mb-2">Pro</h3>
           <div class="text-3xl font-bold font-mono text-pink-600 mb-2">
-            <span class="monthly-price">$99</span>
-            <span class="yearly-price hidden">$79</span>
+            <span class="monthly-price">$149</span>
+            <span class="yearly-price hidden">$119</span>
             <span class="text-sm text-grey-300">/mo</span>
           </div>
           <p class="text-grey-300 text-sm yearly-savings hidden">Billed annually</p>
+          <p class="text-grey-300 text-sm yearly-not-shown">2,000 syncs included</p>
         </div>
         
         <div class="space-y-3 mb-8">
+          <div class="flex items-start">
+            <span class="text-pink-600 mr-3 text-sm">✓</span>
+            <span class="text-light text-sm">2,000 syncs included</span>
+          </div>
           <div class="flex items-start">
             <span class="text-pink-600 mr-3 text-sm">✓</span>
             <span class="text-light text-sm">500MB storage</span>
@@ -154,12 +167,16 @@ social_meta:
             <span class="text-pink-600 mr-3 text-sm">✓</span>
             <span class="text-light text-sm">Advanced transformations</span>
           </div>
+          <div class="flex items-start">
+            <span class="text-grey-400 mr-3 text-sm">+</span>
+            <span class="text-grey-300 text-xs overage-rate">$0.10/sync over 2,000</span>
+          </div>
         </div>
 
         <div class="group h-10 relative w-full">
           <button class="flex items-center w-full h-10 absolute bg-pink-600">
             <div class="flex items-center w-full text-center text-light text-sm font-normal font-mono">
-              <p class="text-center w-full pt-1 group-hover:pt-0">Start Trial</p>
+              <p class="text-center w-full pt-1 group-hover:pt-0">Start Free Trial</p>
             </div>
           </button>
           <div class="flex w-full h-10 top-1 left-1 group-hover:top-0 group-hover:left-0 absolute border-solid border-2 border-light">
@@ -168,23 +185,28 @@ social_meta:
       </div>
 
       <!-- Team Plan -->
-      <div class="pricing-plan bg-dark p-6 rounded-lg border-2 border-cyan-400 relative" data-plan="team">
+      <div class="pricing-plan bg-dark p-6  border-2 border-cyan-400 relative" data-plan="team">
         <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <span class="bg-transparent text-transparent px-3 py-1 rounded-full text-xs font-mono">SPACER</span>
+          <span class="bg-transparent text-transparent px-3 py-1  text-xs font-mono">SPACER</span>
         </div>
         
         <div class="text-center mb-6">
           <p class="text-grey-300 text-xs mb-2 font-mono">Best for teams</p>
           <h3 class="text-xl font-bold font-mono text-light mb-2">Team</h3>
           <div class="text-3xl font-bold font-mono text-cyan-400 mb-2">
-            <span class="monthly-price">$299</span>
-            <span class="yearly-price hidden">$239</span>
+            <span class="monthly-price">$399</span>
+            <span class="yearly-price hidden">$319</span>
             <span class="text-sm text-grey-300">/mo</span>
           </div>
           <p class="text-grey-300 text-sm yearly-savings hidden">Billed annually</p>
+          <p class="text-grey-300 text-sm yearly-not-shown">5,000 syncs included</p>
         </div>
         
         <div class="space-y-3 mb-8">
+          <div class="flex items-start">
+            <span class="text-cyan-400 mr-3 text-sm">✓</span>
+            <span class="text-light text-sm">5,000 syncs included</span>
+          </div>
           <div class="flex items-start">
             <span class="text-cyan-400 mr-3 text-sm">✓</span>
             <span class="text-light text-sm">2TB storage</span>
@@ -205,12 +227,16 @@ social_meta:
             <span class="text-cyan-400 mr-3 text-sm">✓</span>
             <span class="text-light text-sm">Audit trails</span>
           </div>
+          <div class="flex items-start">
+            <span class="text-grey-400 mr-3 text-sm">+</span>
+            <span class="text-grey-300 text-xs overage-rate">$0.08/sync over 5,000</span>
+          </div>
         </div>
 
         <div class="group h-10 relative w-full">
           <button class="flex items-center w-full h-10 absolute bg-cyan-400">
             <div class="flex items-center w-full text-center text-dark text-sm font-normal font-mono">
-              <p class="text-center w-full pt-1 group-hover:pt-0">Start Trial</p>
+              <p class="text-center w-full pt-1 group-hover:pt-0">Start Free Trial</p>
             </div>
           </button>
           <div class="flex w-full h-10 top-1 left-1 group-hover:top-0 group-hover:left-0 absolute border-solid border-2 border-light">
@@ -219,9 +245,9 @@ social_meta:
       </div>
 
       <!-- Enterprise Plan -->
-      <div class="pricing-plan bg-dark p-6 rounded-lg border-2 border-yellow-400 relative" data-plan="enterprise">
+      <div class="pricing-plan bg-dark p-6  border-2 border-yellow-400 relative" data-plan="enterprise">
         <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <span class="bg-transparent text-transparent px-3 py-1 rounded-full text-xs font-mono">SPACER</span>
+          <span class="bg-transparent text-transparent px-3 py-1  text-xs font-mono">SPACER</span>
         </div>
         
         <div class="text-center mb-6">
@@ -233,9 +259,14 @@ social_meta:
             <span class="text-sm text-grey-300"> </span>
           </div>
           <p class="text-grey-300 text-sm yearly-savings hidden">Custom pricing</p>
+          <p class="text-grey-300 text-sm yearly-not-shown">25,000+ syncs included</p>
         </div>
         
         <div class="space-y-3 mb-8">
+          <div class="flex items-start">
+            <span class="text-yellow-400 mr-3 text-sm">✓</span>
+            <span class="text-light text-sm">25,000+ syncs included</span>
+          </div>
           <div class="flex items-start">
             <span class="text-yellow-400 mr-3 text-sm">✓</span>
             <span class="text-light text-sm">Custom storage</span>
@@ -255,6 +286,10 @@ social_meta:
           <div class="flex items-start">
             <span class="text-yellow-400 mr-3 text-sm">✓</span>
             <span class="text-light text-sm">Dedicated support</span>
+          </div>
+          <div class="flex items-start">
+            <span class="text-grey-400 mr-3 text-sm">+</span>
+            <span class="text-grey-300 text-xs overage-rate">Custom overage rates</span>
           </div>
         </div>
 
@@ -303,7 +338,7 @@ social_meta:
             What happens if I exceed my sync limit?
           </h3>
           <p class="text-light">
-            We'll notify you when you approach your limits. You can upgrade your plan or your syncs will pause until the next billing cycle.
+            You'll be charged for overages at your plan's rate (Starter: $0.15/sync, Pro: $0.10/sync, Team: $0.08/sync). We'll notify you when you approach your included limit so there are no surprises.
           </p>
         </div>
       </div>
@@ -329,10 +364,10 @@ social_meta:
         
         <div>
           <h3 class="text-xl font-semibold font-mono text-yellow-400 mb-3">
-            Can I add more users to my plan?
+            How do overage charges work?
           </h3>
           <p class="text-light">
-            Pro and Team plans have fixed user limits. For more users, you can upgrade to the next tier or contact sales for custom Enterprise pricing.
+            Each plan includes a set number of syncs. If you exceed this, you're charged per additional sync at your plan's overage rate. Higher tiers have lower overage rates, making them more cost-effective for high-volume usage.
           </p>
         </div>
       </div>

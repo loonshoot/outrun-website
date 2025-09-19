@@ -18,7 +18,7 @@ breadcrumbs:
 
 Connect your Confluence instance to Outrun for comprehensive knowledge base and document synchronization. Confluence specializes in document-centric data with rich content and collaboration metadata.
 
-<div class="bg-blue-600 bg-opacity-10 border border-blue-600 rounded-lg p-6 my-6">
+<div class="bg-blue-600 bg-opacity-10 border border-blue-600  p-6 my-6">
   <h3 class="text-blue-400 text-lg font-semibold mb-3">📄 Document-Focused Integration</h3>
   <p class="text-gray-300">Confluence integration focuses on documents and content rather than traditional CRM objects. Perfect for knowledge management and content synchronization use cases.</p>
 </div>
@@ -113,7 +113,7 @@ Confluence has moderate rate limits that Outrun respects:
 - **Search Operations**: 3 requests per second
 - **Content Retrieval**: Optimized for bulk content access
 
-<div class="bg-yellow bg-opacity-10 border border-yellow rounded-lg p-6 my-6">
+<div class="bg-yellow bg-opacity-10 border border-yellow  p-6 my-6">
   <h3 class="text-yellow text-lg font-semibold mb-3">📊 Content-Heavy Operations</h3>
   <p class="text-gray-300">Confluence content can be large (HTML, attachments, comments). Outrun optimizes content retrieval and handles large payloads efficiently while respecting rate limits.</p>
 </div>

@@ -18,7 +18,7 @@ breadcrumbs:
 
 Outrun's storage architecture is designed for maximum reliability, performance, and compliance. Our multi-region infrastructure ensures your data is always available while meeting local data sovereignty requirements.
 
-<div class="bg-blue-500 bg-opacity-10 border border-blue-500 rounded-lg p-6 my-6">
+<div class="bg-blue-500 bg-opacity-10 border border-blue-500  p-6 my-6">
   <h3 class="text-blue-400 text-lg font-semibold mb-3">🌍 Global Infrastructure</h3>
   <p class="text-gray-300">Your data is automatically replicated across multiple data centers in your chosen region, with intelligent placement based on user location for optimal compliance and performance.</p>
 </div>
@@ -36,7 +36,7 @@ Every piece of data is stored with built-in redundancy:
 ### Regional Data Centers
 
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
-  <div class="bg-dark-light border border-green-500 rounded-lg p-6">
+  <div class="bg-dark-light border border-green-500  p-6">
     <h3 class="text-green-400 text-lg font-semibold mb-3">🇦🇺 Australia</h3>
     <ul class="text-gray-300 space-y-2 text-sm">
       <li>• <strong>NextDC S1</strong><br/>Sydney, New South Wales</li>
@@ -46,7 +46,7 @@ Every piece of data is stored with built-in redundancy:
     <p class="text-gray-400 text-xs mt-3">Tier III+ facilities with 99.999% uptime SLA</p>
   </div>
 
-  <div class="bg-dark-light border border-blue-500 rounded-lg p-6">
+  <div class="bg-dark-light border border-blue-500  p-6">
     <h3 class="text-blue-400 text-lg font-semibold mb-3">🇪🇺 Europe</h3>
     <ul class="text-gray-300 space-y-2 text-sm">
       <li>• <strong>Hetzner Nuremberg</strong><br/>Data Center Park, Germany</li>
@@ -56,7 +56,7 @@ Every piece of data is stored with built-in redundancy:
     <p class="text-gray-400 text-xs mt-3">GDPR-compliant facilities with renewable energy</p>
   </div>
 
-  <div class="bg-dark-light border border-purple-500 rounded-lg p-6">
+  <div class="bg-dark-light border border-purple-500  p-6">
     <h3 class="text-purple-400 text-lg font-semibold mb-3">🇺🇸 United States</h3>
     <ul class="text-gray-300 space-y-2 text-sm">
       <li>• <strong>DigitalOcean NYC3</strong><br/>New York City</li>
@@ -280,13 +280,13 @@ We're continuously expanding our global footprint:
 ## Next Steps
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
+  <div class="bg-dark-light border border-gray-600  p-6">
     <h3 class="text-yellow text-lg font-semibold mb-3">🔒 Learn About Security</h3>
     <p class="text-gray-300 mb-4">Understand Outrun's security measures and compliance framework.</p>
     <a href="/docs/concepts/security/" class="text-yellow hover:text-yellow-light transition-colors">Security & Compliance →</a>
   </div>
   
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
+  <div class="bg-dark-light border border-gray-600  p-6">
     <h3 class="text-yellow text-lg font-semibold mb-3">🚀 Get Started</h3>
     <p class="text-gray-300 mb-4">Set up your first data synchronization workflow.</p>
     <a href="/docs/getting-started/quick-start/" class="text-yellow hover:text-yellow-light transition-colors">Quick Start Guide →</a>

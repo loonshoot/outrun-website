@@ -15,7 +15,7 @@ breadcrumbs:
 ---
 The Model Context Protocol destination enables AI models to directly query and interact with your standardized data. This integration provides a secure, standardized way for Large Language Models (LLMs) to access your business data for analysis, insights, and automated decision-making.
 
-<div class="bg-purple-500 bg-opacity-10 border border-purple-500 rounded-lg p-6 my-6">
+<div class="bg-purple-500 bg-opacity-10 border border-purple-500  p-6 my-6">
   <h3 class="text-purple-400 text-lg font-semibold mb-3">🤖 AI-Powered Data Access</h3>
   <p class="text-gray-300">MCP destination transforms your Outrun workspace into an AI-accessible data source, enabling natural language queries, automated analysis, and intelligent insights generation while maintaining security and access controls.</p>
 </div>

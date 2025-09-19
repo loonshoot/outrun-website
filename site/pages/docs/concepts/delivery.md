@@ -18,7 +18,7 @@ breadcrumbs:
 
 Delivery is the final stage of Outrun's data synchronization process, where standardized objects are transformed and delivered to your destination systems. This process ensures data reaches its intended targets in the correct format while respecting system limitations and business rules.
 
-<div class="bg-green-500 bg-opacity-10 border border-green-500 rounded-lg p-6 my-6">
+<div class="bg-green-500 bg-opacity-10 border border-green-500  p-6 my-6">
   <h3 class="text-green-400 text-lg font-semibold mb-3">📤 Intelligent Delivery</h3>
   <p class="text-gray-300">Outrun automatically handles destination-specific formatting, rate limiting, and error recovery to ensure reliable data delivery across all your systems.</p>
 </div>
@@ -64,7 +64,7 @@ Ensures successful delivery and tracks performance:
 Each destination system has unique requirements that Outrun handles automatically:
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-  <div class="bg-dark-light border border-blue-500 rounded-lg p-6">
+  <div class="bg-dark-light border border-blue-500  p-6">
     <h3 class="text-blue-400 text-lg font-semibold mb-3">🔄 HubSpot Destination</h3>
     <ul class="text-gray-300 space-y-2 text-sm">
       <li>• <strong>Rate Limit</strong>: 10 requests/second for writes</li>
@@ -74,7 +74,7 @@ Each destination system has unique requirements that Outrun handles automaticall
     </ul>
   </div>
 
-  <div class="bg-dark-light border border-green-500 rounded-lg p-6">
+  <div class="bg-dark-light border border-green-500  p-6">
     <h3 class="text-green-400 text-lg font-semibold mb-3">⚡ Salesforce Destination</h3>
     <ul class="text-gray-300 space-y-2 text-sm">
       <li>• <strong>Rate Limit</strong>: 100 requests/10 seconds</li>
@@ -84,7 +84,7 @@ Each destination system has unique requirements that Outrun handles automaticall
     </ul>
   </div>
 
-  <div class="bg-dark-light border border-purple-500 rounded-lg p-6">
+  <div class="bg-dark-light border border-purple-500  p-6">
     <h3 class="text-purple-400 text-lg font-semibold mb-3">🎯 Zoho CRM Destination</h3>
     <ul class="text-gray-300 space-y-2 text-sm">
       <li>• <strong>Rate Limit</strong>: 3 requests/10 seconds (writes)</li>
@@ -94,7 +94,7 @@ Each destination system has unique requirements that Outrun handles automaticall
     </ul>
   </div>
 
-  <div class="bg-dark-light border border-yellow-500 rounded-lg p-6">
+  <div class="bg-dark-light border border-yellow-500  p-6">
     <h3 class="text-yellow-400 text-lg font-semibold mb-3">📊 Analytics Destinations</h3>
     <ul class="text-gray-300 space-y-2 text-sm">
       <li>• <strong>Facts Objects</strong>: Metrics and KPIs</li>
@@ -368,13 +368,13 @@ Comprehensive monitoring ensures delivery reliability:
 ## Next Steps
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
+  <div class="bg-dark-light border border-gray-600  p-6">
     <h3 class="text-yellow text-lg font-semibold mb-3">🎯 Explore Destinations</h3>
     <p class="text-gray-300 mb-4">Learn about specific destination configurations and capabilities.</p>
     <a href="/docs/destinations/" class="text-yellow hover:text-yellow-light transition-colors">View Destinations →</a>
   </div>
   
-  <div class="bg-dark-light border border-gray-600 rounded-lg p-6">
+  <div class="bg-dark-light border border-gray-600  p-6">
     <h3 class="text-yellow text-lg font-semibold mb-3">🚀 Get Started</h3>
     <p class="text-gray-300 mb-4">Set up your first data synchronization workflow.</p>
     <a href="/docs/getting-started/quick-start/" class="text-yellow hover:text-yellow-light transition-colors">Quick Start Guide →</a>
