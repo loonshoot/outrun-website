@@ -84,10 +84,11 @@
               var(--lg7),
               var(--lg8),
               var(--lg9),
-              url("/assets/images/outrun/mountain.png") center 60% / min(75vh, 75vw) no-repeat,
-              url("/assets/images/outrun/mountain.png") center 60% / min(75vh, 75vw) repeat-x,
-              linear-gradient(transparent 20%, var(--c5) 60%, var(--c3) 60% 70%, hsla(var(--c2hsl), 0.75), transparent 150%),
+              url("/assets/images/outrun/mountain.svg") center 60% / min(75vh, 75vw) no-repeat,
+              url("/assets/images/outrun/mountain.svg") center 60% / min(75vh, 75vw) repeat-x,
+              linear-gradient(transparent 20%, var(--c5) 50%, var(--c3) 90%, transparent 150%),
               repeating-linear-gradient(90deg, transparent 0px 2px, var(--c3) 3px 4px),
+              url("/assets/images/outrun/sun.svg") center 45% / min(90vh, 90vw) no-repeat,
               radial-gradient(circle at center, transparent min(45vh, 45vw), hsla(var(--c2hsl), 0.75) min(65vh, 65vw), var(--c3) 120%),
               linear-gradient(
                 transparent 30vh,
@@ -102,7 +103,6 @@
                                                                     var(--c5) 52.5vh 57.5vh,
                                                                          transparent 57.5vh
               ),
-              radial-gradient(circle at center, var(--c4) min(45vh, 45vw), transparent min(45vh, 45vw)),
               linear-gradient(var(--c5) 60%, var(--c3) 60%, var(--c2) 150%);
 }
 

@@ -1,0 +1,56 @@
+<svg width="933" height="933" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 933 933">
+  <!-- Mountain Silhouette -->
+  <defs>
+    <linearGradient id="mountainGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a0033;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d1b69;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Mountains (farther) -->
+  <path d="M 0 400
+           L 150 250
+           L 280 320
+           L 400 180
+           L 520 280
+           L 650 200
+           L 780 300
+           L 933 250
+           L 933 933
+           L 0 933
+           Z"
+        fill="url(#mountainGradient)"
+        opacity="0.4"/>
+
+  <!-- Middle Mountains -->
+  <path d="M 0 450
+           L 100 350
+           L 200 380
+           L 350 200
+           L 450 320
+           L 600 250
+           L 750 350
+           L 850 280
+           L 933 320
+           L 933 933
+           L 0 933
+           Z"
+        fill="url(#mountainGradient)"
+        opacity="0.6"/>
+
+  <!-- Foreground Mountains (closer) -->
+  <path d="M 0 500
+           L 120 380
+           L 250 450
+           L 380 300
+           L 500 400
+           L 620 320
+           L 760 420
+           L 880 350
+           L 933 380
+           L 933 933
+           L 0 933
+           Z"
+        fill="url(#mountainGradient)"
+        opacity="1"/>
+</svg>

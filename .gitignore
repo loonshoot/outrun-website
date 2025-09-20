@@ -8,3 +8,5 @@ bookshop-live.js
 bookshop-hosted.js
 bookshop.css
 *.out.css
+.DS_Store
+**/.DS_Store
