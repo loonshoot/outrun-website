@@ -89,7 +89,6 @@
               linear-gradient(transparent 20%, var(--c5) 50%, var(--c3) 90%, transparent 150%),
               repeating-linear-gradient(90deg, transparent 0px 2px, var(--c3) 3px 4px),
               url("/assets/images/outrun/sun.svg") center 45% / min(90vh, 90vw) no-repeat,
-              radial-gradient(circle at center, transparent min(45vh, 45vw), hsla(var(--c2hsl), 0.75) min(65vh, 65vw), var(--c3) 120%),
               linear-gradient(
                 transparent 30vh,
                   var(--c5) 30vh 30.2vh,
