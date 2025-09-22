@@ -9,301 +9,33 @@ social_meta:
 
 <link rel="stylesheet" href="/assets/css/pricing.css">
 
-<section class="bg-yellow-400 text-dark min-h-screen">
-  <div class="max-w-7xl mx-auto px-6 lg:px-8 py-20">
-    <div class="text-center mb-16">
+<section class="bg-yellow-400 text-dark min-h-screen flex items-center justify-center">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="text-center">
       <h1 class="text-4xl lg:text-5xl font-bold font-mono mb-6 text-dark">
-        Simple, transparent pricing
+        Pricing to suit every business
       </h1>
       <p class="text-xl text-dark mb-8 leading-relaxed max-w-3xl mx-auto">
-        Fixed monthly price with included syncs. Need more? Pay only for what you use with affordable overage rates.
+        Every business has different needs and we are willing to support you on the unique way you work.
       </p>
-      
-      <!-- Billing Toggle -->
-      <div class="flex items-center justify-center gap-4 mb-12">
-        <label class="flex items-center cursor-pointer">
-          <input type="radio" name="billing" value="monthly" checked class="sr-only billing-toggle">
-          <span class="billing-label px-4 py-2 font-mono text-sm bg-dark text-light ">Pay monthly</span>
-        </label>
-        <label class="flex items-center cursor-pointer">
-          <input type="radio" name="billing" value="yearly" class="sr-only billing-toggle">
-          <span class="billing-label px-4 py-2 font-mono text-sm text-dark hover:bg-dark hover:text-light  transition-colors">Pay yearly (Save 20%)</span>
-        </label>
+
+      <div class="group h-12 relative w-64 mx-auto">
+        <a href="/contact">
+          <button class="flex items-center w-full h-12 absolute bg-dark hover:bg-gray-800 transition-colors">
+            <div class="flex items-center w-full text-center text-light text-lg font-normal font-mono">
+              <p class="text-center w-full pt-1 group-hover:pt-0">Contact Us</p>
+            </div>
+          </button>
+          <div class="flex w-full h-12 top-1 left-1 group-hover:top-0 group-hover:left-0 absolute border-solid border-2 border-dark transition-all">
+          </div>
+        </a>
       </div>
     </div>
 
-    <!-- Sync Selector -->
-    <div class="mb-16">
-      <h2 class="text-2xl font-bold font-mono text-dark text-center mb-8">
-        How many syncs per month do you need?
-      </h2>
-      
-      <div class="max-w-2xl mx-auto mb-8">
-        <div class="relative">
-          <input 
-            type="range" 
-            id="syncSlider" 
-            min="0" 
-            max="6" 
-            value="0" 
-            step="1"
-            class="w-full h-2 bg-dark  appearance-none cursor-pointer slider"
-          >
-          <div class="flex justify-between text-sm font-mono text-dark mt-2 slider-labels">
-            <span>500</span>
-            <span>1K</span>
-            <span>2K</span>
-            <span>5K</span>
-            <span>10K</span>
-            <span>25K</span>
-            <span>50K+</span>
-          </div>
-        </div>
-        <div class="text-center mt-4">
-          <span id="syncCount" class="text-2xl font-bold font-mono text-dark">500</span>
-          <span class="text-dark font-mono"> syncs/month</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Pricing Cards -->
-    <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-      <!-- Starter Plan -->
-      <div class="pricing-plan bg-dark p-6  border-2 border-grey-600 relative" data-plan="starter">
-        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <span class="bg-transparent text-transparent px-3 py-1  text-xs font-mono">SPACER</span>
-        </div>
-        
-        <div class="text-center mb-6">
-          <p class="text-grey-300 text-xs mb-2 font-mono">Best for getting started</p>
-          <h3 class="text-xl font-bold font-mono text-light mb-2">Starter</h3>
-          <div class="text-3xl font-bold font-mono text-yellow-400 mb-2">
-            <span class="monthly-price">$49</span>
-            <span class="yearly-price hidden">$39</span>
-            <span class="text-sm text-grey-300">/mo</span>
-          </div>
-          <p class="text-grey-300 text-sm yearly-savings hidden">Billed annually</p>
-          <p class="text-grey-300 text-sm yearly-not-shown">500 syncs included</p>
-        </div>
-        
-        <div class="space-y-3 mb-8">
-          <div class="flex items-start">
-            <span class="text-yellow-400 mr-3 text-sm">✓</span>
-            <span class="text-light text-sm">500 syncs included</span>
-          </div>
-          <div class="flex items-start">
-            <span class="text-yellow-400 mr-3 text-sm">✓</span>
-            <span class="text-light text-sm">100MB storage</span>
-          </div>
-          <div class="flex items-start">
-            <span class="text-yellow-400 mr-3 text-sm">✓</span>
-            <span class="text-light text-sm">2 connectors</span>
-          </div>
-          <div class="flex items-start">
-            <span class="text-yellow-400 mr-3 text-sm">✓</span>
-            <span class="text-light text-sm">1 user</span>
-          </div>
-          <div class="flex items-start">
-            <span class="text-yellow-400 mr-3 text-sm">✓</span>
-            <span class="text-light text-sm">Community support</span>
-          </div>
-          <div class="flex items-start">
-            <span class="text-grey-400 mr-3 text-sm">+</span>
-            <span class="text-grey-300 text-xs overage-rate">$0.15/sync over 500</span>
-          </div>
-        </div>
-
-        <div class="group h-10 relative w-full">
-          <button class="flex items-center w-full h-10 absolute bg-yellow-400">
-            <div class="flex items-center w-full text-center text-dark text-sm font-normal font-mono">
-              <p class="text-center w-full pt-1 group-hover:pt-0">Start Free Trial</p>
-            </div>
-          </button>
-          <div class="flex w-full h-10 top-1 left-1 group-hover:top-0 group-hover:left-0 absolute border-solid border-2 border-light">
-          </div>
-        </div>
-      </div>
-
-      <!-- Pro Plan -->
-      <div class="pricing-plan bg-dark p-6  border-2 border-pink-600 relative" data-plan="pro">
-        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <span class="bg-pink-600 text-light px-3 py-1  text-xs font-mono">POPULAR</span>
-        </div>
-        
-        <div class="text-center mb-6">
-          <p class="text-grey-300 text-xs mb-2 font-mono">Best for individuals</p>
-          <h3 class="text-xl font-bold font-mono text-light mb-2">Pro</h3>
-          <div class="text-3xl font-bold font-mono text-pink-600 mb-2">
-            <span class="monthly-price">$149</span>
-            <span class="yearly-price hidden">$119</span>
-            <span class="text-sm text-grey-300">/mo</span>
-          </div>
-          <p class="text-grey-300 text-sm yearly-savings hidden">Billed annually</p>
-          <p class="text-grey-300 text-sm yearly-not-shown">2,000 syncs included</p>
-        </div>
-        
-        <div class="space-y-3 mb-8">
-          <div class="flex items-start">
-            <span class="text-pink-600 mr-3 text-sm">✓</span>
-            <span class="text-light text-sm">2,000 syncs included</span>
-          </div>
-          <div class="flex items-start">
-            <span class="text-pink-600 mr-3 text-sm">✓</span>
-            <span class="text-light text-sm">500MB storage</span>
-          </div>
-          <div class="flex items-start">
-            <span class="text-pink-600 mr-3 text-sm">✓</span>
-            <span class="text-light text-sm">5 connectors</span>
-          </div>
-          <div class="flex items-start">
-            <span class="text-pink-600 mr-3 text-sm">✓</span>
-            <span class="text-light text-sm">5 users</span>
-          </div>
-          <div class="flex items-start">
-            <span class="text-pink-600 mr-3 text-sm">✓</span>
-            <span class="text-light text-sm">Priority support</span>
-          </div>
-          <div class="flex items-start">
-            <span class="text-pink-600 mr-3 text-sm">✓</span>
-            <span class="text-light text-sm">Advanced transformations</span>
-          </div>
-          <div class="flex items-start">
-            <span class="text-grey-400 mr-3 text-sm">+</span>
-            <span class="text-grey-300 text-xs overage-rate">$0.10/sync over 2,000</span>
-          </div>
-        </div>
-
-        <div class="group h-10 relative w-full">
-          <button class="flex items-center w-full h-10 absolute bg-pink-600">
-            <div class="flex items-center w-full text-center text-light text-sm font-normal font-mono">
-              <p class="text-center w-full pt-1 group-hover:pt-0">Start Free Trial</p>
-            </div>
-          </button>
-          <div class="flex w-full h-10 top-1 left-1 group-hover:top-0 group-hover:left-0 absolute border-solid border-2 border-light">
-          </div>
-        </div>
-      </div>
-
-      <!-- Team Plan -->
-      <div class="pricing-plan bg-dark p-6  border-2 border-cyan-400 relative" data-plan="team">
-        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <span class="bg-transparent text-transparent px-3 py-1  text-xs font-mono">SPACER</span>
-        </div>
-        
-        <div class="text-center mb-6">
-          <p class="text-grey-300 text-xs mb-2 font-mono">Best for teams</p>
-          <h3 class="text-xl font-bold font-mono text-light mb-2">Team</h3>
-          <div class="text-3xl font-bold font-mono text-cyan-400 mb-2">
-            <span class="monthly-price">$399</span>
-            <span class="yearly-price hidden">$319</span>
-            <span class="text-sm text-grey-300">/mo</span>
-          </div>
-          <p class="text-grey-300 text-sm yearly-savings hidden">Billed annually</p>
-          <p class="text-grey-300 text-sm yearly-not-shown">5,000 syncs included</p>
-        </div>
-        
-        <div class="space-y-3 mb-8">
-          <div class="flex items-start">
-            <span class="text-cyan-400 mr-3 text-sm">✓</span>
-            <span class="text-light text-sm">5,000 syncs included</span>
-          </div>
-          <div class="flex items-start">
-            <span class="text-cyan-400 mr-3 text-sm">✓</span>
-            <span class="text-light text-sm">2TB storage</span>
-          </div>
-          <div class="flex items-start">
-            <span class="text-cyan-400 mr-3 text-sm">✓</span>
-            <span class="text-light text-sm">10 connectors</span>
-          </div>
-          <div class="flex items-start">
-            <span class="text-cyan-400 mr-3 text-sm">✓</span>
-            <span class="text-light text-sm">15 users</span>
-          </div>
-          <div class="flex items-start">
-            <span class="text-cyan-400 mr-3 text-sm">✓</span>
-            <span class="text-light text-sm">Advanced analytics</span>
-          </div>
-          <div class="flex items-start">
-            <span class="text-cyan-400 mr-3 text-sm">✓</span>
-            <span class="text-light text-sm">Audit trails</span>
-          </div>
-          <div class="flex items-start">
-            <span class="text-grey-400 mr-3 text-sm">+</span>
-            <span class="text-grey-300 text-xs overage-rate">$0.08/sync over 5,000</span>
-          </div>
-        </div>
-
-        <div class="group h-10 relative w-full">
-          <button class="flex items-center w-full h-10 absolute bg-cyan-400">
-            <div class="flex items-center w-full text-center text-dark text-sm font-normal font-mono">
-              <p class="text-center w-full pt-1 group-hover:pt-0">Start Free Trial</p>
-            </div>
-          </button>
-          <div class="flex w-full h-10 top-1 left-1 group-hover:top-0 group-hover:left-0 absolute border-solid border-2 border-light">
-          </div>
-        </div>
-      </div>
-
-      <!-- Enterprise Plan -->
-      <div class="pricing-plan bg-dark p-6  border-2 border-yellow-400 relative" data-plan="enterprise">
-        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <span class="bg-transparent text-transparent px-3 py-1  text-xs font-mono">SPACER</span>
-        </div>
-        
-        <div class="text-center mb-6">
-          <p class="text-grey-300 text-xs mb-2 font-mono">Best for large organizations</p>
-          <h3 class="text-xl font-bold font-mono text-light mb-2">Enterprise</h3>
-          <div class="text-3xl font-bold font-mono text-yellow-400 mb-2">
-            <span class="monthly-price">Custom</span>
-            <span class="yearly-price hidden">Custom</span>
-            <span class="text-sm text-grey-300"> </span>
-          </div>
-          <p class="text-grey-300 text-sm yearly-savings hidden">Custom pricing</p>
-          <p class="text-grey-300 text-sm yearly-not-shown">25,000+ syncs included</p>
-        </div>
-        
-        <div class="space-y-3 mb-8">
-          <div class="flex items-start">
-            <span class="text-yellow-400 mr-3 text-sm">✓</span>
-            <span class="text-light text-sm">25,000+ syncs included</span>
-          </div>
-          <div class="flex items-start">
-            <span class="text-yellow-400 mr-3 text-sm">✓</span>
-            <span class="text-light text-sm">Custom storage</span>
-          </div>
-          <div class="flex items-start">
-            <span class="text-yellow-400 mr-3 text-sm">✓</span>
-            <span class="text-light text-sm">Unlimited connectors</span>
-          </div>
-          <div class="flex items-start">
-            <span class="text-yellow-400 mr-3 text-sm">✓</span>
-            <span class="text-light text-sm">Unlimited users</span>
-          </div>
-          <div class="flex items-start">
-            <span class="text-yellow-400 mr-3 text-sm">✓</span>
-            <span class="text-light text-sm">SSO integration</span>
-          </div>
-          <div class="flex items-start">
-            <span class="text-yellow-400 mr-3 text-sm">✓</span>
-            <span class="text-light text-sm">Dedicated support</span>
-          </div>
-          <div class="flex items-start">
-            <span class="text-grey-400 mr-3 text-sm">+</span>
-            <span class="text-grey-300 text-xs overage-rate">Custom overage rates</span>
-          </div>
-        </div>
-
-        <div class="group h-10 relative w-full">
-          <button class="flex items-center w-full h-10 absolute bg-yellow-400">
-            <div class="flex items-center w-full text-center text-dark text-sm font-normal font-mono">
-              <p class="text-center w-full pt-1 group-hover:pt-0">Contact Sales</p>
-            </div>
-          </button>
-          <div class="flex w-full h-10 top-1 left-1 group-hover:top-0 group-hover:left-0 absolute border-solid border-2 border-light">
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- Temporarily commented out for Salesforce review -->
+    <!--
+    [All pricing content commented out]
+    -->
   </div>
 </section>
 
