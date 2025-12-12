@@ -11,8 +11,7 @@
     "@bookshop/eleventy-bookshop": "3.10.0",
     "@bookshop/eleventy-engine": "3.10.0",
     "@bookshop/generate": "3.10.0",
-    "@bookshop/sass": "3.10.0",
-    "npm-run-all": "^4.1.5"
+    "@bookshop/sass": "3.10.0"
   },
   "bugs": {
     "url": "https://github.com/CloudCannon/eleventy-bookshop-starter/issues"
@@ -27,15 +26,14 @@
     "bookshop-sass:watch": "bookshop-sass -b component-library -o site/assets/bookshop.css -w",
     "eleventy:build": "ELEVENTY_ENV=production eleventy",
     "eleventy:watch": "ELEVENTY_ENV=development eleventy --serve",
-    "tailwind:build": "npx tailwindcss -i component-library/shared/styles/tailwind.css -o _site/assets/tailwind.css --minify",
-    "tailwind:watch": "npx tailwindcss -i component-library/shared/styles/tailwind.css -o component-library/shared/styles/tailwind.out.css --watch",
-    "dev": "npm-run-all --parallel tailwind:watch bookshop-sass:watch bookshop:watch eleventy:watch",
-    "prod": "npm-run-all --parallel tailwind:build bookshop-sass:build eleventy:build"
+    "tailwind:build": "bunx tailwindcss -i component-library/shared/styles/tailwind.css -o _site/assets/tailwind.css --minify",
+    "tailwind:watch": "bunx tailwindcss -i component-library/shared/styles/tailwind.css -o component-library/shared/styles/tailwind.out.css --watch",
+    "dev": "bun run tailwind:watch & bun run bookshop-sass:watch & bun run bookshop:watch & bun run eleventy:watch",
+    "prod": "bun run tailwind:build & bun run bookshop-sass:build & bun run eleventy:build & wait"
   },
   "dependencies": {
     "autoprefixer": "^10.4.16",
     "dotenv": "^16.4.5",
-    "npm-run-all": "^4.1.5",
     "tailwindcss": "^3.3.5",
     "terser": "^5.31.1"
   }
