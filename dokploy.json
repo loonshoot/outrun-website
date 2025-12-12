@@ -1,11 +1,11 @@
 {
   "build": {
     "env": {
-      "NODE_VERSION": "18"
+      "BUN_VERSION": "1"
     },
     "commands": [
-      "npm install",
-      "npm run prod"
+      "bun install",
+      "bun run prod"
     ]
   }
 } 
