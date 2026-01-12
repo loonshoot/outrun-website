@@ -4,6 +4,12 @@ module.exports = {
     "./**/*.{html,js,md,liquid}",
   ],
   theme: {
+    extend: {
+      zIndex: {
+        '999': '999',
+        '1000': '1000',
+      },
+    },
     fontFamily: {
       'mono': ['Fira Code', 'ui-monospace', 'SFMono-Regular'],
     },
