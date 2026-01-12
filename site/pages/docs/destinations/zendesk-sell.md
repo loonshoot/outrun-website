@@ -1,24 +1,29 @@
 ---
 layout: layouts/docs.liquid
-title: Zendesk Sell Integration & Migration
-description: Complete migration solution for Zendesk Sell users. Seamlessly migrate to Salesforce, HubSpot, Pipedrive, or other CRMs before discontinuation.
-metaTitle: Zendesk Sell Migration - Outrun CRM Migration Platform
-metaDescription: Comprehensive guide to migrating from Zendesk Sell. Zero-downtime migration to your new CRM with complete data preservation.
+title: Zendesk Sell Integration
+description: Complete Zendesk Sell integration with bidirectional sync. Full source and destination support for seamless migration while keeping your CRM operational.
+metaTitle: Zendesk Sell Integration - Outrun CRM Migration Platform
+metaDescription: Migrate from Zendesk Sell with zero downtime. Bidirectional sync keeps your CRM operational while you transition your team to a new platform.
 permalink: /docs/destinations/zendesk-sell/
 breadcrumbs:
   - title: Documentation
     url: /docs/
-  - title: Integrations
+  - title: Destinations
     url: /docs/destinations/
   - title: Zendesk Sell
     url: /docs/destinations/zendesk-sell/
 ---
 
-# Zendesk Sell Migration & Integration
+# Zendesk Sell Integration
+
+<div class="bg-green-500 bg-opacity-10 border border-green-500  p-6 my-6">
+  <h3 class="text-green-400 text-lg font-semibold mb-3">🔄 Bidirectional Sync</h3>
+  <p class="text-gray-300">Zendesk Sell is fully supported as both a source and destination, enabling complete bidirectional synchronization with your other CRM platforms.</p>
+</div>
 
 <div class="bg-pink-600 bg-opacity-10 border border-pink-600  p-6 my-6">
   <h3 class="text-pink-400 text-lg font-semibold mb-3">⚠️ Zendesk Sell Discontinuation Notice</h3>
-  <p class="text-gray-300">Zendesk has announced the discontinuation of Zendesk Sell. Outrun provides the perfect migration path to transition your data to a new CRM platform without disruption. Keep Zendesk Sell running while you evaluate and transition to your new system.</p>
+  <p class="text-gray-300">Zendesk has announced the discontinuation of Zendesk Sell. Outrun provides the perfect migration path to transition your data to a new CRM platform without disruption. Keep Zendesk Sell running while you evaluate and transition your team and processes to your new system.</p>
 </div>
 
 ## Why Choose Outrun for Zendesk Sell Migration?
@@ -31,10 +36,8 @@ Every lead, contact, deal, and activity. Custom fields, tags, and complete histo
 
 ### 🎯 Choose Your Destination
 Migrate to any of our supported CRMs:
-- **Salesforce**: Enterprise-grade CRM
 - **HubSpot**: All-in-one growth platform
 - **Pipedrive**: Sales-focused simplicity
-- **Dynamics 365**: Microsoft ecosystem
 - **Zoho CRM**: Comprehensive suite
 
 ### 🚀 Fast Implementation
@@ -110,17 +113,6 @@ Select your new CRM platform and we'll:
 - Decommission Zendesk Sell when ready
 
 ## Data Mapping Examples
-
-### To Salesforce
-```
-Zendesk Sell → Salesforce
-━━━━━━━━━━━━━━━━━━━━━━━━
-Contacts     → Contacts
-Companies    → Accounts
-Deals        → Opportunities
-Leads        → Leads
-Activities   → Tasks/Events
-```
 
 ### To HubSpot
 ```

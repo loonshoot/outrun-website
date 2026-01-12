@@ -3,7 +3,7 @@ layout: layouts/docs.liquid
 title: Sources
 description: Connect your data sources to Outrun. Learn about supported systems, object mappings, and configuration options.
 metaTitle: Outrun Sources - Supported Data Sources and Integrations
-metaDescription: Complete guide to Outrun's supported data sources including HubSpot, Salesforce, Zoho CRM, Confluence, and Google Search Console.
+metaDescription: Complete guide to Outrun's supported data sources including HubSpot, Zoho CRM, Confluence, and Google Search Console.
 permalink: /docs/sources/
 breadcrumbs:
   - title: Documentation
@@ -42,23 +42,6 @@ We currently support **{{ sources.count }}** different source systems:
     <div class="flex flex-wrap gap-2">
       <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs ">People</span>
       <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs ">Organizations</span>
-      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs ">Relationships</span>
-    </div>
-  </a>
-
-  <a href="/docs/sources/salesforce/" class="bg-dark-light border border-gray-600  p-6 hover:border-yellow transition-colors">
-    <div class="flex items-center space-x-4 mb-4">
-      <div class="w-12 h-12 bg-blue-500  flex items-center justify-center text-white font-bold text-lg">SF</div>
-      <div>
-        <h3 class="text-yellow text-lg font-semibold">Salesforce</h3>
-        <p class="text-gray-400 text-sm">Enterprise CRM Platform</p>
-      </div>
-    </div>
-    <p class="text-gray-300 text-sm mb-3">Contacts, Accounts, Leads, and Products from your Salesforce org.</p>
-    <div class="flex flex-wrap gap-2">
-      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs ">People</span>
-      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs ">Organizations</span>
-      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs ">Products</span>
       <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs ">Relationships</span>
     </div>
   </a>
@@ -164,7 +147,6 @@ All sources transform their native data into these standardized objects:
 Each source has carefully tuned rate limits to respect API quotas while maximizing sync speed:
 
 - **HubSpot**: 110 requests per 10 seconds (default), 5 per second (search)
-- **Salesforce**: 100 requests per 10 seconds, with PubSub support for real-time updates
 - **Zoho CRM**: 5-8 requests per 10 seconds depending on operation type
 - **Confluence**: 50 requests per 10 seconds (default), 3 per second (search)
 - **Google Search Console**: 2000 requests per minute

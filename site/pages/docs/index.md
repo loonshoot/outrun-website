@@ -20,7 +20,7 @@ In the age of AI, getting access to clean, standardized data is becoming the big
 
 Philosophically, Outrun focuses on creating standardized approaches to everything—from standard objects to data cleaning processes. While there are many tools available to create custom data flows, they require intricate system knowledge and significant engineering overhead.
 
-Our approach is different. You add HubSpot as a source, add Salesforce as a destination, and when a contact is updated in HubSpot (by a user or workflow), the same lead is automatically updated in Salesforce. No understanding of system mechanics required.
+Our approach is different. You add HubSpot as a source, add Zoho CRM as a destination, and when a contact is updated in HubSpot (by a user or workflow), the same lead is automatically updated in Zoho. No understanding of system mechanics required.
 
 **The Trade-off We Make**
 
@@ -72,22 +72,22 @@ Understanding these fundamental concepts will help you make the most of Outrun:
 Connect your most-used tools and services:
 
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 my-8">
-  <a href="/docs/providers/salesforce/" class="flex items-center space-x-3 p-4 bg-dark-light border border-gray-600  hover:border-yellow transition-colors">
-    <div class="w-8 h-8 bg-blue-500  flex items-center justify-center text-white font-bold text-sm">SF</div>
-    <span class="text-light">Salesforce</span>
-  </a>
-  
-  <a href="/docs/providers/hubspot/" class="flex items-center space-x-3 p-4 bg-dark-light border border-gray-600  hover:border-yellow transition-colors">
+  <a href="/docs/sources/hubspot/" class="flex items-center space-x-3 p-4 bg-dark-light border border-gray-600  hover:border-yellow transition-colors">
     <div class="w-8 h-8 bg-orange-500  flex items-center justify-center text-white font-bold text-sm">HS</div>
     <span class="text-light">HubSpot</span>
   </a>
-  
-  <a href="/docs/providers/google-search-console/" class="flex items-center space-x-3 p-4 bg-dark-light border border-gray-600  hover:border-yellow transition-colors">
-    <div class="w-8 h-8 bg-red-500  flex items-center justify-center text-white font-bold text-sm">G</div>
+
+  <a href="/docs/sources/zoho-crm/" class="flex items-center space-x-3 p-4 bg-dark-light border border-gray-600  hover:border-yellow transition-colors">
+    <div class="w-8 h-8 bg-red-500  flex items-center justify-center text-white font-bold text-sm">Z</div>
+    <span class="text-light">Zoho CRM</span>
+  </a>
+
+  <a href="/docs/sources/google-search-console/" class="flex items-center space-x-3 p-4 bg-dark-light border border-gray-600  hover:border-yellow transition-colors">
+    <div class="w-8 h-8 bg-green-500  flex items-center justify-center text-white font-bold text-sm">G</div>
     <span class="text-light">Google SC</span>
   </a>
-  
-  <a href="/docs/providers/confluence/" class="flex items-center space-x-3 p-4 bg-dark-light border border-gray-600  hover:border-yellow transition-colors">
+
+  <a href="/docs/sources/confluence/" class="flex items-center space-x-3 p-4 bg-dark-light border border-gray-600  hover:border-yellow transition-colors">
     <div class="w-8 h-8 bg-blue-600  flex items-center justify-center text-white font-bold text-sm">C</div>
     <span class="text-light">Confluence</span>
   </a>

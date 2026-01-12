@@ -4,7 +4,8 @@ title: Salesforce Destination
 description: Send standardized data to Salesforce CRM. Write People to Contacts and Organizations to Accounts with enterprise-grade validation and processing.
 metaTitle: Salesforce Destination - Outrun Integration Documentation
 metaDescription: Complete guide to sending data to Salesforce CRM via Outrun. Field mappings, validation rules, and enterprise features for destination sync.
-permalink: /docs/destinations/salesforce/
+permalink: false
+eleventyExcludeFromCollections: true
 breadcrumbs:
   - title: Documentation
     url: /docs/

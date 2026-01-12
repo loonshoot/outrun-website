@@ -112,7 +112,7 @@ Once your source sync is complete, add where you want the data to go.
 
 1. **Navigate to Destinations** in the sidebar
 2. **Click "Add Destination"**
-3. **Select your destination type** (Salesforce, data warehouse, etc.)
+3. **Select your destination type** (HubSpot, Zoho CRM, etc.)
 4. **Follow the same authentication process** as with sources
 5. **Name your destination** descriptively
 6. **Configure field mappings** (optional - we provide smart defaults)

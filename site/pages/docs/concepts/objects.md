@@ -134,16 +134,16 @@ People represent individual humans across all your systems, providing a unified 
 }
 ```
 
-#### Salesforce → People
+#### Pipedrive → People
 ```json
-// Salesforce Lead
+// Pipedrive Person
 {
-  "Id": "00Q000000123456",
-  "Email": "jane@startup.com",
-  "FirstName": "Jane",
-  "LastName": "Smith",
-  "Company": "Startup Inc",
-  "Title": "CEO"
+  "id": 123456,
+  "primary_email": "jane@startup.com",
+  "first_name": "Jane",
+  "last_name": "Smith",
+  "org_name": "Startup Inc",
+  "job_title": "CEO"
 }
 
 // Becomes Person Object
@@ -205,7 +205,7 @@ People represent individual humans across all your systems, providing a unified 
 }
 ```
 
-#### People → Salesforce Leads/Contacts
+#### People → Pipedrive Persons
 ```json
 // Person Object (New Lead)
 {
@@ -216,14 +216,13 @@ People represent individual humans across all your systems, providing a unified 
   "company": "Prospect Corp"
 }
 
-// Becomes Salesforce Lead
+// Becomes Pipedrive Person
 {
-  "Email": "alex@prospect.com",
-  "FirstName": "Alex",
-  "LastName": "Chen",
-  "Company": "Prospect Corp",
-  "LeadSource": "Outrun",
-  "Status": "Open - Not Contacted"
+  "name": "Alex Chen",
+  "email": [{"value": "alex@prospect.com", "primary": true}],
+  "org_id": null,
+  "visible_to": "3",
+  "label": "New Lead"
 }
 ```
 
@@ -257,9 +256,9 @@ Organizations represent companies, accounts, and business entities across all yo
     "accountTier": "Enterprise",
     "contractValue": 250000
   },
-  "sourceId": "salesforce_def456",
-  "sourceObjectId": "001000000234567",
-  "sourceObjectType": "Account",
+  "sourceId": "pipedrive_def456",
+  "sourceObjectId": "234567",
+  "sourceObjectType": "organization",
   "qualityScore": 0.92,
   "createdAt": "2024-01-15T10:30:00Z",
   "updatedAt": "2024-01-15T16:45:00Z"
@@ -293,32 +292,28 @@ Organizations represent companies, accounts, and business entities across all yo
 }
 ```
 
-#### Salesforce → Organizations
+#### Pipedrive → Organizations
 ```json
-// Salesforce Account
+// Pipedrive Organization
 {
-  "Id": "001000000345678",
-  "Name": "Global Enterprises Inc",
-  "Website": "https://globalenterprises.com",
-  "Industry": "Manufacturing",
-  "NumberOfEmployees": 5000,
-  "AnnualRevenue": 500000000
+  "id": 345678,
+  "name": "Global Enterprises Inc",
+  "address": "123 Industrial Blvd",
+  "people_count": 5000
 }
 
 // Becomes Organization Object
 {
   "type": "Organization",
   "name": "Global Enterprises Inc",
-  "website": "https://globalenterprises.com",
-  "industry": "Manufacturing",
-  "size": "5000",
-  "revenue": 500000000
+  "address": "123 Industrial Blvd",
+  "size": "5000"
 }
 ```
 
 ### Destination System Mappings
 
-#### Organizations → Salesforce Accounts
+#### Organizations → Pipedrive Organizations
 ```json
 // Organization Object
 {
@@ -329,14 +324,14 @@ Organizations represent companies, accounts, and business entities across all yo
   "revenue": 75000000
 }
 
-// Becomes Salesforce Account
+// Becomes Pipedrive Organization
 {
-  "Name": "Future Systems Corp",
-  "Website": "https://futuresystems.com",
-  "Industry": "Technology",
-  "AnnualRevenue": 75000000,
-  "Type": "Prospect",
-  "AccountSource": "Outrun"
+  "name": "Future Systems Corp",
+  "visible_to": "3",
+  "custom_fields": {
+    "website": "https://futuresystems.com",
+    "industry": "Technology"
+  }
 }
 ```
 
@@ -510,19 +505,18 @@ Relationships represent connections between People and Organizations, maintainin
 }
 ```
 
-#### Salesforce → Relationships
+#### Pipedrive → Relationships
 ```json
-// Salesforce Contact with Account
+// Pipedrive Person with Organization
 {
-  "Contact": {
-    "Id": "003000000123456",
-    "Email": "sarah@enterprise.com",
-    "AccountId": "001000000234567"
+  "Person": {
+    "id": 123456,
+    "primary_email": "sarah@enterprise.com",
+    "org_id": 234567
   },
-  "Account": {
-    "Id": "001000000234567", 
-    "Name": "Enterprise Solutions",
-    "Website": "enterprise.com"
+  "Organization": {
+    "id": 234567,
+    "name": "Enterprise Solutions"
   }
 }
 

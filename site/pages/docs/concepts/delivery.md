@@ -75,12 +75,12 @@ Each destination system has unique requirements that Outrun handles automaticall
   </div>
 
   <div class="bg-dark-light border border-green-500  p-6">
-    <h3 class="text-green-400 text-lg font-semibold mb-3">⚡ Salesforce Destination</h3>
+    <h3 class="text-green-400 text-lg font-semibold mb-3">⚡ Pipedrive Destination</h3>
     <ul class="text-gray-300 space-y-2 text-sm">
-      <li>• <strong>Rate Limit</strong>: 100 requests/10 seconds</li>
-      <li>• <strong>Bulk API</strong>: Large dataset optimization</li>
-      <li>• <strong>Objects</strong>: Leads, Contacts, Accounts</li>
-      <li>• <strong>Enterprise</strong>: Advanced validation rules</li>
+      <li>• <strong>Rate Limit</strong>: 10 requests/second</li>
+      <li>• <strong>Batch API</strong>: Efficient bulk operations</li>
+      <li>• <strong>Objects</strong>: Persons, Organizations, Deals</li>
+      <li>• <strong>Sales Focus</strong>: Pipeline-centric approach</li>
     </ul>
   </div>
 
@@ -136,7 +136,7 @@ Each destination system has unique requirements that Outrun handles automaticall
 }
 ```
 
-### Organization → Salesforce Account
+### Organization → Pipedrive Organization
 
 ```json
 // Standardized Organization Object
@@ -149,15 +149,16 @@ Each destination system has unique requirements that Outrun handles automaticall
   "phone": "+1-555-0456"
 }
 
-// Salesforce Account Format
+// Pipedrive Organization Format
 {
-  "Name": "Enterprise Solutions Ltd",
-  "Website": "https://enterprise.com",
-  "Industry": "Financial Services",
-  "NumberOfEmployees": 750,
-  "Phone": "+1-555-0456",
-  "Type": "Prospect",
-  "AccountSource": "Outrun"
+  "name": "Enterprise Solutions Ltd",
+  "address": null,
+  "visible_to": "3",
+  "custom_fields": {
+    "website": "https://enterprise.com",
+    "industry": "Financial Services",
+    "employees": "500-1000"
+  }
 }
 ```
 
@@ -247,7 +248,7 @@ Many destinations also function as sources, enabling bi-directional data flow:
 
 ### Supported Bi-Directional Systems
 - **HubSpot**: Full read/write capabilities
-- **Salesforce**: Enterprise-grade bi-directional sync
+- **Pipedrive**: Sales-focused bi-directional sync
 - **Zoho CRM**: Complete CRM data synchronization
 
 ### Conflict Resolution

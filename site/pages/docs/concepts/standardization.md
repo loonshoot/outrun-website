@@ -151,17 +151,17 @@ Outrun standardizes all data into four universal object types that represent the
 }
 ```
 
-### Salesforce → Standardized Objects
+### Pipedrive → Standardized Objects
 
 ```json
-// Salesforce Lead → Person
+// Pipedrive Person → Person
 {
   "sourceData": {
-    "Id": "00Q000000123456",
-    "Email": "jane@startup.com",
-    "FirstName": "Jane",
-    "LastName": "Smith",
-    "Company": "Startup Inc"
+    "id": 123456,
+    "primary_email": "jane@startup.com",
+    "first_name": "Jane",
+    "last_name": "Smith",
+    "org_name": "Startup Inc"
   },
   "standardizedObject": {
     "type": "Person",
@@ -169,28 +169,26 @@ Outrun standardizes all data into four universal object types that represent the
     "firstName": "Jane",
     "lastName": "Smith",
     "company": "Startup Inc",
-    "sourceId": "salesforce_def456",
-    "sourceObjectId": "00Q000000123456",
-    "sourceObjectType": "Lead"
+    "sourceId": "pipedrive_def456",
+    "sourceObjectId": "123456",
+    "sourceObjectType": "person"
   }
 }
 
-// Salesforce Account → Organization
+// Pipedrive Organization → Organization
 {
   "sourceData": {
-    "Id": "001000000234567",
-    "Name": "Enterprise Solutions Ltd",
-    "Website": "enterprise.com",
-    "Industry": "Financial Services"
+    "id": 234567,
+    "name": "Enterprise Solutions Ltd",
+    "address": "123 Main St"
   },
   "standardizedObject": {
     "type": "Organization",
     "name": "Enterprise Solutions Ltd",
-    "website": "enterprise.com",
-    "industry": "Financial Services",
-    "sourceId": "salesforce_def456",
-    "sourceObjectId": "001000000234567",
-    "sourceObjectType": "Account"
+    "address": "123 Main St",
+    "sourceId": "pipedrive_def456",
+    "sourceObjectId": "234567",
+    "sourceObjectType": "organization"
   }
 }
 ```
@@ -221,7 +219,7 @@ When duplicates are detected, Outrun intelligently merges records:
     "phone": null,
     "jobTitle": "Manager"
   },
-  "salesforce_record": {
+  "pipedrive_record": {
     "email": "john@acme.com",
     "firstName": "John",
     "lastName": "Doe",
@@ -236,9 +234,9 @@ When duplicates are detected, Outrun intelligently merges records:
     "email": "john@acme.com",
     "firstName": "John",
     "lastName": "Doe",
-    "phone": "+1-555-0123",        // Filled from Salesforce
-    "jobTitle": "Marketing Manager", // More specific from Salesforce
-    "sources": ["hubspot_abc123", "salesforce_def456"],
+    "phone": "+1-555-0123",        // Filled from Pipedrive
+    "jobTitle": "Marketing Manager", // More specific from Pipedrive
+    "sources": ["hubspot_abc123", "pipedrive_def456"],
     "qualityScore": 0.95,
     "lastUpdated": "2024-01-15T10:30:00Z"
   }

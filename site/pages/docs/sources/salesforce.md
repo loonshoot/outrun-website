@@ -2,9 +2,10 @@
 layout: layouts/docs.liquid
 title: Salesforce Source
 description: Connect Salesforce CRM to Outrun. Sync Contacts, Accounts, Leads, and Products with real-time PubSub support and enterprise features.
-metaTitle: Salesforce Integration - Outrun Source Documentation  
+metaTitle: Salesforce Integration - Outrun Source Documentation
 metaDescription: Complete guide to integrating Salesforce CRM with Outrun. Object mappings, PubSub real-time sync, rate limits, and enterprise features.
-permalink: /docs/sources/salesforce/
+permalink: false
+eleventyExcludeFromCollections: true
 breadcrumbs:
   - title: Documentation
     url: /docs/

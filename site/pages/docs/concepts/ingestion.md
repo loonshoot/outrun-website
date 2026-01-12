@@ -33,7 +33,7 @@ When a source supports real-time data streams, Outrun leverages these for immedi
 - **Instant Collection**: Data is ingested as soon as it's available
 - **Event-Driven**: Triggered by actual data changes in the source system
 - **Continuous Flow**: Maintains persistent connection for ongoing data flow
-- **Examples**: Salesforce PubSub, webhook-enabled systems
+- **Examples**: Webhook-enabled systems, real-time event feeds
 
 ### Batch Jobs
 For sources without real-time capabilities, Outrun runs periodic batch jobs:
@@ -47,10 +47,10 @@ For sources without real-time capabilities, Outrun runs periodic batch jobs:
   <div class="bg-dark-light border border-gray-600  p-6">
     <h3 class="text-green-400 text-lg font-semibold mb-3">⚡ Real-Time Streams</h3>
     <ul class="text-gray-300 space-y-2 text-sm">
-      <li>• <strong>Salesforce PubSub</strong> - Enterprise/Unlimited editions</li>
       <li>• <strong>Webhook Systems</strong> - Event-driven notifications</li>
       <li>• <strong>Change Streams</strong> - Database change logs</li>
       <li>• <strong>Event APIs</strong> - Real-time event feeds</li>
+      <li>• <strong>Pipedrive Webhooks</strong> - Real-time activity updates</li>
     </ul>
   </div>
 
@@ -76,7 +76,7 @@ All ingested data is stored in dedicated stream collections that preserve the or
 
 Each source gets its own dedicated stream collection:
 - `hubspot_abc123_stream` - HubSpot source data
-- `salesforce_def456_stream` - Salesforce source data
+- `pipedrive_def456_stream` - Pipedrive source data
 - `zoho_ghi789_stream` - Zoho CRM source data
 
 ### Data Storage Principles
@@ -123,7 +123,7 @@ Outrun adds comprehensive metadata to track data lineage and processing:
 
 ### Source Information
 - **`sourceId`**: Unique identifier for the source instance
-- **`sourceType`**: Type of source system (hubspot, salesforce, etc.)
+- **`sourceType`**: Type of source system (hubspot, pipedrive, zoho, etc.)
 - **`apiEndpoint`**: Specific API endpoint used for data collection
 - **`objectType`**: Native object type from source system
 
