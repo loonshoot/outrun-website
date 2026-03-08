@@ -1,9 +1,9 @@
 ---
 layout: layouts/docs.liquid
 title: Objects
-description: Learn about Outrun's four standardized object types - People, Organizations, Facts, and Relationships - and how they interact with source and destination systems.
+description: Learn about Outrun's standardized object types - People, Organizations, Relationships, and Analytics - and how they interact with source and destination systems.
 metaTitle: Standardized Objects - Outrun Core Concepts
-metaDescription: Complete guide to Outrun's standardized object types including People, Organizations, Facts, and Relationships with source and destination mappings.
+metaDescription: Complete guide to Outrun's standardized object types including People, Organizations, Relationships, and Analytics with source and destination mappings.
 permalink: /docs/concepts/objects/
 breadcrumbs:
   - title: Documentation
@@ -16,7 +16,7 @@ breadcrumbs:
 
 # Objects
 
-Outrun standardizes all data into four universal object types that represent the fundamental building blocks of business data. These objects enable seamless data synchronization across different systems regardless of their native data formats.
+Outrun standardizes all data into core object types that represent the fundamental building blocks of business data. These objects enable seamless data synchronization across different systems regardless of their native data formats.
 
 <div class="bg-purple-500 bg-opacity-10 border border-purple-500  p-6 my-6">
   <h3 class="text-purple-400 text-lg font-semibold mb-3">🧩 Universal Data Model</h3>
@@ -49,13 +49,13 @@ Outrun standardizes all data into four universal object types that represent the
   </div>
 
   <div class="bg-dark-light border border-yellow-500  p-6">
-    <h3 class="text-yellow-400 text-lg font-semibold mb-3">📊 Facts</h3>
+    <h3 class="text-yellow-400 text-lg font-semibold mb-3">📊 Analytics</h3>
     <p class="text-gray-300 text-sm mb-3">Measurable data points and metrics</p>
     <ul class="text-gray-300 space-y-1 text-sm">
-      <li>• Analytics data, KPIs</li>
+      <li>• Search analytics data</li>
       <li>• Performance metrics</li>
-      <li>• Search console data</li>
-      <li>• Quantifiable measurements</li>
+      <li>• Rankings and impressions</li>
+      <li>• Stored in typed tables per data source</li>
     </ul>
   </div>
 
@@ -75,35 +75,36 @@ Outrun standardizes all data into four universal object types that represent the
 
 People represent individual humans across all your systems, providing a unified view of contacts, leads, users, and team members.
 
-### Core Schema
+### Database Schema
+People are stored in the `people` table within each tenant database:
 ```json
 {
-  "type": "Person",
-  "email": "john@acme.com",
+  "emailAddress": "john@acme.com",
   "firstName": "John",
   "lastName": "Doe",
-  "fullName": "John Doe",
-  "phone": "+1-555-0123",
-  "jobTitle": "Marketing Manager",
-  "company": "Acme Corp",
-  "department": "Marketing",
-  "location": "San Francisco, CA",
-  "linkedInUrl": "https://linkedin.com/in/johndoe",
-  "twitterHandle": "@johndoe",
-  "website": "https://johndoe.com",
-  "tags": ["customer", "enterprise"],
-  "customFields": {
-    "leadScore": 85,
-    "industry": "Technology"
+  "companyName": "Acme Corp",
+  "phoneNumbers": [{ "type": "work", "number": "+1-555-0123" }],
+  "externalIds": {
+    "hubspot": "12345",
+    "pipedrive": "67890"
   },
-  "sourceId": "hubspot_abc123",
-  "sourceObjectId": "12345",
-  "sourceObjectType": "contact",
-  "qualityScore": 0.95,
+  "record": {
+    "jobTitle": "Marketing Manager",
+    "department": "Marketing",
+    "location": "San Francisco, CA",
+    "linkedInUrl": "https://linkedin.com/in/johndoe",
+    "website": "https://johndoe.com"
+  },
+  "labels": ["customer", "enterprise"],
+  "classifications": [{ "type": "lead", "score": 85 }],
+  "assignedTo": "sales-team",
+  "metadata": { "qualityScore": 0.95, "sources": ["hubspot", "pipedrive"] },
   "createdAt": "2024-01-15T10:30:00Z",
   "updatedAt": "2024-01-15T14:22:00Z"
 }
 ```
+
+The `emailAddress` column is indexed for fast lookups. The `externalIds` JSONB column tracks IDs across all connected source systems. Extended fields are stored in the `record` JSONB column, keeping the core columns lean while preserving all source data.
 
 ### Source System Mappings
 
@@ -134,16 +135,16 @@ People represent individual humans across all your systems, providing a unified 
 }
 ```
 
-#### Salesforce → People
+#### Pipedrive → People
 ```json
-// Salesforce Lead
+// Pipedrive Person
 {
-  "Id": "00Q000000123456",
-  "Email": "jane@startup.com",
-  "FirstName": "Jane",
-  "LastName": "Smith",
-  "Company": "Startup Inc",
-  "Title": "CEO"
+  "id": 123456,
+  "primary_email": "jane@startup.com",
+  "first_name": "Jane",
+  "last_name": "Smith",
+  "org_name": "Startup Inc",
+  "job_title": "CEO"
 }
 
 // Becomes Person Object
@@ -205,7 +206,7 @@ People represent individual humans across all your systems, providing a unified 
 }
 ```
 
-#### People → Salesforce Leads/Contacts
+#### People → Pipedrive Persons
 ```json
 // Person Object (New Lead)
 {
@@ -216,14 +217,13 @@ People represent individual humans across all your systems, providing a unified 
   "company": "Prospect Corp"
 }
 
-// Becomes Salesforce Lead
+// Becomes Pipedrive Person
 {
-  "Email": "alex@prospect.com",
-  "FirstName": "Alex",
-  "LastName": "Chen",
-  "Company": "Prospect Corp",
-  "LeadSource": "Outrun",
-  "Status": "Open - Not Contacted"
+  "name": "Alex Chen",
+  "email": [{"value": "alex@prospect.com", "primary": true}],
+  "org_id": null,
+  "visible_to": "3",
+  "label": "New Lead"
 }
 ```
 
@@ -231,40 +231,41 @@ People represent individual humans across all your systems, providing a unified 
 
 Organizations represent companies, accounts, and business entities across all your systems.
 
-### Core Schema
+### Database Schema
+Organizations are stored in the `organizations` table within each tenant database:
 ```json
 {
-  "type": "Organization",
-  "name": "Acme Corporation",
+  "companyName": "Acme Corporation",
   "domain": "acme.com",
-  "website": "https://acme.com",
-  "industry": "Technology",
-  "size": "500-1000 employees",
-  "revenue": 50000000,
-  "location": "San Francisco, CA",
-  "address": {
-    "street": "123 Market Street",
-    "city": "San Francisco",
-    "state": "CA",
-    "postalCode": "94105",
-    "country": "United States"
+  "externalIds": {
+    "hubspot": "67890",
+    "pipedrive": "234567"
   },
-  "phone": "+1-555-0456",
-  "description": "Leading technology solutions provider",
-  "foundedYear": 2010,
-  "tags": ["enterprise", "technology"],
-  "customFields": {
-    "accountTier": "Enterprise",
-    "contractValue": 250000
+  "record": {
+    "website": "https://acme.com",
+    "industry": "Technology",
+    "size": "500-1000 employees",
+    "revenue": 50000000,
+    "location": "San Francisco, CA",
+    "address": {
+      "street": "123 Market Street",
+      "city": "San Francisco",
+      "state": "CA",
+      "postalCode": "94105",
+      "country": "United States"
+    },
+    "phone": "+1-555-0456",
+    "description": "Leading technology solutions provider",
+    "foundedYear": 2010
   },
-  "sourceId": "salesforce_def456",
-  "sourceObjectId": "001000000234567",
-  "sourceObjectType": "Account",
-  "qualityScore": 0.92,
+  "labels": ["enterprise", "technology"],
+  "metadata": { "qualityScore": 0.92, "sources": ["hubspot", "pipedrive"] },
   "createdAt": "2024-01-15T10:30:00Z",
   "updatedAt": "2024-01-15T16:45:00Z"
 }
 ```
+
+The `domain` column is indexed for fast lookups. The `externalIds` JSONB column tracks IDs across all connected source systems.
 
 ### Source System Mappings
 
@@ -293,32 +294,28 @@ Organizations represent companies, accounts, and business entities across all yo
 }
 ```
 
-#### Salesforce → Organizations
+#### Pipedrive → Organizations
 ```json
-// Salesforce Account
+// Pipedrive Organization
 {
-  "Id": "001000000345678",
-  "Name": "Global Enterprises Inc",
-  "Website": "https://globalenterprises.com",
-  "Industry": "Manufacturing",
-  "NumberOfEmployees": 5000,
-  "AnnualRevenue": 500000000
+  "id": 345678,
+  "name": "Global Enterprises Inc",
+  "address": "123 Industrial Blvd",
+  "people_count": 5000
 }
 
 // Becomes Organization Object
 {
   "type": "Organization",
   "name": "Global Enterprises Inc",
-  "website": "https://globalenterprises.com",
-  "industry": "Manufacturing",
-  "size": "5000",
-  "revenue": 500000000
+  "address": "123 Industrial Blvd",
+  "size": "5000"
 }
 ```
 
 ### Destination System Mappings
 
-#### Organizations → Salesforce Accounts
+#### Organizations → Pipedrive Organizations
 ```json
 // Organization Object
 {
@@ -329,56 +326,46 @@ Organizations represent companies, accounts, and business entities across all yo
   "revenue": 75000000
 }
 
-// Becomes Salesforce Account
+// Becomes Pipedrive Organization
 {
-  "Name": "Future Systems Corp",
-  "Website": "https://futuresystems.com",
-  "Industry": "Technology",
-  "AnnualRevenue": 75000000,
-  "Type": "Prospect",
-  "AccountSource": "Outrun"
+  "name": "Future Systems Corp",
+  "visible_to": "3",
+  "custom_fields": {
+    "website": "https://futuresystems.com",
+    "industry": "Technology"
+  }
 }
 ```
 
-## Facts Objects
+## Analytics Data
 
-Facts represent measurable data points, metrics, and analytics from various systems.
+Analytics and metrics data from sources like Google Search Console are stored in dedicated typed tables rather than a generic object. This gives each data source a purpose-built schema with proper column types for efficient querying.
 
-### Core Schema
+### Search Analytics Data Table
+Search performance data is stored in the `search_analytics_data` table:
 ```json
 {
-  "type": "Facts",
-  "metric": "organic_clicks",
-  "value": 1250,
-  "unit": "clicks",
-  "dimension": {
-    "query": "data synchronization",
-    "page": "/products/data-sync",
-    "country": "United States",
-    "device": "desktop"
-  },
-  "timestamp": "2024-01-15T00:00:00Z",
-  "period": "daily",
-  "source": "Google Search Console",
-  "category": "search_performance",
-  "tags": ["organic", "search", "traffic"],
-  "metadata": {
-    "position": 3.2,
-    "impressions": 5420,
-    "ctr": 0.23
-  },
-  "sourceId": "gsc_ghi789",
-  "sourceObjectId": "query_12345",
-  "sourceObjectType": "search_analytics",
-  "createdAt": "2024-01-15T06:00:00Z"
+  "site": "https://example.com",
+  "date": "2024-01-15",
+  "query": "data synchronization",
+  "page": "/products/data-sync",
+  "device": "desktop",
+  "country": "United States",
+  "clicks": 1250,
+  "impressions": 5420,
+  "ctr": 0.23,
+  "position": 3.2,
+  "jobId": "gsc_job_abc123"
 }
 ```
+
+The table is indexed on `(site, date)` for efficient time-range queries.
 
 ### Source System Mappings
 
-#### Google Search Console → Facts
+#### Google Search Console → Search Analytics Data
 ```json
-// GSC Search Analytics
+// GSC Search Analytics API Response
 {
   "keys": ["data synchronization"],
   "clicks": 1250,
@@ -388,90 +375,53 @@ Facts represent measurable data points, metrics, and analytics from various syst
   "date": "2024-01-15"
 }
 
-// Becomes Multiple Facts Objects
-[
-  {
-    "type": "Facts",
-    "metric": "organic_clicks",
-    "value": 1250,
-    "dimension": {"query": "data synchronization"},
-    "timestamp": "2024-01-15T00:00:00Z"
-  },
-  {
-    "type": "Facts",
-    "metric": "organic_impressions", 
-    "value": 5420,
-    "dimension": {"query": "data synchronization"},
-    "timestamp": "2024-01-15T00:00:00Z"
-  }
-]
-```
-
-#### HubSpot → Facts (Analytics)
-```json
-// HubSpot Deal
+// Stored in search_analytics_data table
 {
-  "dealId": 98765,
-  "properties": {
-    "amount": 50000,
-    "dealstage": "closedwon",
-    "closedate": "2024-01-15",
-    "dealtype": "New Business"
-  }
-}
-
-// Becomes Facts Object
-{
-  "type": "Facts",
-  "metric": "deal_value",
-  "value": 50000,
-  "unit": "USD",
-  "dimension": {
-    "stage": "closedwon",
-    "type": "New Business"
-  },
-  "timestamp": "2024-01-15T00:00:00Z",
-  "category": "sales_performance"
+  "site": "https://example.com",
+  "date": "2024-01-15",
+  "query": "data synchronization",
+  "clicks": 1250,
+  "impressions": 5420,
+  "ctr": 0.23,
+  "position": 3.2
 }
 ```
 
-### Destination System Mappings
-
-Facts are typically used for analytics and reporting rather than being written back to operational systems. However, they can be delivered to:
-
-- **Analytics Platforms**: Tableau, Power BI, Looker
-- **Data Warehouses**: Snowflake, BigQuery, Redshift
-- **Business Intelligence Tools**: Custom dashboards and reports
+### Usage
+Analytics data is used for reporting, dashboards, and AI-powered insights within Outrun. It can be queried alongside your CRM and support data to provide a complete view of business performance.
 
 ## Relationships Objects
 
 Relationships represent connections between People and Organizations, maintaining the context of how entities are related.
 
-### Core Schema
+### Database Schema
+Relationships are stored in the `relationships` table within each tenant database:
 ```json
 {
-  "type": "Relationships",
-  "fromType": "Person",
-  "fromId": "john@acme.com",
-  "toType": "Organization", 
-  "toId": "acme.com",
+  "sourceType": "Person",
+  "sourceEntityId": "john@acme.com",
+  "targetType": "Organization",
+  "targetEntityId": "acme.com",
   "relationshipType": "employee",
-  "strength": 0.95,
-  "verified": true,
-  "startDate": "2022-03-15T00:00:00Z",
-  "endDate": null,
-  "metadata": {
+  "externalIds": {
+    "hubspot": "association_456789"
+  },
+  "record": {
     "department": "Marketing",
     "role": "Manager",
     "reportingStructure": "direct"
   },
-  "sourceId": "hubspot_abc123",
-  "sourceObjectId": "association_456789",
-  "sourceObjectType": "contact_to_company",
+  "metadata": {
+    "strength": 0.95,
+    "verified": true,
+    "startDate": "2022-03-15T00:00:00Z"
+  },
   "createdAt": "2024-01-15T10:30:00Z",
   "updatedAt": "2024-01-15T10:30:00Z"
 }
 ```
+
+The table is indexed on `(source_type, source_entity_id)` and `(target_type, target_entity_id)` for efficient relationship lookups in both directions.
 
 ### Source System Mappings
 
@@ -510,19 +460,18 @@ Relationships represent connections between People and Organizations, maintainin
 }
 ```
 
-#### Salesforce → Relationships
+#### Pipedrive → Relationships
 ```json
-// Salesforce Contact with Account
+// Pipedrive Person with Organization
 {
-  "Contact": {
-    "Id": "003000000123456",
-    "Email": "sarah@enterprise.com",
-    "AccountId": "001000000234567"
+  "Person": {
+    "id": 123456,
+    "primary_email": "sarah@enterprise.com",
+    "org_id": 234567
   },
-  "Account": {
-    "Id": "001000000234567", 
-    "Name": "Enterprise Solutions",
-    "Website": "enterprise.com"
+  "Organization": {
+    "id": 234567,
+    "name": "Enterprise Solutions"
   }
 }
 
@@ -588,20 +537,8 @@ Relationships include a strength score (0-1) indicating confidence:
 }
 ```
 
-#### Facts → People/Organizations
-```json
-// Facts can reference People or Organizations
-{
-  "type": "Facts",
-  "metric": "deal_value",
-  "value": 50000,
-  "dimension": {
-    "person": "john@acme.com",      // References Person
-    "organization": "acme.com",     // References Organization
-    "dealStage": "closed-won"
-  }
-}
-```
+#### Analytics → People/Organizations
+Analytics data can be correlated with People and Organizations through shared identifiers like email domains and company names, enabling cross-functional reporting and AI-driven insights.
 
 ### Data Flow Examples
 
@@ -634,27 +571,16 @@ Relationships include a strength score (0-1) indicating confidence:
   "relationshipType": "employee"
 }
 
-// 4. Facts Objects
-[
-  {
-    "type": "Facts",
-    "metric": "deal_value",
-    "value": 100000,
-    "dimension": {
-      "person": "ceo@startup.com",
-      "organization": "startup.com"
-    }
-  },
-  {
-    "type": "Facts",
-    "metric": "website_visits",
-    "value": 1250,
-    "dimension": {
-      "organization": "startup.com",
-      "source": "organic"
-    }
-  }
-]
+// 4. Analytics Data (search_analytics_data table)
+{
+  "site": "startup.com",
+  "date": "2024-01-15",
+  "query": "startup inc reviews",
+  "clicks": 320,
+  "impressions": 1250,
+  "ctr": 0.256,
+  "position": 2.1
+}
 ```
 
 ## Object Validation & Quality
@@ -663,7 +589,7 @@ Relationships include a strength score (0-1) indicating confidence:
 - **Email Validation**: Valid email format for People
 - **Domain Validation**: Valid domain format for Organizations
 - **Relationship Consistency**: Valid references between objects
-- **Metric Validation**: Appropriate data types for Facts values
+- **Metric Validation**: Appropriate data types for analytics values
 
 ### Quality Scoring Factors
 - **Completeness**: Percentage of required fields populated
@@ -674,8 +600,8 @@ Relationships include a strength score (0-1) indicating confidence:
 ### Duplicate Detection
 - **People**: Email-based deduplication with name similarity
 - **Organizations**: Domain-based with name fuzzy matching
-- **Facts**: Metric + dimension + timestamp uniqueness
-- **Relationships**: From/To object pair uniqueness
+- **Relationships**: Source/target entity pair uniqueness
+- **Analytics**: Composite uniqueness per data source (e.g. site + date + query for search data)
 
 ## Best Practices
 

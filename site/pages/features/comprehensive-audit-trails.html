@@ -1,118 +1,114 @@
 ---
 layout: layouts/default.liquid
-permalink: /features/comprehensive-audit-trails/
-title: Comprehensive Audit Trails - Outrun
+permalink: /features/activity-logs/
+title: Activity Logs - Outrun
 social_meta:
-  title: Comprehensive Audit Trails - Outrun
-  description: Complete audit trails and compliance logging. Track every action and change with detailed forensic capabilities.
+  title: Activity Logs - Outrun
+  description: See what's happening across your integrations. Track data syncs, API activity, and job history in one place.
 ---
 
-<section class="bg-yellow-400 text-dark min-h-screen flex items-center">
-  <div class="max-w-6xl mx-auto px-6 lg:px-8 py-20">
+<link rel="stylesheet" href="/assets/css/features.css">
+
+<!-- Hero -->
+<section style="padding-top: 10rem; padding-bottom: 6rem; background: linear-gradient(180deg, #1B1237 0%, #151030 40%, #120E2A 100%);">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div>
-        <h1 class="text-4xl lg:text-5xl font-bold font-mono mb-6">
-          Comprehensive Audit Trails
+        <p class="font-mono text-sm text-pink-600 tracking-widest uppercase mb-4">Feature</p>
+        <h1 class="text-4xl lg:text-5xl font-bold font-mono text-light mb-6">
+          Activity Logs
         </h1>
-        <p class="text-xl text-dark mb-8 leading-relaxed">
-          Comprehensive job history and activity logging. Track data processing operations, API calls, and system activities with detailed performance metrics.
+        <div class="section-divider mb-8"></div>
+        <p class="text-lg text-grey-500 leading-relaxed mb-8">
+          See exactly what's happening with your data. Every sync, every API call, every job - logged with timing and status so you can spot issues before they become problems.
         </p>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <div class="group h-10 relative w-48">
-                    <button class="flex items-center w-48 h-10 absolute bg-dark">
-                        <div class="flex items-center w-full text-center text-light text-sm font-normal font-mono">
-                            <p class="text-center w-full pt-1 group-hover:pt-0">
-            Get started
-          </button>
-          <a href="/features" class="text-dark hover:text-grey-700 transition-colors duration-200 flex items-center">
-            View all features →
+        <div class="flex flex-col sm:flex-row gap-6 items-start">
+          <div class="group h-14 relative w-72">
+            <a href="https://app.getoutrun.com">
+              <button class="flex items-center w-full h-14 absolute bg-pink-600 hover:bg-pink-600 transition-colors">
+                <div class="flex items-center w-full text-center text-light text-xl font-normal font-mono">
+                  <p class="text-center w-full pt-1 group-hover:pt-0">Get started</p>
+                </div>
+              </button>
+              <div class="flex w-full h-14 top-1 left-1 group-hover:top-0 group-hover:left-0 absolute border-solid border-2 border-light transition-all"></div>
+            </a>
+          </div>
+          <a href="/features" class="font-mono text-sm transition-colors flex items-center h-14 text-light hover:text-pink-600">
+            View all features &rarr;
           </a>
         </div>
       </div>
-      <div class="bg-gradient-to-br from-cyan-600 to-blue-600 w-64 h-64 mx-auto lg:mx-0 lg:ml-auto flex items-center justify-center">
-        <span class="text-6xl">📋</span>
+      <div class="hero-icon-box mx-auto lg:mx-0 lg:ml-auto" style="background: linear-gradient(135deg, rgba(34,211,238,0.15), rgba(59,130,246,0.15));">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: #22d3ee"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
       </div>
     </div>
   </div>
 </section>
 
-<section class="py-20 bg-dark">
-  <div class="max-w-6xl mx-auto px-6 lg:px-8">
-    <h2 class="text-3xl font-bold font-mono text-light mb-12 text-center">
-      Complete visibility into every action
+<!-- Key Features -->
+<section class="relative" style="padding-top: 10rem; padding-bottom: 6rem; background: linear-gradient(180deg, #120E2A 0%, #0F0B24 40%, #0D0920 100%);">
+  <div class="section-grid-bg"></div>
+  <div class="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
+    <p class="font-mono text-sm text-yellow-400 tracking-widest uppercase mb-4">Capabilities</p>
+    <h2 class="text-3xl font-bold font-mono text-light mb-4">
+      Know what's happening, when it matters
     </h2>
-    
+    <div class="section-divider mb-12"></div>
+
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-      <div class="text-center">
-        <div class="bg-gradient-to-br from-blue-500 to-cyan-500 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-          <span class="text-2xl text-light">📝</span>
+      <div class="help-card">
+        <div class="help-card-icon help-card-icon--pink">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
         </div>
-        <h3 class="text-xl font-semibold font-mono text-light mb-3">
-          Detailed Logging
-        </h3>
-        <p class="text-light">
-          Capture every data access, modification, and system change with timestamp and user attribution.
-        </p>
+        <h3 class="text-xl font-bold font-mono text-light mb-3">Job History</h3>
+        <p class="text-grey-500 text-sm">See every data sync, enrichment, and consolidation job with its status, duration, and any errors. No more guessing whether your automations actually ran.</p>
       </div>
-      
-      <div class="text-center">
-        <div class="bg-gradient-to-br from-green-500 to-emerald-500 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-          <span class="text-2xl text-light">🔍</span>
+
+      <div class="help-card">
+        <div class="help-card-icon help-card-icon--cyan">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
         </div>
-        <h3 class="text-xl font-semibold font-mono text-light mb-3">
-          Advanced Search
-        </h3>
-        <p class="text-light">
-          Search and filter audit logs by user, action, time range, data type, and custom criteria.
-        </p>
+        <h3 class="text-xl font-bold font-mono text-light mb-3">API Request Logs</h3>
+        <p class="text-grey-500 text-sm">Track every API call to your connected tools - request details, response codes, and timing - so you can quickly diagnose integration issues.</p>
       </div>
-      
-      <div class="text-center">
-        <div class="bg-gradient-to-br from-purple-500 to-pink-500 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-          <span class="text-2xl text-light">📊</span>
+
+      <div class="help-card">
+        <div class="help-card-icon help-card-icon--yellow">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
         </div>
-        <h3 class="text-xl font-semibold font-mono text-light mb-3">
-          Compliance Reports
-        </h3>
-        <p class="text-light">
-          Generate automated compliance reports for GDPR, SOX, HIPAA, and other regulatory requirements.
-        </p>
+        <h3 class="text-xl font-bold font-mono text-light mb-3">Performance Metrics</h3>
+        <p class="text-grey-500 text-sm">Understand how long your syncs take and where bottlenecks are. Spot slow integrations and address them before they impact your team.</p>
       </div>
     </div>
 
-    <div class="bg-dark/20 backdrop-blur-sm p-8 mb-16">
-      <h3 class="text-2xl font-bold font-mono text-light mb-6">
-        What we track
-      </h3>
+    <div class="help-card">
+      <h3 class="text-2xl font-bold font-mono text-light mb-6">What gets logged</h3>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="space-y-4">
-          <h4 class="font-semibold font-mono text-light">User Activities</h4>
-          <div class="space-y-2 text-light">
-            <div>• Login and logout events</div>
-            <div>• Permission changes</div>
-            <div>• Role assignments</div>
-            <div>• Failed login attempts</div>
-            <div>• Session management</div>
+          <h4 class="font-bold font-mono text-light">Data Syncs</h4>
+          <div class="space-y-2 text-grey-500">
+            <div>Source and destination sync runs</div>
+            <div>Records processed per job</div>
+            <div>Sync duration and timing</div>
+            <div>Error details when syncs fail</div>
           </div>
         </div>
         <div class="space-y-4">
-          <h4 class="font-semibold font-mono text-light">Data Operations</h4>
-          <div class="space-y-2 text-light">
-            <div>• Data access and views</div>
-            <div>• Create, update, delete</div>
-            <div>• Data exports</div>
-            <div>• Import operations</div>
-            <div>• Sharing activities</div>
+          <h4 class="font-bold font-mono text-light">API Activity</h4>
+          <div class="space-y-2 text-grey-500">
+            <div>Inbound API requests</div>
+            <div>Response codes and messages</div>
+            <div>Request source IP</div>
+            <div>Call duration</div>
           </div>
         </div>
         <div class="space-y-4">
-          <h4 class="font-semibold font-mono text-light">System Changes</h4>
-          <div class="space-y-2 text-light">
-            <div>• Configuration changes</div>
-            <div>• Integration setup</div>
-            <div>• Security policy updates</div>
-            <div>• System maintenance</div>
-            <div>• API access</div>
+          <h4 class="font-bold font-mono text-light">Workflows</h4>
+          <div class="space-y-2 text-grey-500">
+            <div>Workflow execution history</div>
+            <div>Node-by-node run status</div>
+            <div>Trigger events</div>
+            <div>AI agent actions</div>
           </div>
         </div>
       </div>
@@ -120,59 +116,51 @@ social_meta:
   </div>
 </section>
 
-<section class="py-20 bg-cyan-400">
-  <div class="max-w-6xl mx-auto px-6 lg:px-8">
+<!-- Value Proposition -->
+<section class="relative" style="padding-top: 10rem; padding-bottom: 6rem; background: linear-gradient(180deg, #0D0920 0%, #14102E 40%, #1A1538 100%);">
+  <div class="section-grid-bg"></div>
+  <div class="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div>
-        <h2 class="text-3xl font-bold font-mono text-dark mb-6">
-          Forensic-grade audit capabilities
+        <h2 class="text-3xl font-bold font-mono text-light mb-6">
+          Debug faster, fix sooner
         </h2>
-        <p class="text-xl text-dark mb-8 leading-relaxed">
-          Meet the most stringent compliance requirements with tamper-proof logs and detailed forensic trails. Our audit system provides the evidence you need for security investigations and regulatory compliance.
+        <p class="text-lg text-grey-500 mb-8 leading-relaxed">
+          When a sync fails or data looks wrong, you shouldn't have to dig through multiple tools to figure out why. Activity logs give you the full picture in one place - what ran, what succeeded, what failed, and why.
         </p>
-        <div class="space-y-4 text-dark">
+        <div class="space-y-4">
           <div class="flex items-start">
-            <span class="text-yellow-400 mr-3">✓</span>
-            <span>Immutable log storage</span>
+            <span class="text-pink-600 mr-3">&#10003;</span>
+            <span class="text-grey-500">Filter logs by source, job type, or status</span>
           </div>
           <div class="flex items-start">
-            <span class="text-yellow-400 mr-3">✓</span>
-            <span>Real-time alerting on suspicious activity</span>
+            <span class="text-pink-600 mr-3">&#10003;</span>
+            <span class="text-grey-500">See error details with full context</span>
           </div>
           <div class="flex items-start">
-            <span class="text-yellow-400 mr-3">✓</span>
-            <span>Long-term retention policies</span>
+            <span class="text-pink-600 mr-3">&#10003;</span>
+            <span class="text-grey-500">Track performance over time</span>
           </div>
           <div class="flex items-start">
-            <span class="text-yellow-400 mr-3">✓</span>
-            <span>Export capabilities for external analysis</span>
+            <span class="text-pink-600 mr-3">&#10003;</span>
+            <span class="text-grey-500">Per-workspace isolation - each team sees only their data</span>
           </div>
         </div>
       </div>
-      <div class="bg-pink-600/10 p-8 backdrop-blur-sm">
-        <h3 class="text-xl font-semibold font-mono text-dark mb-4">
-          Compliance standards
-        </h3>
-        <div class="space-y-4 text-dark">
-          <div class="border-l-4 border-yellow-400 pl-4">
-            <h4 class="font-semibold font-mono">SOX Compliance</h4>
-            <p class="text-sm">Financial data access and change tracking</p>
+      <div class="help-card">
+        <h3 class="text-xl font-bold font-mono text-light mb-4">Built for growing teams</h3>
+        <div class="space-y-4">
+          <div class="pl-4" style="border-left: 4px solid #FFC403;">
+            <h4 class="font-bold font-mono text-light">Operations</h4>
+            <p class="text-sm text-grey-500">Monitor sync health across all your connected tools without jumping between dashboards.</p>
           </div>
-          <div class="border-l-4 border-yellow-400 pl-4">
-            <h4 class="font-semibold font-mono">GDPR Article 30</h4>
-            <p class="text-sm">Records of processing activities</p>
+          <div class="pl-4" style="border-left: 4px solid #FFC403;">
+            <h4 class="font-bold font-mono text-light">IT &amp; Admin</h4>
+            <p class="text-sm text-grey-500">Track API usage and integration activity to stay on top of what's connected and how it's being used.</p>
           </div>
-          <div class="border-l-4 border-yellow-400 pl-4">
-            <h4 class="font-semibold font-mono">HIPAA Audit Controls</h4>
-            <p class="text-sm">Healthcare data access monitoring</p>
-          </div>
-          <div class="border-l-4 border-yellow-400 pl-4">
-            <h4 class="font-semibold font-mono">PCI DSS</h4>
-            <p class="text-sm">Payment data access logging</p>
-          </div>
-          <div class="border-l-4 border-yellow-400 pl-4">
-            <h4 class="font-semibold font-mono">SOC 2 Type II</h4>
-            <p class="text-sm">Security and availability controls</p>
+          <div class="pl-4" style="border-left: 4px solid #FFC403;">
+            <h4 class="font-bold font-mono text-light">Sales Leadership</h4>
+            <p class="text-sm text-grey-500">Confidence that your CRM data is being synced correctly and completely across your tools.</p>
           </div>
         </div>
       </div>
@@ -180,21 +168,34 @@ social_meta:
   </div>
 </section>
 
-<section class="py-20 bg-pink-600">
-  <div class="max-w-4xl mx-auto text-center px-6 lg:px-8">
-    <h2 class="text-3xl font-bold font-mono text-light mb-6">
-      Ready for complete audit visibility?
-    </h2>
-    <p class="text-xl text-light mb-8">
-      Start tracking every action with comprehensive audit trails that meet compliance requirements.
-    </p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <button class="bg-cyan-400 text-dark h-10 w-48 font-medium transition-all duration-200 hover:shadow-lg hover:shadow-blue-600/50 transform hover:translate-x-1 hover:translate-y-1">
-        Start free trial
-      </button>
-      <a href="/features" class="text-yellow-400 hover:text-blue-700 transition-colors duration-200 flex items-center justify-center">
-        View all features →
-      </a>
+<!-- CTA -->
+<section class="final-cta-section relative overflow-hidden" style="padding-top: 10rem; padding-bottom: 6rem; background: linear-gradient(180deg, #1B1237 0%, #200E30 40%, #2A1040 100%);">
+  <div class="cta-bg-gradient"></div>
+  <div class="section-grid-bg" style="opacity: 0.03;"></div>
+  <div class="relative z-10 max-w-3xl mx-auto px-6 lg:px-8 text-center">
+    <div class="space-y-8">
+      <h2 class="text-4xl lg:text-5xl font-bold font-mono text-light leading-tight">
+        Ready to <span class="text-yellow-400">get started</span>?
+      </h2>
+      <p class="text-lg text-grey-500 leading-relaxed max-w-2xl mx-auto">
+        Build your first workflow in minutes. Connect your tools and start automating today.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-6 justify-center items-center pt-4">
+        <div class="group h-14 relative w-72">
+          <a href="https://app.getoutrun.com">
+            <button class="flex items-center w-full h-14 absolute bg-pink-600 hover:bg-pink-600 transition-colors">
+              <div class="flex items-center w-full text-center text-light text-xl font-normal font-mono">
+                <p class="text-center w-full pt-1 group-hover:pt-0">Start Building Free</p>
+              </div>
+            </button>
+            <div class="flex w-full h-14 top-1 left-1 group-hover:top-0 group-hover:left-0 absolute border-solid border-2 border-light transition-all"></div>
+          </a>
+        </div>
+        <a href="/contact" class="text-light hover:text-pink-600 font-mono text-lg transition-colors">Book a Demo &rarr;</a>
+      </div>
+      <p class="text-xs font-mono text-grey-500 pt-2">
+        No credit card required
+      </p>
     </div>
   </div>
-</section> 
+</section>

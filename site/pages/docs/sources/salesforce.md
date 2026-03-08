@@ -2,9 +2,10 @@
 layout: layouts/docs.liquid
 title: Salesforce Source
 description: Connect Salesforce CRM to Outrun. Sync Contacts, Accounts, Leads, and Products with real-time PubSub support and enterprise features.
-metaTitle: Salesforce Integration - Outrun Source Documentation  
+metaTitle: Salesforce Integration - Outrun Source Documentation
 metaDescription: Complete guide to integrating Salesforce CRM with Outrun. Object mappings, PubSub real-time sync, rate limits, and enterprise features.
-permalink: /docs/sources/salesforce/
+permalink: false
+eleventyExcludeFromCollections: true
 breadcrumbs:
   - title: Documentation
     url: /docs/
@@ -154,9 +155,9 @@ Salesforce has sophisticated rate limiting that Outrun optimizes:
 - **Backfill Period**: 30 days by default
 - **Polling Interval**: 60 minutes (when not using PubSub)
 - **Data Processing**:
-  1. Raw data → `_stream` collection
-  2. Merged data → `_consolidate` collection
-  3. Standardized objects → People, Organizations, Products, Relationships
+  1. Raw data → `stream_data` table
+  2. Merged data → `consolidated_data` table
+  3. Standardized objects → `people`, `organizations`, `relationships` tables
 
 ### Real-Time Sync (PubSub)
 - **Event Detection**: Instant notification of changes

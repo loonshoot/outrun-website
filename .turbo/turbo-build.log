@@ -1,0 +1,30 @@
+$ bun run tailwind:build & bun run bookshop-sass:build & bun run eleventy:build & wait
+$ NODE_OPTIONS='--disable-warning=DEP0040' ELEVENTY_ENV=production eleventy --quiet
+$ bookshop-sass -b component-library -o _site/assets/bookshop.css
+$ bunx tailwindcss -i component-library/shared/styles/tailwind.css -o _site/assets/tailwind.css --minify
+Error minifying JavaScript: JS_Parse_Error [SyntaxError]: Unexpected token: operator (%)
+    at js_error (/Users/graysoncampbell/dev/outrun/node_modules/.bun/terser@5.44.1/node_modules/terser/dist/bundle.min.js:537:11)
+    at croak (/Users/graysoncampbell/dev/outrun/node_modules/.bun/terser@5.44.1/node_modules/terser/dist/bundle.min.js:1337:9)
+    at token_error (/Users/graysoncampbell/dev/outrun/node_modules/.bun/terser@5.44.1/node_modules/terser/dist/bundle.min.js:1345:9)
+    at unexpected (/Users/graysoncampbell/dev/outrun/node_modules/.bun/terser@5.44.1/node_modules/terser/dist/bundle.min.js:1351:9)
+    at expr_atom (/Users/graysoncampbell/dev/outrun/node_modules/.bun/terser@5.44.1/node_modules/terser/dist/bundle.min.js:2645:9)
+    at maybe_unary (/Users/graysoncampbell/dev/outrun/node_modules/.bun/terser@5.44.1/node_modules/terser/dist/bundle.min.js:3513:19)
+    at expr_ops (/Users/graysoncampbell/dev/outrun/node_modules/.bun/terser@5.44.1/node_modules/terser/dist/bundle.min.js:3588:28)
+    at maybe_conditional (/Users/graysoncampbell/dev/outrun/node_modules/.bun/terser@5.44.1/node_modules/terser/dist/bundle.min.js:3594:20)
+    at maybe_assign (/Users/graysoncampbell/dev/outrun/node_modules/.bun/terser@5.44.1/node_modules/terser/dist/bundle.min.js:3671:20)
+    at expression (/Users/graysoncampbell/dev/outrun/node_modules/.bun/terser@5.44.1/node_modules/terser/dist/bundle.min.js:3706:24) {
+  filename: '0',
+  line: 106,
+  col: 15,
+  pos: 4188
+}
+Browserslist: caniuse-lite is outdated. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+
+Rebuilding...
+[11ty] Copied 31 files / Wrote 111 files in 1.13 seconds (10.2ms each, v2.0.1)
+Compiled Bookshop Sass with 0 errors and 0 warnings.
+📚 Writing styles to bookshop.css
+
+Done in 1672ms.

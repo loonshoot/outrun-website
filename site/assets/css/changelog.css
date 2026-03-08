@@ -1,11 +1,244 @@
 /* Changelog page styles */
 
-/* Consistent margin-top for main content to match docs */
-main {
-  margin-top: 4rem;
+/* System font stack for all page text */
+body, html {
+  font-family: -apple-system, 'Segoe UI', BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* Target the first content block (sectiontitle) to add top margin */
-main > div:first-child {
-  margin-top: 4rem;
-} 
+/* Paytone One for headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Paytone One', sans-serif !important;
+}
+
+/* Square edges for all elements */
+* {
+  border-radius: 0 !important;
+}
+
+
+/* ========== SHARED COMPONENT STYLES ========== */
+
+/* Section divider accent line */
+.section-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #FFC403, #FE0170);
+}
+.section-divider--pink {
+  background: linear-gradient(90deg, #FE0170, #471695);
+}
+.section-divider--cyan {
+  background: linear-gradient(90deg, #22d3ee, #FE0170);
+}
+
+/* Subtle grid background for sections */
+.section-grid-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.025;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.4) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+/* Focus states */
+button:focus,
+a:focus {
+  outline: 2px solid #FFC403;
+  outline-offset: 2px;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Button hover effects */
+.group button {
+  border: none;
+  outline: none;
+}
+
+.group:hover button {
+  transform: translateY(-2px);
+}
+
+/* ========== CHANGELOG-SPECIFIC STYLES ========== */
+
+/* Timeline container */
+.changelog-timeline {
+  position: relative;
+}
+
+/* Version card */
+.version-card {
+  position: relative;
+  z-index: 1;
+  padding: 2.5rem 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  transition: all 0.3s ease;
+}
+
+.version-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.20);
+}
+
+/* Version accent line at top of card */
+.version-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+}
+
+.version-accent--yellow { background: linear-gradient(90deg, #FFC403, transparent); }
+.version-accent--pink   { background: linear-gradient(90deg, #FE0170, transparent); }
+.version-accent--cyan   { background: linear-gradient(90deg, #22d3ee, transparent); }
+
+/* Version artwork square */
+.version-artwork {
+  width: 168px;
+  height: 168px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.875rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.version-artwork::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.version-card:hover .version-artwork {
+  border-color: rgba(255, 255, 255, 0.30);
+}
+
+/* Version number badge */
+.version-number {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid;
+}
+
+.version-number--yellow { color: #FFC403; border-color: rgba(255, 196, 3, 0.3); }
+.version-number--pink   { color: #FE0170; border-color: rgba(254, 1, 112, 0.3); }
+.version-number--cyan   { color: #22d3ee; border-color: rgba(34, 211, 238, 0.3); }
+
+/* Codename badge */
+.codename-badge {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+/* Feature group inside version card */
+.feature-group h3 {
+  font-family: 'Fira Code', monospace !important;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.feature-group li {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  padding-left: 0.5rem;
+}
+
+.feature-group li::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  margin-right: 0.75rem;
+  margin-bottom: 2px;
+  vertical-align: middle;
+}
+
+.feature-group--yellow li::before { background: #FFC403; }
+.feature-group--pink li::before   { background: #FE0170; }
+.feature-group--cyan li::before   { background: #22d3ee; }
+
+/* Roadmap card (Coming Soon) */
+.roadmap-card {
+  position: relative;
+  padding: 3rem;
+  background: rgba(34, 211, 238, 0.04);
+  border: 1px solid rgba(34, 211, 238, 0.15);
+  transition: all 0.3s ease;
+}
+
+.roadmap-card:hover {
+  background: rgba(34, 211, 238, 0.08);
+  border-color: rgba(34, 211, 238, 0.25);
+}
+
+/* Stealth divider */
+.stealth-divider {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.stealth-divider::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+}
+
+/* Section glow effects */
+.changelog-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(254, 1, 112, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Final CTA Section */
+.final-cta-section {
+  position: relative;
+  overflow: hidden;
+  border-top: 2px solid #FFC403;
+}
+
+.cta-bg-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #1B1237 0%, rgba(254, 1, 112, 0.15) 50%, #1B1237 100%);
+  pointer-events: none;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

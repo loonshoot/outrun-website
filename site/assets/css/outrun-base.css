@@ -1,0 +1,137 @@
+/* ========== OUTRUN BASE — shared brand system ========== */
+
+/* System font stack for all page text */
+body, html {
+  font-family: -apple-system, 'Segoe UI', BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Paytone One for headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Paytone One', sans-serif !important;
+}
+
+/* Square edges for all elements */
+* {
+  border-radius: 0 !important;
+}
+
+/* Override any rounded classes */
+.rounded,
+.rounded-sm,
+.rounded-md,
+.rounded-lg,
+.rounded-xl,
+.rounded-2xl,
+.rounded-3xl,
+.rounded-full {
+  border-radius: 0 !important;
+}
+
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ========== SECTION DIVIDERS ========== */
+
+.section-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #FFC403, #FE0170);
+}
+.section-divider--pink {
+  background: linear-gradient(90deg, #FE0170, #471695);
+}
+.section-divider--cyan {
+  background: linear-gradient(90deg, #22d3ee, #FE0170);
+}
+
+/* ========== SECTION GRID BACKGROUND ========== */
+
+.section-grid-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.025;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.4) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+/* ========== CARD SYSTEM ========== */
+
+.help-card {
+  padding: 2.5rem 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  transition: all 0.3s ease;
+}
+.help-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.20);
+  transform: translateY(-2px);
+}
+
+.help-card-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  border: 1px solid;
+}
+.help-card-icon svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+.help-card-icon--yellow { color: #FFC403; border-color: rgba(255, 196, 3, 0.4); }
+.help-card-icon--pink   { color: #FE0170; border-color: rgba(254, 1, 112, 0.4); }
+.help-card-icon--cyan   { color: #22d3ee; border-color: rgba(34, 211, 238, 0.4); }
+.help-card-icon--purple { color: #471695; border-color: rgba(71, 22, 149, 0.4); }
+
+/* ========== CTA SECTION ========== */
+
+.final-cta-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-bg-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #1B1237 0%, rgba(254, 1, 112, 0.15) 50%, #1B1237 100%);
+  pointer-events: none;
+}
+
+/* ========== BUTTON HOVER ========== */
+
+.group button {
+  border: none;
+  outline: none;
+}
+
+.group:hover button {
+  transform: translateY(-2px);
+}
+
+/* ========== FOCUS STATES ========== */
+
+button:focus,
+a:focus {
+  outline: 2px solid #FFC403;
+  outline-offset: 2px;
+}
+
+/* ========== REDUCED MOTION ========== */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

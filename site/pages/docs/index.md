@@ -20,7 +20,7 @@ In the age of AI, getting access to clean, standardized data is becoming the big
 
 Philosophically, Outrun focuses on creating standardized approaches to everything—from standard objects to data cleaning processes. While there are many tools available to create custom data flows, they require intricate system knowledge and significant engineering overhead.
 
-Our approach is different. You add HubSpot as a source, add Salesforce as a destination, and when a contact is updated in HubSpot (by a user or workflow), the same lead is automatically updated in Salesforce. No understanding of system mechanics required.
+Our approach is different. You add HubSpot as a source, add Zoho CRM as a destination, and when a contact is updated in HubSpot (by a user or workflow), the same lead is automatically updated in Zoho. No understanding of system mechanics required.
 
 **The Trade-off We Make**
 
@@ -39,22 +39,22 @@ Our ambition extends beyond data synchronization. After establishing this standa
 New to Outrun? Start with these essential guides:
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-8">
-  <div class="bg-dark-light border border-gray-600  p-6 hover:border-yellow transition-colors">
-    <h3 class="text-yellow text-lg font-semibold mb-3">🚀 Quick Start</h3>
-    <p class="text-gray-300 mb-4">Get up and running with Outrun in minutes. Create your first sync and see your data flow.</p>
-    <a href="/docs/getting-started/" class="text-yellow hover:text-yellow-light transition-colors">Get Started →</a>
+  <div class="docs-card">
+    <h3 class="text-lg font-semibold mb-3">🚀 Quick Start</h3>
+    <p class="mb-4">Get up and running with Outrun in minutes. Create your first sync and see your data flow.</p>
+    <a href="/docs/getting-started/">Get Started →</a>
   </div>
-  
-  <div class="bg-dark-light border border-gray-600  p-6 hover:border-yellow transition-colors">
-    <h3 class="text-yellow text-lg font-semibold mb-3">📚 Core Concepts</h3>
-    <p class="text-gray-300 mb-4">Understand how Outrun standardizes data and creates seamless integrations.</p>
-    <a href="/docs/concepts/" class="text-yellow hover:text-yellow-light transition-colors">Learn More →</a>
+
+  <div class="docs-card">
+    <h3 class="text-lg font-semibold mb-3">📚 Core Concepts</h3>
+    <p class="mb-4">Understand how Outrun standardizes data and creates seamless integrations.</p>
+    <a href="/docs/concepts/">Learn More →</a>
   </div>
-  
-  <div class="bg-dark-light border border-gray-600  p-6 hover:border-yellow transition-colors">
-    <h3 class="text-yellow text-lg font-semibold mb-3">🔌 Integrations</h3>
-    <p class="text-gray-300 mb-4">Browse our supported sources and destinations to plan your data flows.</p>
-    <a href="/docs/integrations/" class="text-yellow hover:text-yellow-light transition-colors">View All →</a>
+
+  <div class="docs-card">
+    <h3 class="text-lg font-semibold mb-3">🔌 Integrations</h3>
+    <p class="mb-4">Browse our supported sources and destinations to plan your data flows.</p>
+    <a href="/docs/integrations/">View All →</a>
   </div>
 </div>
 
@@ -63,7 +63,7 @@ New to Outrun? Start with these essential guides:
 Understanding these fundamental concepts will help you make the most of Outrun:
 
 - **[Data Syncing](/docs/concepts/data-syncing/)** - How Outrun moves and transforms your data
-- **[Providers](/docs/concepts/providers/)** - Source systems where your data originates  
+- **[Providers](/docs/concepts/providers/)** - Source systems where your data originates
 - **[Destinations](/docs/concepts/destinations/)** - Target systems where your data goes
 - **[Rate Limiting](/docs/concepts/rate-limiting/)** - How we manage API quotas and performance
 
@@ -72,24 +72,24 @@ Understanding these fundamental concepts will help you make the most of Outrun:
 Connect your most-used tools and services:
 
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 my-8">
-  <a href="/docs/providers/salesforce/" class="flex items-center space-x-3 p-4 bg-dark-light border border-gray-600  hover:border-yellow transition-colors">
-    <div class="w-8 h-8 bg-blue-500  flex items-center justify-center text-white font-bold text-sm">SF</div>
-    <span class="text-light">Salesforce</span>
+  <a href="/docs/sources/hubspot/" class="docs-card flex items-center space-x-3 p-4">
+    <div class="w-8 h-8 flex items-center justify-center font-bold text-sm" style="background: rgba(255, 196, 3, 0.15); color: #FFC403; border: 1px solid rgba(255, 196, 3, 0.3);">HS</div>
+    <span>HubSpot</span>
   </a>
-  
-  <a href="/docs/providers/hubspot/" class="flex items-center space-x-3 p-4 bg-dark-light border border-gray-600  hover:border-yellow transition-colors">
-    <div class="w-8 h-8 bg-orange-500  flex items-center justify-center text-white font-bold text-sm">HS</div>
-    <span class="text-light">HubSpot</span>
+
+  <a href="/docs/sources/zoho-crm/" class="docs-card flex items-center space-x-3 p-4">
+    <div class="w-8 h-8 flex items-center justify-center font-bold text-sm" style="background: rgba(254, 1, 112, 0.15); color: #FE0170; border: 1px solid rgba(254, 1, 112, 0.3);">Z</div>
+    <span>Zoho CRM</span>
   </a>
-  
-  <a href="/docs/providers/google-search-console/" class="flex items-center space-x-3 p-4 bg-dark-light border border-gray-600  hover:border-yellow transition-colors">
-    <div class="w-8 h-8 bg-red-500  flex items-center justify-center text-white font-bold text-sm">G</div>
-    <span class="text-light">Google SC</span>
+
+  <a href="/docs/sources/google-search-console/" class="docs-card flex items-center space-x-3 p-4">
+    <div class="w-8 h-8 flex items-center justify-center font-bold text-sm" style="background: rgba(34, 211, 238, 0.15); color: #22d3ee; border: 1px solid rgba(34, 211, 238, 0.3);">G</div>
+    <span>Google SC</span>
   </a>
-  
-  <a href="/docs/providers/confluence/" class="flex items-center space-x-3 p-4 bg-dark-light border border-gray-600  hover:border-yellow transition-colors">
-    <div class="w-8 h-8 bg-blue-600  flex items-center justify-center text-white font-bold text-sm">C</div>
-    <span class="text-light">Confluence</span>
+
+  <a href="/docs/sources/confluence/" class="docs-card flex items-center space-x-3 p-4">
+    <div class="w-8 h-8 flex items-center justify-center font-bold text-sm" style="background: rgba(71, 22, 149, 0.25); color: #a78bfa; border: 1px solid rgba(71, 22, 149, 0.4);">C</div>
+    <span>Confluence</span>
   </a>
 </div>
 
@@ -107,26 +107,26 @@ Build custom integrations with our comprehensive API:
 
 We're here to support you every step of the way:
 
-<div class="bg-yellow bg-opacity-10 border border-yellow  p-6 my-8">
-  <h3 class="text-yellow text-lg font-semibold mb-3">💬 Get Support</h3>
+<div class="docs-card p-6 my-8" style="border-color: rgba(255, 196, 3, 0.2);">
+  <h3 class="text-lg font-semibold mb-3">💬 Get Support</h3>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
     <div>
-      <h4 class="font-medium text-light mb-2">Community</h4>
-      <ul class="space-y-1 text-gray-300">
-        <li><a href="/docs/support/faq/" class="hover:text-yellow transition-colors">FAQ</a></li>
-        <li><a href="/docs/support/troubleshooting/" class="hover:text-yellow transition-colors">Troubleshooting</a></li>
-        <li><a href="/docs/support/changelog/" class="hover:text-yellow transition-colors">Changelog</a></li>
+      <h4 class="font-medium mb-2">Community</h4>
+      <ul class="space-y-1">
+        <li><a href="/docs/support/faq/">FAQ</a></li>
+        <li><a href="/docs/support/troubleshooting/">Troubleshooting</a></li>
+        <li><a href="/docs/support/changelog/">Changelog</a></li>
       </ul>
     </div>
     <div>
-      <h4 class="font-medium text-light mb-2">Direct Support</h4>
-      <ul class="space-y-1 text-gray-300">
-        <li><a href="mailto:support@getoutrun.com" class="hover:text-yellow transition-colors">Email Support</a></li>
-        <li><a href="https://discord.gg/outrun" class="hover:text-yellow transition-colors">Discord Community</a></li>
-        <li><a href="https://github.com/outrun/outrun" class="hover:text-yellow transition-colors">GitHub Issues</a></li>
+      <h4 class="font-medium mb-2">Direct Support</h4>
+      <ul class="space-y-1">
+        <li><a href="mailto:support@getoutrun.com">Email Support</a></li>
+        <li><a href="https://discord.gg/outrun">Discord Community</a></li>
+        <li><a href="https://github.com/outrun/outrun">GitHub Issues</a></li>
       </ul>
     </div>
   </div>
 </div>
 
-*Last updated: {{ "now" | date: "%B %d, %Y" }}* 
+*Last updated: {{ "now" | date: "%B %d, %Y" }}*

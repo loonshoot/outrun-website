@@ -1,7 +1,7 @@
 ---
 layout: layouts/docs.liquid
 title: Standardization
-description: Learn how Outrun transforms raw data from different sources into standardized People, Organizations, Facts, and Relationships objects.
+description: Learn how Outrun transforms raw data from different sources into standardized People, Organizations, and Relationships objects.
 metaTitle: Data Standardization - Outrun Core Concepts
 metaDescription: Complete guide to Outrun's standardization process including consolidation, object mapping, and the four core standardized object types.
 permalink: /docs/concepts/standardization/
@@ -28,7 +28,7 @@ Standardization is the core transformation process that converts raw data from v
 Standardization transforms raw stream data through a multi-stage process:
 
 ### 1. Stream Processing
-Raw data from `[sourceId]_stream` collections is processed using source-specific mapping rules:
+Raw data from the `stream_data` table is processed using source-specific mapping rules:
 
 - **Field Mapping**: Native fields mapped to standardized equivalents
 - **Data Type Conversion**: Ensures consistent data types across sources
@@ -36,7 +36,7 @@ Raw data from `[sourceId]_stream` collections is processed using source-specific
 - **Enrichment**: Adds computed fields and metadata
 
 ### 2. Consolidation
-Processed data moves to `[sourceId]_consolidate` collections for merging and deduplication:
+Processed data moves to the `consolidated_data` table for merging and deduplication:
 
 - **Duplicate Detection**: Identifies potential duplicate records
 - **Record Merging**: Combines duplicate records intelligently
@@ -79,13 +79,13 @@ Outrun standardizes all data into four universal object types that represent the
   </div>
 
   <div class="bg-dark-light border border-yellow-500  p-6">
-    <h3 class="text-yellow-400 text-lg font-semibold mb-3">📊 Facts</h3>
+    <h3 class="text-yellow-400 text-lg font-semibold mb-3">📊 Analytics</h3>
     <p class="text-gray-300 text-sm mb-3">Measurable data points and metrics</p>
     <ul class="text-gray-300 space-y-1 text-sm">
-      <li>• Analytics data, KPIs</li>
+      <li>• Search analytics data</li>
       <li>• Performance metrics</li>
-      <li>• Search console data</li>
-      <li>• Quantifiable measurements</li>
+      <li>• Rankings and impressions</li>
+      <li>• Stored in typed tables per data source</li>
     </ul>
   </div>
 
@@ -151,17 +151,17 @@ Outrun standardizes all data into four universal object types that represent the
 }
 ```
 
-### Salesforce → Standardized Objects
+### Pipedrive → Standardized Objects
 
 ```json
-// Salesforce Lead → Person
+// Pipedrive Person → Person
 {
   "sourceData": {
-    "Id": "00Q000000123456",
-    "Email": "jane@startup.com",
-    "FirstName": "Jane",
-    "LastName": "Smith",
-    "Company": "Startup Inc"
+    "id": 123456,
+    "primary_email": "jane@startup.com",
+    "first_name": "Jane",
+    "last_name": "Smith",
+    "org_name": "Startup Inc"
   },
   "standardizedObject": {
     "type": "Person",
@@ -169,28 +169,26 @@ Outrun standardizes all data into four universal object types that represent the
     "firstName": "Jane",
     "lastName": "Smith",
     "company": "Startup Inc",
-    "sourceId": "salesforce_def456",
-    "sourceObjectId": "00Q000000123456",
-    "sourceObjectType": "Lead"
+    "sourceId": "pipedrive_def456",
+    "sourceObjectId": "123456",
+    "sourceObjectType": "person"
   }
 }
 
-// Salesforce Account → Organization
+// Pipedrive Organization → Organization
 {
   "sourceData": {
-    "Id": "001000000234567",
-    "Name": "Enterprise Solutions Ltd",
-    "Website": "enterprise.com",
-    "Industry": "Financial Services"
+    "id": 234567,
+    "name": "Enterprise Solutions Ltd",
+    "address": "123 Main St"
   },
   "standardizedObject": {
     "type": "Organization",
     "name": "Enterprise Solutions Ltd",
-    "website": "enterprise.com",
-    "industry": "Financial Services",
-    "sourceId": "salesforce_def456",
-    "sourceObjectId": "001000000234567",
-    "sourceObjectType": "Account"
+    "address": "123 Main St",
+    "sourceId": "pipedrive_def456",
+    "sourceObjectId": "234567",
+    "sourceObjectType": "organization"
   }
 }
 ```
@@ -221,7 +219,7 @@ When duplicates are detected, Outrun intelligently merges records:
     "phone": null,
     "jobTitle": "Manager"
   },
-  "salesforce_record": {
+  "pipedrive_record": {
     "email": "john@acme.com",
     "firstName": "John",
     "lastName": "Doe",
@@ -236,9 +234,9 @@ When duplicates are detected, Outrun intelligently merges records:
     "email": "john@acme.com",
     "firstName": "John",
     "lastName": "Doe",
-    "phone": "+1-555-0123",        // Filled from Salesforce
-    "jobTitle": "Marketing Manager", // More specific from Salesforce
-    "sources": ["hubspot_abc123", "salesforce_def456"],
+    "phone": "+1-555-0123",        // Filled from Pipedrive
+    "jobTitle": "Marketing Manager", // More specific from Pipedrive
+    "sources": ["hubspot_abc123", "pipedrive_def456"],
     "qualityScore": 0.95,
     "lastUpdated": "2024-01-15T10:30:00Z"
   }
@@ -256,97 +254,68 @@ When sources provide conflicting data, Outrun applies resolution rules:
 
 ## Standardized Object Schema
 
-### Person Object
+### People Table
 ```json
 {
-  "type": "Person",
-  "email": "string (primary key)",
+  "emailAddress": "string (indexed)",
   "firstName": "string",
   "lastName": "string",
-  "fullName": "string (computed)",
-  "phone": "string",
-  "jobTitle": "string",
-  "company": "string",
-  "department": "string",
-  "location": "string",
-  "linkedInUrl": "string",
-  "twitterHandle": "string",
-  "website": "string",
-  "tags": ["array of strings"],
-  "customFields": "object",
-  "sourceId": "string",
-  "sourceObjectId": "string",
-  "sourceObjectType": "string",
-  "qualityScore": "number (0-1)",
+  "companyName": "string",
+  "phoneNumbers": ["array of phone objects"],
+  "externalIds": { "hubspot": "12345", "pipedrive": "67890" },
+  "record": { /* full merged record as JSONB */ },
+  "labels": ["customer", "enterprise"],
+  "classifications": [{ "type": "lead", "score": 0.85 }],
+  "assignedTo": "string",
+  "metadata": { /* processing history, quality scores */ },
   "createdAt": "datetime",
   "updatedAt": "datetime"
 }
 ```
 
-### Organization Object
+### Organizations Table
 ```json
 {
-  "type": "Organization",
-  "name": "string (primary key)",
-  "domain": "string",
-  "website": "string",
-  "industry": "string",
-  "size": "string",
-  "revenue": "number",
-  "location": "string",
-  "address": "object",
-  "phone": "string",
-  "description": "string",
-  "foundedYear": "number",
-  "tags": ["array of strings"],
-  "customFields": "object",
-  "sourceId": "string",
-  "sourceObjectId": "string",
-  "sourceObjectType": "string",
-  "qualityScore": "number (0-1)",
+  "companyName": "string",
+  "domain": "string (indexed)",
+  "externalIds": { "hubspot": "67890", "pipedrive": "234567" },
+  "record": { /* full merged record as JSONB */ },
+  "labels": ["enterprise", "technology"],
+  "metadata": { /* processing history, quality scores */ },
   "createdAt": "datetime",
   "updatedAt": "datetime"
 }
 ```
 
-### Facts Object
+### Search Analytics Data Table
+Analytics and metrics data (e.g. from Google Search Console) is stored in a dedicated typed table:
 ```json
 {
-  "type": "Facts",
-  "metric": "string",
-  "value": "number",
-  "unit": "string",
-  "dimension": "object",
-  "timestamp": "datetime",
-  "period": "string",
-  "source": "string",
-  "category": "string",
-  "tags": ["array of strings"],
-  "metadata": "object",
-  "sourceId": "string",
-  "sourceObjectId": "string",
-  "sourceObjectType": "string",
-  "createdAt": "datetime"
+  "site": "string",
+  "date": "date",
+  "query": "string",
+  "page": "string",
+  "device": "string",
+  "country": "string",
+  "clicks": "integer",
+  "impressions": "integer",
+  "ctr": "decimal",
+  "position": "decimal",
+  "jobId": "string"
 }
 ```
 
-### Relationships Object
+### Relationships Table
 ```json
 {
-  "type": "Relationships",
-  "fromType": "string (Person|Organization)",
-  "fromId": "string",
-  "toType": "string (Person|Organization)",
-  "toId": "string",
+  "sourceType": "string (Person|Organization)",
+  "sourceEntityId": "string",
+  "targetType": "string (Person|Organization)",
+  "targetEntityId": "string",
   "relationshipType": "string",
-  "strength": "number (0-1)",
-  "verified": "boolean",
-  "startDate": "datetime",
-  "endDate": "datetime",
-  "metadata": "object",
-  "sourceId": "string",
-  "sourceObjectId": "string",
-  "sourceObjectType": "string",
+  "externalIds": { /* source system IDs */ },
+  "record": { /* full relationship data as JSONB */ },
+  "metadata": { /* processing history */ },
   "createdAt": "datetime",
   "updatedAt": "datetime"
 }

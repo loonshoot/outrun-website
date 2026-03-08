@@ -2,7 +2,7 @@
 title: "What is a data lake?"
 subtitle: "Your tool to storing your data until you know what to do with it."
 background: "Yellow"
-permalink: /learn/what-is-a-data-lake
+permalink: /learn/what-is-a-data-lake/
 metaTitle: "What Is a Data Lake? A Comprehensive Guide"
 layout: layouts/learn.liquid
 metaDescription: "Unlock the power of your data with a data lake. Learn what a data lake is, its benefits, and how it differs from a data warehouse. Discover best practices and explore popular data lake vendors."

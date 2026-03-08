@@ -22,7 +22,7 @@ AI integration transforms your workspace into an intelligent data platform. AI m
 
 ## How AI Integration Works
 
-Your standardized data becomes accessible to AI models through secure, protocol-based connections. AI models automatically discover your data schema and relationships between People, Organizations, and Facts, enabling contextual insights without manual configuration.
+Your standardized data becomes accessible to AI models through secure, protocol-based connections. AI models automatically discover your data schema and relationships between People, Organizations, and Analytics, enabling contextual insights without manual configuration.
 
 ## Supported AI Integrations
 

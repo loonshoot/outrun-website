@@ -239,7 +239,7 @@ All system activities are comprehensively logged:
 ### Data Isolation
 
 #### Workspace-Level Separation
-- **Logical Database Isolation**: Each workspace has separate database instances
+- **Logical Database Isolation**: Each workspace has a separate tenant database
 - **Access Boundaries**: Strict enforcement of workspace boundaries
 - **No Cross-Contamination**: Data never mixed between workspaces
 - **Independent Processing**: Separate processing pipelines per workspace

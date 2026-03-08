@@ -4,6 +4,11 @@ document.addEventListener('DOMContentLoaded', function() {
   const syncCount = document.getElementById('syncCount');
   const pricingPlans = document.querySelectorAll('.pricing-plan');
 
+  // Exit early if not on pricing page
+  if (!syncSlider || !syncCount) {
+    return;
+  }
+
   let pricingConfig = null;
 
   // Load pricing configuration

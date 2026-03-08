@@ -1,128 +1,110 @@
 ---
 layout: layouts/default.liquid
-permalink: /features/cloud-app-data-backup/
-title: Cloud App Data Backup - Outrun
+permalink: /features/saas-data-protection/
+title: SaaS Data Protection - Outrun
 social_meta:
-  title: Cloud App Data Backup - Outrun
-  description: Automated backup and recovery for your cloud applications. Protect your SaaS data with enterprise-grade backup solutions.
+  title: SaaS Data Protection - Outrun
+  description: Keep a second copy of your CRM and SaaS data outside your vendors. Protect against accidental deletions, bad imports, and vendor outages.
 ---
 
-<section class="bg-yellow-400 text-dark min-h-screen flex items-center">
-  <div class="max-w-6xl mx-auto px-6 lg:px-8 py-20">
+<link rel="stylesheet" href="/assets/css/features.css">
+
+<!-- Hero -->
+<section style="padding-top: 10rem; padding-bottom: 6rem; background: linear-gradient(180deg, #1B1237 0%, #151030 40%, #120E2A 100%);">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div>
-        <h1 class="text-4xl lg:text-5xl font-bold font-mono mb-6">
-          Cloud App Data Backup
+        <p class="font-mono text-sm text-pink-600 tracking-widest uppercase mb-4">Feature</p>
+        <h1 class="text-4xl lg:text-5xl font-bold font-mono text-light mb-6">
+          SaaS Data Protection
         </h1>
-        <p class="text-xl text-dark mb-8 leading-relaxed">
-          Automated backup and recovery for your cloud applications. Protect your SaaS data with enterprise-grade backup solutions and point-in-time recovery.
+        <div class="section-divider mb-8"></div>
+        <p class="text-lg text-grey-500 leading-relaxed mb-8">
+          Your CRM data is too important to exist in only one place. Outrun automatically keeps a copy of your SaaS data outside your vendors - so if something goes wrong, you have a safety net.
         </p>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <div class="group h-10 relative w-48">
-                    <button class="flex items-center w-48 h-10 absolute bg-dark">
-                        <div class="flex items-center w-full text-center text-light text-sm font-normal font-mono">
-                            <p class="text-center w-full pt-1 group-hover:pt-0">
-            Get started
-          </button>
-          <a href="/features" class="text-dark hover:text-grey-700 transition-colors duration-200 flex items-center">
-            View all features →
+        <div class="flex flex-col sm:flex-row gap-6 items-start">
+          <div class="group h-14 relative w-72">
+            <a href="https://app.getoutrun.com">
+              <button class="flex items-center w-full h-14 absolute bg-pink-600 hover:bg-pink-600 transition-colors">
+                <div class="flex items-center w-full text-center text-light text-xl font-normal font-mono">
+                  <p class="text-center w-full pt-1 group-hover:pt-0">Get started</p>
+                </div>
+              </button>
+              <div class="flex w-full h-14 top-1 left-1 group-hover:top-0 group-hover:left-0 absolute border-solid border-2 border-light transition-all"></div>
+            </a>
+          </div>
+          <a href="/features" class="font-mono text-sm transition-colors flex items-center h-14 text-light hover:text-pink-600">
+            View all features &rarr;
           </a>
         </div>
       </div>
-      <div class="bg-gradient-to-br from-teal-600 to-cyan-600 w-64 h-64 mx-auto lg:mx-0 lg:ml-auto flex items-center justify-center">
-        <span class="text-6xl">☁️</span>
+      <div class="hero-icon-box mx-auto lg:mx-0 lg:ml-auto" style="background: linear-gradient(135deg, rgba(34,211,238,0.15), rgba(59,130,246,0.15));">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: #22d3ee"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
       </div>
     </div>
   </div>
 </section>
 
-<section class="py-20 bg-dark">
-  <div class="max-w-6xl mx-auto px-6 lg:px-8">
-    <h2 class="text-3xl font-bold font-mono text-light mb-12 text-center">
-      Never lose your cloud data again
+<!-- Key Features -->
+<section class="relative" style="padding-top: 10rem; padding-bottom: 6rem; background: linear-gradient(180deg, #120E2A 0%, #0F0B24 40%, #0D0920 100%);">
+  <div class="section-grid-bg"></div>
+  <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
+    <p class="font-mono text-sm text-yellow-400 tracking-widest uppercase mb-4">Capabilities</p>
+    <h2 class="text-3xl font-bold font-mono text-light mb-4">
+      De-risk your SaaS data
     </h2>
-    
+    <div class="section-divider mb-12"></div>
+
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-      <div class="text-center">
-        <div class="bg-gradient-to-br from-blue-500 to-indigo-500 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-          <span class="text-2xl text-light">🔄</span>
+      <div class="help-card">
+        <div class="help-card-icon help-card-icon--pink">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 17 12 21 16 17"></polyline><line x1="12" y1="12" x2="12" y2="21"></line><path d="M20.88 18.09A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.29"></path></svg>
         </div>
-        <h3 class="text-xl font-semibold font-mono text-light mb-3">
-          Automated Backups
-        </h3>
-        <p class="text-light">
-          Set up automated daily, hourly, or real-time backups for all your cloud applications without manual intervention.
-        </p>
+        <h3 class="text-xl font-bold font-mono text-light mb-3">Automatic Copies</h3>
+        <p class="text-grey-500 text-sm">Outrun syncs your connected apps and stores a copy of your data automatically. Set it up once and your data is protected going forward.</p>
       </div>
-      
-      <div class="text-center">
-        <div class="bg-gradient-to-br from-green-500 to-emerald-500 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-          <span class="text-2xl text-light">⚡</span>
+
+      <div class="help-card">
+        <div class="help-card-icon help-card-icon--cyan">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
         </div>
-        <h3 class="text-xl font-semibold font-mono text-light mb-3">
-          Instant Recovery
-        </h3>
-        <p class="text-light">
-          Restore data to any point in time with granular recovery options for individual records or complete datasets.
-        </p>
+        <h3 class="text-xl font-bold font-mono text-light mb-3">Full Change History</h3>
+        <p class="text-grey-500 text-sm">See what changed and when. Outrun maintains a complete history of your data so you can track changes over time and spot problems early.</p>
       </div>
-      
-      <div class="text-center">
-        <div class="bg-gradient-to-br from-purple-500 to-pink-500 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-          <span class="text-2xl text-light">🔒</span>
+
+      <div class="help-card">
+        <div class="help-card-icon help-card-icon--yellow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
         </div>
-        <h3 class="text-xl font-semibold font-mono text-light mb-3">
-          Encrypted Storage
-        </h3>
-        <p class="text-light">
-          All backups are encrypted in transit and at rest with industry-standard encryption protocols.
-        </p>
+        <h3 class="text-xl font-bold font-mono text-light mb-3">Encrypted Storage</h3>
+        <p class="text-grey-500 text-sm">Your data is encrypted at rest and in transit. Each workspace has its own isolated database, so your data is never mixed with anyone else's.</p>
       </div>
     </div>
 
-    <div class="bg-dark/20 backdrop-blur-sm p-8 mb-16">
-      <h3 class="text-2xl font-bold font-mono text-light mb-6">
-        Supported applications
-      </h3>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="help-card">
+      <h3 class="text-2xl font-bold font-mono text-light mb-6">Supported applications</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="space-y-4">
-          <h4 class="font-semibold font-mono text-light">CRM & Sales</h4>
-          <div class="space-y-2 text-light">
-            <div>• Salesforce</div>
-            <div>• HubSpot</div>
-            <div>• Pipedrive</div>
-            <div>• Zoho CRM</div>
-            <div>• Microsoft Dynamics</div>
+          <h4 class="font-bold font-mono text-light" style="border-left: 4px solid #FFC403; padding-left: 1rem;">CRM &amp; Sales</h4>
+          <div class="space-y-2 text-grey-500">
+            <div>HubSpot</div>
+            <div>Pipedrive</div>
+            <div>Zoho CRM</div>
+            <div>Zendesk Sell</div>
           </div>
         </div>
         <div class="space-y-4">
-          <h4 class="font-semibold font-mono text-light">Productivity</h4>
-          <div class="space-y-2 text-light">
-            <div>• Google Workspace</div>
-            <div>• Microsoft 365</div>
-            <div>• Slack</div>
-            <div>• Notion</div>
-            <div>• Airtable</div>
+          <h4 class="font-bold font-mono text-light" style="border-left: 4px solid #FFC403; padding-left: 1rem;">Productivity</h4>
+          <div class="space-y-2 text-grey-500">
+            <div>iCloud</div>
+            <div>Confluence</div>
           </div>
         </div>
         <div class="space-y-4">
-          <h4 class="font-semibold font-mono text-light">Marketing</h4>
-          <div class="space-y-2 text-light">
-            <div>• Mailchimp</div>
-            <div>• Marketo</div>
-            <div>• Pardot</div>
-            <div>• Klaviyo</div>
-            <div>• ActiveCampaign</div>
-          </div>
-        </div>
-        <div class="space-y-4">
-          <h4 class="font-semibold font-mono text-light">Support & HR</h4>
-          <div class="space-y-2 text-light">
-            <div>• Zendesk</div>
-            <div>• Intercom</div>
-            <div>• BambooHR</div>
-            <div>• Workday</div>
-            <div>• Freshworks</div>
+          <h4 class="font-bold font-mono text-light" style="border-left: 4px solid #FFC403; padding-left: 1rem;">Developer</h4>
+          <div class="space-y-2 text-grey-500">
+            <div>GitHub</div>
+            <div>Google Search Console</div>
           </div>
         </div>
       </div>
@@ -130,59 +112,55 @@ social_meta:
   </div>
 </section>
 
-<section class="py-20 bg-cyan-400">
-  <div class="max-w-6xl mx-auto px-6 lg:px-8">
+<!-- Value Proposition -->
+<section class="relative" style="padding-top: 10rem; padding-bottom: 6rem; background: linear-gradient(180deg, #0D0920 0%, #14102E 40%, #1A1538 100%);">
+  <div class="section-grid-bg"></div>
+  <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div>
-        <h2 class="text-3xl font-bold font-mono text-dark mb-6">
-          Enterprise backup you can trust
+        <h2 class="text-3xl font-bold font-mono text-light mb-6">
+          Your data shouldn't live in just one place
         </h2>
-        <p class="text-xl text-dark mb-8 leading-relaxed">
-          Don't trust your critical business data to chance. Our enterprise-grade backup solution ensures your cloud application data is always protected and recoverable when you need it most.
+        <p class="text-lg text-grey-500 mb-8 leading-relaxed">
+          SaaS tools are great - until someone accidentally deletes a field, a bad import overwrites your records, or a vendor has an outage. Having an independent copy of your data means you can always recover.
         </p>
-        <div class="space-y-4 text-dark">
+        <div class="space-y-4">
           <div class="flex items-start">
-            <span class="text-yellow-400 mr-3">✓</span>
-            <span>99.99% backup reliability</span>
+            <span class="text-pink-600 mr-3">&#10003;</span>
+            <span class="text-grey-500">Recover from accidental deletions or overwrites</span>
           </div>
           <div class="flex items-start">
-            <span class="text-yellow-400 mr-3">✓</span>
-            <span>Multi-region redundancy</span>
+            <span class="text-pink-600 mr-3">&#10003;</span>
+            <span class="text-grey-500">Catch bad data imports before they cause damage</span>
           </div>
           <div class="flex items-start">
-            <span class="text-yellow-400 mr-3">✓</span>
-            <span>Configurable retention policies</span>
+            <span class="text-pink-600 mr-3">&#10003;</span>
+            <span class="text-grey-500">Keep working even when your vendor is down</span>
           </div>
           <div class="flex items-start">
-            <span class="text-yellow-400 mr-3">✓</span>
-            <span>Compliance-ready storage</span>
+            <span class="text-pink-600 mr-3">&#10003;</span>
+            <span class="text-grey-500">Full change history so you know what happened and when</span>
           </div>
         </div>
       </div>
-      <div class="bg-pink-600/10 p-8 backdrop-blur-sm">
-        <h3 class="text-xl font-semibold font-mono text-dark mb-4">
-          Backup features
-        </h3>
-        <div class="space-y-4 text-dark">
-          <div class="border-l-4 border-yellow-400 pl-4">
-            <h4 class="font-semibold font-mono">Point-in-time Recovery</h4>
-            <p class="text-sm">Restore to any point in your backup history</p>
+      <div class="help-card">
+        <h3 class="text-xl font-bold font-mono text-light mb-4">What you get</h3>
+        <div class="space-y-4">
+          <div class="pl-4" style="border-left: 4px solid #FFC403;">
+            <h4 class="font-bold font-mono text-light">Independent Copy</h4>
+            <p class="text-sm text-grey-500">Your data stored outside your SaaS vendor - not dependent on them being online</p>
           </div>
-          <div class="border-l-4 border-yellow-400 pl-4">
-            <h4 class="font-semibold font-mono">Incremental Backups</h4>
-            <p class="text-sm">Only backup changed data to save time and storage</p>
+          <div class="pl-4" style="border-left: 4px solid #FFC403;">
+            <h4 class="font-bold font-mono text-light">Change Tracking</h4>
+            <p class="text-sm text-grey-500">See exactly what changed in your data and when it happened</p>
           </div>
-          <div class="border-l-4 border-yellow-400 pl-4">
-            <h4 class="font-semibold font-mono">Cross-platform Restore</h4>
-            <p class="text-sm">Restore data to different applications</p>
+          <div class="pl-4" style="border-left: 4px solid #FFC403;">
+            <h4 class="font-bold font-mono text-light">Cross-platform Access</h4>
+            <p class="text-sm text-grey-500">Use your stored data to move between tools or create reports across platforms</p>
           </div>
-          <div class="border-l-4 border-yellow-400 pl-4">
-            <h4 class="font-semibold font-mono">Automated Testing</h4>
-            <p class="text-sm">Regular backup integrity verification</p>
-          </div>
-          <div class="border-l-4 border-yellow-400 pl-4">
-            <h4 class="font-semibold font-mono">Disaster Recovery</h4>
-            <p class="text-sm">Complete environment restoration</p>
+          <div class="pl-4" style="border-left: 4px solid #FFC403;">
+            <h4 class="font-bold font-mono text-light">Automatic Sync</h4>
+            <p class="text-sm text-grey-500">Outrun keeps your copy up to date - no manual exports or spreadsheets needed</p>
           </div>
         </div>
       </div>
@@ -190,21 +168,34 @@ social_meta:
   </div>
 </section>
 
-<section class="py-20 bg-pink-600">
-  <div class="max-w-4xl mx-auto text-center px-6 lg:px-8">
-    <h2 class="text-3xl font-bold font-mono text-light mb-6">
-      Ready to protect your cloud data?
-    </h2>
-    <p class="text-xl text-light mb-8">
-      Start backing up your cloud applications automatically and sleep better knowing your data is safe.
-    </p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <button class="bg-cyan-400 text-dark h-10 w-48 font-medium transition-all duration-200 hover:shadow-lg hover:shadow-blue-600/50 transform hover:translate-x-1 hover:translate-y-1">
-        Start free trial
-      </button>
-      <a href="/features" class="text-yellow-400 hover:text-blue-700 transition-colors duration-200 flex items-center justify-center">
-        View all features →
-      </a>
+<!-- CTA -->
+<section class="final-cta-section relative overflow-hidden" style="padding-top: 10rem; padding-bottom: 6rem; background: linear-gradient(180deg, #1B1237 0%, #200E30 40%, #2A1040 100%);">
+  <div class="cta-bg-gradient"></div>
+  <div class="section-grid-bg" style="opacity: 0.03;"></div>
+  <div class="relative z-10 max-w-3xl mx-auto px-6 lg:px-8 text-center">
+    <div class="space-y-8">
+      <h2 class="text-4xl lg:text-5xl font-bold font-mono text-light leading-tight">
+        Ready to <span class="text-yellow-400">get started</span>?
+      </h2>
+      <p class="text-lg text-grey-500 leading-relaxed max-w-2xl mx-auto">
+        Build your first workflow in minutes. Connect your tools and start automating today.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-6 justify-center items-center pt-4">
+        <div class="group h-14 relative w-72">
+          <a href="https://app.getoutrun.com">
+            <button class="flex items-center w-full h-14 absolute bg-pink-600 hover:bg-pink-600 transition-colors">
+              <div class="flex items-center w-full text-center text-light text-xl font-normal font-mono">
+                <p class="text-center w-full pt-1 group-hover:pt-0">Start Building Free</p>
+              </div>
+            </button>
+            <div class="flex w-full h-14 top-1 left-1 group-hover:top-0 group-hover:left-0 absolute border-solid border-2 border-light transition-all"></div>
+          </a>
+        </div>
+        <a href="/contact" class="text-light hover:text-pink-600 font-mono text-lg transition-colors">Book a Demo &rarr;</a>
+      </div>
+      <p class="text-xs font-mono text-grey-500 pt-2">
+        No credit card required
+      </p>
     </div>
   </div>
-</section> 
+</section>

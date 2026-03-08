@@ -1,0 +1,145 @@
+[
+  {
+    "name": "HubSpot",
+    "slug": "hubspot",
+    "icon": "https://cdn.getoutrun.com/integrations/hubspot/logo.webp",
+    "description": "Contacts, companies, deals, tickets, and marketing data. Full bidirectional sync.",
+    "categories": ["crm"],
+    "type": "source-dest",
+    "typeLabel": "Source + Destination",
+    "link": "/integrations/hubspot",
+    "published": true
+  },
+  {
+    "name": "Zoho CRM",
+    "slug": "zoho-crm",
+    "icon": "https://cdn.getoutrun.com/integrations/zoho/logo.png",
+    "description": "Leads, contacts, accounts, and deals. Bidirectional sync with batch delivery.",
+    "categories": ["crm"],
+    "type": "source-dest",
+    "typeLabel": "Source + Destination",
+    "link": "/integrations/zoho-crm",
+    "published": true
+  },
+  {
+    "name": "Pipedrive",
+    "slug": "pipedrive",
+    "icon": "https://cdn.getoutrun.com/integrations/pipedrive/monogram.png",
+    "description": "Sales pipeline, contacts, organisations, and deal stages.",
+    "categories": ["crm"],
+    "type": "source-dest",
+    "typeLabel": "Source + Destination",
+    "link": "/integrations/pipedrive",
+    "published": true
+  },
+  {
+    "name": "Zendesk Sell",
+    "slug": "zendesk-sell",
+    "icon": "https://cdn.getoutrun.com/integrations/zendesk/products/sell-logo.png",
+    "description": "Leads, deals, and contacts. Migration support available.",
+    "categories": ["crm"],
+    "type": "migration",
+    "typeLabel": "Migration Support",
+    "link": "/integrations/zendesk-sell",
+    "published": true
+  },
+  {
+    "name": "Zendesk Support",
+    "slug": "zendesk-support",
+    "icon": "https://cdn.getoutrun.com/integrations/zendesk/products/support-icon.svg",
+    "description": "Tickets, users, organisations, and ticket comments. Trigger workflows on ticket events.",
+    "categories": ["support"],
+    "type": "source-dest",
+    "typeLabel": "Source + Destination",
+    "link": "/integrations/zendesk-support",
+    "published": true
+  },
+  {
+    "name": "Zoho Desk",
+    "slug": "zoho-desk",
+    "icon": "https://cdn.getoutrun.com/integrations/zoho/logo.png",
+    "description": "Support tickets, contacts, agents, and departments. Connect support to your CRM.",
+    "categories": ["support"],
+    "type": "source-dest",
+    "typeLabel": "Source + Destination",
+    "link": "/integrations/zoho-desk",
+    "published": true
+  },
+  {
+    "name": "Intercom",
+    "slug": "intercom",
+    "icon": "https://cdn.getoutrun.com/integrations/intercom/icon.png",
+    "description": "Conversations, contacts, companies, and tickets. Link messaging to your CRM.",
+    "categories": ["support"],
+    "type": "source-dest",
+    "typeLabel": "Source + Destination",
+    "link": "/integrations/intercom",
+    "published": true
+  },
+  {
+    "name": "Confluence",
+    "slug": "confluence",
+    "icon": "https://cdn.getoutrun.com/integrations/atlassian-confluence/logo.png",
+    "description": "Pages, spaces, and comments. Make your knowledge base accessible to workflows and AI agents.",
+    "categories": ["productivity"],
+    "type": "source",
+    "typeLabel": "Source",
+    "link": "/integrations/confluence",
+    "published": true
+  },
+  {
+    "name": "Google Search Console",
+    "slug": "google-search-console",
+    "icon": "https://cdn.getoutrun.com/integrations/google-search-console/icon.png",
+    "description": "Search performance data, rankings, clicks, and impressions alongside your business data.",
+    "categories": ["developer"],
+    "type": "source",
+    "typeLabel": "Source",
+    "link": "/integrations/google-search-console",
+    "published": true
+  },
+  {
+    "name": "GitHub",
+    "slug": "github",
+    "icon": "https://cdn.getoutrun.com/integrations/github/logo-white.svg",
+    "description": "Issues, pull requests, commits, and repositories. Run AI agents on your codebase.",
+    "categories": ["developer"],
+    "type": "source-dest",
+    "typeLabel": "Source + Destination",
+    "link": null,
+    "published": true
+  },
+  {
+    "name": "Email (SMTP / Gmail)",
+    "slug": "email",
+    "icon": null,
+    "description": "Receive and track inbound emails. Trigger workflows from incoming messages automatically.",
+    "categories": ["productivity"],
+    "type": "source",
+    "typeLabel": "Source",
+    "link": null,
+    "published": true
+  },
+  {
+    "name": "Salesforce",
+    "slug": "salesforce",
+    "icon": "https://cdn.getoutrun.com/integrations/salesforce/logo.webp",
+    "description": "Contacts, leads, accounts, opportunities, and custom objects.",
+    "categories": ["crm"],
+    "type": "source-dest",
+    "typeLabel": "Source + Destination",
+    "link": null,
+    "published": false
+  },
+  {
+    "name": "Microsoft Dynamics 365",
+    "slug": "dynamics365",
+    "icon": "https://cdn.getoutrun.com/integrations/microsoft/dynamics/dynamics365_scalable.svg",
+    "description": "Sales, marketing, and customer service data from Dynamics 365.",
+    "categories": ["crm"],
+    "type": "source-dest",
+    "typeLabel": "Source + Destination",
+    "link": null,
+    "published": false
+  }
+]

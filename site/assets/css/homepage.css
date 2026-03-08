@@ -1,4 +1,5 @@
 /* Homepage Specific Styles */
+/* Base brand system is in outrun-base.css */
 
 /* Hero Section Styling */
 .hero-section {
@@ -79,16 +80,6 @@
   animation-play-state: paused;
 }
 
-/* Button Hover Effects */
-.group button {
-  border: none;
-  outline: none;
-}
-
-.group:hover button {
-  transform: translateY(-2px);
-}
-
 /* Recommended Reads Cards */
 .recommended-reads-section a:hover > div {
   transform: translateY(-4px) scale(1.05);
@@ -115,13 +106,7 @@
   transform: scale(1.05);
 }
 
-/* Final CTA Section with Geometric Pattern */
-.final-cta-section {
-  position: relative;
-  overflow: hidden;
-  border-top: 2px solid #FFC403;
-}
-
+/* Final CTA geometric pattern (base .final-cta-section in outrun-base.css) */
 .geometric-pattern {
   background-image: 
     repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255, 196, 3, 0.1) 2px, rgba(255, 196, 3, 0.1) 4px),
@@ -201,18 +186,6 @@
   position: relative;
 }
 
-/* Smooth scrolling for anchor links */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Focus states for accessibility */
-button:focus,
-a:focus {
-  outline: 2px solid #FFC403;
-  outline-offset: 2px;
-}
-
 /* Improved hover states */
 .recommended-reads-section a,
 .value-props-section a,
@@ -221,18 +194,12 @@ a:focus {
   transition: all 0.3s ease;
 }
 
-/* Reduced motion support */
+/* Reduced motion — homepage-specific overrides (base in outrun-base.css) */
 @media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-  
   .integration-logos-scroll {
     animation: none;
   }
-  
+
   .geometric-pattern {
     animation: none;
   }
@@ -248,23 +215,6 @@ a:focus {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-/* Square edges for all elements */
-* {
-  border-radius: 0 !important;
-}
-
-/* Override any rounded classes */
-.rounded,
-.rounded-sm,
-.rounded-md,
-.rounded-lg,
-.rounded-xl,
-.rounded-2xl,
-.rounded-3xl,
-.rounded-full {
-  border-radius: 0 !important;
 }
 
 /* Text shadows for better contrast */
@@ -322,9 +272,368 @@ a:focus {
   transition-duration: 300ms;
 }
 
-/* Consistent margin-top for main content to match docs */
-main {
-    margin-top: 4rem;
+/* ========== HOMEPAGE SECTION LAYOUT ========== */
+
+.hp-section {
+  padding-top: 10rem;
+  padding-bottom: 6rem;
+}
+
+.hp-hero-inner {
+  padding: 3rem 1rem;
+  background: none !important;
+}
+
+/* Section background gradients */
+.hp-bg-how-it-works {
+  background: linear-gradient(180deg, #1B1237 0%, #151030 40%, #120E2A 100%);
+}
+.hp-bg-data-layer {
+  background: linear-gradient(180deg, #8B0A4A 0%, #C4105A 25%, #E0186E 45%, #A01050 65%, #3A0A28 85%, #1a0a2e 100%);
+}
+.hp-bg-use-cases {
+  background: linear-gradient(180deg, #0D0920 0%, #0E0E2A 40%, #0A1232 100%);
+}
+.hp-bg-integrations {
+  background: linear-gradient(180deg, #0A1232 0%, #071430 50%, #041830 100%);
+}
+.hp-bg-cta {
+  background: linear-gradient(180deg, #041830 0%, hsl(220, 90%, 6%) 40%);
+}
+
+.hp-grid-bg-faint {
+  opacity: 0.03;
+}
+
+/* CRM card layout overrides (avoid inline flex) */
+.crm-card--text {
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.crm-card--text .crm-card-name {
+  font-weight: 600;
+}
+.crm-card--text .crm-card-sub {
+  font-size: 0.7rem;
+}
+
+/* Book a Demo link */
+.hp-demo-link {
+  color: white !important;
+}
+.hp-demo-link:hover {
+  color: #ec4899 !important;
+}
+
+/* No credit card text */
+.hp-muted-text {
+  color: rgba(255,255,255,0.7);
+}
+
+/* Contain oversized decorative shapes within their sections */
+.what-we-do-section {
+  overflow: hidden;
+}
+
+/* Prevent horizontal scroll from oversized decorative elements */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Decorative circle behind How It Works */
+.hp-circle-accent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 525px;
+  height: 525px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.25;
+}
+.hp-circle-accent svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Decorative triangle behind What You Can Build */
+.hp-triangle-accent {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 656px;
+  height: 656px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.25;
+}
+.hp-triangle-accent svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Opaque cards in use cases section so triangle doesn't bleed through */
+.hp-bg-use-cases .help-card {
+  background: #14102E;
+}
+.hp-bg-use-cases .help-card:hover {
+  background: #1a1538;
+}
+
+/* ========== HOMEPAGE-SPECIFIC SECTIONS ========== */
+
+/* Step cards — "What We Do" */
+.step-card {
+  position: relative;
+  padding: 2.5rem 2rem 2rem;
+  background: #151030;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+.step-card:hover {
+  background: #1a1438;
+  border-color: rgba(255, 255, 255, 0.20);
+  transform: translateY(-2px);
+}
+
+.step-number {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.25rem;
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid;
+}
+.step-number--yellow { color: #FFC403; border-color: rgba(255, 196, 3, 0.3); }
+.step-number--pink   { color: #FE0170; border-color: rgba(254, 1, 112, 0.3); }
+.step-number--cyan   { color: #22d3ee; border-color: rgba(34, 211, 238, 0.3); }
+
+/* Accent line at bottom of step cards */
+.step-accent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.step-card:hover .step-accent { opacity: 1; }
+.step-accent--yellow { background: linear-gradient(90deg, #FFC403, transparent); }
+.step-accent--pink   { background: linear-gradient(90deg, #FE0170, transparent); }
+.step-accent--cyan   { background: linear-gradient(90deg, #22d3ee, transparent); }
+
+/* Synthwave landscape background for Data Layer section */
+.hp-synthwave-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hp-synthwave-sun {
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 300px;
+  border-radius: 50% !important;
+  background: radial-gradient(circle, rgba(254, 1, 112, 0.6) 0%, rgba(254, 1, 112, 0.3) 40%, transparent 70%);
+}
+
+.hp-synthwave-landscape {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Palm tree images */
+.hp-palm {
+  position: absolute;
+  height: 106%;
+  bottom: 2%;
+  z-index: 1;
+  opacity: 0.9;
+}
+.hp-palm--left {
+  left: -15%;
+}
+.hp-palm--right {
+  right: -15%;
+  transform: scaleX(-1);
+}
+
+/* Mobile: single palm, repositioned higher */
+@media (max-width: 768px) {
+  .hp-palm--right {
+    display: none;
+  }
+  .hp-palm--left {
+    left: -25%;
+    height: 150%;
+    bottom: auto;
+    top: -30%;
+  }
+}
+
+/* Opaque cards in data layer section so landscape doesn't bleed through */
+.how-it-helps-section .help-card {
+  background: #2a0e30;
+}
+.how-it-helps-section .help-card:hover {
+  background: #351438;
+}
+
+/* Decorative rectangle in CTA section — between moon and text */
+.hp-rect-accent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 72%;
+  width: 27.5%;
+  pointer-events: none;
+  z-index: 5;
+}
+.hp-rect-accent svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* CTA section highway background (mirrors hero, no mountains, full-width moon) */
+.hp-cta-highway {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  animation: outrun 1.2s linear infinite;
+  transform: translateZ(0);
+  will-change: transform;
+  /* Night/moon theme — blue grid lines */
+  --cta-line: hsl(217, 91%, 60%);
+  --outrun: 0;
+  --pos: var(--outrun, 0);
+  --distance: 0.5%;
+  --hor: 60%;
+  --hw-h: 40%;
+  --l0: var(--hor) + 0 * 0 * var(--distance) + (((0 + 1) * (0 + 1) * var(--distance) - 0 * 0 * var(--distance)) * var(--pos));
+  --l1: var(--hor) + 1 * 1 * var(--distance) + (((1 + 1) * (1 + 1) * var(--distance) - 1 * 1 * var(--distance)) * var(--pos));
+  --l2: var(--hor) + 2 * 2 * var(--distance) + (((2 + 1) * (2 + 1) * var(--distance) - 2 * 2 * var(--distance)) * var(--pos));
+  --l3: var(--hor) + 3 * 3 * var(--distance) + (((3 + 1) * (3 + 1) * var(--distance) - 3 * 3 * var(--distance)) * var(--pos));
+  --l4: var(--hor) + 4 * 4 * var(--distance) + (((4 + 1) * (4 + 1) * var(--distance) - 4 * 4 * var(--distance)) * var(--pos));
+  --l5: var(--hor) + 5 * 5 * var(--distance) + (((5 + 1) * (5 + 1) * var(--distance) - 5 * 5 * var(--distance)) * var(--pos));
+  --l6: var(--hor) + 6 * 6 * var(--distance) + (((6 + 1) * (6 + 1) * var(--distance) - 6 * 6 * var(--distance)) * var(--pos));
+  --l7: var(--hor) + 7 * 7 * var(--distance) + (((7 + 1) * (7 + 1) * var(--distance) - 7 * 7 * var(--distance)) * var(--pos));
+  --l8: var(--hor) + 8 * 8 * var(--distance) + (((8 + 1) * (8 + 1) * var(--distance) - 8 * 8 * var(--distance)) * var(--pos));
+  --l9: var(--hor) + 9 * 9 * var(--distance) + (((9 + 1) * (9 + 1) * var(--distance) - 9 * 9 * var(--distance)) * var(--pos));
+  --lgh: linear-gradient(transparent 0px var(--hor), var(--cta-line) var(--hor) calc(var(--hor) + 2px), transparent calc(var(--hor) + 2px));
+  --lg0: linear-gradient(transparent 0px calc(var(--l0)), var(--cta-line) calc(var(--l0)) calc(var(--l0) + 2px), transparent calc(var(--l0) + 2px));
+  --lg1: linear-gradient(transparent 0px calc(var(--l1)), var(--cta-line) calc(var(--l1)) calc(var(--l1) + 2px), transparent calc(var(--l1) + 2px));
+  --lg2: linear-gradient(transparent 0px calc(var(--l2)), var(--cta-line) calc(var(--l2)) calc(var(--l2) + 2px), transparent calc(var(--l2) + 2px));
+  --lg3: linear-gradient(transparent 0px calc(var(--l3)), var(--cta-line) calc(var(--l3)) calc(var(--l3) + 2px), transparent calc(var(--l3) + 2px));
+  --lg4: linear-gradient(transparent 0px calc(var(--l4)), var(--cta-line) calc(var(--l4)) calc(var(--l4) + 2px), transparent calc(var(--l4) + 2px));
+  --lg5: linear-gradient(transparent 0px calc(var(--l5)), var(--cta-line) calc(var(--l5)) calc(var(--l5) + 2px), transparent calc(var(--l5) + 2px));
+  --lg6: linear-gradient(transparent 0px calc(var(--l6)), var(--cta-line) calc(var(--l6)) calc(var(--l6) + 2px), transparent calc(var(--l6) + 2px));
+  --lg7: linear-gradient(transparent 0px calc(var(--l7)), var(--cta-line) calc(var(--l7)) calc(var(--l7) + 2px), transparent calc(var(--l7) + 2px));
+  --lg8: linear-gradient(transparent 0px calc(var(--l8)), var(--cta-line) calc(var(--l8)) calc(var(--l8) + 2px), transparent calc(var(--l8) + 2px));
+  --lg9: linear-gradient(transparent 0px calc(var(--l9)), var(--cta-line) calc(var(--l9)) calc(var(--l9) + 2px), transparent calc(var(--l9) + 2px));
+  background:
+    url("/assets/images/outrun/highway-lines-blue.svg") left bottom / 100% var(--hw-h) no-repeat,
+    var(--lgh),
+    var(--lg0),
+    var(--lg1),
+    var(--lg2),
+    var(--lg3),
+    var(--lg4),
+    var(--lg5),
+    var(--lg6),
+    var(--lg7),
+    var(--lg8),
+    var(--lg9),
+    linear-gradient(transparent 0%, hsla(217, 70%, 30%, 0.15) 30%, hsla(220, 60%, 15%, 0.4) 50%, hsl(220, 90%, 6%) 60%),
+    url("/assets/images/outrun/moon.svg") center 42% / auto 75% no-repeat,
+    linear-gradient(#041830 0%, #031428 20%, hsl(220, 90%, 6%) 50%, hsl(220, 90%, 6%) 100%);
+}
+
+/* Mobile: scale decorative shapes and adjust CTA highway */
+@media (max-width: 768px) {
+  .hp-circle-accent {
+    width: 300px;
+    height: 300px;
+  }
+
+  .hp-triangle-accent {
+    width: 150%;
+    height: 100%;
+    top: 50%;
+  }
+
+  .hp-rect-accent {
+    width: 60%;
+    height: 87%;
+  }
+
+  .hp-cta-highway {
+    --hw-h: 50%;
+    --hor: 55%;
+    --distance: 0.7%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hp-circle-accent {
+    width: 220px;
+    height: 220px;
+  }
+
+  .hp-triangle-accent {
+    width: 150%;
+    height: 100%;
+    top: 50%;
+  }
+
+  .hp-rect-accent {
+    width: 75%;
+    height: 87%;
+  }
+}
+
+/* CRM logo cards */
+.crm-card {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 1.5rem !important;
+  min-height: 100px !important;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+.crm-card:hover {
+  border-color: rgba(254, 1, 112, 0.4);
+  background: rgba(255, 255, 255, 0.08);
+}
+.crm-card img {
+  max-height: 40px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+.crm-card:hover img {
+  opacity: 1;
 }
 
 /* ========== OUTRUN STYLE HEADER LAYOUTS ========== */
@@ -652,152 +961,3 @@ main {
   100% { text-shadow: 0 0 20px #ff1493, 0 0 30px #ff1493; }
 }
 
-/* ========== CLASSIC OUTRUN HIGHWAY GRID ========== */
-
-/* Enhanced Outrun Highway with Animation */
-@property --outrun-progress {
-  syntax: "<number>";
-  initial-value: 0;
-  inherits: false;
-}
-
-@keyframes outrunDrive {
-  to { --outrun-progress: 1; }
-}
-
-.outrun-highway {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  z-index: 1;
-  pointer-events: none;
-  animation: outrunDrive 2s linear infinite;
-  --outrun-progress: 0;
-  --horizon: 60%;
-  --distance: 0.8%;
-  background:
-    /* Vertical grid lines */
-    repeating-linear-gradient(
-      90deg,
-      transparent 0px,
-      transparent 99px,
-      #ff1493 100px,
-      #ff1493 101px
-    ),
-    /* Horizontal grid lines */
-    repeating-linear-gradient(
-      0deg,
-      transparent 0px,
-      transparent 49px,
-      #ff1493 50px,
-      #ff1493 51px
-    );
-
-  /* Apply perspective to create the highway effect */
-  transform: perspective(600px) rotateX(75deg) translateZ(-200px);
-  transform-origin: center bottom;
-
-  /* Animate the grid moving toward the viewer */
-  animation: highway-scroll 2s linear infinite;
-
-  /* Make it cover the full area */
-  width: 200%;
-  height: 200%;
-  left: -50%;
-  top: -50%;
-}
-
-/* Animation that makes the grid continuously move down/toward viewer */
-@keyframes highway-scroll {
-  0% {
-    transform: perspective(600px) rotateX(75deg) translateZ(-200px) translateY(0px);
-  }
-  100% {
-    transform: perspective(600px) rotateX(75deg) translateZ(-200px) translateY(100px);
-  }
-}
-
-/* Mountain Silhouettes for Outrun Aesthetic */
-.outrun-mountains {
-  position: absolute;
-  bottom: 40%;
-  left: 0;
-  right: 0;
-  height: 40%;
-  z-index: 2;
-  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1200 400' xmlns='http://www.w3.org/2000/svg'><path d='M0,400 L0,200 L100,100 L200,150 L300,80 L400,120 L500,60 L600,100 L700,40 L800,80 L900,20 L1000,60 L1100,30 L1200,50 L1200,400 Z' fill='%23331155' opacity='0.9'/><path d='M0,400 L0,250 L150,180 L250,220 L350,160 L450,200 L550,140 L650,180 L750,120 L850,160 L950,100 L1050,140 L1150,110 L1200,130 L1200,400 Z' fill='%23441166' opacity='0.7'/></svg>");
-  background-size: cover;
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  pointer-events: none;
-}
-
-/* Add a subtle glow effect to the grid lines for more synthwave feel */
-/* SVG Grid Lines for Perspective */
-.outrun-highway::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 40%;
-  background-image: url("data:image/svg+xml;utf8,<svg width='1808' height='230' xmlns='http://www.w3.org/2000/svg'><path d='M904 -46 L-3616 230 M904 -46 L-3254.4 230 M904 -46 L-2892.8 230 M904 -46 L-2531.2000000000003 230 M904 -46 L-2169.6000000000004 230 M904 -46 L-1808 230 M904 -46 L-1446.4 230 M904 -46 L-1084.8000000000002 230 M904 -46 L-723.2 230 M904 -46 L-361.6 230 M904 -46 L0 230 M904 -46 L361.6 230 M904 -46 L723.2 230 M904 -46 L1084.8000000000002 230 M904 -46 L1446.4 230 M904 -46 L1808 230 M904 -46 L2169.6000000000004 230 M904 -46 L2531.2000000000003 230 M904 -46 L2892.8 230 M904 -46 L3254.4 230 M904 -46 L3616 230 M904 -46 L3977.6000000000004 230 M904 -46 L4339.200000000001 230 M904 -46 L4700.8 230 M904 -46 L5062.400000000001 230 M904 -46 L5424 230' stroke='%23FF0080' stroke-width='2' vector-effect='non-scaling-stroke' opacity='0.8' /></svg>");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center bottom;
-}
-
-/* Horizontal Grid Lines with Animation */
-.outrun-highway::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 60%;
-  --pos: var(--outrun-progress, 0);
-  --l0: calc(var(--horizon) + 0 * 0 * var(--distance) + (((0 + 1) * (0 + 1) * var(--distance) - 0 * 0 * var(--distance)) * var(--pos)));
-  --l1: calc(var(--horizon) + 1 * 1 * var(--distance) + (((1 + 1) * (1 + 1) * var(--distance) - 1 * 1 * var(--distance)) * var(--pos)));
-  --l2: calc(var(--horizon) + 2 * 2 * var(--distance) + (((2 + 1) * (2 + 1) * var(--distance) - 2 * 2 * var(--distance)) * var(--pos)));
-  --l3: calc(var(--horizon) + 3 * 3 * var(--distance) + (((3 + 1) * (3 + 1) * var(--distance) - 3 * 3 * var(--distance)) * var(--pos)));
-  --l4: calc(var(--horizon) + 4 * 4 * var(--distance) + (((4 + 1) * (4 + 1) * var(--distance) - 4 * 4 * var(--distance)) * var(--pos)));
-  --l5: calc(var(--horizon) + 5 * 5 * var(--distance) + (((5 + 1) * (5 + 1) * var(--distance) - 5 * 5 * var(--distance)) * var(--pos)));
-
-  background:
-    linear-gradient(transparent 0 var(--horizon), #6495ED var(--horizon) calc(var(--horizon) + 2px), transparent calc(var(--horizon) + 2px)),
-    linear-gradient(transparent 0 var(--l0), #6495ED var(--l0) calc(var(--l0) + 2px), transparent calc(var(--l0) + 2px)),
-    linear-gradient(transparent 0 var(--l1), #6495ED var(--l1) calc(var(--l1) + 2px), transparent calc(var(--l1) + 2px)),
-    linear-gradient(transparent 0 var(--l2), #6495ED var(--l2) calc(var(--l2) + 2px), transparent calc(var(--l2) + 2px)),
-    linear-gradient(transparent 0 var(--l3), #6495ED var(--l3) calc(var(--l3) + 2px), transparent calc(var(--l3) + 2px)),
-    linear-gradient(transparent 0 var(--l4), #6495ED var(--l4) calc(var(--l4) + 2px), transparent calc(var(--l4) + 2px)),
-    linear-gradient(transparent 0 var(--l5), #6495ED var(--l5) calc(var(--l5) + 2px), transparent calc(var(--l5) + 2px));
-}
-
-/* Fallback for older browser support */
-.outrun-highway-fallback::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background:
-    repeating-linear-gradient(
-      90deg,
-      transparent 0px,
-      transparent 99px,
-      rgba(255, 20, 147, 0.5) 100px,
-      rgba(255, 20, 147, 0.5) 101px
-    ),
-    repeating-linear-gradient(
-      0deg,
-      transparent 0px,
-      transparent 49px,
-      rgba(255, 20, 147, 0.5) 50px,
-      rgba(255, 20, 147, 0.5) 51px
-    );
-  filter: blur(1px);
-  opacity: 0.7;
-} 

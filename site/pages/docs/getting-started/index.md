@@ -84,13 +84,13 @@ Your source will start syncing immediately after setup.
 **What happens during sync:**
 
 1. **Initial data pull** - We fetch all existing data from your source
-2. **Stream creation** - Raw data goes into a `_stream` (all data we ever receive)
-3. **Consolidation** - Data gets merged and cleaned into `_consolidate` 
+2. **Stream storage** - Raw data goes into the `stream_data` table (all data we ever receive)
+3. **Consolidation** - Data gets merged and cleaned into the `consolidated_data` table
 4. **Standardization** - Data transforms into standardized objects:
-   - **Facts** - Events and activities
-   - **Organizations** - Companies and accounts  
    - **People** - Contacts and users
+   - **Organizations** - Companies and accounts
    - **Relationships** - Connections between entities
+   - **Analytics** - Metrics and performance data
 
 ## Step 6: Wait for Initial Sync
 
@@ -112,7 +112,7 @@ Once your source sync is complete, add where you want the data to go.
 
 1. **Navigate to Destinations** in the sidebar
 2. **Click "Add Destination"**
-3. **Select your destination type** (Salesforce, data warehouse, etc.)
+3. **Select your destination type** (HubSpot, Zoho CRM, etc.)
 4. **Follow the same authentication process** as with sources
 5. **Name your destination** descriptively
 6. **Configure field mappings** (optional - we provide smart defaults)

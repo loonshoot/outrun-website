@@ -1,10 +1,5 @@
 {
-  "name": "eleventy-bookshop-starter",
-  "author": "CloudCannon",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/CloudCannon/eleventy-bookshop-starter.git"
-  },
+  "name": "website",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@bookshop/browser": "3.10.0",
@@ -13,23 +8,18 @@
     "@bookshop/generate": "3.10.0",
     "@bookshop/sass": "3.10.0"
   },
-  "bugs": {
-    "url": "https://github.com/CloudCannon/eleventy-bookshop-starter/issues"
-  },
-  "description": "A starter template for Eleventy with Bookshop",
-  "homepage": "https://github.com/CloudCannon/eleventy-bookshop-starter#readme",
-  "license": "MIT",
+  "description": "Outrun marketing website",
   "private": true,
   "scripts": {
     "bookshop:watch": "bookshop-browser",
     "bookshop-sass:build": "bookshop-sass -b component-library -o _site/assets/bookshop.css",
     "bookshop-sass:watch": "bookshop-sass -b component-library -o site/assets/bookshop.css -w",
-    "eleventy:build": "ELEVENTY_ENV=production eleventy",
-    "eleventy:watch": "ELEVENTY_ENV=development eleventy --serve",
+    "eleventy:build": "NODE_OPTIONS='--disable-warning=DEP0040' ELEVENTY_ENV=production eleventy --quiet",
+    "eleventy:watch": "NODE_OPTIONS='--disable-warning=DEP0040' ELEVENTY_ENV=development eleventy --serve --quiet",
     "tailwind:build": "bunx tailwindcss -i component-library/shared/styles/tailwind.css -o _site/assets/tailwind.css --minify",
     "tailwind:watch": "bunx tailwindcss -i component-library/shared/styles/tailwind.css -o component-library/shared/styles/tailwind.out.css --watch",
     "dev": "bun run tailwind:watch & bun run bookshop-sass:watch & bun run bookshop:watch & bun run eleventy:watch",
-    "prod": "bun run tailwind:build & bun run bookshop-sass:build & bun run eleventy:build & wait"
+    "build": "bun run tailwind:build & bun run bookshop-sass:build & bun run eleventy:build & wait"
   },
   "dependencies": {
     "autoprefixer": "^10.4.16",

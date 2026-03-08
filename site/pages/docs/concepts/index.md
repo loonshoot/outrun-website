@@ -51,7 +51,7 @@ Outrun follows a systematic approach to data synchronization:
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
   <a href="/docs/concepts/objects/" class="bg-dark-light border border-gray-600  p-6 hover:border-yellow transition-colors">
     <h3 class="text-yellow text-lg font-semibold mb-3">🧩 Objects</h3>
-    <p class="text-gray-300 mb-3">The four standardized object types that represent all business data: People, Organizations, Facts, and Relationships.</p>
+    <p class="text-gray-300 mb-3">The standardized object types that represent all business data: People, Organizations, Relationships, and Analytics.</p>
     <ul class="text-gray-400 text-sm space-y-1">
       <li>• Universal data model</li>
       <li>• Source and destination mappings</li>
@@ -71,7 +71,7 @@ Outrun follows a systematic approach to data synchronization:
 
   <a href="/docs/concepts/standardization/" class="bg-dark-light border border-gray-600  p-6 hover:border-yellow transition-colors">
     <h3 class="text-yellow text-lg font-semibold mb-3">🔄 Standardization</h3>
-    <p class="text-gray-300 mb-3">How raw data transforms into standardized People, Organizations, Facts, and Relationships.</p>
+    <p class="text-gray-300 mb-3">How raw data transforms into standardized People, Organizations, and Relationships.</p>
     <ul class="text-gray-400 text-sm space-y-1">
       <li>• Standard object types</li>
       <li>• Field mapping and transformation</li>
@@ -127,23 +127,23 @@ Outrun follows a systematic approach to data synchronization:
 
 Understanding how Outrun stores and processes your data:
 
-### Stream Collections
-- **`[sourceId]_stream`**: Raw data as received from APIs
+### Stream Data
+- **`stream_data` table**: Raw data as received from APIs, partitioned by `source_id`
 - **First-in, first-out**: Chronological data storage
-- **Metadata enriched**: System metadata for processing tracking
-- **Original format**: Data preserved as close to source format as possible
+- **Metadata enriched**: System metadata stored in a separate JSONB column
+- **Original format**: Data preserved as close to source format as possible in a `record` JSONB column
 
-### Consolidated Collections
-- **`[sourceId]_consolidate`**: Merged and cleaned data
-- **Deduplication**: Duplicate records identified and merged
+### Consolidated Data
+- **`consolidated_data` table**: Merged and cleaned data, keyed by `source_id` + `object_type`
+- **Deduplication**: Duplicate records identified and merged via `external_id`
 - **Data quality**: Validation and cleansing applied
 - **Relationship mapping**: Cross-record relationships established
 
 ### Standardized Objects
-- **People**: Contacts, leads, users from any system
-- **Organizations**: Companies, accounts, business entities
-- **Facts**: Events, activities, metrics, analytics data
-- **Relationships**: Connections between people and organizations
+- **`people` table**: Contacts, leads, users from any system
+- **`organizations` table**: Companies, accounts, business entities
+- **`relationships` table**: Connections between people and organizations
+- **`search_analytics_data` table**: Search metrics, analytics, and performance data
 
 ## The Outrun Philosophy
 

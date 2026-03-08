@@ -1,127 +1,123 @@
 ---
 layout: layouts/default.liquid
-permalink: /features/data-browser-analytics/
-title: Data Browser & Analytics - Outrun
+permalink: /features/data-browser/
+title: Data Browser - Outrun
 social_meta:
-  title: Data Browser & Analytics - Outrun
-  description: Explore and analyze your data with an intuitive browser interface. Get insights from all your connected applications in one place.
+  title: Data Browser - Outrun
+  description: Browse and search the data Outrun syncs from your tools. See your contacts, companies, deals, and activities in one place.
 ---
 
-<section class="bg-yellow-400 text-dark min-h-screen flex items-center">
-  <div class="max-w-6xl mx-auto px-6 lg:px-8 py-20">
+<link rel="stylesheet" href="/assets/css/features.css">
+
+<!-- Hero -->
+<section style="padding-top: 10rem; padding-bottom: 6rem; background: linear-gradient(180deg, #1B1237 0%, #151030 40%, #120E2A 100%);">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div>
-        <h1 class="text-4xl lg:text-5xl font-bold font-mono mb-6 text-dark">
-          Data Browser & Analytics
+        <p class="font-mono text-sm text-pink-600 tracking-widest uppercase mb-4">Feature</p>
+        <h1 class="text-4xl lg:text-5xl font-bold font-mono text-light mb-6">
+          Data Browser
         </h1>
-        <p class="text-xl text-dark mb-8 leading-relaxed">
-          Explore and analyze your data with an intuitive browser interface. Get insights from all your connected applications in one place.
+        <div class="section-divider mb-8"></div>
+        <p class="text-lg text-grey-500 leading-relaxed mb-8">
+          Browse and search the data Outrun syncs from your tools. See your contacts, companies, deals, and activities all in one place - no switching between apps.
         </p>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <div class="group h-10 relative w-48">
-            <button class="flex items-center w-48 h-10 absolute bg-dark">
-              <div class="flex items-center w-full text-center text-light text-sm font-normal font-mono">
-                <p class="text-center w-full pt-1 group-hover:pt-0">Get started</p>
-              </div>
-            </button>
-            <div class="flex w-48 h-10 top-1 left-1 group-hover:top-0 group-hover:left-0 absolute border-solid border-2 border-dark">
-            </div>
+        <div class="flex flex-col sm:flex-row gap-6 items-start">
+          <div class="group h-14 relative w-72">
+            <a href="https://app.getoutrun.com">
+              <button class="flex items-center w-full h-14 absolute bg-pink-600 hover:bg-pink-600 transition-colors">
+                <div class="flex items-center w-full text-center text-light text-xl font-normal font-mono">
+                  <p class="text-center w-full pt-1 group-hover:pt-0">Get started</p>
+                </div>
+              </button>
+              <div class="flex w-full h-14 top-1 left-1 group-hover:top-0 group-hover:left-0 absolute border-solid border-2 border-light transition-all"></div>
+            </a>
           </div>
-          <a href="/features" class="text-dark hover:text-grey-700 transition-colors duration-200 flex items-center font-mono text-sm">
-            View all features →
+          <a href="/features" class="font-mono text-sm transition-colors flex items-center h-14 text-light hover:text-pink-600">
+            View all features &rarr;
           </a>
         </div>
       </div>
-      <div class="bg-gradient-to-br from-blue-600 to-purple-600 w-64 h-64 mx-auto lg:mx-0 lg:ml-auto flex items-center justify-center">
-        <span class="text-6xl">📊</span>
+      <div class="hero-icon-box mx-auto lg:mx-0 lg:ml-auto" style="background: linear-gradient(135deg, rgba(254,1,112,0.15), rgba(71,22,149,0.15));">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: #FE0170"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
       </div>
     </div>
   </div>
 </section>
 
-<section class="py-20 bg-dark">
-  <div class="max-w-6xl mx-auto px-6 lg:px-8">
-    <h2 class="text-3xl font-bold font-mono text-light mb-12 text-center">
-      Powerful data exploration and analysis
+<!-- Key Features -->
+<section class="relative" style="padding-top: 10rem; padding-bottom: 6rem; background: linear-gradient(180deg, #120E2A 0%, #0F0B24 40%, #0D0920 100%);">
+  <div class="section-grid-bg"></div>
+  <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
+    <p class="font-mono text-sm text-yellow-400 tracking-widest uppercase mb-4">Capabilities</p>
+    <h2 class="text-3xl font-bold font-mono text-light mb-4">
+      Explore your synced data in one place
     </h2>
-    
+    <div class="section-divider mb-12"></div>
+
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-      <div class="text-center">
-        <div class="bg-gradient-to-br from-green-500 to-teal-500 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-          <span class="text-2xl text-light">🔍</span>
+      <div class="help-card">
+        <div class="help-card-icon help-card-icon--pink">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
         </div>
-        <h3 class="text-xl font-semibold font-mono text-light mb-3">
-          Intuitive Search
-        </h3>
-        <p class="text-light">
-          Find any data point across all your connected applications with smart search and filtering capabilities.
-        </p>
+        <h3 class="text-xl font-bold font-mono text-light mb-3">Search &amp; Filter</h3>
+        <p class="text-grey-500 text-sm">Find any record across all your connected tools. Search by name, email, deal stage, or any other field to quickly locate what you need.</p>
       </div>
-      
-      <div class="text-center">
-        <div class="bg-gradient-to-br from-blue-500 to-indigo-500 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-          <span class="text-2xl text-light">📈</span>
+
+      <div class="help-card">
+        <div class="help-card-icon help-card-icon--cyan">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
         </div>
-        <h3 class="text-xl font-semibold font-mono text-light mb-3">
-          Real-time Analytics
-        </h3>
-        <p class="text-light">
-          Get instant insights with real-time charts, graphs, and analytics dashboards.
-        </p>
+        <h3 class="text-xl font-bold font-mono text-light mb-3">Collection Overview</h3>
+        <p class="text-grey-500 text-sm">See how much data has been synced from each tool at a glance. View record counts and collection details for every connected source.</p>
       </div>
-      
-      <div class="text-center">
-        <div class="bg-gradient-to-br from-purple-500 to-pink-500 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-          <span class="text-2xl text-light">🎯</span>
+
+      <div class="help-card">
+        <div class="help-card-icon help-card-icon--yellow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
         </div>
-        <h3 class="text-xl font-semibold font-mono text-light mb-3">
-          Custom Views
-        </h3>
-        <p class="text-light">
-          Create custom data views and save them for quick access to the insights that matter most.
-        </p>
+        <h3 class="text-xl font-bold font-mono text-light mb-3">Tabbed Navigation</h3>
+        <p class="text-grey-500 text-sm">Switch between People, Companies, Deals, and Activities with simple tabs. Each view is tailored to the data type you are exploring.</p>
       </div>
     </div>
 
-    <div class="bg-dark/20 p-8 mb-16 backdrop-blur-sm">
-      <h3 class="text-2xl font-bold font-mono text-light mb-6">
-        Key features
-      </h3>
+    <div class="help-card">
+      <h3 class="text-2xl font-bold font-mono text-light mb-6">What you can browse</h3>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="space-y-4">
           <div class="flex items-start">
-            <span class="text-yellow-400 mr-3">•</span>
-            <span class="text-light">Cross-application data browsing</span>
+            <span class="text-yellow-400 mr-3">&#8226;</span>
+            <span class="text-grey-500">Contacts and people from your CRM</span>
           </div>
           <div class="flex items-start">
-            <span class="text-yellow-400 mr-3">•</span>
-            <span class="text-light">Advanced search and filtering</span>
+            <span class="text-yellow-400 mr-3">&#8226;</span>
+            <span class="text-grey-500">Companies and organisations</span>
           </div>
           <div class="flex items-start">
-            <span class="text-yellow-400 mr-3">•</span>
-            <span class="text-light">Real-time data visualization</span>
+            <span class="text-yellow-400 mr-3">&#8226;</span>
+            <span class="text-grey-500">Deals and opportunities</span>
           </div>
           <div class="flex items-start">
-            <span class="text-yellow-400 mr-3">•</span>
-            <span class="text-light">Custom dashboard creation</span>
+            <span class="text-yellow-400 mr-3">&#8226;</span>
+            <span class="text-grey-500">Activities like emails, calls, and meetings</span>
           </div>
         </div>
         <div class="space-y-4">
           <div class="flex items-start">
-            <span class="text-yellow-400 mr-3">•</span>
-            <span class="text-light">Export capabilities (CSV, PDF, JSON)</span>
+            <span class="text-yellow-400 mr-3">&#8226;</span>
+            <span class="text-grey-500">Data from every connected source</span>
           </div>
           <div class="flex items-start">
-            <span class="text-yellow-400 mr-3">•</span>
-            <span class="text-light">Collaborative sharing and annotations</span>
+            <span class="text-yellow-400 mr-3">&#8226;</span>
+            <span class="text-grey-500">Standardised fields across different tools</span>
           </div>
           <div class="flex items-start">
-            <span class="text-yellow-400 mr-3">•</span>
-            <span class="text-light">Automated insight detection</span>
+            <span class="text-yellow-400 mr-3">&#8226;</span>
+            <span class="text-grey-500">Record details and raw data</span>
           </div>
           <div class="flex items-start">
-            <span class="text-yellow-400 mr-3">•</span>
-            <span class="text-light">Mobile-responsive interface</span>
+            <span class="text-yellow-400 mr-3">&#8226;</span>
+            <span class="text-grey-500">Works on desktop and mobile</span>
           </div>
         </div>
       </div>
@@ -129,73 +125,90 @@ social_meta:
   </div>
 </section>
 
-<section class="py-20 bg-cyan-400">
-  <div class="max-w-6xl mx-auto px-6 lg:px-8">
+<!-- Value Proposition -->
+<section class="relative" style="padding-top: 10rem; padding-bottom: 6rem; background: linear-gradient(180deg, #0D0920 0%, #14102E 40%, #1A1538 100%);">
+  <div class="section-grid-bg"></div>
+  <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div>
-        <h2 class="text-3xl font-bold font-mono text-dark mb-6">
-          Turn data into actionable insights
+        <h2 class="text-3xl font-bold font-mono text-light mb-6">
+          Stop switching between apps to find what you need
         </h2>
-        <p class="text-xl text-dark mb-8 leading-relaxed">
-          With Outrun's Data Browser & Analytics, you can explore data from all your connected applications in one unified interface. No more jumping between different tools to get a complete picture of your business.
+        <p class="text-lg text-grey-500 mb-8 leading-relaxed">
+          Once Outrun syncs your tools, the Data Browser gives you a single place to look up any contact, company, or deal. No more logging into three different CRMs to find a phone number.
         </p>
-        <div class="space-y-4 text-dark">
+        <div class="space-y-4">
           <div class="flex items-start">
-            <span class="text-yellow-400 mr-3">✓</span>
-            <span>Reduce time to insight by 80%</span>
+            <span class="text-pink-600 mr-3">&#10003;</span>
+            <span class="text-grey-500">See all your synced data without leaving Outrun</span>
           </div>
           <div class="flex items-start">
-            <span class="text-yellow-400 mr-3">✓</span>
-            <span>Make data-driven decisions faster</span>
+            <span class="text-pink-600 mr-3">&#10003;</span>
+            <span class="text-grey-500">Quickly look up contacts, companies, and deals</span>
           </div>
           <div class="flex items-start">
-            <span class="text-yellow-400 mr-3">✓</span>
-            <span>Identify trends and patterns across applications</span>
+            <span class="text-pink-600 mr-3">&#10003;</span>
+            <span class="text-grey-500">Understand what data has been synced and from where</span>
           </div>
           <div class="flex items-start">
-            <span class="text-yellow-400 mr-3">✓</span>
-            <span>Collaborate on insights with your team</span>
+            <span class="text-pink-600 mr-3">&#10003;</span>
+            <span class="text-grey-500">Consistent view regardless of which tool the data came from</span>
           </div>
         </div>
       </div>
-      <div class="bg-pink-600/10 p-8 backdrop-blur-sm">
-        <h3 class="text-xl font-semibold font-mono text-dark mb-4">
-          Popular use cases
-        </h3>
-        <div class="space-y-3 text-dark">
-          <div>• Customer journey analysis</div>
-          <div>• Sales performance tracking</div>
-          <div>• Marketing campaign effectiveness</div>
-          <div>• Support ticket analytics</div>
-          <div>• Financial reporting</div>
-          <div>• Operational metrics monitoring</div>
+      <div class="help-card">
+        <h3 class="text-xl font-bold font-mono text-light mb-4">How it works</h3>
+        <div class="space-y-4">
+          <div class="pl-4" style="border-left: 4px solid #FFC403;">
+            <h4 class="font-bold font-mono text-light">Connect Your Tools</h4>
+            <p class="text-sm text-grey-500">Link your CRM, email, and other tools to Outrun. Data syncs automatically.</p>
+          </div>
+          <div class="pl-4" style="border-left: 4px solid #FFC403;">
+            <h4 class="font-bold font-mono text-light">Browse by Category</h4>
+            <p class="text-sm text-grey-500">Use tabs to switch between People, Companies, Deals, and Activities.</p>
+          </div>
+          <div class="pl-4" style="border-left: 4px solid #FFC403;">
+            <h4 class="font-bold font-mono text-light">Search &amp; Filter</h4>
+            <p class="text-sm text-grey-500">Find specific records with search, or filter by source to see data from a particular tool.</p>
+          </div>
+          <div class="pl-4" style="border-left: 4px solid #FFC403;">
+            <h4 class="font-bold font-mono text-light">View Record Details</h4>
+            <p class="text-sm text-grey-500">Click any record to see its full details, including which tool it was synced from.</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="py-20 bg-pink-600">
-  <div class="max-w-4xl mx-auto text-center px-6 lg:px-8">
-    <h2 class="text-3xl font-bold font-mono text-light mb-6">
-      Ready to unlock your data insights?
-    </h2>
-    <p class="text-xl text-light mb-8">
-      Start exploring your data with our powerful browser and analytics tools.
-    </p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <div class="group h-10 relative w-48">
-        <button class="flex items-center w-48 h-10 absolute bg-dark">
-          <div class="flex items-center w-full text-center text-light text-sm font-normal font-mono">
-            <p class="text-center w-full pt-1 group-hover:pt-0">Start free trial</p>
-          </div>
-        </button>
-        <div class="flex w-48 h-10 top-1 left-1 group-hover:top-0 group-hover:left-0 absolute border-solid border-2 border-light">
+<!-- CTA -->
+<section class="final-cta-section relative overflow-hidden" style="padding-top: 10rem; padding-bottom: 6rem; background: linear-gradient(180deg, #1B1237 0%, #200E30 40%, #2A1040 100%);">
+  <div class="cta-bg-gradient"></div>
+  <div class="section-grid-bg" style="opacity: 0.03;"></div>
+  <div class="relative z-10 max-w-3xl mx-auto px-6 lg:px-8 text-center">
+    <div class="space-y-8">
+      <h2 class="text-4xl lg:text-5xl font-bold font-mono text-light leading-tight">
+        Ready to <span class="text-yellow-400">get started</span>?
+      </h2>
+      <p class="text-lg text-grey-500 leading-relaxed max-w-2xl mx-auto">
+        Build your first workflow in minutes. Connect your tools and start automating today.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-6 justify-center items-center pt-4">
+        <div class="group h-14 relative w-72">
+          <a href="https://app.getoutrun.com">
+            <button class="flex items-center w-full h-14 absolute bg-pink-600 hover:bg-pink-600 transition-colors">
+              <div class="flex items-center w-full text-center text-light text-xl font-normal font-mono">
+                <p class="text-center w-full pt-1 group-hover:pt-0">Start Building Free</p>
+              </div>
+            </button>
+            <div class="flex w-full h-14 top-1 left-1 group-hover:top-0 group-hover:left-0 absolute border-solid border-2 border-light transition-all"></div>
+          </a>
         </div>
+        <a href="/contact" class="text-light hover:text-pink-600 font-mono text-lg transition-colors">Book a Demo &rarr;</a>
       </div>
-      <a href="/features" class="text-yellow-400 hover:text-blue-700 transition-colors duration-200 flex items-center justify-center font-mono text-sm">
-        View all features →
-      </a>
+      <p class="text-xs font-mono text-grey-500 pt-2">
+        No credit card required
+      </p>
     </div>
   </div>
-</section> 
+</section>

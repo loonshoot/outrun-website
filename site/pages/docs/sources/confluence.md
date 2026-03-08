@@ -124,9 +124,9 @@ Confluence has moderate rate limits that Outrun respects:
 - **Backfill Period**: 30 days by default
 - **Polling Interval**: 60 minutes
 - **Data Processing**:
-  1. Raw content → `_stream` collection
-  2. Processed content → `_consolidate` collection
-  3. Standardized objects → Documents, Relationships
+  1. Raw content → `stream_data` table
+  2. Processed content → `consolidated_data` table
+  3. Standardized objects → Stored with content indexing
   4. Content indexing → Full-text search capabilities
 
 ### Continuous Sync

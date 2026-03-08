@@ -33,7 +33,7 @@ When a source supports real-time data streams, Outrun leverages these for immedi
 - **Instant Collection**: Data is ingested as soon as it's available
 - **Event-Driven**: Triggered by actual data changes in the source system
 - **Continuous Flow**: Maintains persistent connection for ongoing data flow
-- **Examples**: Salesforce PubSub, webhook-enabled systems
+- **Examples**: Webhook-enabled systems, real-time event feeds
 
 ### Batch Jobs
 For sources without real-time capabilities, Outrun runs periodic batch jobs:
@@ -47,10 +47,10 @@ For sources without real-time capabilities, Outrun runs periodic batch jobs:
   <div class="bg-dark-light border border-gray-600  p-6">
     <h3 class="text-green-400 text-lg font-semibold mb-3">⚡ Real-Time Streams</h3>
     <ul class="text-gray-300 space-y-2 text-sm">
-      <li>• <strong>Salesforce PubSub</strong> - Enterprise/Unlimited editions</li>
       <li>• <strong>Webhook Systems</strong> - Event-driven notifications</li>
       <li>• <strong>Change Streams</strong> - Database change logs</li>
       <li>• <strong>Event APIs</strong> - Real-time event feeds</li>
+      <li>• <strong>Pipedrive Webhooks</strong> - Real-time activity updates</li>
     </ul>
   </div>
 
@@ -67,17 +67,19 @@ For sources without real-time capabilities, Outrun runs periodic batch jobs:
 
 ## Stream Storage Architecture
 
-All ingested data is stored in dedicated stream collections that preserve the original format while adding essential metadata.
+All ingested data is stored in the `stream_data` table within each workspace's tenant database, preserving the original format while adding essential metadata.
 
-### Stream Collection Naming
+### Stream Data Table
 ```
-[sourceId]_stream
+stream_data (per tenant database)
+├── source_id    → FK to the source that produced this data
+├── external_id  → Original record ID from the source system
+├── record       → JSONB column containing the raw API response
+├── metadata     → JSONB column with processing metadata
+└── created_at   → Ingestion timestamp
 ```
 
-Each source gets its own dedicated stream collection:
-- `hubspot_abc123_stream` - HubSpot source data
-- `salesforce_def456_stream` - Salesforce source data
-- `zoho_ghi789_stream` - Zoho CRM source data
+All sources write to the same table, differentiated by `source_id`. Composite indexes on `(source_id, created_at)` and `(source_id, external_id)` ensure fast lookups.
 
 ### Data Storage Principles
 
@@ -94,26 +96,24 @@ Each source gets its own dedicated stream collection:
 - **Nested Objects**: Complex object structures preserved intact
 
 #### Metadata Enrichment
-Outrun appends system metadata without altering source data:
+Outrun stores source data and system metadata in separate columns, keeping the original record untouched:
 
 ```json
+// record column (JSONB) — original source data preserved
 {
-  // Original source data (unchanged)
   "id": "12345",
   "email": "john@example.com",
   "firstName": "John",
-  "lastName": "Doe",
-  
-  // Outrun metadata (appended)
-  "_outrun": {
-    "sourceId": "hubspot_abc123",
-    "sourceType": "hubspot",
-    "ingestedAt": "2024-01-15T10:30:00Z",
-    "apiEndpoint": "/contacts/v1/contact/12345",
-    "processed": false,
-    "processingAttempts": 0,
-    "lastModified": "2024-01-15T09:45:00Z"
-  }
+  "lastName": "Doe"
+}
+
+// metadata column (JSONB) — system metadata stored separately
+{
+  "sourceType": "hubspot",
+  "apiEndpoint": "/contacts/v1/contact/12345",
+  "processed": false,
+  "processingAttempts": 0,
+  "lastModified": "2024-01-15T09:45:00Z"
 }
 ```
 
@@ -123,7 +123,7 @@ Outrun adds comprehensive metadata to track data lineage and processing:
 
 ### Source Information
 - **`sourceId`**: Unique identifier for the source instance
-- **`sourceType`**: Type of source system (hubspot, salesforce, etc.)
+- **`sourceType`**: Type of source system (hubspot, pipedrive, zoho, etc.)
 - **`apiEndpoint`**: Specific API endpoint used for data collection
 - **`objectType`**: Native object type from source system
 

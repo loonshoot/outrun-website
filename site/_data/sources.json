@@ -1,12 +1,12 @@
 {
-  "count": 15,
+  "count": 14,
   "featured": [
     "HubSpot",
-    "Salesforce", 
     "Google Search Console",
     "Confluence",
     "Shopify",
-    "Zendesk"
+    "Zendesk",
+    "Zoho CRM"
   ],
   "lastUpdated": "2024-01-15"
 } 

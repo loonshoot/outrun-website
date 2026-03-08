@@ -2,7 +2,7 @@
 title: "How to Build a Data Lake"
 subtitle: "A Step-by-step Guide to Building a Data Lake for Your Business"
 background: "Yellow"
-permalink: /learn/how-to-build-a-data-lake
+permalink: /learn/how-to-build-a-data-lake/
 metaTitle: "How to Build a Data Lake: A Step-by-Step Guide"
 layout: layouts/learn.liquid
 metaDescription: "Learn how to build a data lake for your business with this comprehensive guide. From defining your objectives to choosing the right tools and technologies, we'll walk you through the entire process."

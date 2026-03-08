@@ -154,10 +154,10 @@ Zoho CRM's Related Records API provides comprehensive relationship tracking:
 - **Backfill Period**: 30 days by default
 - **Polling Interval**: 60 minutes
 - **Data Processing**:
-  1. Raw data → `_stream` collection
-  2. Merged data → `_consolidate` collection
-  3. Standardized objects → People, Organizations, Relationships
-  4. Related records → Additional relationship objects
+  1. Raw data → `stream_data` table
+  2. Merged data → `consolidated_data` table
+  3. Standardized objects → `people`, `organizations`, `relationships` tables
+  4. Related records → Additional relationship rows
 
 ### Continuous Sync
 - **Change Detection**: Modified_Time-based queries

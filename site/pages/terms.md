@@ -27,7 +27,7 @@ permalink: /terms/
 
         <h2 class="text-2xl font-bold text-light mb-4">Using Outrun</h2>
         <p class="text-light mb-4">
-          <strong>Our Services:</strong> Outrun provides data synchronization between platforms like HubSpot, Salesforce, and Zoho CRM. We standardize, clean, and transfer your data automatically.
+          <strong>Our Services:</strong> Outrun provides data synchronization between platforms like HubSpot, Pipedrive, and Zoho CRM. We standardize, clean, and transfer your data automatically.
         </p>
         
         <p class="text-light mb-4">

@@ -30,7 +30,7 @@ In the context of Outrun, MCP acts as a bridge between your standardized data an
 
 When you configure MCP as a destination in Outrun, you're essentially making your workspace data available to AI models through a standardized protocol. The integration works through several key components:
 
-**Data Exposure**: Your standardized objects (People, Organizations, Relationships, Facts) become queryable resources that AI models can discover and understand. The MCP server provides schema information, field definitions, and relationship mappings to help AI models understand your data structure.
+**Data Exposure**: Your standardized objects (People, Organizations, Relationships) and analytics data become queryable resources that AI models can discover and understand. The MCP server provides schema information, field definitions, and relationship mappings to help AI models understand your data structure.
 
 **Query Interface**: AI models can execute GraphQL queries against your data, enabling them to retrieve specific information, perform aggregations, and explore relationships between objects. This provides a powerful interface for data analysis and insight generation.
 
@@ -54,7 +54,7 @@ The integration uses bearer token authentication with read-only access to your s
 
 Once configured, AI models connect using the provided endpoint and bearer token, with popular platforms including Claude Desktop, custom MCP client applications, and various AI development frameworks that support the standard MCP protocol.
 
-When connected, AI models automatically discover your data schema including object types (People, Organizations, Relationships, Facts), field definitions, relationship mappings, and available query capabilities, enabling them to understand your data structure without manual configuration.
+When connected, AI models automatically discover your data schema including object types (People, Organizations, Relationships) and analytics data, along with field definitions, relationship mappings, and available query capabilities, enabling them to understand your data structure without manual configuration.
 
 AI models can execute GraphQL queries for direct object retrieval, aggregations, relationship traversal, and schema exploration, providing a powerful and flexible interface for data analysis and insight generation.
 

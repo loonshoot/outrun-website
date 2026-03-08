@@ -20,19 +20,18 @@ Connect your Google Search Console to Outrun for comprehensive SEO and search pe
 
 <div class="bg-green-500 bg-opacity-10 border border-green-500  p-6 my-6">
   <h3 class="text-green-400 text-lg font-semibold mb-3">📊 Analytics-Focused Integration</h3>
-  <p class="text-gray-300">Google Search Console integration focuses on search analytics and performance data, mapping to Facts objects for time-series analysis and reporting.</p>
+  <p class="text-gray-300">Google Search Console integration focuses on search analytics and performance data, stored in the `search_analytics_data` table for time-series analysis and reporting.</p>
 </div>
 
 ## Supported Objects
 
 Google Search Console maps to the following standardized objects:
 
-### 📊 Facts (from Search Analytics)
+### 📊 Search Analytics Data
 - **Source Object**: `searchAnalytics`
-- **Primary ID**: Generated composite ID
+- **Table**: `search_analytics_data`
 - **Key Fields**: Clicks, impressions, CTR, position, query, page, date
-- **Fact Type**: `searchAnalytics`
-- **Period**: Daily aggregation
+- **Granularity**: Daily aggregation
 
 ## Authentication
 
@@ -47,11 +46,11 @@ Google Search Console uses Google OAuth 2.0:
 
 ## Field Mappings
 
-### Facts (Search Analytics)
+### Search Analytics Data
 
 | Outrun Field | Google Search Console Field | Type | Description |
 |--------------|----------------------------|------|-------------|
-| `factType` | `"searchAnalytics"` | String | Fixed fact type identifier |
+| `site` | Property URL | String | The Search Console property |
 | `property` | `site` | String | Search Console property URL |
 | `entityId` | `page` | String | Page URL that received traffic |
 | `entityType` | `"page"` | String | Fixed entity type |
@@ -110,9 +109,9 @@ Google Search Console provides multi-dimensional analytics data:
 - **Backfill Period**: 30 days by default
 - **Polling Interval**: 60 minutes
 - **Data Processing**:
-  1. Raw analytics → `_stream` collection
-  2. Processed metrics → `_consolidate` collection
-  3. Standardized objects → Facts with search analytics
+  1. Raw analytics → `stream_data` table
+  2. Processed metrics → `consolidated_data` table
+  3. Analytics data → `search_analytics_data` table
   4. Aggregation → Daily, weekly, monthly rollups
 
 ### Continuous Sync

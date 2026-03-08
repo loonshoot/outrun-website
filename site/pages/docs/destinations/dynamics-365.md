@@ -4,7 +4,8 @@ title: Microsoft Dynamics 365 Integration
 description: Complete integration for Dynamics 365 Sales, Marketing, and Customer Service. Migrate, synchronize, and unify your Microsoft CRM data.
 metaTitle: Dynamics 365 Integration - Outrun CRM Migration & Sync
 metaDescription: Comprehensive guide to Dynamics 365 CRM integration via Outrun. Support for Sales, Marketing, and Service clouds with full data preservation.
-permalink: /docs/destinations/dynamics-365/
+permalink: false
+eleventyExcludeFromCollections: true
 breadcrumbs:
   - title: Documentation
     url: /docs/

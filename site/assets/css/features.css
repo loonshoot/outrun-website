@@ -1,11 +1,44 @@
 /* Features page styles */
+/* Base brand system is in outrun-base.css */
 
-/* Consistent margin-top for main content to match docs */
-main {
+/* Extra margin for first child in features pages */
+main > div:first-child {
   margin-top: 4rem;
 }
 
-/* Target the first content block (sectiontitle) to add top margin */
-main > div:first-child {
-  margin-top: 4rem;
-} 
+/* ========== FEATURE-SPECIFIC STYLES ========== */
+
+/* Feature index card icons */
+.feature-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  border: 1px solid;
+}
+.feature-icon svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+.feature-icon--pink   { color: #FE0170; border-color: rgba(254, 1, 112, 0.3); }
+.feature-icon--cyan   { color: #22d3ee; border-color: rgba(34, 211, 238, 0.3); }
+.feature-icon--yellow { color: #FFC403; border-color: rgba(255, 196, 3, 0.3); }
+.feature-icon--purple { color: #471695; border-color: rgba(71, 22, 149, 0.3); }
+
+/* Hero icon box */
+.hero-icon-box {
+  width: 16rem;
+  height: 16rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.hero-icon-box svg {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+}

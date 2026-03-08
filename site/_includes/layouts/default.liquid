@@ -15,7 +15,7 @@
         <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' *.getoutrun.com; style-src 'self' *.getoutrun.com https://fonts.googleapis.com; img-src 'self' *.getoutrun.com; font-src 'self' *.getoutrun.com https://fonts.gstatic.com; connect-src 'self' *.getoutrun.com; frame-src 'self' *.getoutrun.com; media-src 'self' *.getoutrun.com;">
     {% endif %}
     {% if env.ELEVENTY_ENV == "development" %}
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' *.localhost *.getoutrun.com 'unsafe-inline'; style-src 'self' *.localhost *.getoutrun.com https://fonts.googleapis.com 'unsafe-inline'; img-src 'self' *.localhost *.getoutrun.com data:; font-src 'self' *.localhost *.getoutrun.com https://fonts.gstatic.com; connect-src 'self' *.localhost *.getoutrun.com; frame-src 'self' *.localhost *.getoutrun.com; media-src 'self' *.localhost *.getoutrun.com;">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' *.localhost *.getoutrun.com 'unsafe-inline'; style-src 'self' *.localhost *.getoutrun.com https://fonts.googleapis.com 'unsafe-inline'; img-src 'self' *.localhost *.getoutrun.com data:; font-src 'self' *.localhost *.getoutrun.com https://fonts.gstatic.com; connect-src 'self' *.localhost *.getoutrun.com http://localhost:* ws://localhost:*; frame-src 'self' *.localhost *.getoutrun.com; media-src 'self' *.localhost *.getoutrun.com;">
     {% endif %}
     {% comment %}
         # The `bookshop-sass` command in package.json compiles all bookshop styles
@@ -28,13 +28,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" type="image/x-icon" href="https://cdn.getoutrun.com/website/brand/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Paytone+One&display=swap" rel="stylesheet">
-    <script defer src="https://cdn.getoutrun.com/sdk/outrun.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/outrun-base.css">
+    {% if env.ELEVENTY_ENV == "production" %}
+        <script defer src="https://cdn.getoutrun.com/sdk/outrun.min.js"></script>
+    {% else %}
+        <script defer src="/assets/js/outrun.js"></script>
+    {% endif %}
 </head>
 <body class="bg-dark min-h-screen">
     {% bookshop "block/menu" bind: menu %}
 
     <!-- Zendesk Sell Notification Bar - Pinned to bottom of nav -->
-    <div id="zendesk-notification" class="bg-pink-600 text-white text-center py-2 px-4 fixed left-0 w-full z-10 transition-transform duration-300 ease-in-out" style="top: 0;">
+    <div id="zendesk-notification" class="bg-pink-600 text-white text-center py-2 px-4 fixed top-16 left-0 w-full z-999 transition-transform duration-300 ease-in-out">
         <div class="max-w-7xl mx-auto">
             <p class="font-mono text-sm">
                 ⚠️ <strong>Zendesk Sell:</strong> Customers affected by the discontinuation announcement.
@@ -42,7 +47,7 @@
             </p>
         </div>
     </div>
-    <main class="gap-0">
+    <main class="gap-0 mt-16">
         {% comment %}
             # The `page` include loops through all content_blocks and renders them.
             # Using a bookshop tag here means that live previewing will catch new components.
@@ -55,96 +60,7 @@
         {{ content }}
     </main>
     {% bookshop "block/footer" bind: footer %}
-    <script  defer src="/assets/bundle.js"></script>
-
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const notification = document.getElementById('zendesk-notification');
-        const nav = document.querySelector('nav') || document.querySelector('header') || document.querySelector('[role="navigation"]');
-        const main = document.querySelector('main');
-        let lastScrollY = window.scrollY;
-        let navHeight = 0;
-        let notificationHeight = 0;
-        let isMobile = window.innerWidth <= 768;
-
-        // Get heights and update positioning
-        function updateLayout() {
-            isMobile = window.innerWidth <= 768;
-
-            if (isMobile) {
-                // On mobile, pin to top
-                notification.style.top = '0';
-                notificationHeight = notification.offsetHeight;
-
-                // Add margin to main content for notification only (nav is at bottom)
-                if (main) {
-                    main.style.marginTop = notificationHeight + 'px';
-                }
-            } else {
-                // On desktop, position below nav
-                if (nav) {
-                    navHeight = nav.offsetHeight;
-                    notification.style.top = navHeight + 'px';
-                }
-
-                notificationHeight = notification.offsetHeight;
-
-                // Add margin to main content to account for both nav and notification
-                if (main) {
-                    main.style.marginTop = (navHeight + notificationHeight) + 'px';
-                }
-            }
-        }
-
-        // Initial setup
-        setTimeout(updateLayout, 100);
-        window.addEventListener('resize', updateLayout);
-
-        // Handle scroll behavior
-        function handleScroll() {
-            const currentScrollY = window.scrollY;
-
-            if (isMobile) {
-                // On mobile, hide on any scroll down
-                if (currentScrollY > lastScrollY && currentScrollY > 50) {
-                    // Scrolling down - hide notification
-                    notification.style.transform = 'translateY(-100%)';
-                    // Remove main margin when notification is hidden
-                    if (main) {
-                        main.style.marginTop = '0';
-                    }
-                } else if (currentScrollY <= 0) {
-                    // At the very top - show notification
-                    notification.style.transform = 'translateY(0)';
-                    // Restore margin when notification is visible
-                    if (main) {
-                        main.style.marginTop = notificationHeight + 'px';
-                    }
-                }
-            } else {
-                // Desktop behavior - slide behind nav
-                if (currentScrollY > lastScrollY && currentScrollY > 100) {
-                    // Scrolling down - hide notification
-                    notification.style.transform = 'translateY(-100%)';
-                    // Reduce main margin when notification is hidden
-                    if (main) {
-                        main.style.marginTop = navHeight + 'px';
-                    }
-                } else {
-                    // Scrolling up or at top - show notification
-                    notification.style.transform = 'translateY(0)';
-                    // Restore full margin when notification is visible
-                    if (main) {
-                        main.style.marginTop = (navHeight + notificationHeight) + 'px';
-                    }
-                }
-            }
-
-            lastScrollY = currentScrollY;
-        }
-
-        window.addEventListener('scroll', handleScroll, { passive: true });
-    });
-    </script>
+    <script defer src="/assets/bundle.js?v={{ bundleHash }}"></script>
+    <script defer src="/assets/js/zendesk-notification.js"></script>
 </body>
 </html>

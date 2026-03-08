@@ -3,7 +3,7 @@ layout: layouts/docs.liquid
 title: Destinations
 description: Send your standardized data to destinations. Learn about supported systems, field mappings, and bi-directional sync capabilities.
 metaTitle: Outrun Destinations - Supported Data Destinations and Integrations
-metaDescription: Complete guide to Outrun's supported data destinations including HubSpot, Salesforce, and Zoho CRM for bi-directional data sync.
+metaDescription: Complete guide to Outrun's supported data destinations including HubSpot and Zoho CRM for bi-directional data sync.
 permalink: /docs/destinations/
 breadcrumbs:
   - title: Documentation
@@ -20,14 +20,14 @@ Destinations are where your standardized data goes. Outrun takes the clean, stan
 
 When you configure a destination in Outrun:
 
-1. **Data Reception** - Standardized objects (People, Organizations, Relationships, Facts) arrive from sources
+1. **Data Reception** - Standardized objects (People, Organizations, Relationships) arrive from sources
 2. **Field Mapping** - Outrun maps standardized fields to destination-specific fields
 3. **Validation** - Data is validated against destination requirements and constraints
 4. **Delivery** - Clean data is written to your destination system via APIs
 
 ## Supported Destinations
 
-We currently support **3** destination systems that also function as sources:
+We currently support **2** destination systems that also function as sources:
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
   <a href="/docs/destinations/hubspot/" class="bg-dark-light border border-gray-600  p-6 hover:border-yellow transition-colors">
@@ -42,21 +42,6 @@ We currently support **3** destination systems that also function as sources:
     <div class="flex flex-wrap gap-2">
       <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs ">People → Contacts</span>
       <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs ">Organizations → Companies</span>
-    </div>
-  </a>
-
-  <a href="/docs/destinations/salesforce/" class="bg-dark-light border border-gray-600  p-6 hover:border-yellow transition-colors">
-    <div class="flex items-center space-x-4 mb-4">
-      <div class="w-12 h-12 bg-blue-500  flex items-center justify-center text-white font-bold text-lg">SF</div>
-      <div>
-        <h3 class="text-yellow text-lg font-semibold">Salesforce</h3>
-        <p class="text-gray-400 text-sm">Enterprise CRM Platform</p>
-      </div>
-    </div>
-    <p class="text-gray-300 text-sm mb-3">Send People and Organizations to Salesforce Contacts and Accounts.</p>
-    <div class="flex flex-wrap gap-2">
-      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs ">People → Contacts</span>
-      <span class="px-2 py-1 bg-yellow bg-opacity-20 text-yellow text-xs ">Organizations → Accounts</span>
     </div>
   </a>
 
@@ -126,7 +111,7 @@ All our destination systems also function as sources, enabling powerful bi-direc
 
 ### CRM Synchronization
 ```
-HubSpot (Source) → Outrun → Salesforce (Destination)
+HubSpot (Source) → Outrun → Zoho CRM (Destination)
 ```
 Keep your CRM systems in sync with standardized contact and company data.
 
@@ -153,7 +138,6 @@ Sync regional data to global systems while maintaining local operations.
 Each destination has specific rate limits that Outrun respects:
 
 - **HubSpot**: 10 requests per second for destination writes
-- **Salesforce**: 10 requests per second for destination writes  
 - **Zoho CRM**: 3 requests per 10 seconds for write operations
 
 <div class="bg-yellow bg-opacity-10 border border-yellow  p-6 my-6">
@@ -166,7 +150,6 @@ Each destination has specific rate limits that Outrun respects:
 ### Required Fields
 Each destination has specific required fields that must be populated:
 - **HubSpot**: Email (People), Company Name (Organizations)
-- **Salesforce**: Email (People), Account Name (Organizations)
 - **Zoho CRM**: Last Name (People), Account Name (Organizations)
 
 ### Data Transformation

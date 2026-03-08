@@ -1,5 +1,6 @@
 // site/assets/outrunConfig.js
 // Callback function called when outrun.js has loaded
+// Config values are injected at build time from env vars (see .eleventy.js)
 (async () => {
     try {
       // Wait for outrun object to be available
@@ -11,19 +12,23 @@
           }
         }, 100);
       });
-  
-      // Initialize Outrun SDK
+
       outrun.init({
-        apiKey: '665c6b40fbf97f706b3a5770', // Replace with your actual API key
-        streamId: '67483fd74c2fef2fec95fcca',
-        workspaceId: 'clwuoes0m000h12daa5gjbrvc', // Replace with your actual Workspace ID
-        autoTrack: ['click', 'hover', 'focus', 'blur', 'input', 'submit', 'page view'], // Enable all autoTrack events
-        // Optional:
-        // endpoint: 'us.core.getoutrun.com', // Default is us.core.getoutrun.com
-        // eventNames: { click: 'custom_click', page view: 'custom_page_view' }, // Optional custom event names
-        debug: true // Optional for debugging
+        apiKey: '%%OUTRUN_WIDGET_API_KEY%%',
+        streamId: '%%OUTRUN_WIDGET_STREAM_ID%%',
+        workspaceId: '%%OUTRUN_WIDGET_WORKSPACE_ID%%',
+        autoTrack: ['click', 'hover', 'focus', 'blur', 'input', 'submit', 'page view'],
+        endpoint: '%%OUTRUN_WIDGET_ENDPOINT%%',
+        debug: %%OUTRUN_WIDGET_DEBUG%%
       });
-  
+
+      // Initialize live chat widget
+      // Chat will only display if a support agent is attached to this website source
+      outrun.chat.init({
+        sourceId: '%%OUTRUN_WIDGET_SOURCE_ID%%',
+        token: '%%OUTRUN_WIDGET_TOKEN%%',
+      });
+
     } catch (error) {
       console.error('Error initializing Outrun SDK:', error);
     }

@@ -1,0 +1,138 @@
+{
+  "tracks": {
+    "business-leaders": {
+      "title": "Business Leaders",
+      "slug": "business-leaders",
+      "description": "Understand what AI means for your team and how to leverage it for better outcomes.",
+      "color": "yellow",
+      "benefits": [
+        "Outcome-focused, strategic content",
+        "ROI and efficiency insights",
+        "No technical jargon required"
+      ],
+      "sections": [
+        {
+          "title": "Understand",
+          "slug": "understand",
+          "color": "yellow",
+          "items": [
+            { "title": "What is Artificial Intelligence?", "slug": "what-is-ai", "readTime": "8 min" },
+            { "title": "What Are LLMs?", "slug": "what-are-llms", "readTime": "7 min" },
+            { "title": "What is Generative AI?", "slug": "what-is-generative-ai", "readTime": "6 min" },
+            { "title": "AI Won't Replace Your Team", "slug": "ai-wont-replace-your-team", "readTime": "5 min" },
+            { "title": "What is NLP?", "slug": "what-is-nlp", "readTime": "6 min" },
+            { "title": "What is Computer Vision?", "slug": "what-is-computer-vision", "readTime": "5 min" },
+            { "title": "Choosing the Right AI Model", "slug": "choosing-the-right-ai-model", "readTime": "7 min" },
+            { "title": "The AI Glossary for Business", "slug": "ai-glossary", "readTime": "10 min" }
+          ]
+        },
+        {
+          "title": "Apply",
+          "slug": "apply",
+          "color": "pink",
+          "items": [
+            { "title": "How AI is Transforming Sales", "slug": "ai-transforming-sales", "readTime": "8 min" },
+            { "title": "5 Processes to Automate with AI", "slug": "5-processes-to-automate", "readTime": "7 min" },
+            { "title": "AI Email Triage", "slug": "ai-email-triage", "readTime": "6 min" },
+            { "title": "AI Automation ROI", "slug": "ai-automation-roi", "readTime": "8 min" },
+            { "title": "AI Agents for Operations", "slug": "ai-agents-for-operations", "readTime": "7 min" },
+            { "title": "AI Governance and Audit Trails", "slug": "ai-governance-audit-trails", "readTime": "6 min" },
+            { "title": "Building an AI Strategy", "slug": "building-ai-strategy", "readTime": "9 min" },
+            { "title": "Vendor Change Tracking with AI", "slug": "vendor-change-tracking", "readTime": "5 min" }
+          ]
+        },
+        {
+          "title": "Build",
+          "slug": "build",
+          "color": "cyan",
+          "items": [
+            { "title": "Your First AI Workflow", "slug": "first-ai-workflow", "readTime": "10 min" },
+            { "title": "Connecting Your CRM", "slug": "connecting-your-crm", "readTime": "5 min" },
+            { "title": "Deploying an Email Agent", "slug": "deploying-email-agent", "readTime": "8 min" },
+            { "title": "Monitoring AI Workflows", "slug": "monitoring-ai-workflows", "readTime": "6 min" },
+            { "title": "Migrating from Zapier/Make", "slug": "migrating-from-zapier", "readTime": "7 min" },
+            { "title": "AI for Data Cleanup", "slug": "ai-data-cleanup", "readTime": "6 min" }
+          ]
+        }
+      ]
+    },
+    "process-builders": {
+      "title": "Process Builders",
+      "slug": "process-builders",
+      "description": "Hands-on guides for implementing and configuring AI workflows and automations.",
+      "color": "cyan",
+      "benefits": [
+        "Implementation-focused guides",
+        "Technical patterns and architecture",
+        "Code examples and configurations"
+      ],
+      "sections": [
+        {
+          "title": "Understand",
+          "slug": "understand",
+          "color": "yellow",
+          "items": [
+            { "title": "AI vs ML vs Deep Learning", "slug": "ai-vs-ml-deep-learning", "readTime": "10 min" },
+            { "title": "How LLMs Actually Work", "slug": "how-llms-work", "readTime": "12 min" },
+            { "title": "Foundation Models and RAG", "slug": "foundation-models-rag", "readTime": "10 min" },
+            { "title": "Neural Networks Explained", "slug": "neural-networks", "readTime": "9 min" },
+            { "title": "What is MCP?", "slug": "what-is-mcp", "readTime": "8 min" },
+            { "title": "Prompt Engineering Patterns", "slug": "prompt-engineering", "readTime": "11 min" },
+            { "title": "Supervised vs Unsupervised", "slug": "supervised-unsupervised", "readTime": "8 min" },
+            { "title": "Evaluating LLMs", "slug": "evaluating-llms", "readTime": "9 min" }
+          ]
+        },
+        {
+          "title": "Apply",
+          "slug": "apply",
+          "color": "pink",
+          "items": [
+            { "title": "AI Workflow Patterns", "slug": "ai-workflow-patterns", "readTime": "10 min" },
+            { "title": "Conditional Logic in Workflows", "slug": "conditional-logic-workflows", "readTime": "8 min" },
+            { "title": "How Agents Triage and Route", "slug": "agents-triage-route", "readTime": "9 min" },
+            { "title": "Building Reliable AI Pipelines", "slug": "reliable-ai-pipelines", "readTime": "11 min" },
+            { "title": "Data Integration for AI", "slug": "data-integration-ai", "readTime": "8 min" },
+            { "title": "Multi-Tenant AI Patterns", "slug": "multi-tenant-ai", "readTime": "9 min" },
+            { "title": "AI Audit Trails at Scale", "slug": "ai-audit-trails-scale", "readTime": "7 min" }
+          ]
+        },
+        {
+          "title": "Build",
+          "slug": "build",
+          "color": "cyan",
+          "items": [
+            { "title": "Building Your First Workflow", "slug": "building-first-workflow", "readTime": "12 min" },
+            { "title": "Configuring AI Agents", "slug": "configuring-ai-agents", "readTime": "10 min" },
+            { "title": "GitHub Automation with AI", "slug": "github-automation-ai", "readTime": "11 min" },
+            { "title": "Setting Up the MCP Server", "slug": "setting-up-mcp", "readTime": "8 min" },
+            { "title": "Workflow Debugging", "slug": "workflow-debugging", "readTime": "9 min" },
+            { "title": "Writing Custom Code Nodes", "slug": "custom-code-nodes", "readTime": "10 min" }
+          ]
+        }
+      ]
+    }
+  },
+  "tiers": [
+    {
+      "title": "Understand",
+      "slug": "understand",
+      "description": "Pure AI education. Build your foundational knowledge with zero product talk.",
+      "color": "yellow",
+      "order": 1
+    },
+    {
+      "title": "Apply",
+      "slug": "apply",
+      "description": "See how AI works in real business context. Light product integration.",
+      "color": "pink",
+      "order": 2
+    },
+    {
+      "title": "Build",
+      "slug": "build",
+      "description": "Hands-on walkthroughs. Get started with Outrun.",
+      "color": "cyan",
+      "order": 3
+    }
+  ]
+}

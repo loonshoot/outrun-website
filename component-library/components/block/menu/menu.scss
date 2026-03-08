@@ -8,3 +8,90 @@
 #integrations-mega-nav {
   z-index: 1500 !important;
 }
+
+/* ---- Nav component styles (no inline styles) ---- */
+
+/* Mega nav dropdown panel */
+.nav-mega-panel {
+  background: linear-gradient(180deg, #151030 0%, #120E2A 100%);
+  border-top: 2px solid;
+  border-image: linear-gradient(90deg, #FFC403, #FE0170, #471695) 1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Subtle grid overlay inside mega nav */
+.nav-grid-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0.02;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+/* Mega nav section headers */
+.nav-section-header {
+  font-family: 'Fira Code', ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+}
+.nav-section-header--yellow {
+  color: #FFC403;
+  border-bottom: 1px solid rgba(255, 196, 3, 0.2);
+}
+.nav-section-header--pink {
+  color: #FE0170;
+  border-bottom: 1px solid rgba(254, 1, 112, 0.2);
+}
+.nav-section-header--cyan {
+  color: #22d3ee;
+  border-bottom: 1px solid rgba(34, 211, 238, 0.2);
+}
+.nav-section-header--muted {
+  color: #8A8A9E;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Mega nav link item (replaces onmouseover/onmouseout) */
+.nav-mega-item {
+  border: 1px solid transparent;
+  transition: background-color 0.15s, border-color 0.15s;
+}
+.nav-mega-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Description text in mega nav */
+.nav-item-desc {
+  color: #8A8A9E;
+}
+
+/* Mobile submenu card */
+.nav-mobile-submenu {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Zendesk migration badge */
+.nav-migration-badge {
+  background: rgba(254, 1, 112, 0.2);
+  color: #FE0170;
+  border: 1px solid rgba(254, 1, 112, 0.3);
+}
+
+/* Expanding soon placeholder icon */
+.nav-placeholder-icon {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Nav divider line */
+.nav-divider {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}

@@ -68,9 +68,5 @@
   border: 1px solid #F1C40F;
 }
 
-/* Consistent margin-top for main content to match docs */
-main {
-    margin-top: 4rem;
-}
 
 /* Removed section:first-of-type margin for better layout */ 

@@ -91,7 +91,7 @@ permalink: /privacy/
 
         <h2 class="text-2xl font-bold text-light mb-4">Third Parties</h2>
         <p class="text-light mb-6">
-          Where reasonable and practicable to do so, we will collect your Personal Information only from you. However, in some circumstances we may be provided with information by third parties (such as through integrations with your existing systems like HubSpot, Salesforce, or Zoho CRM). In such cases we will take reasonable steps to ensure that you are made aware of the information provided to us by the third party.
+          Where reasonable and practicable to do so, we will collect your Personal Information only from you. However, in some circumstances we may be provided with information by third parties (such as through integrations with your existing systems like HubSpot, Pipedrive, or Zoho CRM). In such cases we will take reasonable steps to ensure that you are made aware of the information provided to us by the third party.
         </p>
 
         <h2 class="text-2xl font-bold text-light mb-4">International Data Transfers</h2>

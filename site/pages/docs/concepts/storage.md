@@ -160,43 +160,45 @@ graph TD
 ## Data Storage Architecture
 
 ### Logical Database Separation
-Each workspace maintains complete data isolation:
+Each workspace maintains complete data isolation through separate tenant databases:
 
 - **Workspace ID**: Unique identifier for data segregation
-- **Logical Databases**: Separate database instances per workspace
+- **Tenant Databases**: Separate database schema per workspace (`workspace_{workspaceId}`)
 - **Access Controls**: Strict permissions based on workspace membership
 - **Data Boundaries**: No cross-workspace data access
 
 ### Storage Layers
 
 #### Stream Storage
-Raw data from sources stored with full fidelity:
+Raw data from sources stored with full fidelity in the `stream_data` table:
 ```
-[workspaceId]_[sourceId]_stream
-├── Original API responses
-├── Metadata enrichment
-├── Ingestion timestamps
-└── Processing status
+stream_data
+├── source_id      → Links to the source that produced this data
+├── external_id    → Original record ID from the source system
+├── record (JSONB) → Original API response preserved in full
+├── metadata (JSONB) → Ingestion timestamps and processing status
+└── created_at     → When the record was ingested
 ```
 
 #### Consolidated Storage
-Processed and merged data ready for standardization:
+Processed and merged data ready for standardization in the `consolidated_data` table:
 ```
-[workspaceId]_[sourceId]_consolidate
-├── Deduplicated records
-├── Quality scores
-├── Merge history
-└── Validation results
+consolidated_data
+├── source_id       → Links to the originating source
+├── external_id     → Unique record identifier (unique per source)
+├── object_type     → Classification (people, organizations, etc.)
+├── record (JSONB)  → Deduplicated and merged record data
+├── metadata (JSONB) → Quality scores, merge history, validation results
+└── created_at / updated_at
 ```
 
 #### Standardized Storage
-Final standardized objects ready for delivery:
+Final standardized objects stored in dedicated typed tables:
 ```
-[workspaceId]_standardized
-├── People objects
-├── Organization objects
-├── Facts objects
-└── Relationship objects
+people             → Contacts, leads, users
+organizations      → Companies, accounts, business entities
+relationships      → Connections between people and organizations
+search_analytics_data → Search metrics, rankings, and performance data
 ```
 
 ## Performance Optimization

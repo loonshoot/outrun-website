@@ -1,7 +1,7 @@
 ---
 permalink: /
-metaTitle: "Outrun: Your Data & Integration Challenges Solved"
-metaDescription: "The ideal solution to rapidly conquer data problems in your stack, keep things in sync and rapidly onboard new tool capability for your business. Connect Salesforce, HubSpot, Pipedrive, Dynamics 365, Zendesk Sell, and Zoho CRM."
+metaTitle: "Outrun: AI Workflow Automation Across Every Tool"
+metaDescription: "Build AI-powered workflows across all your business tools. Outrun connects your systems and lets you automate with no integration work required. HubSpot, Pipedrive, Zoho CRM, and more."
 layout: layouts/default.liquid
 ---
 
@@ -12,21 +12,41 @@ layout: layouts/default.liquid
 <!-- Complete Outrun Highway Hero with Parallax -->
 <div class="outrun-parallax-container">
   <section class="outrun-complete-hero" id="outrun-hero">
+    <!-- Hero Triangle -->
+    <svg class="hero-triangle" viewBox="0 0 800 700" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <defs>
+        <!-- Navy gradient fill: light center, dark edges -->
+        <radialGradient id="triFill" cx="50%" cy="45%" r="55%">
+          <stop offset="0%" stop-color="#1a2744"/>
+          <stop offset="50%" stop-color="#111c38"/>
+          <stop offset="100%" stop-color="#080e1f"/>
+        </radialGradient>
+        <!-- Outrun color gradient for the border -->
+        <linearGradient id="triBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#FFC403"/>
+          <stop offset="35%" stop-color="#FE0170"/>
+          <stop offset="70%" stop-color="#471695"/>
+          <stop offset="100%" stop-color="#22d3ee"/>
+        </linearGradient>
+      </defs>
+      <!-- Single triangle with uniform stroke -->
+      <polygon points="30,80 770,80 400,670" fill="url(#triFill)" fill-opacity="0.92" stroke="url(#triBorder)" stroke-width="8" stroke-linejoin="miter"/>
+    </svg>
     <div class="outrun-complete-content">
-      <div class="max-w-4xl mx-auto px-4" style="padding: 3rem 1rem; background: none !important;">
+      <div class="max-w-4xl mx-auto px-4 hp-hero-inner">
         <h1 class="outrun-complete-title">
-          THE DATA PLATFORM FOR
+          STOP WASTING TIME ON
         </h1>
 
         <div class="rotating-text-container">
-          <span class="rotating-text-item active">Syncing your apps</span>
-          <span class="rotating-text-item">Migrating your CRM</span>
-          <span class="rotating-text-item">Cleaning your data</span>
-          <span class="rotating-text-item">Fixing duplicates</span>
+          <span class="rotating-text-item active">Manual workflows</span>
+          <span class="rotating-text-item">Copy-paste busywork</span>
+          <span class="rotating-text-item">Disconnected tools</span>
+          <span class="rotating-text-item">Repetitive tasks</span>
         </div>
 
         <p class="outrun-complete-subtitle">
-          Operate like a team 10x your size and grow like neon in the night.
+          Build AI-powered automation across every tool you use. Outrun connects your systems so you can go straight to building.
         </p>
 
         <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mt-8">
@@ -34,216 +54,303 @@ layout: layouts/default.liquid
             <a href="https://app.getoutrun.com">
               <button class="flex items-center w-full h-14 absolute bg-pink-600 hover:bg-pink-600 transition-colors">
                 <div class="flex items-center w-full text-center text-white text-xl font-normal font-mono">
-                  <p class="text-center w-full pt-1 group-hover:pt-0">Let's go</p>
+                  <p class="text-center w-full pt-1 group-hover:pt-0">Start Building Free</p>
                 </div>
               </button>
               <div class="flex w-full h-14 top-1 left-1 group-hover:top-0 group-hover:left-0 absolute border-solid border-2 border-light transition-all">
               </div>
             </a>
           </div>
-          <a href="/contact" class="font-mono text-xl transition-colors" style="color: white !important;" onmouseover="this.style.color='#ec4899'" onmouseout="this.style.color='white'">
-            Contact for Quote →
+          <a href="/contact" class="font-mono text-xl transition-colors hp-demo-link">
+            Book a Demo &rarr;
           </a>
         </div>
+        <p class="text-center text-sm font-mono mt-4 hp-muted-text">
+          No credit card required
+        </p>
       </div>
     </div>
   </section>
 </div>
 
-<!-- What We Do Section -->
-<section class="what-we-do-section bg-dark py-20">
-  <div class="max-w-7xl mx-auto px-6 lg:px-8">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl lg:text-5xl font-bold font-mono text-yellow-400 mb-6">
-        What We Do
-      </h2>
-      <div class="max-w-4xl mx-auto">
-        <p class="text-xl text-light leading-relaxed">
-          A data platform that syncs your business systems by standardising data across all your tools and keeping everything updated in real-time.
-        </p>
-      </div>
-    </div>
 
-    <!-- Process Visualization -->
-    <div class="grid lg:grid-cols-3 gap-8 mb-16">
-      <div class="text-center">
-        <div class="bg-yellow-400 w-16 h-16 mx-auto mb-6 flex items-center justify-center">
-          <span class="text-3xl">📥</span>
-        </div>
-        <h3 class="text-xl font-bold font-mono text-light mb-4">
-          1. Sync Your Data
-        </h3>
-        <p class="text-light">
-          We connect to your business systems and continuously sync your data to our platform.
-        </p>
-      </div>
-
-      <div class="text-center">
-        <div class="bg-pink-600 w-16 h-16 mx-auto mb-6 flex items-center justify-center">
-          <span class="text-3xl">⚙️</span>
-        </div>
-        <h3 class="text-xl font-bold font-mono text-light mb-4">
-          2. Standardise Everything
-        </h3>
-        <p class="text-light">
-          Our platform standardises data from all your different systems into a unified format.
-        </p>
-      </div>
-
-      <div class="text-center">
-        <div class="bg-cyan-400 w-16 h-16 mx-auto mb-6 flex items-center justify-center">
-          <span class="text-3xl">📤</span>
-        </div>
-        <h3 class="text-xl font-bold font-mono text-light mb-4">
-          3. Sync Back Seamlessly
-        </h3>
-        <p class="text-light">
-          We sync updates back to each system in the format it understands, keeping everything in perfect harmony.
-        </p>
-      </div>
-    </div>
+<!-- How It Works Section -->
+<section class="what-we-do-section relative hp-section hp-bg-how-it-works">
+  <div class="section-grid-bg"></div>
+  <div class="hp-circle-accent">
+    <svg viewBox="0 0 525 525" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="circleAccentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#FFC403"/>
+          <stop offset="100%" stop-color="#FE0170"/>
+        </linearGradient>
+      </defs>
+      <circle cx="262.5" cy="262.5" r="260" fill="none" stroke="url(#circleAccentGrad)" stroke-width="3"/>
+    </svg>
   </div>
-</section>
-
-<!-- How It Can Help Section -->
-<section class="how-it-helps-section bg-gradient-to-r from-yellow-400 to-pink-600 py-20">
-  <div class="max-w-7xl mx-auto px-6 lg:px-8">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl lg:text-5xl font-bold font-mono text-dark mb-6">
-        How It Can Help
-      </h2>
-    </div>
-
-    <div class="grid lg:grid-cols-3 gap-12">
-      <!-- Sync Your Tools -->
-      <div class="bg-dark p-8 text-center">
-        <div class="bg-yellow-400 w-16 h-16 mx-auto mb-6 flex items-center justify-center">
-          <span class="text-3xl">🔄</span>
-        </div>
-        <h3 class="text-2xl font-bold font-mono text-light mb-4">
-          Sync Your Tools
-        </h3>
-        <p class="text-light leading-relaxed">
-          Team members working on different systems will all be in the loop, working rapidly together to solve your big problems. No more data silos or disconnected teams.
-        </p>
-      </div>
-
-      <!-- Rapidly Onboard New Tools -->
-      <div class="bg-dark p-8 text-center">
-        <div class="bg-pink-600 w-16 h-16 mx-auto mb-6 flex items-center justify-center">
-          <span class="text-3xl">⚡</span>
-        </div>
-        <h3 class="text-2xl font-bold font-mono text-light mb-4">
-          Rapidly Onboard New Tools
-        </h3>
-        <p class="text-light leading-relaxed">
-          Because we already understand the data model, we can import your existing data into tools we support. Skip months of setup and get straight to productivity.
-        </p>
-      </div>
-
-      <!-- Support Migrations -->
-      <div class="bg-dark p-8 text-center">
-        <div class="bg-cyan-400 w-16 h-16 mx-auto mb-6 flex items-center justify-center">
-          <span class="text-3xl">🚀</span>
-        </div>
-        <h3 class="text-2xl font-bold font-mono text-light mb-4">
-          Support Migrations
-        </h3>
-        <p class="text-light leading-relaxed">
-          Sometimes you outgrow your old tool - we have you covered. Outrun can easily keep your old and new systems in sync while you setup workflows and complete training.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Supported CRMs Section -->
-<section class="supported-crms-section bg-dark py-20">
-  <div class="max-w-7xl mx-auto px-6 lg:px-8">
-    <div class="text-center mb-12">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
+    <div class="text-center mb-20">
+      <p class="font-mono text-sm text-pink-600 tracking-widest uppercase mb-4">How it works</p>
       <h2 class="text-4xl lg:text-5xl font-bold font-mono text-light mb-6">
-        We Support the Following CRMs
+        Three Steps to Automation
       </h2>
-      <p class="text-xl text-light max-w-3xl mx-auto leading-relaxed">
-        Salesforce, HubSpot, Zoho, Pipedrive, Dynamics 365 (Sales, Marketing, Support), and Zendesk Sell.
+      <div class="section-divider mx-auto mb-8"></div>
+      <div class="max-w-3xl mx-auto">
+        <p class="text-lg text-grey-500 leading-relaxed">
+          Other platforms make you spend months on integration before you can build anything. Outrun handles the plumbing so you can go straight to automating.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-6">
+      <div class="step-card group">
+        <div class="step-number step-number--yellow">01</div>
+        <h3 class="text-xl font-bold font-mono text-light mb-3">
+          Connect Your Tools
+        </h3>
+        <p class="text-grey-500 leading-relaxed text-sm">
+          Plug in your CRMs, calendars, email, and more. We handle the integration so you don&rsquo;t have to.
+        </p>
+        <div class="step-accent step-accent--yellow"></div>
+      </div>
+
+      <div class="step-card group">
+        <div class="step-number step-number--pink">02</div>
+        <h3 class="text-xl font-bold font-mono text-light mb-3">
+          Build Workflows
+        </h3>
+        <p class="text-grey-500 leading-relaxed text-sm">
+          Design automation visually. Route leads, sync records, and trigger actions across every connected system.
+        </p>
+        <div class="step-accent step-accent--pink"></div>
+      </div>
+
+      <div class="step-card group">
+        <div class="step-number step-number--cyan">03</div>
+        <h3 class="text-xl font-bold font-mono text-light mb-3">
+          Let AI Do the Work
+        </h3>
+        <p class="text-grey-500 leading-relaxed text-sm">
+          Deploy AI agents that read, write, and act across all your tools automatically. You build it once, it keeps running. If a connection needs refreshing, we&rsquo;ll let you know. And when APIs change, our team handles the updates so you don&rsquo;t have to.
+        </p>
+        <div class="step-accent step-accent--cyan"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Your Data, Always in Sync Section -->
+<section class="how-it-helps-section relative hp-section hp-bg-data-layer overflow-hidden">
+  <!-- Synthwave landscape background -->
+  <div class="hp-synthwave-bg">
+    <div class="hp-synthwave-sun"></div>
+    <img src="https://cdn.getoutrun.com/website/images/palm-tree.svg" class="hp-palm hp-palm--left" alt="" aria-hidden="true" />
+    <img src="https://cdn.getoutrun.com/website/images/palm-tree.svg" class="hp-palm hp-palm--right" alt="" aria-hidden="true" />
+    <svg class="hp-synthwave-landscape" viewBox="0 0 1440 1000" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Mountains - low and subtle -->
+      <polygon points="0,1000 0,880 100,820 180,850 260,790 340,830 420,800 500,860 580,780 660,830 740,800 820,850 900,790 980,830 1060,810 1140,860 1220,790 1300,840 1440,810 1440,1000" fill="#1a0a2e"/>
+      <polygon points="0,1000 0,920 80,880 160,900 240,870 320,890 400,860 480,900 560,880 640,910 720,870 800,890 880,880 960,900 1040,870 1120,890 1200,880 1280,900 1360,875 1440,895 1440,1000" fill="#120720"/>
+    </svg>
+  </div>
+  <div class="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
+    <div class="text-center mb-20">
+      <p class="font-mono text-sm text-yellow-400 tracking-widest uppercase mb-4">Data layer</p>
+      <h2 class="text-4xl lg:text-5xl font-bold font-mono text-light mb-6">
+        Your Data, Cleaned &amp; Synced
+      </h2>
+      <div class="section-divider section-divider--pink mx-auto mb-8"></div>
+      <div class="max-w-3xl mx-auto">
+        <p class="text-lg text-grey-500 leading-relaxed">
+          Tired of updating the same record in three different tools? Outrun keeps your systems in sync. Live syncing is available for tools that support it, and scheduled syncs cover everything else. Change something in HubSpot and it updates in your other connected CRMs and tools.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-6">
+      <div class="help-card group">
+        <div class="help-card-icon help-card-icon--yellow">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg>
+        </div>
+        <h3 class="text-xl font-bold font-mono text-light mb-4">
+          No More Stale Data
+        </h3>
+        <p class="text-grey-500 leading-relaxed text-sm">
+          Every system stays current. Update a contact in your CRM and Outrun keeps your connected tools in sync. Live syncing where supported, scheduled syncs for everything else.
+        </p>
+      </div>
+
+      <div class="help-card group">
+        <div class="help-card-icon help-card-icon--pink">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+        </div>
+        <h3 class="text-xl font-bold font-mono text-light mb-4">
+          Zero Integration Work
+        </h3>
+        <p class="text-grey-500 leading-relaxed text-sm">
+          No API docs, no middleware, no custom code. Plug in your tools and Outrun handles the data mapping, transformation, and sync automatically.
+        </p>
+      </div>
+
+      <div class="help-card group">
+        <div class="help-card-icon help-card-icon--cyan">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+        </div>
+        <h3 class="text-xl font-bold font-mono text-light mb-4">
+          A Complete Copy With Change History
+        </h3>
+        <p class="text-grey-500 leading-relaxed text-sm">
+          Outrun stores a complete copy of your data with full change history. Your whole team works from the same, accurate information - no matter which tool they prefer.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What You Can Build Section -->
+<section class="relative hp-section hp-bg-use-cases">
+  <div class="section-grid-bg"></div>
+  <div class="hp-triangle-accent">
+    <svg viewBox="0 0 600 520" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="triAccentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#22d3ee"/>
+          <stop offset="100%" stop-color="#FE0170"/>
+        </linearGradient>
+      </defs>
+      <polygon points="300,30 570,490 30,490" fill="none" stroke="url(#triAccentGrad)" stroke-width="3" stroke-linejoin="miter"/>
+    </svg>
+  </div>
+  <div class="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
+    <div class="text-center mb-20">
+      <p class="font-mono text-sm text-cyan-400 tracking-widest uppercase mb-4">Use cases</p>
+      <h2 class="text-4xl lg:text-5xl font-bold font-mono text-light mb-6">
+        What You Can Build
+      </h2>
+      <div class="section-divider section-divider--cyan mx-auto"></div>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-6">
+      <div class="help-card group">
+        <div class="help-card-icon help-card-icon--yellow">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+        </div>
+        <h3 class="text-xl font-bold font-mono text-light mb-4">
+          Sales Automation
+        </h3>
+        <p class="text-grey-500 leading-relaxed text-sm">
+          Route leads, update CRMs, trigger follow-ups, and keep your pipeline moving automatically across every tool your team uses.
+        </p>
+      </div>
+
+      <div class="help-card group">
+        <div class="help-card-icon help-card-icon--pink">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+        </div>
+        <h3 class="text-xl font-bold font-mono text-light mb-4">
+          AI Agents
+        </h3>
+        <p class="text-grey-500 leading-relaxed text-sm">
+          Build intelligent agents that read from and write to all your connected systems. They understand your data and take action without manual intervention.
+        </p>
+      </div>
+
+      <div class="help-card group">
+        <div class="help-card-icon help-card-icon--cyan">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+        </div>
+        <h3 class="text-xl font-bold font-mono text-light mb-4">
+          Custom Workflows
+        </h3>
+        <p class="text-grey-500 leading-relaxed text-sm">
+          Design any business process visually. Onboarding sequences, approval chains, notification flows. If you can describe it, you can automate it.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Integrations Section -->
+<section class="supported-crms-section relative hp-section hp-bg-integrations">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <p class="font-mono text-sm text-pink-600 tracking-widest uppercase mb-4">Integrations</p>
+      <h2 class="text-4xl lg:text-5xl font-bold font-mono text-light mb-6">
+        Connect Everything You Use
+      </h2>
+      <div class="section-divider mx-auto mb-8"></div>
+      <p class="text-lg text-grey-500 max-w-3xl mx-auto leading-relaxed">
+        CRMs, calendars, email, productivity tools. Plug them in and Outrun keeps them all in sync. More integrations shipping every week.
       </p>
     </div>
 
-    <!-- CRM Logos Grid -->
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-12">
-      <!-- Salesforce -->
-      <div class="bg-white p-6 flex items-center justify-center h-24 hover:shadow-lg transition-shadow">
-        <img src="https://cdn.getoutrun.com/integrations/salesforce/logo.webp"
-             alt="Salesforce"
-             class="max-h-16 w-auto object-contain">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
+      <div class="crm-card group">
+        <img src="https://cdn.getoutrun.com/integrations/hubspot/icon.png" alt="HubSpot" class="w-10 h-10 object-contain">
+        <span class="font-mono text-light text-sm mt-3">HubSpot</span>
       </div>
-
-      <!-- HubSpot -->
-      <div class="bg-white p-6 flex items-center justify-center h-24 hover:shadow-lg transition-shadow">
-        <img src="https://cdn.getoutrun.com/integrations/hubspot/logo.webp"
-             alt="HubSpot"
-             class="max-h-16 w-auto object-contain">
+      <div class="crm-card group">
+        <img src="https://cdn.getoutrun.com/integrations/zoho/logo.png" alt="Zoho CRM" class="w-10 h-10 object-contain">
+        <span class="font-mono text-light text-sm mt-3">Zoho CRM</span>
       </div>
-
-      <!-- Zoho CRM -->
-      <div class="bg-white p-6 flex items-center justify-center h-24 hover:shadow-lg transition-shadow">
-        <img src="https://cdn.getoutrun.com/integrations/zoho/logo.png"
-             alt="Zoho CRM"
-             class="max-h-16 w-auto object-contain">
+      <div class="crm-card group">
+        <img src="https://cdn.getoutrun.com/integrations/pipedrive/monogram.png" alt="Pipedrive" class="w-10 h-10 object-contain">
+        <span class="font-mono text-light text-sm mt-3">Pipedrive</span>
       </div>
-
-      <!-- Pipedrive -->
-      <div class="bg-white p-6 flex items-center justify-center h-24 hover:shadow-lg transition-shadow">
-        <img src="https://cdn.getoutrun.com/integrations/pipedrive/monogram.png"
-             alt="Pipedrive"
-             class="max-h-16 w-auto object-contain">
+      <div class="crm-card group">
+        <img src="https://cdn.getoutrun.com/integrations/zendesk/products/sell-logo.png" alt="Zendesk Sell" class="w-10 h-10 object-contain">
+        <span class="font-mono text-light text-sm mt-3">Zendesk Sell</span>
       </div>
-
-      <!-- Dynamics 365 -->
-      <div class="bg-white p-6 flex items-center justify-center h-24 hover:shadow-lg transition-shadow">
-        <img src="https://cdn.getoutrun.com/integrations/microsoft/dynamics/dynamics365_scalable.svg"
-             alt="Microsoft Dynamics 365"
-             class="max-h-16 w-auto object-contain">
+      <div class="crm-card group">
+        <img src="https://cdn.getoutrun.com/integrations/zendesk/products/support-icon.svg" alt="Zendesk Support" class="w-10 h-10 object-contain">
+        <span class="font-mono text-light text-sm mt-3">Zendesk Support</span>
       </div>
-
-      <!-- Zendesk Sell -->
-      <div class="bg-white hover:shadow-lg transition-shadow overflow-hidden flex flex-col h-24">
-        <div class="flex items-center justify-center flex-grow p-4">
-          <img src="https://cdn.getoutrun.com/integrations/zendesk/products/sell-logo.png"
-               alt="Zendesk Sell"
-               class="max-h-16 w-auto object-contain">
-        </div>
-        <div class="bg-pink-600 text-white text-xs px-2 py-1 font-mono text-center">
-          Migration Support
-        </div>
+      <div class="crm-card group">
+        <img src="https://cdn.getoutrun.com/integrations/atlassian-confluence/logo.png" alt="Confluence" class="w-10 h-10 object-contain">
+        <span class="font-mono text-light text-sm mt-3">Confluence</span>
+      </div>
+      <div class="crm-card group">
+        <img src="https://cdn.getoutrun.com/integrations/google-search-console/icon.png" alt="Google Search Console" class="w-10 h-10 object-contain">
+        <span class="font-mono text-light text-sm mt-3">Search Console</span>
+      </div>
+      <div class="crm-card group">
+        <img src="https://cdn.getoutrun.com/integrations/intercom/icon.png" alt="Intercom" class="w-10 h-10 object-contain">
+        <span class="font-mono text-light text-sm mt-3">Intercom</span>
       </div>
     </div>
 
-    <!-- View All Integrations Link -->
     <div class="text-center">
-      <a href="/integrations" class="text-pink-600 hover:text-pink-500 font-mono text-lg">View all integrations →</a>
+      <a href="/integrations" class="font-mono text-sm text-pink-600 hover:text-light transition-colors tracking-wide">View all integrations &rarr;</a>
     </div>
   </div>
 </section>
 
 <!-- Final CTA Section -->
-<section class="final-cta-section bg-gradient-to-br from-pink-600 to-purple-600 py-20 relative">
-  <!-- Geometric Pattern Background -->
-  <div class="absolute inset-0 opacity-10">
-    <div class="geometric-pattern"></div>
+<section class="final-cta-section relative overflow-hidden hp-section hp-bg-cta">
+  <div class="hp-cta-highway"></div>
+
+  <div class="hp-rect-accent">
+    <svg viewBox="0 0 300 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <defs>
+        <radialGradient id="rectFill" cx="50%" cy="45%" r="60%">
+          <stop offset="0%" stop-color="#0a1a3a"/>
+          <stop offset="50%" stop-color="#071230"/>
+          <stop offset="100%" stop-color="#030a1f"/>
+        </radialGradient>
+      </defs>
+      <rect x="4" y="4" width="292" height="492" fill="url(#rectFill)" fill-opacity="0.85" stroke="hsl(217, 91%, 60%)" stroke-width="8" vector-effect="non-scaling-stroke"/>
+    </svg>
   </div>
 
-  <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center">
+  <div class="relative z-10 max-w-3xl mx-auto px-6 lg:px-8 text-center">
     <div class="space-y-8">
       <h2 class="text-4xl lg:text-5xl font-bold font-mono text-light leading-tight">
-        Ready to <span class="text-yellow-400">outrun</span> your competitors?
+        Ready to <span class="text-yellow-400">automate</span>?
       </h2>
-      <p class="text-xl text-light leading-relaxed max-w-2xl mx-auto">
-        Stop struggling with data silos and integration headaches. Get your systems working together seamlessly.
+      <p class="text-lg text-grey-500 leading-relaxed max-w-2xl mx-auto">
+        Stop juggling tools manually. Build your first workflow in minutes. Your data is already connected.
       </p>
 
-      <!-- CTA Buttons -->
-      <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+      <div class="flex flex-col sm:flex-row gap-6 justify-center items-center pt-4">
         <div class="group h-14 relative w-72">
           <a href="https://app.getoutrun.com">
             <button class="flex items-center w-full h-14 absolute bg-yellow-400 hover:bg-yellow-300 transition-colors">
@@ -251,112 +358,19 @@ layout: layouts/default.liquid
                 <p class="text-center w-full pt-1 group-hover:pt-0">Get Started</p>
               </div>
             </button>
-            <div class="flex w-full h-14 top-1 left-1 group-hover:top-0 group-hover:left-0 absolute border-solid border-2 border-light">
+            <div class="flex w-full h-14 top-1 left-1 group-hover:top-0 group-hover:left-0 absolute border-solid border-2 border-light transition-all">
             </div>
           </a>
         </div>
 
-        <a href="/contact" class="text-yellow-400 hover:text-yellow-300 font-mono text-xl">Contact for Quote →</a>
+        <a href="/contact" class="text-light hover:text-yellow-400 font-mono text-lg transition-colors">Contact for Quote &rarr;</a>
       </div>
 
-      <div class="text-center pt-2">
-        <p class="text-sm font-mono text-light">
-          ✓ No credit card required  ✓ Free tier  ✓ Cancel anytime
-        </p>
-      </div>
+      <p class="text-xs font-mono text-grey-500 pt-2">
+        Free tier &nbsp;&middot;&nbsp; Cancel anytime
+      </p>
     </div>
   </div>
 </section>
 
-<script>
-// Simple interactivity for the hero section and parallax
-document.addEventListener('DOMContentLoaded', function() {
-  // Add any JavaScript for animations or interactions
-  const heroTitle = document.querySelector('.hero-title');
-  if (heroTitle) {
-    heroTitle.style.opacity = '0';
-    heroTitle.style.transform = 'translateY(20px)';
-
-    setTimeout(() => {
-      heroTitle.style.transition = 'opacity 1s ease, transform 1s ease';
-      heroTitle.style.opacity = '1';
-      heroTitle.style.transform = 'translateY(0)';
-    }, 300);
-  }
-
-  // Rotating text animation
-  const rotatingItems = document.querySelectorAll('.rotating-text-item');
-  if (rotatingItems.length > 0) {
-    let currentIndex = 0;
-
-    function rotateText() {
-      // Add exit class to current item
-      rotatingItems[currentIndex].classList.add('exit');
-      rotatingItems[currentIndex].classList.remove('active');
-
-      // Move to next item
-      currentIndex = (currentIndex + 1) % rotatingItems.length;
-
-      // After a short delay, activate the next item
-      setTimeout(() => {
-        // Remove exit class from all items
-        rotatingItems.forEach(item => item.classList.remove('exit'));
-
-        // Activate the next item
-        rotatingItems[currentIndex].classList.add('active');
-      }, 400);
-    }
-
-    // Start rotation after initial delay (slower timing)
-    setInterval(rotateText, 4500);
-  }
-
-  // Parallax effect for outrun hero
-  const outrunHero = document.getElementById('outrun-hero');
-  if (outrunHero) {
-    let ticking = false;
-    let isMobile = window.innerWidth <= 768;
-
-    function updateParallax() {
-      if (isMobile) return; // Skip parallax on mobile
-
-      const scrolled = window.pageYOffset;
-      const heroRect = outrunHero.getBoundingClientRect();
-      const heroTop = heroRect.top + scrolled;
-      const heroHeight = heroRect.height;
-
-      // Only apply parallax when hero is in viewport
-      if (scrolled + window.innerHeight > heroTop && scrolled < heroTop + heroHeight) {
-        const parallaxOffset = (scrolled - heroTop) * 0.3; // Adjust multiplier for effect intensity
-        outrunHero.style.setProperty('--scroll-offset', `${parallaxOffset}px`);
-        outrunHero.classList.add('parallax-active');
-      } else {
-        outrunHero.classList.remove('parallax-active');
-      }
-
-      ticking = false;
-    }
-
-    function requestTick() {
-      if (!ticking) {
-        requestAnimationFrame(updateParallax);
-        ticking = true;
-      }
-    }
-
-    // Handle scroll events
-    window.addEventListener('scroll', requestTick, { passive: true });
-
-    // Handle resize events
-    window.addEventListener('resize', function() {
-      isMobile = window.innerWidth <= 768;
-      if (isMobile) {
-        outrunHero.classList.remove('parallax-active');
-      }
-    }, { passive: true });
-
-    // Initial call
-    updateParallax();
-  }
-});
-</script>
+<script defer src="/assets/js/homepage.js"></script>

@@ -1,7 +1,7 @@
 const subscribeBannerButton = document.getElementById('subscribebanner_subscribeButton');
 const subscribeBanneremailInput = document.getElementById('subscribebanner_emailInput');
 
-subscribeBannerButton.addEventListener('click', () => {
+if (subscribeBannerButton) subscribeBannerButton.addEventListener('click', () => {
   const email = subscribeBanneremailInput.value;
   console.log("Email:", email); // Log the email value
 

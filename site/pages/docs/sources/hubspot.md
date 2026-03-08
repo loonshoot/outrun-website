@@ -114,9 +114,9 @@ HubSpot has specific rate limits that Outrun respects:
 - **Backfill Period**: 30 days by default
 - **Polling Interval**: 60 minutes
 - **Data Processing**: 
-  1. Raw data → `_stream` collection
-  2. Merged data → `_consolidate` collection  
-  3. Standardized objects → People, Organizations, Relationships
+  1. Raw data → `stream_data` table
+  2. Merged data → `consolidated_data` table
+  3. Standardized objects → `people`, `organizations`, `relationships` tables
 
 ### Continuous Sync
 - **Change Detection**: Polling-based monitoring

@@ -3,62 +3,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>{{ metaTitle }}</title>
+    <title>{{ metaTitle | default: title }} - Outrun Learn</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
     <meta name="description" content="{{ metaDescription }}">
     {% if metaAuthor %} <meta name="author" content="{{ metaAuthor }}"> {% endif %}
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% if env.ELEVENTY_ENV == "production" %}
         <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' *.getoutrun.com; style-src 'self' *.getoutrun.com https://fonts.googleapis.com; img-src 'self' *.getoutrun.com; font-src 'self' *.getoutrun.com https://fonts.gstatic.com; connect-src 'self' *.getoutrun.com; frame-src 'self' *.getoutrun.com; media-src 'self' *.getoutrun.com;">
     {% endif %}
     {% if env.ELEVENTY_ENV == "development" %}
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' *.localhost *.getoutrun.com; style-src 'self' *.localhost *.getoutrun.com https://fonts.googleapis.com; img-src 'self' *.localhost *.getoutrun.com; font-src 'self' *.localhost *.getoutrun.com https://fonts.gstatic.com; connect-src 'self' *.localhost *.getoutrun.com; frame-src 'self' *.localhost *.getoutrun.com; media-src 'self' *.localhost *.getoutrun.com;">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' *.localhost *.getoutrun.com; style-src 'self' *.localhost *.getoutrun.com https://fonts.googleapis.com; img-src 'self' *.localhost *.getoutrun.com data:; font-src 'self' *.localhost *.getoutrun.com https://fonts.gstatic.com; connect-src 'self' *.localhost *.getoutrun.com; frame-src 'self' *.localhost *.getoutrun.com; media-src 'self' *.localhost *.getoutrun.com;">
     {% endif %}
-    {% comment %}
-        # The `bookshop-sass` command in package.json compiles all bookshop styles
-        # to this location before the Eleventy build.
-        # This includes running any postcss configuration in your working directory.
-    {% endcomment %}
     <link rel="stylesheet" href="/assets/tailwind.css">
     <link rel="stylesheet" href="/assets/bookshop.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" type="image/x-icon" href="https://cdn.getoutrun.com/website/brand/favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600&family=Paytone+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/outrun-base.css">
+    <link rel="stylesheet" href="/assets/css/learn-article.css">
     <script defer src="https://cdn.getoutrun.com/sdk/outrun.min.js"></script>
 </head>
 <body class="bg-dark min-h-screen">
     {% bookshop "block/menu" bind: menu %}
-    {% bookshop "block/hero" 
-    bind: hero
-    background: "Yellow" %}
-    <main class="">
-        {% bookshop_include "page" content_blocks: content_blocks %}
 
-        {% comment %}
-            # The `page` include loops through all content_blocks and renders them.
-            # Using a bookshop tag here means that live previewing will catch new components.
-        {% endcomment %}
+    {% assign current_track = track | default: "business-leaders" %}
+    {% assign track_data = learnNav.tracks[current_track] %}
 
-        {% comment %}
-            # Render any additional page content below the page content blocks.
-        {% endcomment %}
-        <div class="markdown container mx-auto py-5 justify-between text-light text-xl font-mono font-normal text-wrap leading-tight">
-            {% if date %} <p>Last updated: {{ date | date: "%d %b %Y"}}</p> {% endif %}
-            {{ content }}
-            {% if author %} <p>Author: {{ author }}</p> {% endif %}
-        </div>
-        {% bookshop "block/subscribebanner" 
-        bind: subscribebanner 
-        title: "Join the waitlist. Stay up to date."
-        subtitle: "Subscribe to be the first to experience outrun."
-        background: "Yellow"
-        textColor: dark %}
-    </main>
-    {% bookshop "block/footer" bind: footer %}
-    <script  defer src="/assets/bundle.js"></script>
+    <div class="learn-layout">
+        <!-- Sidebar Navigation -->
+        <nav class="learn-sidebar" id="learn-sidebar">
+            <div class="learn-sidebar-header">
+                <div class="learn-track-switcher">
+                    {% assign biz_first = learnNav.tracks["business-leaders"].sections[0] %}
+                    {% assign tech_first = learnNav.tracks["process-builders"].sections[0] %}
+                    <a href="/learn/{{ biz_first.slug }}/{{ biz_first.items[0].slug }}/" class="learn-track-tab{% if current_track == 'business-leaders' %} learn-track-tab--active learn-track-tab--yellow{% endif %}" data-track="business-leaders">Business</a>
+                    <a href="/learn/{{ tech_first.slug }}/{{ tech_first.items[0].slug }}/" class="learn-track-tab{% if current_track == 'process-builders' %} learn-track-tab--active learn-track-tab--cyan{% endif %}" data-track="process-builders">Technical</a>
+                </div>
+            </div>
+
+            <div class="learn-sidebar-nav">
+                <a href="/learn/" class="learn-nav-link learn-nav-link--overview{% if isOverview %} active{% endif %}">Overview</a>
+
+                {% for section in track_data.sections %}
+                <div class="learn-nav-group learn-section" data-section="{{ section.slug }}">
+                    <button class="learn-section-toggle" aria-expanded="false">
+                        <span>{{ section.title }}</span>
+                        <svg class="learn-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                    <div class="learn-subsection">
+                        {% for item in section.items %}
+                        {% assign item_url = "/learn/" | append: section.slug | append: "/" | append: item.slug | append: "/" %}
+                        <a href="{{ item_url }}" class="learn-nav-link{% if page.url == item_url %} active{% endif %}">{{ item.title }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </nav>
+
+        <div class="learn-overlay" id="learn-overlay"></div>
+
+        <main class="learn-main">
+            <div class="learn-content-wrapper{% if isOverview %} learn-content-wrapper--wide{% endif %}">
+                <button class="learn-mobile-toggle" id="learn-mobile-toggle" aria-label="Toggle navigation">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                    <span class="font-mono text-sm">Navigation</span>
+                </button>
+
+                {% if isOverview %}
+                <div class="learn-overview">
+                    {{ content }}
+                </div>
+                {% else %}
+                <div class="learn-article-header">
+                    {% if tier or track %}
+                    <div class="flex items-center gap-2 mb-4">
+                        {% if tier == "understand" %}
+                            <span class="learn-badge learn-badge--yellow">Understand</span>
+                        {% elsif tier == "apply" %}
+                            <span class="learn-badge learn-badge--pink">Apply</span>
+                        {% elsif tier == "build" %}
+                            <span class="learn-badge learn-badge--cyan">Build</span>
+                        {% endif %}
+                        {% if track == "business-leaders" %}
+                            <span class="learn-badge learn-badge--yellow">Business Leaders</span>
+                        {% elsif track == "process-builders" %}
+                            <span class="learn-badge learn-badge--cyan">Process Builders</span>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                    <h1 class="text-3xl lg:text-4xl font-bold text-light mb-4">{{ title }}</h1>
+                    <div class="section-divider mb-4"></div>
+                    <div class="learn-hero-meta font-mono">
+                        {% if readTime %}<span>{{ readTime }}</span>{% endif %}
+                        {% if author %}<span>{{ author }}</span>{% endif %}
+                        {% if date %}<span>{{ date | date: "%d %b %Y" }}</span>{% endif %}
+                    </div>
+                </div>
+
+                {% if learnings.size > 0 %}
+                <div class="learn-guide-info">
+                    <div class="learn-guide-info-header">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                        In this guide
+                    </div>
+                    <ul class="learn-guide-learnings">
+                        {% for learning in learnings %}
+                        <li>
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            {{ learning }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    <div class="learn-guide-meta">
+                        {% if readTime %}
+                        <span class="learn-guide-meta-item">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            {{ readTime }}
+                        </span>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endif %}
+
+                <div class="learn-article">
+                    {{ content }}
+                </div>
+
+                {% if crossTrackUrl %}
+                <a href="{{ crossTrackUrl }}" class="learn-cross-track">
+                    <div class="learn-cross-track-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                    </div>
+                    <div>
+                        <div class="learn-cross-track-label">{{ crossTrackLabel | default: "See the other perspective" }}</div>
+                        <div class="learn-cross-track-title">{{ crossTrackTitle }}</div>
+                    </div>
+                    <div class="learn-cross-track-arrow">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </div>
+                </a>
+                {% endif %}
+
+                {% if prevArticle or nextArticle %}
+                <nav class="learn-page-nav">
+                    {% if prevArticle %}
+                    <a href="{{ prevArticle.url }}" class="learn-page-nav-link learn-page-nav-link--prev">
+                        <span class="learn-page-nav-label">Previous</span>
+                        <span class="learn-page-nav-title">{{ prevArticle.title }}</span>
+                    </a>
+                    {% else %}
+                    <div></div>
+                    {% endif %}
+                    {% if nextArticle %}
+                    <a href="{{ nextArticle.url }}" class="learn-page-nav-link learn-page-nav-link--next">
+                        <span class="learn-page-nav-label">Next</span>
+                        <span class="learn-page-nav-title">{{ nextArticle.title }}</span>
+                    </a>
+                    {% endif %}
+                </nav>
+                {% endif %}
+                {% endif %}
+            </div>
+
+            <div class="learn-footer">
+                {% bookshop "block/footer" bind: footer %}
+            </div>
+        </main>
+    </div>
+
+    <script defer src="/assets/bundle.js?v={{ bundleHash }}"></script>
+    <script src="/assets/js/learn-nav.js"></script>
 </body>
 </html>
