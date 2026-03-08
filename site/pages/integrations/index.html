@@ -8,9 +8,10 @@ social_meta:
 ---
 
 <link rel="stylesheet" href="/assets/css/features.css">
+<link rel="stylesheet" href="/assets/css/integrations.css">
 
 <!-- Hero -->
-<section style="padding-top: 10rem; padding-bottom: 4rem; background: linear-gradient(180deg, #1B1237 0%, #151030 40%, #120E2A 100%);">
+<section class="integrations-hero-bg">
   <div class="max-w-6xl mx-auto px-6 lg:px-8 text-center">
     <p class="font-mono text-sm text-pink-600 tracking-widest uppercase mb-4">Integrations</p>
     <h1 class="text-4xl lg:text-5xl font-bold font-mono text-light mb-6">
@@ -23,7 +24,7 @@ social_meta:
 </section>
 
 <!-- Connector Browser -->
-<section class="relative" style="padding-top: 2rem; padding-bottom: 6rem; background: linear-gradient(180deg, #120E2A 0%, #0F0B24 40%, #0D0920 100%);">
+<section class="integrations-browser-bg relative">
   <div class="section-grid-bg"></div>
   <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
 
@@ -31,7 +32,7 @@ social_meta:
     <div class="mb-8">
       <!-- Search -->
       <div class="relative mb-6">
-        <svg class="pointer-events-none" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); width: 1.25rem; height: 1.25rem; color: rgba(255,255,255,0.25);" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <svg class="integration-search-icon pointer-events-none" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
         <input
           type="text"
           id="integration-search"
@@ -51,7 +52,7 @@ social_meta:
     </div>
 
     <!-- Results count -->
-    <p class="font-mono text-xs mb-6" style="color: rgba(255,255,255,0.35);" id="results-count"></p>
+    <p class="font-mono text-xs mb-6 integration-results-count" id="results-count"></p>
 
     <!-- Integration Grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="integration-grid">
@@ -59,7 +60,7 @@ social_meta:
 
     <!-- No results -->
     <div class="hidden text-center py-16" id="no-results">
-      <svg class="w-12 h-12 mx-auto mb-4" style="color: rgba(255,255,255,0.25);" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <svg class="w-12 h-12 mx-auto mb-4 integration-no-results-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
       <p class="text-light font-mono text-lg mb-2">No integrations found</p>
       <p class="text-grey-500 text-sm">Try a different search or <a href="/contact" class="text-pink-600 hover:text-light transition-colors">request an integration</a>.</p>
     </div>
@@ -76,9 +77,9 @@ social_meta:
 </section>
 
 <!-- CTA -->
-<section class="final-cta-section relative overflow-hidden" style="padding-top: 6rem; padding-bottom: 6rem; background: linear-gradient(180deg, #0D0920 0%, #200E30 40%, #2A1040 100%);">
+<section class="integrations-cta-bg final-cta-section relative overflow-hidden">
   <div class="cta-bg-gradient"></div>
-  <div class="section-grid-bg" style="opacity: 0.03;"></div>
+  <div class="section-grid-bg section-grid-bg-faint"></div>
   <div class="relative z-10 max-w-3xl mx-auto px-6 lg:px-8 text-center">
     <div class="space-y-8">
       <h2 class="text-4xl lg:text-5xl font-bold font-mono text-light leading-tight">
@@ -107,187 +108,6 @@ social_meta:
   </div>
 </section>
 
-<style>
-  /* Search input */
-  .integration-search-input {
-    width: 100%;
-    padding: 1rem 1rem 1rem 3.5rem;
-    height: 3.25rem;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: #F4F4F4;
-    font-family: monospace;
-    font-size: 0.875rem;
-    outline: none;
-    transition: border-color 0.2s ease;
-  }
-  .integration-search-input::placeholder {
-    color: rgba(255, 255, 255, 0.3);
-  }
-  .integration-search-input:focus {
-    border-color: #FE0170;
-  }
-
-  /* Filter pills */
-  .integration-filter-btn {
-    padding: 0.375rem 1rem;
-    font-family: monospace;
-    font-size: 0.8125rem;
-    border: 1px solid rgba(255, 255, 255, 0.10);
-    background: transparent;
-    color: rgba(255, 255, 255, 0.4);
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-  .integration-filter-btn:hover {
-    border-color: rgba(254, 1, 112, 0.4);
-    color: rgba(255, 255, 255, 0.7);
-  }
-  .integration-filter-btn--active {
-    border-color: #FE0170;
-    background: rgba(254, 1, 112, 0.12);
-    color: #FE0170;
-  }
-
-  /* Cards */
-  .integration-card {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1.25rem 1.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    background: rgba(255, 255, 255, 0.02);
-    transition: all 0.2s ease;
-    text-decoration: none;
-  }
-  .integration-card:hover {
-    border-color: rgba(254, 1, 112, 0.3);
-    background: rgba(255, 255, 255, 0.04);
-    transform: translateY(-1px);
-  }
-  .integration-card-logo {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-    flex-shrink: 0;
-  }
-  .integration-card-fallback {
-    width: 40px;
-    height: 40px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .integration-card-name {
-    color: #F4F4F4;
-    font-family: monospace;
-    font-size: 0.9375rem;
-    font-weight: 600;
-  }
-  .integration-card-desc {
-    color: rgba(255, 255, 255, 0.4);
-    font-size: 0.8125rem;
-    line-height: 1.4;
-    margin-top: 0.125rem;
-  }
-  .integration-card-badge {
-    font-family: monospace;
-    font-size: 0.625rem;
-    padding: 0.125rem 0.5rem;
-    display: inline-block;
-    margin-top: 0.25rem;
-  }
-  .badge-source-dest {
-    background: rgba(34, 211, 238, 0.12);
-    color: #22d3ee;
-  }
-  .badge-source {
-    background: rgba(34, 197, 94, 0.12);
-    color: #22c55e;
-  }
-  .badge-migration {
-    background: rgba(254, 1, 112, 0.12);
-    color: #FE0170;
-  }
-</style>
-
-<script>
-(function() {
-  var allIntegrations = {{ integrations | json }};
-  var integrations = allIntegrations.filter(function(app) { return app.published; });
-
-  var grid = document.getElementById("integration-grid");
-  var searchInput = document.getElementById("integration-search");
-  var filtersContainer = document.getElementById("category-filters");
-  var resultsCount = document.getElementById("results-count");
-  var noResults = document.getElementById("no-results");
-  var requestCta = document.getElementById("request-cta");
-
-  var activeCategory = "all";
-
-  function renderCards(filtered) {
-    grid.innerHTML = "";
-    filtered.forEach(function(app) {
-      var tag = app.link ? "a" : "div";
-      var card = document.createElement(tag);
-      card.className = "integration-card";
-      if (app.link) {
-        card.href = app.link;
-      }
-
-      var iconHtml;
-      if (app.icon) {
-        iconHtml = '<img src="' + app.icon + '" alt="' + app.name + '" class="integration-card-logo">';
-      } else {
-        iconHtml = '<div class="integration-card-fallback"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></div>';
-      }
-
-      card.innerHTML =
-        iconHtml +
-        '<div>' +
-          '<div class="integration-card-name">' + app.name + '</div>' +
-          '<div class="integration-card-desc">' + app.description + '</div>' +
-          '<span class="integration-card-badge badge-' + app.type + '">' + app.typeLabel + '</span>' +
-        '</div>';
-      grid.appendChild(card);
-    });
-
-    var count = filtered.length;
-    resultsCount.textContent = count + " integration" + (count !== 1 ? "s" : "");
-
-    if (count === 0) {
-      noResults.classList.remove("hidden");
-      requestCta.classList.add("hidden");
-    } else {
-      noResults.classList.add("hidden");
-      requestCta.classList.remove("hidden");
-    }
-  }
-
-  function filterIntegrations() {
-    var query = searchInput.value.toLowerCase().trim();
-    var filtered = integrations.filter(function(app) {
-      var matchesCategory = activeCategory === "all" || app.categories.indexOf(activeCategory) !== -1;
-      var matchesSearch = !query || app.name.toLowerCase().indexOf(query) !== -1 || app.description.toLowerCase().indexOf(query) !== -1;
-      return matchesCategory && matchesSearch;
-    });
-    renderCards(filtered);
-  }
-
-  searchInput.addEventListener("input", filterIntegrations);
-
-  filtersContainer.addEventListener("click", function(e) {
-    var btn = e.target.closest(".integration-filter-btn");
-    if (!btn) return;
-    activeCategory = btn.dataset.category;
-    filtersContainer.querySelectorAll(".integration-filter-btn").forEach(function(b) {
-      b.classList.remove("integration-filter-btn--active");
-    });
-    btn.classList.add("integration-filter-btn--active");
-    filterIntegrations();
-  });
-
-  renderCards(integrations);
-})();
-</script>
+<!-- Integration data (non-executable, read by integrations.js) -->
+<script type="application/json" id="integrations-data">{{ integrations | json }}</script>
+<script src="/assets/js/integrations.js"></script>

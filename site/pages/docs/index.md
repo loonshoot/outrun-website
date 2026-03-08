@@ -73,22 +73,22 @@ Connect your most-used tools and services:
 
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 my-8">
   <a href="/docs/sources/hubspot/" class="docs-card flex items-center space-x-3 p-4">
-    <div class="w-8 h-8 flex items-center justify-center font-bold text-sm" style="background: rgba(255, 196, 3, 0.15); color: #FFC403; border: 1px solid rgba(255, 196, 3, 0.3);">HS</div>
+    <div class="w-8 h-8 flex items-center justify-center font-bold text-sm docs-avatar-yellow">HS</div>
     <span>HubSpot</span>
   </a>
 
   <a href="/docs/sources/zoho-crm/" class="docs-card flex items-center space-x-3 p-4">
-    <div class="w-8 h-8 flex items-center justify-center font-bold text-sm" style="background: rgba(254, 1, 112, 0.15); color: #FE0170; border: 1px solid rgba(254, 1, 112, 0.3);">Z</div>
+    <div class="w-8 h-8 flex items-center justify-center font-bold text-sm docs-avatar-pink">Z</div>
     <span>Zoho CRM</span>
   </a>
 
   <a href="/docs/sources/google-search-console/" class="docs-card flex items-center space-x-3 p-4">
-    <div class="w-8 h-8 flex items-center justify-center font-bold text-sm" style="background: rgba(34, 211, 238, 0.15); color: #22d3ee; border: 1px solid rgba(34, 211, 238, 0.3);">G</div>
+    <div class="w-8 h-8 flex items-center justify-center font-bold text-sm docs-avatar-cyan">G</div>
     <span>Google SC</span>
   </a>
 
   <a href="/docs/sources/confluence/" class="docs-card flex items-center space-x-3 p-4">
-    <div class="w-8 h-8 flex items-center justify-center font-bold text-sm" style="background: rgba(71, 22, 149, 0.25); color: #a78bfa; border: 1px solid rgba(71, 22, 149, 0.4);">C</div>
+    <div class="w-8 h-8 flex items-center justify-center font-bold text-sm docs-avatar-purple">C</div>
     <span>Confluence</span>
   </a>
 </div>
@@ -107,7 +107,7 @@ Build custom integrations with our comprehensive API:
 
 We're here to support you every step of the way:
 
-<div class="docs-card p-6 my-8" style="border-color: rgba(255, 196, 3, 0.2);">
+<div class="docs-card p-6 my-8 border-accent-yellow-subtle">
   <h3 class="text-lg font-semibold mb-3">💬 Get Support</h3>
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
     <div>

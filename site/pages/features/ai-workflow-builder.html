@@ -10,7 +10,7 @@ social_meta:
 <link rel="stylesheet" href="/assets/css/features.css">
 
 <!-- Hero -->
-<section style="padding-top: 10rem; padding-bottom: 6rem; background: linear-gradient(180deg, #1B1237 0%, #151030 40%, #120E2A 100%);">
+<section class="section-bg-hero section-pad-hero">
   <div class="max-w-6xl mx-auto px-6 lg:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div>
@@ -38,15 +38,15 @@ social_meta:
           </a>
         </div>
       </div>
-      <div class="hero-icon-box mx-auto lg:mx-0 lg:ml-auto" style="background: linear-gradient(135deg, rgba(254,1,112,0.15), rgba(71,22,149,0.15));">
-        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: #FE0170"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+      <div class="hero-icon-box mx-auto lg:mx-0 lg:ml-auto icon-box-pink-purple">
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-color-pink"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Key Features -->
-<section class="relative" style="padding-top: 10rem; padding-bottom: 6rem; background: linear-gradient(180deg, #120E2A 0%, #0F0B24 40%, #0D0920 100%);">
+<section class="relative section-bg-content section-pad-content">
   <div class="section-grid-bg"></div>
   <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
     <p class="font-mono text-sm text-yellow-400 tracking-widest uppercase mb-4">Capabilities</p>
@@ -115,7 +115,7 @@ social_meta:
 </section>
 
 <!-- Value Proposition -->
-<section class="relative" style="padding-top: 10rem; padding-bottom: 6rem; background: linear-gradient(180deg, #0D0920 0%, #14102E 40%, #1A1538 100%);">
+<section class="relative section-bg-tertiary section-pad-content">
   <div class="section-grid-bg"></div>
   <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -148,19 +148,19 @@ social_meta:
       <div class="help-card">
         <h3 class="text-xl font-bold font-mono text-light mb-4">How data flows between steps</h3>
         <div class="space-y-4">
-          <div class="pl-4" style="border-left: 4px solid #FFC403;">
+          <div class="pl-4 border-accent-yellow">
             <h4 class="font-bold font-mono text-light">Trigger Data</h4>
             <p class="text-sm text-grey-500">Access the event that started your workflow - the webhook payload, email content, or schedule metadata</p>
           </div>
-          <div class="pl-4" style="border-left: 4px solid #FFC403;">
+          <div class="pl-4 border-accent-yellow">
             <h4 class="font-bold font-mono text-light">AI Output</h4>
             <p class="text-sm text-grey-500">Reference AI responses in later steps using template variables like {{ai.text}} or by node name</p>
           </div>
-          <div class="pl-4" style="border-left: 4px solid #FFC403;">
+          <div class="pl-4 border-accent-yellow">
             <h4 class="font-bold font-mono text-light">Code Results</h4>
             <p class="text-sm text-grey-500">Code nodes return structured results that downstream steps can use for decisions or actions</p>
           </div>
-          <div class="pl-4" style="border-left: 4px solid #FFC403;">
+          <div class="pl-4 border-accent-yellow">
             <h4 class="font-bold font-mono text-light">Conditional Routing</h4>
             <p class="text-sm text-grey-500">When a condition is not met, that entire branch is skipped - and the skip carries through to any steps that only depend on it</p>
           </div>
@@ -171,9 +171,9 @@ social_meta:
 </section>
 
 <!-- CTA -->
-<section class="final-cta-section relative overflow-hidden" style="padding-top: 10rem; padding-bottom: 6rem; background: linear-gradient(180deg, #1B1237 0%, #200E30 40%, #2A1040 100%);">
+<section class="final-cta-section relative overflow-hidden section-bg-cta section-pad-cta">
   <div class="cta-bg-gradient"></div>
-  <div class="section-grid-bg" style="opacity: 0.03;"></div>
+  <div class="section-grid-bg opacity-3"></div>
   <div class="relative z-10 max-w-3xl mx-auto px-6 lg:px-8 text-center">
     <div class="space-y-8">
       <h2 class="text-4xl lg:text-5xl font-bold font-mono text-light leading-tight">

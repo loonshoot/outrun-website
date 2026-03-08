@@ -1,0 +1,148 @@
+/* Integrations page styles */
+
+/* Section backgrounds */
+.integrations-hero-bg {
+  padding-top: 10rem;
+  padding-bottom: 4rem;
+  background: linear-gradient(180deg, #1B1237 0%, #151030 40%, #120E2A 100%);
+}
+
+.integrations-browser-bg {
+  padding-top: 2rem;
+  padding-bottom: 6rem;
+  background: linear-gradient(180deg, #120E2A 0%, #0F0B24 40%, #0D0920 100%);
+}
+
+.integrations-cta-bg {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background: linear-gradient(180deg, #0D0920 0%, #200E30 40%, #2A1040 100%);
+}
+
+/* Search input */
+.integration-search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.25rem;
+  height: 1.25rem;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.integration-search-input {
+  width: 100%;
+  padding: 1rem 1rem 1rem 3.5rem;
+  height: 3.25rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #F4F4F4;
+  font-family: monospace;
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+.integration-search-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+.integration-search-input:focus {
+  border-color: #FE0170;
+}
+
+/* Filter pills */
+.integration-filter-btn {
+  padding: 0.375rem 1rem;
+  font-family: monospace;
+  font-size: 0.8125rem;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.integration-filter-btn:hover {
+  border-color: rgba(254, 1, 112, 0.4);
+  color: rgba(255, 255, 255, 0.7);
+}
+.integration-filter-btn--active {
+  border-color: #FE0170;
+  background: rgba(254, 1, 112, 0.12);
+  color: #FE0170;
+}
+
+/* Results count */
+.integration-results-count {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* No results icon */
+.integration-no-results-icon {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+/* Cards */
+.integration-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+.integration-card:hover {
+  border-color: rgba(254, 1, 112, 0.3);
+  background: rgba(255, 255, 255, 0.04);
+  transform: translateY(-1px);
+}
+.integration-card-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.integration-card-fallback {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.integration-card-name {
+  color: #F4F4F4;
+  font-family: monospace;
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+.integration-card-desc {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  margin-top: 0.125rem;
+}
+.integration-card-badge {
+  font-family: monospace;
+  font-size: 0.625rem;
+  padding: 0.125rem 0.5rem;
+  display: inline-block;
+  margin-top: 0.25rem;
+}
+.badge-source-dest {
+  background: rgba(34, 211, 238, 0.12);
+  color: #22d3ee;
+}
+.badge-source {
+  background: rgba(34, 197, 94, 0.12);
+  color: #22c55e;
+}
+.badge-migration {
+  background: rgba(254, 1, 112, 0.12);
+  color: #FE0170;
+}
+
+/* Grid overlay low opacity */
+.section-grid-bg-faint {
+  opacity: 0.03;
+}

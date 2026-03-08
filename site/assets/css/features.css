@@ -42,3 +42,6 @@ main > div:first-child {
   height: 64px;
   flex-shrink: 0;
 }
+
+/* Section backgrounds, padding, accent borders, icon colors, and icon boxes
+   are defined in outrun-sections.css (loaded via default.liquid layout) */

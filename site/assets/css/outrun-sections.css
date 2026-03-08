@@ -1,0 +1,343 @@
+/* Shared section styles — replaces inline style= attributes blocked by CSP */
+
+/* === Section Background Gradients === */
+
+/* Hero: deep purple-navy gradient */
+.section-bg-hero {
+  background: linear-gradient(180deg, #1B1237 0%, #151030 40%, #120E2A 100%);
+}
+
+/* Content: darker navy gradient */
+.section-bg-content {
+  background: linear-gradient(180deg, #120E2A 0%, #0F0B24 40%, #0D0920 100%);
+}
+
+/* Tertiary: charcoal to deep indigo */
+.section-bg-tertiary {
+  background: linear-gradient(180deg, #0D0920 0%, #14102E 40%, #1A1538 100%);
+}
+
+/* CTA: purple-magenta gradient */
+.section-bg-cta {
+  background: linear-gradient(180deg, #1B1237 0%, #200E30 40%, #2A1040 100%);
+}
+
+/* CTA alt: indigo-magenta variant */
+.section-bg-cta-alt {
+  background: linear-gradient(180deg, #1A1538 0%, #200E30 40%, #2A1040 100%);
+}
+
+/* Integrations: indigo-purple gradient */
+.section-bg-integrations {
+  background: linear-gradient(180deg, #1A1538 0%, #1E1740 40%, #1B1237 100%);
+}
+
+/* Changelog: two-stop navy */
+.section-bg-changelog-mid {
+  background: linear-gradient(180deg, #120E2A 0%, #0F0B24 100%);
+}
+
+.section-bg-changelog-dark {
+  background: linear-gradient(180deg, #0F0B24 0%, #0D0920 100%);
+}
+
+.section-bg-changelog-spread {
+  background: linear-gradient(180deg, #0F0B24 0%, #0D0920 20%, #14102E 60%, #1A1538 100%);
+}
+
+
+/* === Section Padding === */
+
+.section-pad-hero {
+  padding-top: 10rem;
+  padding-bottom: 6rem;
+}
+
+.section-pad-hero-short {
+  padding-top: 10rem;
+  padding-bottom: 4rem;
+}
+
+.section-pad-hero-tall {
+  padding-top: 12rem;
+  padding-bottom: 6rem;
+}
+
+.section-pad-content {
+  padding-top: 10rem;
+  padding-bottom: 6rem;
+}
+
+.section-pad-cta {
+  padding-top: 10rem;
+  padding-bottom: 6rem;
+}
+
+.section-pad-cta-short {
+  padding-top: 8rem;
+  padding-bottom: 6rem;
+}
+
+.section-pad-medium {
+  padding-top: 6rem;
+  padding-bottom: 4rem;
+}
+
+.section-pad-small {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.section-pad-minimal {
+  padding: 1rem 0;
+}
+
+.section-pad-content-short {
+  padding-top: 2rem;
+  padding-bottom: 6rem;
+}
+
+.section-pad-small-tall {
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+}
+
+/* Flat solid backgrounds */
+.section-bg-flat-navy {
+  background: #0F0B24;
+}
+
+
+/* === Accent Border Left === */
+
+.border-accent-yellow {
+  border-left: 4px solid #FFC403;
+  padding-left: 1rem;
+}
+
+.border-accent-pink {
+  border-left: 4px solid #FE0170;
+  padding-left: 1rem;
+}
+
+.border-accent-blue {
+  border-left: 4px solid #3b82f6;
+  padding-left: 1rem;
+}
+
+.border-accent-cyan {
+  border-left: 4px solid #22d3ee;
+  padding-left: 1rem;
+}
+
+.border-accent-purple {
+  border-left: 4px solid #471695;
+  padding-left: 1rem;
+}
+
+
+/* === Hero Icon Box Gradients === */
+
+.icon-box-cyan-blue {
+  background: linear-gradient(135deg, rgba(34,211,238,0.15), rgba(59,130,246,0.15));
+}
+
+.icon-box-purple-blue {
+  background: linear-gradient(135deg, rgba(71,22,149,0.15), rgba(59,130,246,0.15));
+}
+
+.icon-box-pink-purple {
+  background: linear-gradient(135deg, rgba(254,1,112,0.15), rgba(71,22,149,0.15));
+}
+
+.icon-box-yellow-orange {
+  background: linear-gradient(135deg, rgba(255,196,3,0.15), rgba(249,115,22,0.15));
+}
+
+.icon-box-pink-yellow {
+  background: linear-gradient(135deg, rgba(254,1,112,0.12), rgba(255,196,3,0.08));
+}
+
+.icon-box-cyan-purple {
+  background: linear-gradient(135deg, rgba(34,211,238,0.12), rgba(71,22,149,0.15));
+}
+
+.icon-box-purple-cyan {
+  background: linear-gradient(135deg, rgba(71,22,149,0.15), rgba(34,211,238,0.15));
+}
+
+.icon-box-purple-pink {
+  background: linear-gradient(135deg, rgba(71,22,149,0.15), rgba(254,1,112,0.15));
+}
+
+
+/* === SVG Icon Colors === */
+
+.icon-color-purple {
+  color: #471695;
+}
+
+.icon-color-cyan {
+  color: #22d3ee;
+}
+
+.icon-color-yellow {
+  color: #FFC403;
+}
+
+.icon-color-pink {
+  color: #FE0170;
+}
+
+.icon-color-blue {
+  color: #3b82f6;
+}
+
+.icon-color-orange {
+  color: #f97316;
+}
+
+
+/* === Opacity === */
+
+.opacity-3 {
+  opacity: 0.03;
+}
+
+
+/* === Subtle Card === */
+
+.card-subtle {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.card-subtle:hover {
+  border-color: rgba(254, 1, 112, 0.3);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+
+/* === Docs Avatars === */
+
+.docs-avatar-yellow {
+  background: rgba(255, 196, 3, 0.15);
+  color: #FFC403;
+  border: 1px solid rgba(255, 196, 3, 0.3);
+}
+
+.docs-avatar-pink {
+  background: rgba(254, 1, 112, 0.15);
+  color: #FE0170;
+  border: 1px solid rgba(254, 1, 112, 0.3);
+}
+
+.docs-avatar-cyan {
+  background: rgba(34, 211, 238, 0.15);
+  color: #22d3ee;
+  border: 1px solid rgba(34, 211, 238, 0.3);
+}
+
+.border-accent-yellow-subtle {
+  border-color: rgba(255, 196, 3, 0.2);
+}
+
+.docs-avatar-purple {
+  background: rgba(71, 22, 149, 0.15);
+  color: #471695;
+  border: 1px solid rgba(71, 22, 149, 0.3);
+}
+
+
+/* === Changelog Version Card Art === */
+
+.changelog-art-gold-pink {
+  background: linear-gradient(135deg, rgba(255, 196, 3, 0.15), rgba(254, 1, 112, 0.10));
+}
+
+.changelog-art-cyan-gold {
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.15), rgba(255, 196, 3, 0.08));
+}
+
+.changelog-art-pink-cyan {
+  background: linear-gradient(135deg, rgba(254, 1, 112, 0.12), rgba(34, 211, 238, 0.12));
+}
+
+.changelog-art-grey-pink {
+  background: linear-gradient(135deg, rgba(217, 217, 217, 0.10), rgba(254, 1, 112, 0.10));
+}
+
+.changelog-art-cyan-purple {
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.12), rgba(71, 22, 149, 0.15));
+}
+
+.changelog-art-gold-purple {
+  background: linear-gradient(135deg, rgba(255, 196, 3, 0.12), rgba(71, 22, 149, 0.12));
+}
+
+.changelog-art-pink-blue {
+  background: linear-gradient(135deg, rgba(254, 1, 112, 0.10), rgba(59, 130, 246, 0.15));
+}
+
+.changelog-art-blue-cyan {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(34, 211, 238, 0.12));
+}
+
+.changelog-art-pink-gold {
+  background: linear-gradient(135deg, rgba(254, 1, 112, 0.15), rgba(255, 196, 3, 0.10));
+}
+
+.changelog-art-dark-pink {
+  background: linear-gradient(135deg, rgba(0, 0, 30, 0.20), rgba(254, 1, 112, 0.08));
+}
+
+.changelog-art-red-gold {
+  background: linear-gradient(135deg, rgba(255, 64, 77, 0.15), rgba(255, 196, 3, 0.10));
+}
+
+.changelog-art-gold-red {
+  background: linear-gradient(135deg, rgba(255, 196, 3, 0.12), rgba(255, 64, 77, 0.12));
+}
+
+.changelog-art-red-pink {
+  background: linear-gradient(135deg, rgba(255, 64, 77, 0.15), rgba(254, 1, 112, 0.12));
+}
+
+.changelog-art-cyan-purple-even {
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.12), rgba(71, 22, 149, 0.12));
+}
+
+.changelog-art-grey-red {
+  background: linear-gradient(135deg, rgba(217, 217, 217, 0.08), rgba(255, 64, 77, 0.10));
+}
+
+.changelog-art-cyan-blue {
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.12), rgba(59, 130, 246, 0.12));
+}
+
+.changelog-art-purple-pink {
+  background: linear-gradient(135deg, rgba(71, 22, 149, 0.15), rgba(254, 1, 112, 0.12));
+}
+
+.changelog-art-orange-red {
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.12), rgba(255, 64, 77, 0.10));
+}
+
+.changelog-art-grey-blue {
+  background: linear-gradient(135deg, rgba(217, 217, 217, 0.06), rgba(0, 128, 255, 0.10));
+}
+
+
+/* === Muted text === */
+
+.text-muted-35 {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.text-muted-25 {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.text-muted-50 {
+  color: rgba(255, 255, 255, 0.50);
+}
