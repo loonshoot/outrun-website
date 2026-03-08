@@ -21,6 +21,8 @@ prevArticle:
   title: "Multi-Tenant AI Patterns"
   url: /learn/apply/multi-tenant-ai/
 nextArticle:
+  title: "MCP for Sales Intelligence"
+  url: /learn/apply/mcp-for-sales-teams/
 ---
 
 When an AI workflow makes a decision — classifying an email, routing a lead, updating a CRM record — someone will eventually ask: "Why did it do that?" Your audit trail needs to answer that question completely, quickly, and at any scale.

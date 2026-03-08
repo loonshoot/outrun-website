@@ -23,8 +23,14 @@ Browserslist: caniuse-lite is outdated. Please run:
   Why you should do it regularly: https://github.com/browserslist/update-db#readme
 
 Rebuilding...
-[11ty] Copied 31 files / Wrote 111 files in 1.13 seconds (10.2ms each, v2.0.1)
+[11ty] Problem writing Eleventy templates: (more in DEBUG output)
+[11ty] 1. Having trouble writing to "_site/learn/build/setting-up-mcp/index.html" from "./site/pages/learn/build/setting-up-mcp.md" (via EleventyTemplateError)
+[11ty] 2. EEXIST: file already exists, mkdir '_site/learn/build/setting-up-mcp' (via Error)
+[11ty] 
+[11ty] Original error stack trace: Error: EEXIST: file already exists, mkdir '_site/learn/build/setting-up-mcp'
+[11ty] Wrote 2 files in 0.72 seconds (v2.0.1)
+error: script "eleventy:build" exited with code 1
 Compiled Bookshop Sass with 0 errors and 0 warnings.
-📚 Writing styles to bookshop.css
 
-Done in 1672ms.
+Done in 1098ms.
+📚 Writing styles to bookshop.css

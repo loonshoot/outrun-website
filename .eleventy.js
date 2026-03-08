@@ -25,38 +25,26 @@ function findJSFiles(dir) {
   return files;
 }
 
-// Function to bundle and minify JS files (async — must be awaited)
-async function bundleAndMinifyJS(files, outputFile) {
-  let bundleContent = '';
-  files.forEach(file => {
-    bundleContent += fs.readFileSync(file, 'utf-8') + '\n';
-  });
-
-  try {
-    const minified = await minify(bundleContent);
-    const finalContent = minified.code || bundleContent;
-    if (!minified.code) {
-      console.error('Terser returned empty code, writing unminified bundle');
-    }
-    // Only write if content changed to avoid triggering 11ty watch loop
-    const existing = fs.existsSync(outputFile) ? fs.readFileSync(outputFile, 'utf-8') : '';
-    if (existing !== finalContent) {
-      fs.writeFileSync(outputFile, finalContent);
-    }
-  } catch (error) {
-    console.error('Error minifying JavaScript:', error);
-    const existing = fs.existsSync(outputFile) ? fs.readFileSync(outputFile, 'utf-8') : '';
-    if (existing !== bundleContent) {
-      fs.writeFileSync(outputFile, bundleContent);
-    }
-  }
-}
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addGlobalData('env', process.env);
   eleventyConfig.addPlugin(EleventyRenderPlugin);
   eleventyConfig.htmlTemplateEngine = "liquid";
   eleventyConfig.markdownTemplateEngine = "liquid";
+
+  // Custom filter: where_exp (Jekyll-compatible) — filters array by expression
+  eleventyConfig.addFilter("where_exp", function(array, itemName, expression) {
+    if (!array) return [];
+    // Parse simple expressions like "segment != ''"
+    const match = expression.match(/^(\w+)\s*(!=|==)\s*['"](.*)['"]$/);
+    if (!match) return array;
+    const [, varName, operator, value] = match;
+    return array.filter(item => {
+      if (operator === '!=') return item !== value;
+      if (operator === '==') return item === value;
+      return true;
+    });
+  });
   
   // Add collections
   eleventyConfig.addCollection("learn", function(collectionApi) {
@@ -82,9 +70,8 @@ module.exports = function (eleventyConfig) {
       ...findJSFiles('component-library/components'),
       ...findJSFiles('component-library/shared/config')
     ];
-    await bundleAndMinifyJS(jsFiles, 'site/assets/bundle.js');
 
-    // Replace %%PLACEHOLDER%% tokens with env vars (local dev defaults for non-production)
+    // Concatenate JS files and replace %%PLACEHOLDER%% tokens BEFORE minification
     const isProd = process.env.ELEVENTY_ENV === 'production';
     const replacements = {
       '%%OUTRUN_WIDGET_API_KEY%%': process.env.OUTRUN_WIDGET_API_KEY || 'outrun-chat-widget-token-1772653365',
@@ -96,11 +83,32 @@ module.exports = function (eleventyConfig) {
       '%%OUTRUN_WIDGET_TOKEN%%': process.env.OUTRUN_WIDGET_TOKEN || 'outrun-chat-widget-token-1772653365',
     };
 
-    let bundleContent = fs.readFileSync('site/assets/bundle.js', 'utf-8');
+    let rawBundle = '';
+    jsFiles.forEach(file => {
+      rawBundle += fs.readFileSync(file, 'utf-8') + '\n';
+    });
     for (const [placeholder, value] of Object.entries(replacements)) {
-      bundleContent = bundleContent.replaceAll(placeholder, value);
+      rawBundle = rawBundle.replaceAll(placeholder, value);
     }
-    fs.writeFileSync('site/assets/bundle.js', bundleContent);
+
+    // Minify the replaced content
+    try {
+      const minified = await minify(rawBundle);
+      const finalContent = minified.code || rawBundle;
+      if (!minified.code) {
+        console.error('Terser returned empty code, writing unminified bundle');
+      }
+      const existing = fs.existsSync('site/assets/bundle.js') ? fs.readFileSync('site/assets/bundle.js', 'utf-8') : '';
+      if (existing !== finalContent) {
+        fs.writeFileSync('site/assets/bundle.js', finalContent);
+      }
+    } catch (error) {
+      console.error('Error minifying JavaScript:', error);
+      const existing = fs.existsSync('site/assets/bundle.js') ? fs.readFileSync('site/assets/bundle.js', 'utf-8') : '';
+      if (existing !== rawBundle) {
+        fs.writeFileSync('site/assets/bundle.js', rawBundle);
+      }
+    }
 
     const content = fs.readFileSync('site/assets/bundle.js', 'utf-8');
     bundleHash = crypto.createHash('md5').update(content).digest('hex').slice(0, 8);

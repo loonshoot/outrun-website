@@ -93,7 +93,8 @@
             { "title": "Building Reliable AI Pipelines", "slug": "reliable-ai-pipelines", "readTime": "11 min" },
             { "title": "Data Integration for AI", "slug": "data-integration-ai", "readTime": "8 min" },
             { "title": "Multi-Tenant AI Patterns", "slug": "multi-tenant-ai", "readTime": "9 min" },
-            { "title": "AI Audit Trails at Scale", "slug": "ai-audit-trails-scale", "readTime": "7 min" }
+            { "title": "AI Audit Trails at Scale", "slug": "ai-audit-trails-scale", "readTime": "7 min" },
+            { "title": "MCP for Sales Intelligence", "slug": "mcp-for-sales-teams", "readTime": "7 min" }
           ]
         },
         {
