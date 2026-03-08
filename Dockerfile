@@ -5,6 +5,15 @@ WORKDIR /app
 COPY package.json bun.lockb ./
 RUN bun install
 COPY . .
+
+# Widget config — injected at build time by .eleventy.js placeholder replacement
+ARG OUTRUN_WIDGET_API_KEY
+ARG OUTRUN_WIDGET_TOKEN
+ARG OUTRUN_WIDGET_STREAM_ID
+ARG OUTRUN_WIDGET_WORKSPACE_ID
+ARG OUTRUN_WIDGET_SOURCE_ID
+ARG OUTRUN_WIDGET_ENDPOINT
+
 RUN bun run build
 
 # SDK CDN upload — runs only when build args are provided (Skyforge prod builds).

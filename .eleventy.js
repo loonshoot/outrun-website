@@ -77,7 +77,7 @@ module.exports = function (eleventyConfig) {
       '%%OUTRUN_WIDGET_API_KEY%%': process.env.OUTRUN_WIDGET_API_KEY || 'outrun-chat-widget-token-1772653365',
       '%%OUTRUN_WIDGET_STREAM_ID%%': process.env.OUTRUN_WIDGET_STREAM_ID || '1b771da2-46d8-4345-8289-73c778b5781c',
       '%%OUTRUN_WIDGET_WORKSPACE_ID%%': process.env.OUTRUN_WIDGET_WORKSPACE_ID || '69be3118-75e7-43a7-944a-303df92e17ca',
-      '%%OUTRUN_WIDGET_ENDPOINT%%': process.env.OUTRUN_WIDGET_ENDPOINT || (isProd ? 'api.outrun.dev' : 'localhost:3001'),
+      '%%OUTRUN_WIDGET_ENDPOINT%%': process.env.OUTRUN_WIDGET_ENDPOINT || (isProd ? 'api.getoutrun.com' : 'localhost:3001'),
       '%%OUTRUN_WIDGET_DEBUG%%': isProd ? 'false' : 'true',
       '%%OUTRUN_WIDGET_SOURCE_ID%%': process.env.OUTRUN_WIDGET_SOURCE_ID || '1b771da2-46d8-4345-8289-73c778b5781c',
       '%%OUTRUN_WIDGET_TOKEN%%': process.env.OUTRUN_WIDGET_TOKEN || 'outrun-chat-widget-token-1772653365',
